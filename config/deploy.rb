@@ -1,5 +1,10 @@
 require "bundler/capistrano"
 
+require "rvm/capistrano"
+
+#set :rvm_ruby_string, '2.0.0-p247'
+set :rvm_type, :user  # Don't use system-wide RVM
+
 server "141.8.193.154", :web, :app, :db, primary: true
 set :application, "moika"
 set :user, "vatagin"

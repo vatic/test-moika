@@ -8,7 +8,6 @@ CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E prod
 AS_USER=vatagin
 set -u
 OLD_PIN="$PID.oldbin"
-8 / 11#335 Deploying to a VPS (pro) - RailsCasts
 sig () {
 test -s "$PID" && kill -$1 `cat $PID`
 }
