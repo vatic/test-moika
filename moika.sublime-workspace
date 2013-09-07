@@ -1,0 +1,918 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"produ",
+				"product_type"
+			],
+			[
+				"v",
+				"va	vertical-align: ${1:top}"
+			],
+			[
+				"m",
+				"m	margin"
+			],
+			[
+				"t",
+				"td	text-decoration: ${1:none}"
+			],
+			[
+				"li",
+				"list	list-style-type"
+			],
+			[
+				"bg",
+				"bg+	background: ${1:#fff} url(${2}) ${3:0} ${4:0} ${5:no-repeat}"
+			],
+			[
+				"d",
+				"d-i	display: inline"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/layouts/application.html.haml",
+			"settings":
+			{
+				"buffer_size": 450,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/application/_marketing.haml",
+			"settings":
+			{
+				"buffer_size": 293,
+				"line_ending": "Unix",
+				"name": "marketing"
+			}
+		},
+		{
+			"file": "/home/vatagin/dev/ror/tmp/bs3_carousel_example.html.haml",
+			"settings":
+			{
+				"buffer_size": 8701,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/locales/ru.yml",
+			"settings":
+			{
+				"buffer_size": 1222,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/application/_navbar.haml",
+			"settings":
+			{
+				"buffer_size": 1276,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/main.scss",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				":wq",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"gitstatus",
+				"Git: Status"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/vatagin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/application.css",
+		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/main.scss",
+		"/home/vatagin/dev/ror/moika/config/locales/en.yml",
+		"/home/vatagin/dev/ror/moika/config/application.rb",
+		"/home/vatagin/dev/ror/moika/app/assets/javascripts/application.js",
+		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/application.scss",
+		"/home/vatagin/dev/ror/moika/Gemfile",
+		"/home/vatagin/dev/ror/moika/app/views/layouts/_navbar.haml",
+		"/home/vatagin/dev/ror/dep2/Gemfile",
+		"/home/vatagin/.irbrc",
+		"/home/vatagin/dev/ror/dep2/Guardfile",
+		"/home/vatagin/dev/ror/moika/config/unicorn.rb",
+		"/home/vatagin/dev/ror/moika/config/unicorn_init.sh",
+		"/home/vatagin/dev/ror/moika/config/deploy.rb",
+		"/home/vatagin/dev/ror/moika/config/nginx.conf",
+		"/home/vatagin/dev/ror/moika/Capfile",
+		"/home/vatagin/dev/ror/moika/app/views/layouts/application.html.erb",
+		"/home/vatagin/dev/ror/moika/app/views/layouts/application.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/welcome/index.html.haml",
+		"/home/vatagin/dev/ror/moika/config/routes.rb",
+		"/home/vatagin/dev/ror/moika/.gitignore",
+		"/home/vatagin/dev/ror/moika/config/database.yml",
+		"/home/vatagin/dev/ror/dep2/Gemfile.lock",
+		"/home/vatagin/dev/ror/dep2/app/views/layouts/static_pages.html.haml",
+		"/home/vatagin/dev/ror/dep2/app/views/layouts/application.html.haml",
+		"/home/vatagin/dev/ror/dep2/app/assets/stylesheets/screen.scss",
+		"/home/vatagin/dev/ror/dep2/app/views/herbs/index.html.haml",
+		"/home/vatagin/dev/ror/dep2/app/views/products/index.haml",
+		"/home/vatagin/dev/ror/dep2/app/assets/stylesheets/susy_base.scss",
+		"/home/vatagin/dev/ror/dep2/app/views/herbs/show.html.haml",
+		"/home/vatagin/dev/ror/dep2/app/views/product_types/index.haml",
+		"/home/vatagin/dev/ror/dep2/app/views/pages/show.haml",
+		"/home/vatagin/dev/ror/dep2/app/views/layouts/application/_footer.html.haml",
+		"/home/vatagin/dev/ror/dep2/config/locales/ru.yml",
+		"/home/vatagin/dev/ror/dep2/app/views/layouts/application/_hbmenu.html.haml",
+		"/home/vatagin/dev/ror/dep2/app/views/layouts/application/_vmenu.html.haml",
+		"/home/vatagin/dev/ror/dep2/app/views/layouts/application/_header.html.haml",
+		"/home/vatagin/dev/ror/dep2/app/assets/stylesheets/custom.scss",
+		"/home/vatagin/dev/материалы для dep2/about.html",
+		"/home/vatagin/dev/ror/dep2/app/views/layouts/admin/_header.html.haml",
+		"/home/vatagin/dev/ror/dep2/app/views/layouts/_footer2.html.haml",
+		"/home/vatagin/dev/ror/dep2/app/assets/stylesheets/application.scss",
+		"/home/vatagin/dev/ror/dep2/app/controllers/admin/pages_controller.rb",
+		"/home/vatagin/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/vatagin/.config/sublime-text-2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/home/vatagin/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/vatagin/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/vatagin/.config/sublime-text-2/Packages/User/test.txt",
+		"/home/vatagin/dev/ror/dep2/app/models/page.rb",
+		"/home/vatagin/dev/ror/dep2/app/controllers/pages_controller.rb"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"blog",
+			"jque",
+			"= ",
+			"product",
+			"r-content",
+			"content",
+			"menu",
+			"no-bullets",
+			"footer",
+			"#footer",
+			"</span>",
+			"<span class=\"wysiwyg-font-size-large\">",
+			"</p>",
+			"<p>",
+			"main-v-menu",
+			"main-v",
+			"cmd"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"</div>",
+			"<div>"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/layouts/application.html.haml",
+					"settings":
+					{
+						"buffer_size": 450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								418,
+								418
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/application/_marketing.haml",
+					"settings":
+					{
+						"buffer_size": 293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								33,
+								33
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "marketing",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/vatagin/dev/ror/tmp/bs3_carousel_example.html.haml",
+					"settings":
+					{
+						"buffer_size": 8701,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5234,
+								5234
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3065.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "config/locales/ru.yml",
+					"settings":
+					{
+						"buffer_size": 1222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1080,
+								1080
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 5181.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/application/_navbar.haml",
+					"settings":
+					{
+						"buffer_size": 1276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								412,
+								412
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/assets/stylesheets/main.scss",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"mai",
+				"app/assets/stylesheets/main.scss"
+			],
+			[
+				"navb",
+				"app/views/application/_navbar.haml"
+			],
+			[
+				"app",
+				"config/application.rb"
+			],
+			[
+				"en",
+				"config/locales/en.yml"
+			],
+			[
+				"ru",
+				"config/locales/ru.yml"
+			],
+			[
+				"appjs",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"appha",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"appcss",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"cap",
+				"Capfile"
+			],
+			[
+				"dep",
+				"config/deploy.rb"
+			],
+			[
+				"giti",
+				".gitignore"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"ind",
+				"app/views/welcome/index.html.haml"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"appli",
+				"config/application.rb"
+			],
+			[
+				"producont",
+				"app/controllers/admin/products_controller.rb"
+			],
+			[
+				"productsby",
+				"app/views/admin/products/index_by_char.haml"
+			],
+			[
+				"susy",
+				"app/assets/stylesheets/susy_base.scss"
+			],
+			[
+				"productindex",
+				"app/views/products/index.haml"
+			],
+			[
+				"herbssho",
+				"app/views/herbs/show.html.haml"
+			],
+			[
+				"herbsho",
+				"app/views/herbs/show.html.haml"
+			],
+			[
+				"herbin",
+				"app/views/herbs/index.html.haml"
+			],
+			[
+				"pagesho",
+				"app/views/pages/show.haml"
+			],
+			[
+				"producttypei",
+				"app/views/product_types/index.haml"
+			],
+			[
+				"ru.",
+				"config/locales/ru.yml"
+			],
+			[
+				"hbme",
+				"app/views/layouts/application/_hbmenu.html.haml"
+			],
+			[
+				"footer",
+				"app/views/layouts/application/_footer.html.haml"
+			],
+			[
+				"herbsin",
+				"app/views/herbs/index.html.haml"
+			],
+			[
+				"productsinde",
+				"app/views/products/index.haml"
+			],
+			[
+				"herbsindex",
+				"app/views/herbs/index.html.haml"
+			],
+			[
+				"sho",
+				"app/views/herbs/show.html.haml"
+			],
+			[
+				"vme",
+				"app/views/layouts/application/_vmenu.html.haml"
+			],
+			[
+				"cu",
+				"app/assets/stylesheets/custom.scss"
+			],
+			[
+				"hea",
+				"app/views/layouts/application/_header.html.haml"
+			],
+			[
+				"header",
+				"app/views/layouts/admin/_header.html.haml"
+			],
+			[
+				"show",
+				"app/views/pages/show.haml"
+			],
+			[
+				"cus",
+				"app/assets/stylesheets/custom.scss"
+			],
+			[
+				"custo",
+				"app/assets/stylesheets/custom.scss"
+			],
+			[
+				"hbm",
+				"app/views/layouts/application/_hbmenu.html.haml"
+			],
+			[
+				"foote",
+				"app/views/layouts/_footer2.html.haml"
+			],
+			[
+				"scre",
+				"app/assets/stylesheets/screen.scss"
+			],
+			[
+				"vmenu",
+				"app/views/layouts/application/_vmenu.html.haml"
+			],
+			[
+				"hb",
+				"app/views/layouts/application/_hbmenu.html.haml"
+			],
+			[
+				"pagecontro",
+				"app/controllers/admin/pages_controller.rb"
+			],
+			[
+				"stati",
+				"app/views/layouts/static_pages.html.haml"
+			],
+			[
+				"page",
+				"app/models/page.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 273.0,
+	"status_bar_visible": true
+}

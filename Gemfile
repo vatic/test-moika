@@ -34,6 +34,28 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'rb-inotify'
+  gem 'libnotify'
+end
+
+group :development do
+  gem 'guard-livereload'
+  gem 'meta_request', '0.2.5'
+  gem 'irbtools', :require => false
+end
+
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
