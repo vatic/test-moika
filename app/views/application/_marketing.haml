@@ -1,11 +1,20 @@
 .container
-  .col-lg-6.marketing
+  .col-lg-4.marketing
     .panel.panel-primary
       .panel-heading
         =t("marketing1")
       .panel-body
         =t("marketing1_body")
-  .col-lg-6.marketing
+  .col-lg-4.marketing
+    .panel.panel-primary
+      .panel-heading
+        =t("main_video")
+      .panel-body
+        .flowplayer
+          =#video_tag "video1.mp4", :size => "320x240", :controls => true, :type => "video/mp4"
+          %video
+            %source(type="video/mp4" src="/videos/video1.mp4")
+  .col-lg-4.marketing
     .panel.panel-primary
       .panel-heading
         =t("marketing2")

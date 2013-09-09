@@ -1,0 +1,30 @@
+.navbar-wrapper
+  .navbar.navbar-default.navbar-static-top
+    .container
+      .navbar-header#logo_text
+        %a.navbar-brand{:href => "#"}
+          %h1= t("site_title")
+          %p= t("logo_text")
+          =#image_tag("logo2.jpg")
+      .navbar-collapse.collapse#logo
+        %h1.text-muted.text-center= t("logo_mockup")
+    .container#header_nav
+      .navbar-collapse.collapse
+        .col-lg-3
+          %ul.nav.navbar-nav#login
+            %li
+              %a{:href => "#login"}= t("login")
+            %li
+              %a{:href => "#sign_in"}= t("sign_in")
+        .col-lg-3
+          %ul.nav.navbar-nav#feedback
+            %li
+              %a{:href => "#feedback"}= t("feedback")
+        .col-lg-3
+          %ul.nav.navbar-nav#social
+            %li
+              %a{:href => "#social"}= t("social")
+        .col-lg-3
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a= Time.now.strftime("%T %d.%m.%Y")

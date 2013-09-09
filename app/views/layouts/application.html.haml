@@ -10,11 +10,12 @@
     = csrf_meta_tags
   %body
     #wrap
-      = render partial: 'navbar'
-      = render partial: 'marketing'
+      #header
+        = render partial: 'header'
+      #marketing_top
+        = render partial: 'marketing'
       .container
         = yield
-    #footer
-      .container
-        %p.text-muted.copyright
-          &copy; 2013 Ватагин С.В.
+      #marketing_bottom
+        = render partial: 'marketing'
+    = render partial: 'footer'
