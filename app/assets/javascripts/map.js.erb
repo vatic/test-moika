@@ -52,7 +52,9 @@ function init(){
       + '<br/>'
       + 'Пост занят'
       + '<br/>'
-      + '<img src="assets/banner_green.png">'
+      + '<img src="'
+      + "<%= asset_path('banner_green.png') %>"
+      + '">'
       + '<br/>'
       + '<a href="'
       + car_wash.url
@@ -70,7 +72,9 @@ function init(){
       + '<br/>'
       + 'Пост загружен'
       + '<br/>'
-      + '<img src="assets/banner_red.png">'
+      + '<img src="'
+      + "<%= asset_path('banner_red.png') %>"
+      + '">'
       + '<br/>'
       + '<a href="'
       + car_wash.url
