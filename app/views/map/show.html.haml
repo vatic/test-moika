@@ -7,11 +7,11 @@
   cw_list = [];
 
   function getCarWashes() {
-    $.ajax('http://141.8.193.154/car_washes', {
+    $.ajax('/car_washes', {
       dataType: "json",
       success: function(json) {
         json.forEach( function(row) {
-          cw_list.push({coords: [row.lat, row.lon], id: row.id, address: row.address, title: row.title, signal: row.signal, url: row.url.slice(0,-5)});
+          cw_list.push({coords: [row.lat, row.lon], id: row.id, address: row.address, title: row.title, signal: row.signal, url: row.url.slice(0,-5), contacts: row.contacts, services: row.services});
           }
         )}
     })
@@ -22,6 +22,13 @@
     myMap = new ymaps.Map ("map", {
         center: [55.76, 37.64],
         zoom: 10,
+    });
+
+    ymaps.option.presetStorage.add('my#red', {
+    iconImageHref: 'assets/banner_red_small.png'
+    });
+    ymaps.option.presetStorage.add('my#green', {
+    iconImageHref: 'assets/banner_green_small.png'
     });
 
     myMap.controls
@@ -38,21 +45,71 @@
     console.log(cw_list);
     cw_list.forEach(function (car_wash) {
 
-      var myBalloonBody = car_wash.address + '<br/>' + '<a href="' + car_wash.url + '">Перейти на страницу этой мойки</a>';
+      var myBalloonBody = (car_wash.signal) ?
+        (
+        '<h3>'
+        + car_wash.title
+        + '</h3>'
+        + car_wash.address
+        + '<br/>'
+        + car_wash.contacts
+        + '<br/>'
+        + car_wash.services
+        + '<br/>'
+        + 'Пост занят'
+        + '<br/>'
+        + '<img src="assets/banner_green.png">'
+        + '<br/>'
+        + '<a href="'
+        + car_wash.url
+        + '">Перейти на страницу этой мойки</a>'
+        ):
+        (
+        '<h3>'
+        + car_wash.title
+        + '</h3>'
+        + car_wash.address
+        + '<br/>'
+        + car_wash.contacts
+        + '<br/>'
+        + car_wash.services
+        + '<br/>'
+        + 'Пост загружен'
+        + '<br/>'
+        + '<img src="assets/banner_red.png">'
+        + '<br/>'
+        + '<a href="'
+        + car_wash.url
+        + '">Перейти на страницу этой мойки</a>'
+        );
+
+        var timeNow = new Date;
+
+        var myHintContent = (car_wash.signal) ?
+          (
+          '<h3>' + car_wash.title + '</h3>'
+          + '<h5>' + car_wash.address + '</h5>'
+          + '<h5>Время:' + timeNow.toLocaleTimeString() + '</h5>'
+          + '<h5>Пост свободен</h5>'
+          + '<img src="assets/banner_green.png">'
+          ):
+          ('<h3>' + car_wash.title + '</h3>' + '<br/>'
+          + '<h5>' + car_wash.address + '</h5>'
+          + '<h5>Время:' + timeNow.toLocaleTimeString() + '</h5>'
+          + '<h5>Пост загружен</h5>'
+          + '<img src="assets/banner_red.png">'
+          );
 
       var coordinates = car_wash.coords,
         properties = {
           body: myBalloonBody,
-          hintContent: (car_wash.signal) ?
-            ('<h1>' + car_wash.title + '</h1>' + '<br/>'+ '<h2 class="open">Свободно</h2>'):
-            ('<h1>' + car_wash.title + '</h1>' + '<br/>'
-            + '<h2 class="closed">Занято</h2>')
+          hintContent: myHintContent
         },
         options = {
           balloonContentBodyLayout : myBalloonContentBodyLayout,
           preset: (car_wash.signal) ?
-            ('twirl#darkgreenStretchyIcon'):
-            ('twirl#redStretchyIcon')
+            ('my#green'):
+            ('my#red')
         },
         placemark = new ymaps.Placemark(coordinates, properties, options);
 

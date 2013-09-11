@@ -1,42 +1,63 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @car_wash.title
-%p
-  %b Address:
-  = @car_wash.address
-%p
-  %b Lat:
-  = @car_wash.lat
-%p
-  %b Lon:
-  = @car_wash.lon
-%p
-  %b Contacts:
-  = @car_wash.contacts
-%p
-  %b Services:
-  = @car_wash.services
-%p
-  %b Price:
-  = @car_wash.price
-%p
-  %b Zones count:
-  = @car_wash.zones_count
-%p
-  %b Actions:
-  = @car_wash.actions
-%p
-  %b Video url1:
-  = @car_wash.video_url1
-%p
-  %b Video url2:
-  = @car_wash.video_url2
-%p
-  %b Signal:
-  = @car_wash.signal
+.row
+  .col-lg-12
+    %h2.text-center
+      = "Автомойка #{@car_wash.title}"
 
-= link_to 'Edit', edit_car_wash_path(@car_wash)
+.row
+  .col-lg-5
+    %ul.list-group
+      %li.list-group-item
+        %span.text-muted Адрес:
+        %span= @car_wash.address
+      %li.list-group-item
+        %button.btn.btn-primary.btn-lg.btn-block(type="button")
+          Оставить отзыв
+      %li.list-group-item
+        %p.text-muted Координаты:
+        %span.text-muted Широта:
+        %span= @car_wash.lat
+        %br
+        %span.text-muted Долгота:
+        %span= @car_wash.lon
+      %li.list-group-item
+        %span.text-muted Контакты:
+        %span= @car_wash.contacts
+      %li.list-group-item
+        %span.text-muted Услуги:
+        %span= @car_wash.services
+      %li.list-group-item
+        %span.text-muted Цена:
+        %span= @car_wash.price
+      %li.list-group-item
+        %span.text-muted Кол-во моечных зон:
+        %span= @car_wash.zones_count
+      %li.list-group-item
+        %span.text-muted Акции:
+        %span= @car_wash.actions
+  .col-lg-1
+    - if @car_wash.signal
+      %h5.text-muted Свободно
+      =image_tag "banner_green.png"
+    - else
+      %h5.text-muted Занято
+      =image_tag "banner_red.png"
+  .col-lg-3
+    %h5.text-muted.text-center Камера с поста №1
+    .flowplayer
+      %video(width="200" height="200")
+        %source(type="video/mp4" src="/video/ex1.mp4")
+    =#render partial: 'ivideon_tag'
+    =#@car_wash.video_url1
+  .col-lg-3
+    %h5.text-muted.text-center Камера с поста №2
+    .flowplayer
+      %video(width="200" height="200")
+        %source(type="video/mp4" src="/video/ex1.mp4")
+    =#render partial: 'ivideon_tag'
+    =#@car_wash.video_url2
+
+= link_to 'Редактировать', edit_car_wash_path(@car_wash)
 \|
-= link_to 'Back', car_washes_path
+= link_to 'Назад', car_washes_path
