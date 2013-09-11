@@ -14,4 +14,3 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require flowplayer/flowplayer.min
-//= require_tree .
