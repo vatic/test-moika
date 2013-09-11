@@ -1,0 +1,58 @@
+= form_for @car_wash, class: "form_horizontal", role: "form" do |f|
+  - if @car_wash.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@car_wash.errors.count, "error")} prohibited this car_wash from being saved:"
+      %ul
+        - @car_wash.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :title, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :address, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :address, class: "form-control"
+  .form-group
+    = f.label :lat, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :lat, class: "form-control"
+  .form-group
+    = f.label :lon, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :lon, class: "form-control"
+  .form-group.field
+    = f.label :contacts, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :contacts, class: "form-control"
+  .form-group.field
+    = f.label :services, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :services, class: "form-control"
+  .form-group.field
+    = f.label :price, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :price, class: "form-control"
+  .form-group.field
+    = f.label :zones_count, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.number_field :zones_count, class: "form-control"
+  .form-group.field
+    = f.label :actions, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :actions, class: "form-control"
+  .form-group.field
+    = f.label :video_url1, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :video_url1, class: "form-control"
+  .form-group.field
+    = f.label :video_url2, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.text_field :video_url2, class: "form-control"
+  .form-group.field
+    = f.label :signal, class: "col-lg-2 control-label"
+    .col-lg-10
+      = f.check_box :signal, class: "form-control"
+  .actions
+    = f.submit 'Save'

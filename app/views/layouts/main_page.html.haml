@@ -6,11 +6,18 @@
     %title= t("site_title")
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"
     = csrf_meta_tags
   %body
     #wrap
       #header
         = render partial: 'header'
-      .container
+      #marketing_top
+        = render partial: 'marketing'
+      #adv1
+        = render partial: 'adv1'
+      .container#main-content
         = yield
+      #marketing_bottom
+        = render partial: 'marketing'
     = render partial: 'footer'

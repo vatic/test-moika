@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @car_wash.title
+%p
+  %b Address:
+  = @car_wash.address
+%p
+  %b Lat:
+  = @car_wash.lat
+%p
+  %b Lon:
+  = @car_wash.lon
+%p
+  %b Contacts:
+  = @car_wash.contacts
+%p
+  %b Services:
+  = @car_wash.services
+%p
+  %b Price:
+  = @car_wash.price
+%p
+  %b Zones count:
+  = @car_wash.zones_count
+%p
+  %b Actions:
+  = @car_wash.actions
+%p
+  %b Video url1:
+  = @car_wash.video_url1
+%p
+  %b Video url2:
+  = @car_wash.video_url2
+%p
+  %b Signal:
+  = @car_wash.signal
+
+= link_to 'Edit', edit_car_wash_path(@car_wash)
+\|
+= link_to 'Back', car_washes_path

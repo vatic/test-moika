@@ -4,10 +4,60 @@
 :javascript
   ymaps.ready(init);
   var myMap;
+  cw_list = [];
 
-  function init(){     
-      myMap = new ymaps.Map ("map", {
-          center: [55.76, 37.64],
-          zoom: 10,
-      });
+  function getCarWashes() {
+    $.ajax('http://localhost:3000/car_washes', {
+      dataType: "json",
+      success: function(json) {
+        json.forEach( function(row) {
+          cw_list.push({coords: [row.lat, row.lon], id: row.id, address: row.address, title: row.title, signal: row.signal, url: row.url.slice(0,-5)});
+          }
+        )}
+    })
+  }
+
+    getCarWashes();
+  function init(){
+    myMap = new ymaps.Map ("map", {
+        center: [55.76, 37.64],
+        zoom: 10,
+    });
+
+    myMap.controls
+        // Кнопка изменения масштаба.
+        .add('zoomControl', { left: 5, top: 5 })
+        // Список типов карты
+        .add('typeSelector')
+        // Стандартный набор кнопок
+        .add('mapTools', { left: 35, top: 5 });
+
+    var myBalloonContentBodyLayout = ymaps.templateLayoutFactory.createClass(
+                    '<div>$[properties.body]</div>'
+                );
+    console.log(cw_list);
+    cw_list.forEach(function (car_wash) {
+
+      var myBalloonBody = car_wash.address + '<br/>' + '<a href="' + car_wash.url + '">Перейти на страницу этой мойки</a>';
+
+      var coordinates = car_wash.coords,
+        properties = {
+          body: myBalloonBody,
+          hintContent: (car_wash.signal) ?
+            ('<h1>' + car_wash.title + '</h1>' + '<br/>'+ '<h2 class="open">Свободно</h2>'):
+            ('<h1>' + car_wash.title + '</h1>' + '<br/>'
+            + '<h2 class="closed">Занято</h2>')
+        },
+        options = {
+          balloonContentBodyLayout : myBalloonContentBodyLayout,
+          preset: (car_wash.signal) ?
+            ('twirl#darkgreenStretchyIcon'):
+            ('twirl#redStretchyIcon')
+        },
+        placemark = new ymaps.Placemark(coordinates, properties, options);
+
+      myMap.geoObjects.add(placemark);
+
+      //placemark.events.add('click', onClick);
+    });
   }

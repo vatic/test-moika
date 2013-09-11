@@ -1,6 +1,8 @@
 $footer-height: 30px;
 $footer-bg: #333;
 $footer-color: #fff;
+//$border-nav: 1px solid #e7e7e7;
+$border-nav: 1px solid #777;
 
 html, body {
   height: 100%;
@@ -34,7 +36,8 @@ html, body {
   }
 }
 #logo_text {
-  border-right: 1px solid #e7e7e7;
+  padding-bottom: 50px;
+  border-right:$border-nav;
   a.navbar-brand {
     h1 {
       margin-top: 5px;
@@ -43,10 +46,61 @@ html, body {
 }
 
 #header {
+  margin-bottom: 10px;
   #logo {
   }
 }
 
 #header_nav {
-  border-top: 1px solid #e7e7e7;
+    border: $border-nav;
+  .col-lg-3 {
+    border-right:$border-nav;
+    a {
+      color: $navbar-default-color;
+    }
+  }
+  .col-lg-3.no-border {
+    border-right: none;
+  }
+}
+
+@media (min-width: 768px) {
+/* top row */
+.col .well{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+    background: #aaa;
+    color: #fff;
+    .panel {
+      color: #000;
+    }
+}
+
+/* bottom row */
+.col-base{
+    margin-top: -15px; /* cut off top portion of bottom wells */
+    .well {
+    background: #aaa;
+    color: #fff;
+  }
+}
+}
+
+@media (max-width: 767px) {
+.row.base{
+    display:none;
+}
+}
+
+.col-wrap{
+    overflow: hidden;
+}
+
+#main-content {
+}
+
+#adv1 {
+  border-top: $border-nav;
+  border-bottom: $border-nav;
+
 }

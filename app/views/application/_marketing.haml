@@ -1,22 +1,36 @@
 .container
-  .col-lg-4.marketing
-    .panel.panel-primary
-      .panel-heading
-        =t("marketing1")
-      .panel-body
-        =t("marketing1_body")
-  .col-lg-4.marketing
-    .panel.panel-primary
-      .panel-heading
-        =t("main_video")
-      .panel-body
-        .flowplayer
-          =#video_tag "video1.mp4", :size => "320x240", :controls => true, :type => "video/mp4"
-          %video
-            %source(type="video/mp4" src="/videos/video1.mp4")
-  .col-lg-4.marketing
-    .panel.panel-primary
-      .panel-heading
-        =t("marketing2")
-      .panel-body
-        =t("marketing2_body")
+
+  .row.col-wrap
+    .col-sm-4.col
+      .well
+        %p.text-center= t('marketing1')
+
+    .col-sm-4.col
+      .well
+        %p.text-center= t('main_video')
+        /
+          .iv-embed{:style => "margin:0 auto;padding:0;border:0;width:322px;"}
+
+          .iv-v{:style => "display:block;margin:0;padding:1px;border:0;background:#333;"}
+            %iframe.iv-i{:frameborder => "0", :height => "240", :src => "http://open.ivideon.com/embed/v2/?server=039178dc42944dfbb1cff0f2fe733973&camera=524288&ap&noibw&lang=ru", :style => "display:block;margin:0;padding:0;border:0;", :width => "320"}
+          .iv-b{:style => "display:block;margin:0;padding:0;border:0;"}
+            %div{:style => "float:right;text-align:right;padding:0 0 10px;line-height:10px;"}
+              %a.iv-a{:href => "http://www.ivideon.com/", :style => "font:10px Verdana,sans-serif;color:inherit;opacity:.6;", :target => "_blank"}
+                powered by Ivideon
+            %div{:style => "clear:both;height:0;overflow:hidden;"}
+              \&nbsp;
+          %script{:src => "http://open.ivideon.com/embed/v2/embedded.js"}
+
+
+    .col-sm-4.col
+
+      .well
+        %p.text-center= t('marketing2')
+
+  .row.base.col-wrap
+    .col-sm-4.col-base
+      .well
+    .col-sm-4.col-base
+      .well
+    .col-sm-4.col-base
+      .well
