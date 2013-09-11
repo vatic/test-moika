@@ -89,13 +89,17 @@ function init(){
         + '<h5>' + car_wash.address + '</h5>'
         + '<h5>Время:' + timeNow.toLocaleTimeString() + '</h5>'
         + '<h5>Пост свободен</h5>'
-        + '<img src="assets/banner_green.png">'
+        + '<img src="'
+        + "<%= asset_path('banner_green.png') %>"
+        + '">'
         ):
         ('<h3>' + car_wash.title + '</h3>' + '<br/>'
         + '<h5>' + car_wash.address + '</h5>'
         + '<h5>Время:' + timeNow.toLocaleTimeString() + '</h5>'
         + '<h5>Пост загружен</h5>'
-        + '<img src="assets/banner_red.png">'
+        + '<img src="'
+        + "<%= asset_path('banner_red.png') %>"
+        + '">'
         );
 
     var coordinates = car_wash.coords,
