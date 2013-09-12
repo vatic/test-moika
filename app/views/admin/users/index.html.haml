@@ -1,0 +1,33 @@
+%h5 Список администраторов сайта
+%table.table
+  %tr
+    %th email
+    %th Роль
+
+  - @admins.each do |user|
+    %tr
+      %td= user.email
+      %td= user.roles.first.name unless user.roles.first.nil?
+%hr
+
+%h5 Список клиентов
+%table.table
+  %tr
+    %th email
+    %th Роль
+    %th Мойка
+
+  - @clients.each do |client|
+    %tr
+      %td= client.email
+      %td= client.roles.first.name unless client.roles.first.nil?
+      %td= client.car_wash.title unless client.car_wash.nil?
+%hr
+
+%h5 Список гостей
+%table.table
+  %tr
+    %th email
+  - @guests.each do |user|
+    %tr
+      %td= user.email

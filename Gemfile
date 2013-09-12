@@ -30,6 +30,7 @@ gem 'haml-rails'
 gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
+gem 'cancan'
 gem 'geocoder'
 
 group :doc do
@@ -53,6 +54,7 @@ end
 group :development do
   gem 'guard-livereload'
   gem 'meta_request', '0.2.5'
+  gem 'boson-more'
   gem 'irbtools', :require => false
 end
 

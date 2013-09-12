@@ -9,10 +9,8 @@
 .container#header_nav
   .col-lg-3
     %ul.nav.navbar-nav#login
-      %li
-        %a{:href => "#login"}= t("login")
-      %li
-        %a{:href => "#sign_in"}= t("sign_in")
+      = render 'devise/menu/login_items'
+      = render 'devise/menu/registration_items'
   .col-lg-3
     %ul.nav.navbar-nav#feedback
       %li
