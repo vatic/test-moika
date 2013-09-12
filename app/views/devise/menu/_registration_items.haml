@@ -1,6 +1,5 @@
 - if user_signed_in?
   %li
-    %span= current_user.email
     - if current_user.admin?
       = link_to t('admin_panel'), admin_path #edit_user_registration_path
     - else

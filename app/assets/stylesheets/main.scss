@@ -53,11 +53,14 @@ html, body {
   margin-bottom: 10px;
   #logo {
   }
+  a#email {
+    font-size: 9px;
+  }
 }
 
 #header_nav {
     border: $border-nav;
-  .col-lg-3 {
+  .col-lg-4, .col-lg-2, .col-lg-3 {
     border-right:$border-nav;
     a {
       color: $navbar-default-color;

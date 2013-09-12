@@ -1,22 +1,22 @@
 .container
-  .col-lg-3#logo_text
+  .col-lg-4#logo_text
     = link_to root_path, class: "navbar-brand" do
       %h1= t("site_title")
       %p= t("logo_text")
       =#image_tag("logo2.jpg")
-  .col-lg-9#logo
+  .col-lg-8#logo
     %h1.text-muted.text-center= t("logo_mockup")
 .container#header_nav
-  .col-lg-3
+  .col-lg-4
     %ul.nav.navbar-nav#login
       = render 'devise/menu/login_items'
       = render 'devise/menu/registration_items'
-  .col-lg-3
+      %li
+        = link_to current_user.email, "#"
+  .col-lg-2
     %ul.nav.navbar-nav#feedback
       %li
         %a{:href => "#feedback"}= t("feedback")
-      %li
-        = link_to "Список моек", car_washes_path
   .col-lg-3
     %ul.nav.navbar-nav#social
       %li
