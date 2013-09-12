@@ -1,4 +1,37 @@
 #footer
   .container
-    %p.text-muted.text-center.copyright
-      &copy; 2013 "Мойка 77"
+    .row
+      .col-lg-6
+        %ul.nav.nav-pills
+          %li
+            = link_to "Главная", root_path
+          %li
+            = link_to "Реклама на сайте", "#"
+          %li
+            = link_to "О компании", "#"
+      .col-lg-3
+        %ul.nav.nav-pills
+          %li
+            = mail_to "info@moika77.ru"
+      .col-lg-3
+        %ul.nav.nav-pills
+          %li
+            = render 'ya_counter'
+    %hr
+    .row
+      .col-lg-2
+        = image_tag "android.png"
+        = link_to "Android", "#"
+      .col-lg-2
+        = image_tag "iphone.png"
+        = link_to "iPhone", "#"
+      .col-lg-3
+        %p.text-muted.text-center.copyright
+          &copy; 2013 "Мойка 77"
+      .col-lg-3
+        = link_to "Пользовательское соглашение", "#"
+      .col-lg-2
+        = link_to "Разработка:", "#"
+        = link_to "Дизайн:", "#"
+
+

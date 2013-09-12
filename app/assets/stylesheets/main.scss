@@ -1,4 +1,4 @@
-$footer-height: 30px;
+$footer-height: 160px;
 $footer-bg: #333;
 $footer-color: #fff;
 //$border-nav: 1px solid #e7e7e7;
@@ -29,9 +29,13 @@ html, body {
   height: $footer-height;
   background-color: $footer-bg;
  .container {
-    p.copyright {
-      margin: 5px 0;
+    a,p {
       color: $footer-color;
+    }
+    img {
+      padding-right: 10px;
+    }
+    p.copyright {
     }
   }
 }
