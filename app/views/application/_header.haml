@@ -12,7 +12,7 @@
       = render 'devise/menu/login_items'
       = render 'devise/menu/registration_items'
       %li
-        = link_to current_user.email, "#"
+        = link_to current_user.email, "#" unless current_user.nil?
   .col-lg-2
     %ul.nav.navbar-nav#feedback
       %li

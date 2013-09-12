@@ -28,6 +28,14 @@
 %table.table
   %tr
     %th email
+    %th
+    %th
+    %th
   - @guests.each do |user|
     %tr
       %td= user.email
+      %td
+        %button.btn.btn-primary
+          = link_to "Добавить в клиeнты", "#"
+      %td &nbsp;
+      %td &nbsp;
