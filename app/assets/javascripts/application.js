@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require flowplayer/flowplayer.min
-//= require jquery-plugins/jquery.simpleImageCheck.min
 //= require_tree .
