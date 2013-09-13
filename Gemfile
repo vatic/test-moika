@@ -1,3 +1,5 @@
+ruby "2.0.0"
+
 source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -74,3 +76,5 @@ gem 'thin', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'rails_12factor', group: :production
