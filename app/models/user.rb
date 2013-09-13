@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
     end
   end
 
-  scope :admins, includes(:roles).where("roles.name='admin'")
-  scope :clients, includes(:roles).where("roles.name='client'")
-  scope :guests, includes(:roles).where("roles.name='guest'")
+  scope :admins, includes(:roles).where("roles.name='admin'").references(:roles)
+  scope :clients, includes(:roles).where("roles.name='client'").references(:roles)
+  scope :guests, includes(:roles).where("roles.name='guest'").references(:roles)
 
 
   has_and_belongs_to_many :roles, join_table: "roles_users"
