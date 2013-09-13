@@ -1,0 +1,18 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+$ ->
+  if $('#car-wash-signal').prop("checked")
+    $('img#red-green').attr('src', "<%= asset_path('banner_green.png') %>")
+  else
+    $('img#red-green').attr('src', "<%= asset_path('banner_red.png') %>")
+
+  $(document).on 'click', '#red-green', (e) ->
+    e.preventDefault()
+    if $('#car-wash-signal').prop("checked")
+      $("input[type='checkbox']#car-wash-signal").prop("checked", false)
+      $('img#red-green').attr('src', "<%= asset_path('banner_red.png') %>")
+    else
+      $("input[type='checkbox']#car-wash-signal").prop("checked", true)
+      $('img#red-green').attr('src', "<%= asset_path('banner_green.png') %>")
