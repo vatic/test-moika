@@ -1,7 +1,9 @@
-%h1 Editing car_wash
+%h3.text-muted.text-center= "Личный кабинет #{CarWash.model_name.human} #{@car_wash.title}"
 
 = render 'form'
-
-= link_to 'Show', @car_wash
-\|
-= link_to 'Back', car_washes_path
+%hr
+.row
+  .col-lg-8.col-lg-offset-4
+    = link_to t('show_link'), @car_wash, class: 'btn btn-primary'
+    =#link_to t('back_link'), car_washes_path
+%br

@@ -58,6 +58,8 @@
     =#render partial: 'ivideon_tag'
     =#@car_wash.video_url2
 
-= link_to 'Редактировать', edit_car_wash_path(@car_wash)
-\|
-= link_to 'Назад', car_washes_path
+= link_to 'Редактировать', edit_car_wash_path(@car_wash), class: 'btn btn-primary'
+%br
+%br
+/\|
+=#link_to 'Назад', car_washes_path

@@ -1,4 +1,7 @@
 ru:
+  save_button: "Сохранить"
+  show_link: "Показать"
+  back_link: "Назад"
   site_title: "Мойка 77"
   logo_text: "Поиск Автомоек Москвы"
   logo_mockup: "Здесь будет логотип"
@@ -20,6 +23,28 @@ ru:
   main_video_body: "Здесь будет трансляция с одной из автомоек"
   adv1: "Горизонтальный рекламный блок бегущая строка"
   link_to_save: "Сохранить"
+  activerecord:
+    models:
+      car_wash: Автомойки
+      user: Пользователи
+    attributes:
+      car_wash:
+        title: "Название"
+        address: "Адрес"
+        lat: "Широта"
+        lon: "Долгота"
+        contacts: "Контакты"
+        services: "Услуги"
+        price: "Цены"
+        zones_count: "Кол-во постов"
+        actions: "Акции"
+        video_url1: "Ссылка на видео 1"
+        video_url2: "Ссылка на видео 2"
+        signal: "Занято/Свободно"
+      user:
+        email: "Email"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
   layouts:
     admin:
       main_header: "Панель управления сайта \"Мойка 77\""

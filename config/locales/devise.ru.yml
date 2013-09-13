@@ -1,5 +1,17 @@
 ru:
   devise:
+    sign_in: "Войти"
+    sign_up: "Зарегистрироваться"
+    remember_me: "Запомнить"
+    forgot_your_password: "Забыли пароль?"
+    send_me_reset_password_instructions: "Отправить письмо"
+    shared:
+      links:
+        sign_in: "Войти"
+        sign_up: "Зарегистрироваться"
+        forgot_your_password: "Забыли пароль?"
+        didnt_receive_confirmation_instructions: "Не получили интструкций по восстановлению пароля?"
+        didnt_receive_unlock_instructions: "Не получили интструкций по разблокировке учетной записи?"
     confirmations:
       confirmed: "Ваша учётная запись подтверждена. Теперь вы вошли в систему."
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по подтверждению вашей учётной записи."
