@@ -27,9 +27,9 @@ function init(){
   });
 
   ymaps.option.presetStorage.add('my#red', {
-  iconImageHref: "<%= asset_path('banner_red_small.png') %>"  });
+  iconImageHref: "<%= asset_path('red_led.png') %>"  });
   ymaps.option.presetStorage.add('my#green', {
-  iconImageHref: "<%= asset_path('banner_green_small.png') %>"  });
+  iconImageHref: "<%= asset_path('green_led.png') %>"  });
 
   myMap.controls
       // Кнопка изменения масштаба.
@@ -117,7 +117,8 @@ function init(){
         balloonContentBodyLayout : myBalloonContentBodyLayout,
         preset: (car_wash.signal) ?
           ('my#green'):
-          ('my#red')
+          ('my#red'),
+        iconImageSize: [20, 20]
       },
       placemark = new ymaps.Placemark(coordinates, properties, options);
 

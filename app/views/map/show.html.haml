@@ -1,3 +1,9 @@
-.col-lg-12
+.col-lg-2
+  %h3.text-muted.text-center Список:
+  %ul#car_wash_list
+    -@car_washes.each do |cw|
+      %li= link_to cw.title, car_wash_path(cw)
+
+.col-lg-10
   %h3.text-muted.text-center Карта автомоек Москвы
   #map

@@ -1,4 +1,4 @@
-$footer-height: 160px;
+$footer-height: 105px;
 $footer-bg: #333;
 $footer-color: #fff;
 //$border-nav: 1px solid #e7e7e7;
@@ -28,6 +28,7 @@ html, body {
 #footer {
   height: $footer-height;
   background-color: $footer-bg;
+  padding-top: 10px;
  .container {
     a,p {
       color: $footer-color;
@@ -165,6 +166,17 @@ fieldset#car-wash-edit {
   li {
     a {
       text-decoration: underline;
+    }
+  }
+}
+
+ul#car_wash_list {
+  border: 1px solid #000;
+  padding: 10px 0 10px 10px;
+  list-style-type: none;
+  li {
+    padding: 5px 0;
+    a {
     }
   }
 }
