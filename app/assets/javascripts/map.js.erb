@@ -37,7 +37,12 @@ function init(){
       // Список типов карты
       .add('typeSelector')
       // Стандартный набор кнопок
-      .add('mapTools', { left: 35, top: 5 });
+      .add('mapTools', { left: 35, top: 5 })
+      .add('routeEditor', { left: 130, top: 5 })
+      .add('trafficControl')
+      .add('searchControl', { left: 180, top: 5 });
+
+  myMap.behaviors.enable('scrollZoom');
 
   var myBalloonContentBodyLayout = ymaps.templateLayoutFactory.createClass(
                   '<div>$[properties.body]</div>'
