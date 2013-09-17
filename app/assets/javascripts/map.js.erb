@@ -23,13 +23,13 @@ $(document).ready( function() {
 function init(){
   myMap = new ymaps.Map ("map", {
       center: [55.76, 37.64],
-      zoom: 10,
+      zoom: 11,
   });
 
   ymaps.option.presetStorage.add('my#red', {
   iconImageHref: "<%= asset_path('red_led.png') %>"  });
   ymaps.option.presetStorage.add('my#green', {
-  iconImageHref: "<%= asset_path('green_led.png') %>"  });
+  iconImageHref: "<%= asset_path('green_bl.gif') %>"  });
 
   myMap.controls
       // Кнопка изменения масштаба.
