@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130912134904) do
+ActiveRecord::Schema.define(version: 20130918183849) do
 
   create_table "car_washes", force: true do |t|
     t.string   "title"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20130912134904) do
     t.float    "lat"
     t.float    "lon"
     t.string   "contacts"
-    t.string   "services"
+    t.text     "services"
     t.string   "price"
     t.integer  "zones_count"
     t.string   "actions"
