@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"el",
+				"element"
+			],
+			[
+				"fe",
+				"features"
+			],
+			[
+				"se",
+				"services"
+			],
+			[
+				"un",
+				"unless	unless … end"
+			],
+			[
+				"Co",
+				"CompanyMetaData"
+			],
+			[
+				"name",
+				"names_ary"
+			],
+			[
+				"jso",
+				"json_hash"
+			],
+			[
+				"ya",
+				"YA_SEARCH_QUERY"
+			],
+			[
+				"q",
+				"QUERY_HASH"
+			],
+			[
+				"P",
+				"PATH"
+			],
+			[
+				"h",
+				"HOST"
+			],
+			[
+				"bd",
+				"bd+	border: ${1:1px} ${2:solid} ${3:#000}"
+			],
+			[
 				"produ",
 				"product_type"
 			],
@@ -36,51 +84,91 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/layouts/application.html.haml",
+			"file": "lib/parse_data.rb",
 			"settings":
 			{
-				"buffer_size": 450,
+				"buffer_size": 1962,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/application/_marketing.haml",
+			"file": "app/controllers/admin/dashboard_controller.rb",
 			"settings":
 			{
-				"buffer_size": 293,
+				"buffer_size": 186,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/admin/dashboard/load_data_from_ya.haml",
+			"settings":
+			{
+				"buffer_size": 225,
 				"line_ending": "Unix",
-				"name": "marketing"
+				"name": "%h3 Список названий моек"
 			}
 		},
 		{
-			"file": "/home/vatagin/dev/ror/tmp/bs3_carousel_example.html.haml",
+			"file": "moika_0.yaml",
 			"settings":
 			{
-				"buffer_size": 8701,
+				"buffer_size": 3596,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/locales/ru.yml",
+			"file": "moiki.yaml",
 			"settings":
 			{
-				"buffer_size": 1222,
+				"buffer_size": 100098,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/application/_navbar.haml",
+			"file": "db/migrate/20130910100316_create_car_washes.rb",
 			"settings":
 			{
-				"buffer_size": 1276,
+				"buffer_size": 422,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/main.scss",
+			"file": "db/migrate/20130918183849_change_type_of_services.rb",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 152,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/map/show.html.haml",
+			"settings":
+			{
+				"buffer_size": 214,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/map_controller.rb",
+			"settings":
+			{
+				"buffer_size": 121,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/map.js.erb",
+			"settings":
+			{
+				"buffer_size": 3509,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 1796,
 				"line_ending": "Unix"
 			}
 		}
@@ -112,7 +200,7 @@
 				"Git: Status"
 			]
 		],
-		"width": 521.0
+		"width": 530.0
 	},
 	"console":
 	{
@@ -129,9 +217,22 @@
 	},
 	"file_history":
 	[
+		"/home/vatagin/dev/ror/moika/app/controllers/car_washes_controller.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20130912111848_add_car_wash_id_to_users.rb",
+		"/home/vatagin/dev/ror/moika/config/routes.rb",
+		"/home/vatagin/dev/ror/moika/config/database.yml",
+		"/home/vatagin/dev/ror/moika/app/views/layouts/application.html.haml",
+		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/main.scss",
+		"/home/vatagin/dev/ror/moika/app/views/map/show.html.haml",
+		"/home/vatagin/dev/ror/moika/vendor/assets/javascripts/ya_ajax_example.js",
+		"/home/vatagin/dev/ror/moika/app/views/application/_navbar.haml",
+		"/home/vatagin/dev/ror/moika/config/locales/ru.yml",
+		"/home/vatagin/dev/yandex/ya_map_template.html",
+		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
+		"/home/vatagin/dev/ror/tmp/bs3_carousel_example.html.haml",
+		"/home/vatagin/dev/ror/moika/app/controllers/map_controller.rb",
 		"/home/vatagin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
 		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/application.css",
-		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/main.scss",
 		"/home/vatagin/dev/ror/moika/config/locales/en.yml",
 		"/home/vatagin/dev/ror/moika/config/application.rb",
 		"/home/vatagin/dev/ror/moika/app/assets/javascripts/application.js",
@@ -147,11 +248,8 @@
 		"/home/vatagin/dev/ror/moika/config/nginx.conf",
 		"/home/vatagin/dev/ror/moika/Capfile",
 		"/home/vatagin/dev/ror/moika/app/views/layouts/application.html.erb",
-		"/home/vatagin/dev/ror/moika/app/views/layouts/application.html.haml",
 		"/home/vatagin/dev/ror/moika/app/views/welcome/index.html.haml",
-		"/home/vatagin/dev/ror/moika/config/routes.rb",
 		"/home/vatagin/dev/ror/moika/.gitignore",
-		"/home/vatagin/dev/ror/moika/config/database.yml",
 		"/home/vatagin/dev/ror/dep2/Gemfile.lock",
 		"/home/vatagin/dev/ror/dep2/app/views/layouts/static_pages.html.haml",
 		"/home/vatagin/dev/ror/dep2/app/views/layouts/application.html.haml",
@@ -197,6 +295,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"777",
 			"blog",
 			"jque",
 			"= ",
@@ -234,23 +333,23 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 10,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/layouts/application.html.haml",
+					"file": "lib/parse_data.rb",
 					"settings":
 					{
-						"buffer_size": 450,
+						"buffer_size": 1962,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								418,
-								418
+								845,
+								845
 							]
 						],
 						"settings":
@@ -299,34 +398,35 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 528.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/application/_marketing.haml",
+					"file": "app/controllers/admin/dashboard_controller.rb",
 					"settings":
 					{
-						"buffer_size": 293,
+						"buffer_size": 186,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								33,
-								33
+								132,
+								132
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
-							"auto_name": "marketing",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -370,7 +470,7 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -380,23 +480,24 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/home/vatagin/dev/ror/tmp/bs3_carousel_example.html.haml",
+					"file": "app/views/admin/dashboard/load_data_from_ya.haml",
 					"settings":
 					{
-						"buffer_size": 8701,
+						"buffer_size": 225,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5234,
-								5234
+								220,
+								220
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
+							"auto_name": "%h3 Список названий моек",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -440,30 +541,28 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3065.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "config/locales/ru.yml",
+					"file": "moika_0.yaml",
 					"settings":
 					{
-						"buffer_size": 1222,
+						"buffer_size": 3596,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1080,
-								1080
+								819,
+								819
 							]
 						],
 						"settings":
@@ -512,28 +611,30 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/YAML/YAML.tmLanguage"
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 5181.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 528.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "app/views/application/_navbar.haml",
+					"file": "moiki.yaml",
 					"settings":
 					{
-						"buffer_size": 1276,
+						"buffer_size": 100098,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								412,
-								412
+								84041,
+								84041
 							]
 						],
 						"settings":
@@ -582,22 +683,22 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"syntax": "Packages/YAML/YAML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 70630.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/assets/stylesheets/main.scss",
+					"file": "db/migrate/20130910100316_create_car_washes.rb",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 422,
 						"regions":
 						{
 						},
@@ -654,10 +755,366 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "db/migrate/20130918183849_change_type_of_services.rb",
+					"settings":
+					{
+						"buffer_size": 152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								132,
+								132
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/map/show.html.haml",
+					"settings":
+					{
+						"buffer_size": 214,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								67
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/controllers/map_controller.rb",
+					"settings":
+					{
+						"buffer_size": 121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								109,
+								109
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/assets/javascripts/map.js.erb",
+					"settings":
+					{
+						"buffer_size": 3509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 1796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1795,
+								1795
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 811.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -707,6 +1164,66 @@
 		"selected_items":
 		[
 			[
+				"ge",
+				"Gemfile"
+			],
+			[
+				"map",
+				"app/assets/javascripts/map.js.erb"
+			],
+			[
+				"mapco",
+				"app/controllers/map_controller.rb"
+			],
+			[
+				"carcon",
+				"app/controllers/car_washes_controller.rb"
+			],
+			[
+				"mapsho",
+				"app/views/map/show.html.haml"
+			],
+			[
+				"migra",
+				"db/migrate/20130912111848_add_car_wash_id_to_users.rb"
+			],
+			[
+				"cha",
+				"db/migrate/20130918183849_change_type_of_services.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"adminco",
+				"app/controllers/admin/dashboard_controller.rb"
+			],
+			[
+				"create",
+				"db/migrate/20130910100316_create_car_washes.rb"
+			],
+			[
+				"lib",
+				"lib/parse_data.rb"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"ru",
+				"config/locales/ru.yml"
+			],
+			[
+				"nav",
+				"app/views/application/_navbar.haml"
+			],
+			[
+				"show",
+				"app/views/map/show.html.haml"
+			],
+			[
 				"mai",
 				"app/assets/stylesheets/main.scss"
 			],
@@ -723,16 +1240,8 @@
 				"config/locales/en.yml"
 			],
 			[
-				"ru",
-				"config/locales/ru.yml"
-			],
-			[
 				"appjs",
 				"app/assets/javascripts/application.js"
-			],
-			[
-				"ge",
-				"Gemfile"
 			],
 			[
 				"appha",
@@ -759,16 +1268,8 @@
 				".gitignore"
 			],
 			[
-				"rou",
-				"config/routes.rb"
-			],
-			[
 				"ind",
 				"app/views/welcome/index.html.haml"
-			],
-			[
-				"data",
-				"config/database.yml"
 			],
 			[
 				"appli",
@@ -855,10 +1356,6 @@
 				"app/views/layouts/admin/_header.html.haml"
 			],
 			[
-				"show",
-				"app/views/pages/show.haml"
-			],
-			[
 				"cus",
 				"app/assets/stylesheets/custom.scss"
 			],
@@ -913,6 +1410,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 273.0,
+	"side_bar_width": 136.0,
 	"status_bar_visible": true
 }

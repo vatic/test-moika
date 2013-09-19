@@ -55,8 +55,9 @@ end
 group :development do
   gem 'guard-livereload'
   gem 'meta_request', '0.2.5'
-  gem 'boson-more'
-  gem 'irbtools', :require => false
+  #gem 'boson-more'
+  gem 'irbtools', '~> 1.5.0', :require => false
+  gem 'irbtools-more', :require => false
 end
 
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
@@ -71,7 +72,8 @@ gem 'unicorn'
 # Use Capistrano for deployment
 gem 'capistrano', group: :development
 gem 'rvm-capistrano'
-gem 'thin', group: :development
+#gem 'thin', group: :development
+gem 'puma', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

@@ -1,8 +1,13 @@
-var myMap;
-cw_list = [];
+function log (argument) {
+  console.log(argument)
+}
+var myMap,
+  cw_list = [],
+  geo_objects_ary = [];
 
 
 $(document).ready( function() {
+  log("document ready!");
   function getCarWashes() {
     $.ajax('/car_washes', {
       dataType: "json",
@@ -11,12 +16,17 @@ $(document).ready( function() {
         cw_list = [];
         json.forEach( function(row) {
           cw_list.push({coords: [row.lat, row.lon], id: row.id, address: row.address, title: row.title, signal: row.signal, url: row.url.slice(0,-5), contacts: row.contacts, services: row.services});
-          }
-        )}
+          })
+        log("json success done");
+        log("load map...");
+        ymaps.ready(init);
+        log("done load map...");
+      }
     })
   };
   getCarWashes();
-  ymaps.ready(init);
+  log('getCarWashes done');
+  //ymaps.ready(init);
 });
 
 
@@ -25,6 +35,14 @@ function init(){
       center: [55.76, 37.64],
       zoom: 11,
   });
+
+  clusterer = new ymaps.Clusterer({
+    preset: 'twirl#invertedVioletClusterIcons',
+    groupByCoordinates: false,
+    clusterDisableClickZoom: false,
+    minClusterSize: 3,
+    gridSize: 80
+    })
 
   ymaps.option.presetStorage.add('my#red', {
   iconImageHref: "<%= asset_path('red_led.png') %>"  });
@@ -39,7 +57,7 @@ function init(){
       // Стандартный набор кнопок
       .add('mapTools', { left: 35, top: 5 })
       .add('routeEditor', { left: 130, top: 5 })
-      .add('trafficControl')
+      .add(new ymaps.control.TrafficControl({providerKey: 'traffic#actual', shown: true}))
       .add('searchControl', { left: 180, top: 5 });
 
   myMap.behaviors.enable('scrollZoom');
@@ -48,7 +66,19 @@ function init(){
                   '<div>$[properties.body]</div>'
               );
   console.log(cw_list);
+
+  greenCollection = new ymaps.GeoObjectCollection({}, {
+      preset: 'my#green',
+      iconImageSize: [20, 20]
+  });
+
+  redCollection = new ymaps.GeoObjectCollection({}, {
+      preset: 'my#red',
+      iconImageSize: [20, 20]
+  });
+
   cw_list.forEach(function (car_wash) {
+
 
     var myBalloonBody = (car_wash.signal) ?
       (
@@ -127,8 +157,19 @@ function init(){
       },
       placemark = new ymaps.Placemark(coordinates, properties, options);
 
-    myMap.geoObjects.add(placemark);
+    (car_wash.signal) ? ( greenCollection.add(placemark) ):( redCollection.add(placemark) );
+    geo_objects_ary.push(placemark)
 
-    //placemark.events.add('click', onClick);
   });
+    //myMap.geoObjects.add(greenCollection);
+    //myMap.geoObjects.add(redCollection);
+    //clusterer.add(greenCollection);
+    //clusterer.add(redCollection);
+    clusterer.add(geo_objects_ary);
+    myMap.geoObjects.add(clusterer);
 }
+
+$(document).ready(function() {
+  var date_now = new Date();
+  $(".datetime").append(date_now.toLocaleDateString() + ' ' + date_now.toLocaleTimeString());
+});

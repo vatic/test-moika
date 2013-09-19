@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require flowplayer/flowplayer.min
-//= require car_washes
+//= require map
