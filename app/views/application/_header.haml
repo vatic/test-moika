@@ -1,11 +1,16 @@
 .container
   .col-lg-4#logo_text
     = link_to root_path, class: "navbar-brand" do
-      %h1= t("site_title")
-      %p= t("logo_text")
-      =#image_tag("logo2.jpg")
+      = image_tag 'logo.png'
   .col-lg-8#logo
-    %h1.text-muted.text-center= t("logo_mockup")
+    .col-lg-3
+      = image_tag 'header_logo_1.png'
+    .col-lg-3
+      = image_tag 'header_logo_2.png'
+    .col-lg-3
+      = image_tag 'header_logo_3.png'
+    .col-lg-3
+      = image_tag 'header_logo_4.png'
 .container#header_nav
   .col-lg-4
     %ul.nav.navbar-nav#login

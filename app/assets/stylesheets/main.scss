@@ -41,8 +41,8 @@ html, body {
   }
 }
 #logo_text {
-  padding-bottom: 50px;
-  border-right:$border-nav;
+  padding-bottom: 0px;
+  //border-right:$border-nav;
   a.navbar-brand {
     h1 {
       margin-top: 5px;
@@ -60,9 +60,10 @@ html, body {
 }
 
 #header_nav {
-    border: $border-nav;
+  background: #ebebeb;
+    //border: $border-nav;
   .col-lg-4, .col-lg-2, .col-lg-3 {
-    border-right:$border-nav;
+    //border-right:$border-nav;
     a {
       color: $navbar-default-color;
     }
