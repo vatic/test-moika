@@ -79,3 +79,7 @@ gem 'puma', group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
+
+gem 'susy'
+gem 'compass', '>= 0.12.2'
+gem 'compass-rails', '>= 1.0.3'
