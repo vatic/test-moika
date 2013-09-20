@@ -7,17 +7,16 @@
     = stylesheet_link_tag    "application", media: "all"
     = csrf_meta_tags
   %body
-    #wrap
-      #header
-        = render partial: 'header'
-      #marketing_top
-        = render partial: 'marketing'
-      #adv1
-        = render partial: 'adv1'
-      #main-content
-        = yield
-      #marketing_bottom
-        = render partial: 'marketing'
+    #header
+      = render partial: 'header'
+    #marketing_top
+      = render partial: 'marketing'
+    #adv1
+      = render partial: 'adv1'
+    #main-content
+      = yield
+    #marketing_bottom
+      = render partial: 'marketing'
     = render partial: 'footer'
     = javascript_include_tag "http://api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU"
     = javascript_include_tag "main_page"

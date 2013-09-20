@@ -1,10 +1,18 @@
 GIT
   remote: git://github.com/anjlab/bootstrap-rails.git
-  revision: 1344ca5c264a84a1b05c4feb872232df711820cd
+  revision: 2bc320beace2dba793a676283c3a25fc3ce66d85
   specs:
     anjlab-bootstrap-rails (3.0.0.3)
       railties (>= 3.0)
       sass (>= 3.2)
+
+GIT
+  remote: git://github.com/milgner/compass-rails.git
+  revision: c86e7fd9c2605c80816a2f64a3fb8b7c3a09e494
+  branch: rails4
+  specs:
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
 
 GEM
   remote: http://rubygems.org/
@@ -76,8 +84,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
     debug_inspector (0.0.2)
     devise (3.1.0)
       bcrypt-ruby (~> 3.0)
@@ -272,6 +278,9 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    susy (1.0.9)
+      compass (>= 0.12.2)
+      sass (>= 3.2.0)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -310,8 +319,7 @@ DEPENDENCIES
   capistrano
   capybara
   coffee-rails (~> 4.0.0)
-  compass (>= 0.12.2)
-  compass-rails (>= 1.0.3)
+  compass-rails!
   devise
   geocoder
   guard-livereload

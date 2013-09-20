@@ -1,33 +1,27 @@
 .container
-  .col-lg-4#logo_text
-    = link_to root_path, class: "navbar-brand" do
+  #logo_left
+    = link_to root_path do
       = image_tag 'logo.png'
-  .col-lg-8#logo
-    .col-lg-3
+  #logo_right
+    .r_logo_img
       = image_tag 'header_logo_1.png'
-    .col-lg-3
+    .r_logo_img
       = image_tag 'header_logo_2.png'
-    .col-lg-3
+    .r_logo_img
       = image_tag 'header_logo_3.png'
-    .col-lg-3
+    .r_logo_img.omega
       = image_tag 'header_logo_4.png'
 .container#header_nav
-  .col-lg-4
-    %ul.nav.navbar-nav#login
-      = render 'devise/menu/login_items'
-      = render 'devise/menu/registration_items'
-      %li
-        = link_to current_user.email, "#" unless current_user.nil?
-  .col-lg-2
-    %ul.nav.navbar-nav#feedback
-      %li
-        %a{:href => "#feedback"}= t("feedback")
-  .col-lg-3
-    %ul.nav.navbar-nav#social
-      %li
-        %a{:href => "#social"}= t("social")
-  .col-lg-3.no-border
-    %ul.nav.navbar-nav.navbar-right#time-weather
-      %li
-        %a.datetime
+  #login
+    = render 'devise/menu/login_items'
+  #registration
+    = render 'devise/menu/registration_items'
+    = link_to current_user.email, "#" unless current_user.nil?
+  #social
+    %a{:href => "#social"}= t("social")
+  #weather Погода
+  #traffic Пробки
+  #datetime
+    %a.datetime
+  #currency Курсы валют
 

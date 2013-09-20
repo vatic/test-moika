@@ -1,0 +1,16 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "compass";
+@import "susy";
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$total-columns  : 12;
+$column-width   : 4em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width/2;
+$container-style: fluid;
+
+$show-grid-backgrounds  : true;

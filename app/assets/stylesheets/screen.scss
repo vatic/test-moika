@@ -1,0 +1,49 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "base";
+@import "flowplayer/skin/minimalist";
+
+/* -------------------------------------------------------------------------*/
+/* Layout */
+
+.container {
+  @include container;
+  @include susy-grid-background;
+}
+#header {
+  #logo_left {
+    @include span-columns(4,12);
+  }
+  #logo_right {
+    .r_logo_img {
+      @include span-columns(2,12);
+    }
+    .r_logo_img.omega{
+      @include span-columns(2 omega,12);
+    }
+  }
+}
+#header_nav {
+  #login {
+    @include span-columns(2,12);
+  }
+  #registration {
+    @include span-columns(2,12);
+  }
+  #social {
+    @include span-columns(2,12);
+  }
+  #weather{
+    @include span-columns(1,12);
+  }
+  #traffic {
+    @include span-columns(1,12);
+  }
+  #datetime {
+    @include span-columns(2,12);
+  }
+  #currency {
+    @include span-columns(2 omega,12);
+  }
+}
