@@ -1,38 +1,30 @@
-#footer
-  .container
-    .row
-      .col-lg-2
-        = image_tag "android.png"
-        = link_to "Android", "#"
-      .col-lg-2
-        = image_tag "iphone.png"
-        = link_to "iPhone", "#"
-      .col-lg-4
-        %ul.nav.nav-pills
-          %li
-            = link_to "Главная", root_path
-          %li
-            = link_to "Реклама на сайте", "#"
-          %li
-            = link_to "О компании", "#"
-      .col-lg-2
-        %ul.nav.nav-pills
-          %li
-            = mail_to "info@moika77.ru"
-      .col-lg-2
-        %ul.nav.nav-pills
-          %li
-            = render 'ya_counter_heroku'
-    .row
-      .col-lg-10.col-lg-offset-2
-        %ul.nav.nav-pills
-          %li
-            = link_to "Пользовательское соглашение", "#"
-          %li
-            = link_to raw('&copy; 2013 "Мойка 77"'), root_path
-          %li
-            = link_to "Разработка: Сергей Ватагин", "#"
-          %li
-            = link_to "Дизайн: Кирилл Прозоров", "#"
+.mobile_apps
+  %p.text-center
+    = image_tag "android_logo.png"
+.mobile_apps
+  %p.text-center
+    = image_tag "apple_logo.png"
+#other_footer_content
+  %ul#bottom_menu
+    %li
+      = link_to "Главная", root_path
+    %li
+      = link_to "Реклама на сайте", "#"
+    %li
+      = link_to "О компании", "#"
+    %li
+      = mail_to "info@moika77.ru"
+    %li
+      = link_to "Обратная связь", "#"
+  %ul#bottom_links
+    =#render 'ya_counter_heroku'
+    %li
+      = link_to "Пользовательское соглашение", "#"
+    %li
+      = link_to raw('&copy; 2013 "Мойка 77"'), root_path
+    %li
+      = link_to "Разработка: Сергей Ватагин", "#"
+    %li
+      = link_to "Дизайн: Кирилл Прозоров", "#"
 
 

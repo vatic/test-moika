@@ -11,6 +11,8 @@ $total-columns  : 12;
 $column-width   : 4em;
 $gutter-width   : 1em;
 $grid-padding   : $gutter-width/2;
-$container-style: fluid;
+$container-style: magic;
+$container-width: 95%;
 
-$show-grid-backgrounds  : true;
+//$show-grid-backgrounds  : true;
+$show-grid-backgrounds  : false;

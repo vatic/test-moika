@@ -1,7 +1,6 @@
-%p.text-center= t('marketing1')
-%p.text-center= t('main_video')
-.flowplayer
-  %video(width="200" height="200")
-    %source(type="video/mp4" src="/video/ex1.mp4")
-=#render partial: 'ivideon_tag'
-%p.text-center= t('marketing2')
+.marketing
+  = image_tag 'marketing1.png'
+.marketing
+  = image_tag 'video.png'
+.marketing.omega
+  = image_tag 'marketing2.png'

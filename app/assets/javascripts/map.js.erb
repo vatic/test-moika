@@ -161,12 +161,10 @@ function init(){
     geo_objects_ary.push(placemark)
 
   });
-    //myMap.geoObjects.add(greenCollection);
-    //myMap.geoObjects.add(redCollection);
-    //clusterer.add(greenCollection);
-    //clusterer.add(redCollection);
-    clusterer.add(geo_objects_ary);
-    myMap.geoObjects.add(clusterer);
+    myMap.geoObjects.add(greenCollection);
+    myMap.geoObjects.add(redCollection);
+    //clusterer.add(geo_objects_ary);
+    //myMap.geoObjects.add(clusterer);
 }
 
 $(document).ready(function() {

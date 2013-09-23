@@ -9,14 +9,16 @@
   %body
     #header
       = render partial: 'header'
-    #marketing_top
+    .container
+      #adv1
+        = render partial: 'adv1'
+    .container#marketing_top
       = render partial: 'marketing'
-    #adv1
-      = render partial: 'adv1'
-    #main-content
+    .container#main-content
       = yield
-    #marketing_bottom
+    .container#marketing_bottom
       = render partial: 'marketing'
-    = render partial: 'footer'
+    .container#footer
+      = render partial: 'footer'
     = javascript_include_tag "http://api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU"
     = javascript_include_tag "main_page"

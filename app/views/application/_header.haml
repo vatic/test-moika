@@ -11,17 +11,18 @@
       = image_tag 'header_logo_3.png'
     .r_logo_img.omega
       = image_tag 'header_logo_4.png'
-.container#header_nav
-  #login
-    = render 'devise/menu/login_items'
-  #registration
-    = render 'devise/menu/registration_items'
-    = link_to current_user.email, "#" unless current_user.nil?
-  #social
-    %a{:href => "#social"}= t("social")
-  #weather Погода
-  #traffic Пробки
-  #datetime
-    %a.datetime
-  #currency Курсы валют
+.container#header_nav_wrapper
+  #header_nav
+    #login
+      = render 'devise/menu/login_items'
+    #registration
+      = render 'devise/menu/registration_items'
+      = link_to current_user.email, "#" unless current_user.nil?
+    #social
+      %a{:href => "#social"}= t("social")
+    #weather Погода
+    #traffic Пробки
+    #datetime
+      %a.datetime
+    #currency Курсы валют
 
