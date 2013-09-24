@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"li",
+				"lis-n	list-style: none"
+			],
+			[
+				"bg",
+				"bgc	background-color: #${1:fff}"
+			],
+			[
 				"marke",
 				"marketing2"
 			],
@@ -96,14 +104,6 @@
 				"td	text-decoration: ${1:none}"
 			],
 			[
-				"li",
-				"list	list-style-type"
-			],
-			[
-				"bg",
-				"bg+	background: ${1:#fff} url(${2}) ${3:0} ${4:0} ${5:no-repeat}"
-			],
-			[
 				"d",
 				"d-i	display: inline"
 			]
@@ -115,7 +115,15 @@
 			"file": "app/views/layouts/main_page.html.haml",
 			"settings":
 			{
-				"buffer_size": 697,
+				"buffer_size": 721,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/application/_footer.haml",
+			"settings":
+			{
+				"buffer_size": 682,
 				"line_ending": "Unix"
 			}
 		},
@@ -123,15 +131,15 @@
 			"file": "app/assets/stylesheets/screen.scss",
 			"settings":
 			{
-				"buffer_size": 1575,
+				"buffer_size": 2857,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/_base.scss",
+			"file": "app/views/application/_adv1.haml",
 			"settings":
 			{
-				"buffer_size": 405,
+				"buffer_size": 37,
 				"line_ending": "Unix"
 			}
 		},
@@ -144,26 +152,10 @@
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/main.scss",
+			"file": "app/assets/javascripts/map.js.erb",
 			"settings":
 			{
-				"buffer_size": 2971,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/map/show.html.haml",
-			"settings":
-			{
-				"buffer_size": 230,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/application/_header.haml",
-			"settings":
-			{
-				"buffer_size": 696,
+				"buffer_size": 4625,
 				"line_ending": "Unix"
 			}
 		}
@@ -176,6 +168,10 @@
 		[
 			[
 				":w",
+				":w - Save"
+			],
+			[
+				":W",
 				":w - Save"
 			],
 			[
@@ -212,15 +208,19 @@
 	},
 	"file_history":
 	[
+		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/_base.scss",
+		"/home/vatagin/dev/ror/moika/app/views/application/_header.haml",
+		"/home/vatagin/dev/ror/moika/app/views/layouts/main_page.html.haml",
+		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/screen.scss",
+		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
+		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/main.scss",
+		"/home/vatagin/dev/ror/moika/app/views/map/show.html.haml",
 		"/home/vatagin/dev/ror/moika/app/views/application/_adv1.haml",
 		"/home/vatagin/dev/ror/moika/app/assets/javascripts/map.js.erb",
-		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/_base.scss",
 		"/home/vatagin/dev/ror/moika/app/assets/javascripts/main_page.js",
-		"/home/vatagin/dev/ror/moika/app/views/application/_header.haml",
 		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_login_items.haml",
 		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_registration_items.haml",
 		"/home/vatagin/dev/ror/moika/app/assets/javascripts/application.js",
-		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/main.scss",
 		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/application.scss",
 		"/home/vatagin/dev/ror/moika/config/application.rb",
 		"/home/vatagin/dev/ror/moika/Gemfile",
@@ -235,7 +235,6 @@
 		"/home/vatagin/dev/ror/moika/moiki.yaml",
 		"/home/vatagin/dev/ror/moika/db/migrate/20130910100316_create_car_washes.rb",
 		"/home/vatagin/dev/ror/moika/db/migrate/20130918183849_change_type_of_services.rb",
-		"/home/vatagin/dev/ror/moika/app/views/map/show.html.haml",
 		"/home/vatagin/dev/ror/moika/app/controllers/map_controller.rb",
 		"/home/vatagin/dev/ror/moika/app/controllers/car_washes_controller.rb",
 		"/home/vatagin/dev/ror/moika/db/migrate/20130912111848_add_car_wash_id_to_users.rb",
@@ -246,7 +245,6 @@
 		"/home/vatagin/dev/ror/moika/app/views/application/_navbar.haml",
 		"/home/vatagin/dev/ror/moika/config/locales/ru.yml",
 		"/home/vatagin/dev/yandex/ya_map_template.html",
-		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
 		"/home/vatagin/dev/ror/tmp/bs3_carousel_example.html.haml",
 		"/home/vatagin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
 		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/application.css",
@@ -346,7 +344,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -354,15 +352,15 @@
 					"file": "app/views/layouts/main_page.html.haml",
 					"settings":
 					{
-						"buffer_size": 697,
+						"buffer_size": 721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								430,
-								430
+								531,
+								531
 							]
 						],
 						"settings":
@@ -423,160 +421,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/assets/stylesheets/screen.scss",
+					"file": "app/views/application/_footer.haml",
 					"settings":
 					{
-						"buffer_size": 1575,
+						"buffer_size": 682,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								559,
-								559
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 396.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/assets/stylesheets/_base.scss",
-					"settings":
-					{
-						"buffer_size": 405,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								343,
-								343
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/application/_marketing.haml",
-					"settings":
-					{
-						"buffer_size": 127,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								100,
-								100
+								127,
+								127
 							]
 						],
 						"settings":
@@ -636,19 +492,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/assets/stylesheets/main.scss",
+					"buffer": 2,
+					"file": "app/assets/stylesheets/screen.scss",
 					"settings":
 					{
-						"buffer_size": 2971,
+						"buffer_size": 2857,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1993,
+								1993
 							]
 						],
 						"settings":
@@ -702,25 +558,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1.0,
+						"translation.y": 2378.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "app/views/map/show.html.haml",
+					"buffer": 3,
+					"file": "app/views/application/_adv1.haml",
 					"settings":
 					{
-						"buffer_size": 230,
+						"buffer_size": 37,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								59,
-								59
+								0,
+								0
 							]
 						],
 						"settings":
@@ -778,19 +634,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "app/views/application/_header.haml",
+					"buffer": 4,
+					"file": "app/views/application/_marketing.haml",
 					"settings":
 					{
-						"buffer_size": 696,
+						"buffer_size": 127,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								694,
-								694
+								0,
+								0
 							]
 						],
 						"settings":
@@ -839,12 +695,82 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/assets/javascripts/map.js.erb",
+					"settings":
+					{
+						"buffer_size": 4625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4430,
+								4430
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3036.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -894,24 +820,44 @@
 		"selected_items":
 		[
 			[
-				"hea",
-				"app/views/application/_header.haml"
-			],
-			[
-				"mapsho",
-				"app/views/map/show.html.haml"
-			],
-			[
-				"base",
+				"b",
 				"app/assets/stylesheets/_base.scss"
+			],
+			[
+				"map",
+				"app/assets/javascripts/map.js.erb"
+			],
+			[
+				"foo",
+				"app/views/application/_footer.haml"
+			],
+			[
+				"mar",
+				"app/views/application/_marketing.haml"
 			],
 			[
 				"adv",
 				"app/views/application/_adv1.haml"
 			],
 			[
-				"map",
-				"app/assets/javascripts/map.js.erb"
+				"sc",
+				"app/assets/stylesheets/screen.scss"
+			],
+			[
+				"base",
+				"app/assets/stylesheets/_base.scss"
+			],
+			[
+				"hea",
+				"app/views/application/_header.haml"
+			],
+			[
+				"main_",
+				"app/views/layouts/main_page.html.haml"
+			],
+			[
+				"mapsho",
+				"app/views/map/show.html.haml"
 			],
 			[
 				"mapj",
