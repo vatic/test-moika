@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"ff",
+				"ff-ss	font-family: sans-serif"
+			],
+			[
 				"li",
 				"lis-n	list-style: none"
 			],
@@ -120,34 +124,26 @@
 			}
 		},
 		{
-			"file": "app/views/application/_footer.haml",
+			"file": "app/views/map/show.html.haml",
 			"settings":
 			{
-				"buffer_size": 682,
+				"buffer_size": 250,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/screen.scss",
+			"file": "app/assets/stylesheets/application.scss",
 			"settings":
 			{
-				"buffer_size": 2857,
+				"buffer_size": 87,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/application/_adv1.haml",
+			"file": "app/assets/stylesheets/screen.css.scss",
 			"settings":
 			{
-				"buffer_size": 37,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/application/_marketing.haml",
-			"settings":
-			{
-				"buffer_size": 127,
+				"buffer_size": 3970,
 				"line_ending": "Unix"
 			}
 		},
@@ -168,6 +164,10 @@
 		[
 			[
 				":w",
+				":w - Save"
+			],
+			[
+				":",
 				":w - Save"
 			],
 			[
@@ -208,25 +208,26 @@
 	},
 	"file_history":
 	[
+		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/screen.scss",
+		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
+		"/home/vatagin/dev/ror/moika/app/views/application/_adv1.haml",
+		"/home/vatagin/dev/ror/moika/app/views/application/_footer.haml",
+		"/home/vatagin/dev/ror/moika/config/application.rb",
+		"/home/vatagin/dev/ror/moika/config/environments/production.rb",
+		"/home/vatagin/dev/ror/moika/app/assets/javascripts/map.js.erb",
 		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/_base.scss",
 		"/home/vatagin/dev/ror/moika/app/views/application/_header.haml",
 		"/home/vatagin/dev/ror/moika/app/views/layouts/main_page.html.haml",
-		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/screen.scss",
-		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
 		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/main.scss",
 		"/home/vatagin/dev/ror/moika/app/views/map/show.html.haml",
-		"/home/vatagin/dev/ror/moika/app/views/application/_adv1.haml",
-		"/home/vatagin/dev/ror/moika/app/assets/javascripts/map.js.erb",
 		"/home/vatagin/dev/ror/moika/app/assets/javascripts/main_page.js",
 		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_login_items.haml",
 		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_registration_items.haml",
 		"/home/vatagin/dev/ror/moika/app/assets/javascripts/application.js",
 		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/application.scss",
-		"/home/vatagin/dev/ror/moika/config/application.rb",
 		"/home/vatagin/dev/ror/moika/Gemfile",
 		"/home/vatagin/dev/ror/moika/config/compass.rb",
 		"/home/vatagin/dev/ror/moika/Gemfile.lock",
-		"/home/vatagin/dev/ror/moika/config/environments/production.rb",
 		"/home/vatagin/.irbrc",
 		"/home/vatagin/dev/ror/moika/lib/parse_data.rb",
 		"/home/vatagin/dev/ror/moika/app/controllers/admin/dashboard_controller.rb",
@@ -305,6 +306,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"list",
 			"header",
 			"777",
 			"blog",
@@ -344,7 +346,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -359,8 +361,8 @@
 						"selection":
 						[
 							[
-								531,
-								531
+								436,
+								436
 							]
 						],
 						"settings":
@@ -421,18 +423,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/application/_footer.haml",
+					"file": "app/views/map/show.html.haml",
 					"settings":
 					{
-						"buffer_size": 682,
+						"buffer_size": 250,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								127,
-								127
+								76,
+								76
 							]
 						],
 						"settings":
@@ -481,9 +483,7 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -493,18 +493,88 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/assets/stylesheets/screen.scss",
+					"file": "app/assets/stylesheets/application.scss",
 					"settings":
 					{
-						"buffer_size": 2857,
+						"buffer_size": 87,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1993,
-								1993
+								46,
+								46
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/stylesheets/screen.css.scss",
+					"settings":
+					{
+						"buffer_size": 3970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2838,
+								2838
 							]
 						],
 						"settings":
@@ -558,153 +628,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2378.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/application/_adv1.haml",
-					"settings":
-					{
-						"buffer_size": 37,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2291.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "app/views/application/_marketing.haml",
-					"settings":
-					{
-						"buffer_size": 127,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "app/assets/javascripts/map.js.erb",
 					"settings":
 					{
@@ -715,8 +645,8 @@
 						"selection":
 						[
 							[
-								4430,
-								4430
+								637,
+								637
 							]
 						],
 						"settings":
@@ -770,7 +700,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3036.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -820,12 +750,32 @@
 		"selected_items":
 		[
 			[
-				"b",
-				"app/assets/stylesheets/_base.scss"
-			],
-			[
 				"map",
 				"app/assets/javascripts/map.js.erb"
+			],
+			[
+				"app",
+				"app/assets/stylesheets/application.scss"
+			],
+			[
+				"mapsho",
+				"app/views/map/show.html.haml"
+			],
+			[
+				"ma",
+				"app/assets/javascripts/map.js.erb"
+			],
+			[
+				"pro",
+				"config/environments/production.rb"
+			],
+			[
+				"appli",
+				"config/application.rb"
+			],
+			[
+				"b",
+				"app/assets/stylesheets/_base.scss"
 			],
 			[
 				"foo",
@@ -854,10 +804,6 @@
 			[
 				"main_",
 				"app/views/layouts/main_page.html.haml"
-			],
-			[
-				"mapsho",
-				"app/views/map/show.html.haml"
 			],
 			[
 				"mapj",
@@ -968,10 +914,6 @@
 				"app/views/application/_navbar.haml"
 			],
 			[
-				"app",
-				"config/application.rb"
-			],
-			[
 				"en",
 				"config/locales/en.yml"
 			],
@@ -998,10 +940,6 @@
 			[
 				"ind",
 				"app/views/welcome/index.html.haml"
-			],
-			[
-				"appli",
-				"config/application.rb"
 			],
 			[
 				"producont",

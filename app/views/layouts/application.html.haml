@@ -8,9 +8,11 @@
     = javascript_include_tag "application", "data-turbolinks-track" => false
     = csrf_meta_tags
   %body
-    #wrap
+    #root
       #header
         = render partial: 'header'
       .container
         = yield
-    = render partial: 'footer'
+      #root_footer
+    .container#footer
+      = render partial: 'footer'
