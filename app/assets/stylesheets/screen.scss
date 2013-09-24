@@ -39,7 +39,7 @@
 }
 .container#header_nav_wrapper {
     z-index: 1;
-    background: #fff url("h_menu.png") 0 0px no-repeat;
+    background: #fff asset-url("h_menu.png",image) 0 0px no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
     height: 73px;
