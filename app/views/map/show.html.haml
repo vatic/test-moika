@@ -1,5 +1,7 @@
 #car_washes_left_list
-  %h3.text-muted.text-center Список:
+  #list_header
+    %p СПИСОК
+    = image_tag 'timer.png'
   %ul#car_wash_list
     -@car_washes.each do |cw|
       %li= link_to cw.title, car_wash_path(cw)
