@@ -19,8 +19,8 @@
       = render 'devise/menu/registration_items'
       = link_to current_user.email, "#" unless current_user.nil?
     #social
-      = link_to content_tag(:div, "", id: "vk", class: "color_on_hover"), "#"
-      = link_to content_tag(:div, "", id: "odn", class: "color_on_hover"), "#"
+      = link_to "", "#", class: 'color_on_hover', id: 'vk'
+      = link_to "", "#", class: 'color_on_hover', id: 'odn'
     #weather
       %a(href="http://rp5.ru/5483/ru")
         %img(border=0 width=88 height=31 src="http://rp5.ru/informer/88x31x2.php?f=26&id=5483&lang=ru&um=00000")

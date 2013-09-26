@@ -87,23 +87,28 @@ a {
       }
     }
     #social {
-      @include span-columns(2,12);
-      a {
-        .color_on_hover {
-          width: 32px;
-          height: 32px;
-          display: inline-block;
-          &#vk {
-            background-image: url(image_path("vk_grey.png"));
-            &:hover {
+      .color_on_hover {
+        height: 32px;
+        float: left;
+        margin-right: 1.694915254237288%;
+        display: inline;
+        &#vk {
+          width: 3.3898305%;
+          margin-left: 3.39%;
+          background-image: url(image_path("vk_grey.png"));
+          background-repeat: no-repeat;
+          &:hover {
             background-image: url(image_path("vk.png"));
-            }
+          background-repeat: no-repeat;
           }
-          &#odn {
-            background-image: url(image_path("odn_grey.png"));
-            &:hover {
+        }
+        &#odn {
+          width: 6.779661%;
+          background-image: url(image_path("odn_grey.png"));
+          background-repeat: no-repeat;
+          &:hover {
             background-image: url(image_path("odn.png"));
-            }
+          background-repeat: no-repeat;
           }
         }
       }
