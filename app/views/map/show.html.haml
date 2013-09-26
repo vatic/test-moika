@@ -11,5 +11,9 @@
     = image_tag 'adv_left.png'
 
 #map_container
-  %h3.text-muted.text-center Карта автомоек Москвы
+  %h3.text-center#map_header Карта автомоек Москвы
+  #map_search
+    = form_for '/search', method: 'get', remote: true do |f|
+      = f.search_field 'address_search', placeholder: "Введите адрес..." 
+      = f.submit t("search_button"), class: 'submit'
   #map
