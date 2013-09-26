@@ -1,3 +1,16 @@
+/* Day Name Strings */
+ var  ru_Date = 
+  {
+    dayNames: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
+    abbreviatedDayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+    shortestDayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+    firstLetterDayNames: ["В", "П", "В", "С", "Ч", "П", "С"],
+
+    /* Month Name Strings */
+    monthNames: ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноябрь", "декабря"],
+    abbreviatedMonthNames: ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
+  }
+
 function log (argument) {
   console.log(argument)
 }
@@ -157,6 +170,7 @@ function init(){
       },
       placemark = new ymaps.Placemark(coordinates, properties, options);
 
+
     (car_wash.signal) ? ( greenCollection.add(placemark) ):( redCollection.add(placemark) );
     geo_objects_ary.push(placemark)
 
@@ -168,6 +182,19 @@ function init(){
 }
 
 $(document).ready(function() {
+  setInterval(function() {
   var date_now = new Date();
-  $(".datetime").append(date_now.toLocaleDateString() + ' ' + date_now.toLocaleTimeString());
+  $(".datetime").html(
+    ru_Date.abbreviatedDayNames[date_now.getDay()] + 
+    ' ' + 
+    date_now.getDate() + 
+    ' ' + 
+    ru_Date.monthNames[date_now.getMonth()] + 
+    ' ' + 
+    date_now.getFullYear() + 
+    ' г. | ' + 
+    date_now.toLocaleTimeString() +
+    ' | ' 
+    );
+  },500)
 });

@@ -109,6 +109,9 @@ body {
     }
     #datetime {
       @include span-columns(2,12);
+      .datetime {
+        font-size: 10px;
+      }
     }
     #currency {
       @include span-columns(2 omega,12);
