@@ -109,7 +109,8 @@ body {
     }
     #date_currency {
       @include span-columns(4 omega,12);
-      font-size: 12px;
+      font-size: 15px;
+      letter-spacing: -1px;
       .datetime {
         display: inline-block;
         .date {
