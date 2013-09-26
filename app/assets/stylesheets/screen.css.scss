@@ -74,12 +74,38 @@ body {
     }
     #social {
       @include span-columns(2,12);
+      a {
+        .color_on_hover {
+          width: 32px;
+          height: 32px;
+          display: inline-block;
+          &#vk {
+            background-image: url("vk_grey.png");
+            &:hover {
+            background-image: url("vk.png");
+            }
+          }
+          &#odn {
+            background-image: url("odn_grey.png");
+            &:hover {
+            background-image: url("odn.png");
+            }
+          }
+        }
+      }
     }
     #weather{
       @include span-columns(1,12);
     }
     #traffic {
       @include span-columns(1,12);
+      a {
+        img {
+          width: 80px;
+          height: 32px;
+          display: inline-block;
+        }
+      }
     }
     #datetime {
       @include span-columns(2,12);

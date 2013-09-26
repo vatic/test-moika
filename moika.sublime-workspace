@@ -132,7 +132,10 @@
 			}
 		},
 		{
+			"contents": "//@import \"twitter/bootstrap\";\n@import \"screen\";\n//@import \"flowplayer/skin/minimalist\"",
 			"file": "app/assets/stylesheets/application.scss",
+			"file_size": 87,
+			"file_write_time": 130245785035474470,
 			"settings":
 			{
 				"buffer_size": 87,
@@ -143,7 +146,15 @@
 			"file": "app/assets/stylesheets/screen.css.scss",
 			"settings":
 			{
-				"buffer_size": 3970,
+				"buffer_size": 5931,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/vatagin/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 132,
 				"line_ending": "Unix"
 			}
 		},
@@ -159,9 +170,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 306.0,
 		"selected_items":
 		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
 			[
 				":w",
 				":w - Save"
@@ -183,19 +198,19 @@
 				"Package Control: Install Package"
 			],
 			[
-				"Package Control: ",
-				"Package Control: Install Package"
-			],
-			[
 				"gitstatus",
 				"Git: Status"
 			]
 		],
-		"width": 521.0
+		"width": 449.0
 	},
 	"console":
 	{
-		"height": 139.0
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
 	},
 	"distraction_free":
 	{
@@ -208,6 +223,12 @@
 	},
 	"file_history":
 	[
+		"/home/vatagin/dev/ror/moika/app/controllers/admin/users_controller.rb",
+		"/home/vatagin/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/vatagin/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/vatagin/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/vatagin/.config/sublime-text-3/Packages/User/SCSS.sublime-settings",
+		"/home/vatagin/.config/sublime-text-3/Installed Packages/SCSS.sublime-package",
 		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/screen.scss",
 		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
 		"/home/vatagin/dev/ror/moika/app/views/application/_adv1.haml",
@@ -352,6 +373,7 @@
 				{
 					"buffer": 0,
 					"file": "app/views/layouts/main_page.html.haml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 721,
@@ -424,6 +446,7 @@
 				{
 					"buffer": 1,
 					"file": "app/views/map/show.html.haml",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 250,
@@ -494,6 +517,7 @@
 				{
 					"buffer": 2,
 					"file": "app/assets/stylesheets/application.scss",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 87,
@@ -503,8 +527,8 @@
 						"selection":
 						[
 							[
-								46,
-								46
+								45,
+								45
 							]
 						],
 						"settings":
@@ -564,17 +588,18 @@
 				{
 					"buffer": 3,
 					"file": "app/assets/stylesheets/screen.css.scss",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3970,
+						"buffer_size": 5931,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2838,
-								2838
+								186,
+								186
 							]
 						],
 						"settings":
@@ -623,19 +648,47 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close"
 							],
-							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2291.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "/home/vatagin/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								131,
+								132
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "app/assets/javascripts/map.js.erb",
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 4625,
@@ -645,8 +698,8 @@
 						"selection":
 						[
 							[
-								637,
-								637
+								636,
+								636
 							]
 						],
 						"settings":
@@ -739,6 +792,7 @@
 		]
 	},
 	"menu_visible": true,
+	"project": "moika.sublime-project",
 	"replace":
 	{
 		"height": 74.0
@@ -749,6 +803,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"user",
+				"app/controllers/admin/users_controller.rb"
+			],
 			[
 				"map",
 				"app/assets/javascripts/map.js.erb"
@@ -1068,10 +1126,24 @@
 		],
 		"width": 380.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 223.0,
-	"status_bar_visible": true
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }

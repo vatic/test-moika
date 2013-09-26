@@ -9,10 +9,10 @@ class Admin::UsersController < ApplicationController
     @clients = User.clients
     @guests = User.guests
 
-    respond_to do |format|
-      format.html
-      format.json { render json: @users}
-    end
+        respond_to do |format|
+          format.html
+          format.json { render json: @users}
+        end
   end
 
   def show
