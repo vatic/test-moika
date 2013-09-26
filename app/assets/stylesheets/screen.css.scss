@@ -34,6 +34,7 @@ a {
 #header {
   #logo_left {
     @include span-columns(4,12);
+    padding-top: 30px;
   }
   #logo_right {
     .r_logo_img {
