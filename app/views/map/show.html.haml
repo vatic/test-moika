@@ -5,6 +5,10 @@
   %ul#car_wash_list
     -@car_washes.each do |cw|
       %li= link_to cw.title, car_wash_path(cw)
+  #adv_left
+    = image_tag 'adv_left.png'
+    = image_tag 'adv_left.png'
+    = image_tag 'adv_left.png'
 
 #map_container
   %h3.text-muted.text-center Карта автомоек Москвы
