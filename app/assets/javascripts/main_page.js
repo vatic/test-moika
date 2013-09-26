@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
-//= require flowplayer/flowplayer.min
+//= require search-address
 //= require map

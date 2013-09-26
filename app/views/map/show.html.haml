@@ -13,7 +13,9 @@
 #map_container
   %h3.text-center#map_header Карта автомоек Москвы
   #map_search
-    = form_for '/search', method: 'get', remote: true do |f|
-      = f.search_field 'address_search', placeholder: "Введите адрес..." 
-      = f.submit t("search_button"), class: 'submit'
+    = form_tag '/search', method: 'get' do
+      .control-group
+        = text_field_tag :address, nil, class: "search-query", placeholder: "Введите адрес...", "data-provide" => "typeahead"
+        = submit_tag t("search_button"), class: 'submit'
+        %span.help-inline.invisible
   #map

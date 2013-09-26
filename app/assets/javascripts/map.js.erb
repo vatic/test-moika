@@ -44,10 +44,12 @@ $(document).ready( function() {
 
 
 function init(){
-  myMap = new ymaps.Map ("map", {
+  myMap = window.map = new ymaps.Map ("map", {
       center: [55.76, 37.64],
       zoom: 11,
   });
+
+  searchControl = new SearchAddress(myMap, $('#map_search form'));
 
   clusterer = new ymaps.Clusterer({
     preset: 'twirl#invertedVioletClusterIcons',
@@ -71,7 +73,8 @@ function init(){
       .add('mapTools', { left: 35, top: 5 })
       .add('routeEditor', { left: 130, top: 5 })
       .add(new ymaps.control.TrafficControl({providerKey: 'traffic#actual', shown: true}))
-      .add('searchControl', { left: 180, top: 5 });
+      //.add('searchControl', { left: 180, top: 5 })
+      ;
 
   myMap.behaviors.enable('scrollZoom');
 
