@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918183849) do
+ActiveRecord::Schema.define(version: 20130926065152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20130918183849) do
     t.string   "video_url1"
     t.string   "video_url2"
     t.boolean  "signal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "currencies", force: true do |t|
+    t.string   "name"
+    t.decimal  "value",      precision: 8, scale: 2
+    t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

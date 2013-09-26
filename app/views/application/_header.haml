@@ -29,5 +29,8 @@
         %img(src="http://info.maps.yandex.net/traffic/moscow/current_traffic_234.gif" alt="Пробки на Яндекс.Картах" border="0")
     #datetime
       %a.datetime
-    #currency Курсы валют
+    #currency 
+      = "#{Currency.get_current_usd.name}:#{Currency.get_current_usd.value}"
+      |
+      = "#{Currency.get_current_eur.name}:#{Currency.get_current_eur.value}"
 
