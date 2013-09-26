@@ -2,7 +2,6 @@ require 'open-uri'
 require 'nokogiri'
 
 class Currency < ActiveRecord::Base
-	attr_reader :name, :value, :date
 
 	def self.get_from_cb(date)
 	  ret = [] 

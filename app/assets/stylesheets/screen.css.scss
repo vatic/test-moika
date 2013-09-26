@@ -107,14 +107,20 @@ body {
         }
       }
     }
-    #datetime {
-      @include span-columns(2,12);
+    #date_currency {
+      @include span-columns(4 omega,12);
+      font-size: 12px;
       .datetime {
-        font-size: 10px;
       }
-    }
-    #currency {
-      @include span-columns(2 omega,12);
+      .currency {
+        display: inline-block;
+        .name {
+          color: red;
+        }
+        .value {
+          color: #000;
+        }
+      }
     }
   }
 }
