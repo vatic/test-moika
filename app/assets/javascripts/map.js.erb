@@ -184,15 +184,18 @@ function init(){
 $(document).ready(function() {
   setInterval(function() {
   var date_now = new Date();
-  $(".datetime").html(
+  $(".datetime .date").html(
     ru_Date.abbreviatedDayNames[date_now.getDay()] + 
     ' ' + 
     date_now.getDate() + 
     ' ' + 
     ru_Date.monthNames[date_now.getMonth()] + 
     ' ' + 
-    date_now.getFullYear() + 
-    ' г. | ' + 
+    date_now.getFullYear() +
+    ' г.'
+    );
+  $(".datetime .time").html(
+    ' | ' +
     date_now.toLocaleTimeString() +
     ' | ' 
     );
