@@ -80,15 +80,15 @@ body {
           height: 32px;
           display: inline-block;
           &#vk {
-            background-image: url("vk_grey.png");
+            background-image: url(image_path("vk_grey.png"));
             &:hover {
-            background-image: url("vk.png");
+            background-image: url(image_path("vk.png"));
             }
           }
           &#odn {
-            background-image: url("odn_grey.png");
+            background-image: url(image_path("odn_grey.png"));
             &:hover {
-            background-image: url("odn.png");
+            background-image: url(image_path("odn.png"));
             }
           }
         }

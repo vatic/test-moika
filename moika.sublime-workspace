@@ -3,166 +3,15 @@
 	{
 		"selected_items":
 		[
-			[
-				"ff",
-				"ff-ss	font-family: sans-serif"
-			],
-			[
-				"li",
-				"lis-n	list-style: none"
-			],
-			[
-				"bg",
-				"bgc	background-color: #${1:fff}"
-			],
-			[
-				"marke",
-				"marketing2"
-			],
-			[
-				"geo",
-				"geo_objects_ary"
-			],
-			[
-				"my",
-				"myMap"
-			],
-			[
-				"green",
-				"greenCollection"
-			],
-			[
-				"gre",
-				"greenCollection"
-			],
-			[
-				"fun",
-				"fun	Function"
-			],
-			[
-				"get",
-				"getCarWashes"
-			],
-			[
-				"el",
-				"element"
-			],
-			[
-				"fe",
-				"features"
-			],
-			[
-				"se",
-				"services"
-			],
-			[
-				"un",
-				"unless	unless … end"
-			],
-			[
-				"Co",
-				"CompanyMetaData"
-			],
-			[
-				"name",
-				"names_ary"
-			],
-			[
-				"jso",
-				"json_hash"
-			],
-			[
-				"ya",
-				"YA_SEARCH_QUERY"
-			],
-			[
-				"q",
-				"QUERY_HASH"
-			],
-			[
-				"P",
-				"PATH"
-			],
-			[
-				"h",
-				"HOST"
-			],
-			[
-				"bd",
-				"bd+	border: ${1:1px} ${2:solid} ${3:#000}"
-			],
-			[
-				"produ",
-				"product_type"
-			],
-			[
-				"v",
-				"va	vertical-align: ${1:top}"
-			],
-			[
-				"m",
-				"m	margin"
-			],
-			[
-				"t",
-				"td	text-decoration: ${1:none}"
-			],
-			[
-				"d",
-				"d-i	display: inline"
-			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/views/layouts/main_page.html.haml",
+			"file": "moika.sublime-project",
 			"settings":
 			{
-				"buffer_size": 721,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/map/show.html.haml",
-			"settings":
-			{
-				"buffer_size": 250,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "//@import \"twitter/bootstrap\";\n@import \"screen\";\n//@import \"flowplayer/skin/minimalist\"",
-			"file": "app/assets/stylesheets/application.scss",
-			"file_size": 87,
-			"file_write_time": 130245785035474470,
-			"settings":
-			{
-				"buffer_size": 87,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/screen.css.scss",
-			"settings":
-			{
-				"buffer_size": 5931,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/vatagin/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 132,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/map.js.erb",
-			"settings":
-			{
-				"buffer_size": 4625,
+				"buffer_size": 71,
 				"line_ending": "Unix"
 			}
 		}
@@ -170,46 +19,17 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 306.0,
+		"height": 0.0,
 		"selected_items":
 		[
-			[
-				"Package Control: ",
-				"Package Control: Install Package"
-			],
-			[
-				":w",
-				":w - Save"
-			],
-			[
-				":",
-				":w - Save"
-			],
-			[
-				":W",
-				":w - Save"
-			],
-			[
-				":wq",
-				"BracketHighlighter: Swap Quotes"
-			],
-			[
-				"pack",
-				"Package Control: Install Package"
-			],
-			[
-				"gitstatus",
-				"Git: Status"
-			]
 		],
-		"width": 449.0
+		"width": 0.0
 	},
 	"console":
 	{
-		"height": 139.0,
+		"height": 0.0,
 		"history":
 		[
-			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
 		]
 	},
 	"distraction_free":
@@ -223,93 +43,6 @@
 	},
 	"file_history":
 	[
-		"/home/vatagin/dev/ror/moika/app/controllers/admin/users_controller.rb",
-		"/home/vatagin/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/vatagin/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
-		"/home/vatagin/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/vatagin/.config/sublime-text-3/Packages/User/SCSS.sublime-settings",
-		"/home/vatagin/.config/sublime-text-3/Installed Packages/SCSS.sublime-package",
-		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/screen.scss",
-		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
-		"/home/vatagin/dev/ror/moika/app/views/application/_adv1.haml",
-		"/home/vatagin/dev/ror/moika/app/views/application/_footer.haml",
-		"/home/vatagin/dev/ror/moika/config/application.rb",
-		"/home/vatagin/dev/ror/moika/config/environments/production.rb",
-		"/home/vatagin/dev/ror/moika/app/assets/javascripts/map.js.erb",
-		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/_base.scss",
-		"/home/vatagin/dev/ror/moika/app/views/application/_header.haml",
-		"/home/vatagin/dev/ror/moika/app/views/layouts/main_page.html.haml",
-		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/main.scss",
-		"/home/vatagin/dev/ror/moika/app/views/map/show.html.haml",
-		"/home/vatagin/dev/ror/moika/app/assets/javascripts/main_page.js",
-		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_login_items.haml",
-		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_registration_items.haml",
-		"/home/vatagin/dev/ror/moika/app/assets/javascripts/application.js",
-		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/application.scss",
-		"/home/vatagin/dev/ror/moika/Gemfile",
-		"/home/vatagin/dev/ror/moika/config/compass.rb",
-		"/home/vatagin/dev/ror/moika/Gemfile.lock",
-		"/home/vatagin/.irbrc",
-		"/home/vatagin/dev/ror/moika/lib/parse_data.rb",
-		"/home/vatagin/dev/ror/moika/app/controllers/admin/dashboard_controller.rb",
-		"/home/vatagin/dev/ror/moika/app/views/admin/dashboard/load_data_from_ya.haml",
-		"/home/vatagin/dev/ror/moika/moika_0.yaml",
-		"/home/vatagin/dev/ror/moika/moiki.yaml",
-		"/home/vatagin/dev/ror/moika/db/migrate/20130910100316_create_car_washes.rb",
-		"/home/vatagin/dev/ror/moika/db/migrate/20130918183849_change_type_of_services.rb",
-		"/home/vatagin/dev/ror/moika/app/controllers/map_controller.rb",
-		"/home/vatagin/dev/ror/moika/app/controllers/car_washes_controller.rb",
-		"/home/vatagin/dev/ror/moika/db/migrate/20130912111848_add_car_wash_id_to_users.rb",
-		"/home/vatagin/dev/ror/moika/config/routes.rb",
-		"/home/vatagin/dev/ror/moika/config/database.yml",
-		"/home/vatagin/dev/ror/moika/app/views/layouts/application.html.haml",
-		"/home/vatagin/dev/ror/moika/vendor/assets/javascripts/ya_ajax_example.js",
-		"/home/vatagin/dev/ror/moika/app/views/application/_navbar.haml",
-		"/home/vatagin/dev/ror/moika/config/locales/ru.yml",
-		"/home/vatagin/dev/yandex/ya_map_template.html",
-		"/home/vatagin/dev/ror/tmp/bs3_carousel_example.html.haml",
-		"/home/vatagin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
-		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/application.css",
-		"/home/vatagin/dev/ror/moika/config/locales/en.yml",
-		"/home/vatagin/dev/ror/moika/app/views/layouts/_navbar.haml",
-		"/home/vatagin/dev/ror/dep2/Gemfile",
-		"/home/vatagin/dev/ror/dep2/Guardfile",
-		"/home/vatagin/dev/ror/moika/config/unicorn.rb",
-		"/home/vatagin/dev/ror/moika/config/unicorn_init.sh",
-		"/home/vatagin/dev/ror/moika/config/deploy.rb",
-		"/home/vatagin/dev/ror/moika/config/nginx.conf",
-		"/home/vatagin/dev/ror/moika/Capfile",
-		"/home/vatagin/dev/ror/moika/app/views/layouts/application.html.erb",
-		"/home/vatagin/dev/ror/moika/app/views/welcome/index.html.haml",
-		"/home/vatagin/dev/ror/moika/.gitignore",
-		"/home/vatagin/dev/ror/dep2/Gemfile.lock",
-		"/home/vatagin/dev/ror/dep2/app/views/layouts/static_pages.html.haml",
-		"/home/vatagin/dev/ror/dep2/app/views/layouts/application.html.haml",
-		"/home/vatagin/dev/ror/dep2/app/assets/stylesheets/screen.scss",
-		"/home/vatagin/dev/ror/dep2/app/views/herbs/index.html.haml",
-		"/home/vatagin/dev/ror/dep2/app/views/products/index.haml",
-		"/home/vatagin/dev/ror/dep2/app/assets/stylesheets/susy_base.scss",
-		"/home/vatagin/dev/ror/dep2/app/views/herbs/show.html.haml",
-		"/home/vatagin/dev/ror/dep2/app/views/product_types/index.haml",
-		"/home/vatagin/dev/ror/dep2/app/views/pages/show.haml",
-		"/home/vatagin/dev/ror/dep2/app/views/layouts/application/_footer.html.haml",
-		"/home/vatagin/dev/ror/dep2/config/locales/ru.yml",
-		"/home/vatagin/dev/ror/dep2/app/views/layouts/application/_hbmenu.html.haml",
-		"/home/vatagin/dev/ror/dep2/app/views/layouts/application/_vmenu.html.haml",
-		"/home/vatagin/dev/ror/dep2/app/views/layouts/application/_header.html.haml",
-		"/home/vatagin/dev/ror/dep2/app/assets/stylesheets/custom.scss",
-		"/home/vatagin/dev/материалы для dep2/about.html",
-		"/home/vatagin/dev/ror/dep2/app/views/layouts/admin/_header.html.haml",
-		"/home/vatagin/dev/ror/dep2/app/views/layouts/_footer2.html.haml",
-		"/home/vatagin/dev/ror/dep2/app/assets/stylesheets/application.scss",
-		"/home/vatagin/dev/ror/dep2/app/controllers/admin/pages_controller.rb",
-		"/home/vatagin/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-		"/home/vatagin/.config/sublime-text-2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
-		"/home/vatagin/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
-		"/home/vatagin/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
-		"/home/vatagin/.config/sublime-text-2/Packages/User/test.txt",
-		"/home/vatagin/dev/ror/dep2/app/models/page.rb",
-		"/home/vatagin/dev/ror/dep2/app/controllers/pages_controller.rb"
 	],
 	"find":
 	{
@@ -327,26 +60,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"list",
-			"header",
-			"777",
-			"blog",
-			"jque",
-			"= ",
-			"product",
-			"r-content",
-			"content",
-			"menu",
-			"no-bullets",
-			"footer",
-			"#footer",
-			"</span>",
-			"<span class=\"wysiwyg-font-size-large\">",
-			"</p>",
-			"<p>",
-			"main-v-menu",
-			"main-v",
-			"cmd"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -354,9 +67,6 @@
 		"regex": false,
 		"replace_history":
 		[
-			"",
-			"</div>",
-			"<div>"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -367,390 +77,29 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/layouts/main_page.html.haml",
-					"semi_transient": false,
+					"file": "moika.sublime-project",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 721,
+						"buffer_size": 71,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								436,
-								436
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/map/show.html.haml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 250,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								76,
-								76
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/assets/stylesheets/application.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 87,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								45,
-								45
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/assets/stylesheets/screen.css.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5931,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								186,
-								186
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/vatagin/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 132,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								131,
-								132
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/assets/javascripts/map.js.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4625,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								636,
-								636
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -763,11 +112,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 0.0
 	},
 	"input":
 	{
-		"height": 33.0
+		"height": 0.0
 	},
 	"layout":
 	{
@@ -795,7 +144,7 @@
 	"project": "moika.sublime-project",
 	"replace":
 	{
-		"height": 74.0
+		"height": 0.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -803,318 +152,6 @@
 		"height": 0.0,
 		"selected_items":
 		[
-			[
-				"user",
-				"app/controllers/admin/users_controller.rb"
-			],
-			[
-				"map",
-				"app/assets/javascripts/map.js.erb"
-			],
-			[
-				"app",
-				"app/assets/stylesheets/application.scss"
-			],
-			[
-				"mapsho",
-				"app/views/map/show.html.haml"
-			],
-			[
-				"ma",
-				"app/assets/javascripts/map.js.erb"
-			],
-			[
-				"pro",
-				"config/environments/production.rb"
-			],
-			[
-				"appli",
-				"config/application.rb"
-			],
-			[
-				"b",
-				"app/assets/stylesheets/_base.scss"
-			],
-			[
-				"foo",
-				"app/views/application/_footer.haml"
-			],
-			[
-				"mar",
-				"app/views/application/_marketing.haml"
-			],
-			[
-				"adv",
-				"app/views/application/_adv1.haml"
-			],
-			[
-				"sc",
-				"app/assets/stylesheets/screen.scss"
-			],
-			[
-				"base",
-				"app/assets/stylesheets/_base.scss"
-			],
-			[
-				"hea",
-				"app/views/application/_header.haml"
-			],
-			[
-				"main_",
-				"app/views/layouts/main_page.html.haml"
-			],
-			[
-				"mapj",
-				"app/assets/javascripts/main_page.js"
-			],
-			[
-				"mapsh",
-				"app/views/map/show.html.haml"
-			],
-			[
-				"main",
-				"app/assets/stylesheets/main.scss"
-			],
-			[
-				"reg",
-				"app/views/devise/menu/_registration_items.haml"
-			],
-			[
-				"logi",
-				"app/views/devise/menu/_login_items.haml"
-			],
-			[
-				"mark",
-				"app/views/application/_marketing.haml"
-			],
-			[
-				"appl",
-				"config/application.rb"
-			],
-			[
-				"gem",
-				"Gemfile.lock"
-			],
-			[
-				"ge",
-				"Gemfile"
-			],
-			[
-				"appsc",
-				"app/assets/stylesheets/application.scss"
-			],
-			[
-				"prod",
-				"config/environments/production.rb"
-			],
-			[
-				"mainjs",
-				"app/assets/javascripts/main_page.js"
-			],
-			[
-				"mai",
-				"app/views/layouts/main_page.html.haml"
-			],
-			[
-				"appjs",
-				"app/assets/javascripts/application.js"
-			],
-			[
-				"mapco",
-				"app/controllers/map_controller.rb"
-			],
-			[
-				"carcon",
-				"app/controllers/car_washes_controller.rb"
-			],
-			[
-				"migra",
-				"db/migrate/20130912111848_add_car_wash_id_to_users.rb"
-			],
-			[
-				"cha",
-				"db/migrate/20130918183849_change_type_of_services.rb"
-			],
-			[
-				"rou",
-				"config/routes.rb"
-			],
-			[
-				"adminco",
-				"app/controllers/admin/dashboard_controller.rb"
-			],
-			[
-				"create",
-				"db/migrate/20130910100316_create_car_washes.rb"
-			],
-			[
-				"lib",
-				"lib/parse_data.rb"
-			],
-			[
-				"data",
-				"config/database.yml"
-			],
-			[
-				"ru",
-				"config/locales/ru.yml"
-			],
-			[
-				"nav",
-				"app/views/application/_navbar.haml"
-			],
-			[
-				"show",
-				"app/views/map/show.html.haml"
-			],
-			[
-				"navb",
-				"app/views/application/_navbar.haml"
-			],
-			[
-				"en",
-				"config/locales/en.yml"
-			],
-			[
-				"appha",
-				"app/views/layouts/application.html.haml"
-			],
-			[
-				"appcss",
-				"app/assets/stylesheets/application.css"
-			],
-			[
-				"cap",
-				"Capfile"
-			],
-			[
-				"dep",
-				"config/deploy.rb"
-			],
-			[
-				"giti",
-				".gitignore"
-			],
-			[
-				"ind",
-				"app/views/welcome/index.html.haml"
-			],
-			[
-				"producont",
-				"app/controllers/admin/products_controller.rb"
-			],
-			[
-				"productsby",
-				"app/views/admin/products/index_by_char.haml"
-			],
-			[
-				"susy",
-				"app/assets/stylesheets/susy_base.scss"
-			],
-			[
-				"productindex",
-				"app/views/products/index.haml"
-			],
-			[
-				"herbssho",
-				"app/views/herbs/show.html.haml"
-			],
-			[
-				"herbsho",
-				"app/views/herbs/show.html.haml"
-			],
-			[
-				"herbin",
-				"app/views/herbs/index.html.haml"
-			],
-			[
-				"pagesho",
-				"app/views/pages/show.haml"
-			],
-			[
-				"producttypei",
-				"app/views/product_types/index.haml"
-			],
-			[
-				"ru.",
-				"config/locales/ru.yml"
-			],
-			[
-				"hbme",
-				"app/views/layouts/application/_hbmenu.html.haml"
-			],
-			[
-				"footer",
-				"app/views/layouts/application/_footer.html.haml"
-			],
-			[
-				"herbsin",
-				"app/views/herbs/index.html.haml"
-			],
-			[
-				"productsinde",
-				"app/views/products/index.haml"
-			],
-			[
-				"herbsindex",
-				"app/views/herbs/index.html.haml"
-			],
-			[
-				"sho",
-				"app/views/herbs/show.html.haml"
-			],
-			[
-				"vme",
-				"app/views/layouts/application/_vmenu.html.haml"
-			],
-			[
-				"cu",
-				"app/assets/stylesheets/custom.scss"
-			],
-			[
-				"header",
-				"app/views/layouts/admin/_header.html.haml"
-			],
-			[
-				"cus",
-				"app/assets/stylesheets/custom.scss"
-			],
-			[
-				"custo",
-				"app/assets/stylesheets/custom.scss"
-			],
-			[
-				"hbm",
-				"app/views/layouts/application/_hbmenu.html.haml"
-			],
-			[
-				"foote",
-				"app/views/layouts/_footer2.html.haml"
-			],
-			[
-				"scre",
-				"app/assets/stylesheets/screen.scss"
-			],
-			[
-				"vmenu",
-				"app/views/layouts/application/_vmenu.html.haml"
-			],
-			[
-				"hb",
-				"app/views/layouts/application/_hbmenu.html.haml"
-			],
-			[
-				"pagecontro",
-				"app/controllers/admin/pages_controller.rb"
-			],
-			[
-				"stati",
-				"app/views/layouts/static_pages.html.haml"
-			],
-			[
-				"page",
-				"app/models/page.rb"
-			]
 		],
 		"width": 0.0
 	},
@@ -1138,10 +175,10 @@
 	{
 	},
 	"show_minimap": true,
-	"show_open_files": true,
+	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 223.0,
+	"side_bar_width": 150.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
