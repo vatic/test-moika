@@ -83,3 +83,5 @@ gem 'rails_12factor', group: :production
 gem 'susy'
 gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
 gem 'nokogiri'
+
+gem 'whenever', :require => false

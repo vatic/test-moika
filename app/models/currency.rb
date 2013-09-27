@@ -27,11 +27,25 @@ class Currency < ActiveRecord::Base
 	end
 
 	def self.get_current_usd
-		Currency.where(name: 'USD', date: Date.today).first
+		get_current currency_name: 'USD'
 	end
 
 	def self.get_current_eur
-		Currency.where(name: 'EUR', date: Date.today).first
+		get_current currency_name: 'EUR'
+	end
+
+	def self.get_current(opt_hash)
+		current = Currency.where(name: opt_hash[:currency_name], date: Date.today)
+		if current.empty?
+			save_current_from_cb
+  		current = Currency.where(name: opt_hash[:currency_name], date: Date.today)
+		end
+		current.first
+	end
+
+	def self.test_runner
+		logger.debug "vatagin: Currency test_runner invoked..."
+		
 	end
 
 end
