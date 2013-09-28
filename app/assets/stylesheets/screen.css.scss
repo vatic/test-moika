@@ -87,6 +87,11 @@ a {
         color: black;
       }
     }
+
+    #car_wash_name {
+      @include pre(1);
+      @include span-columns(3,12);
+    }
     #social {
       .color_on_hover {
         height: 32px;
