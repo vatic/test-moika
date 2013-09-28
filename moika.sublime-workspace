@@ -7,19 +7,83 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/car_washes/show.html.haml",
+			"settings":
+			{
+				"buffer_size": 1347,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/application/_adv1.haml",
+			"settings":
+			{
+				"buffer_size": 87,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/application.html.haml",
+			"settings":
+			{
+				"buffer_size": 679,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "",
+			"file": "app/views/application/_car_wash_menu.haml",
+			"file_size": 15,
+			"file_write_time": 1380391435000000,
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "#car_wash_menu"
+			}
+		},
+		{
+			"file": "app/views/layouts/main_page.html.haml",
+			"settings":
+			{
+				"buffer_size": 781,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/application/_header.haml",
+			"settings":
+			{
+				"buffer_size": 1504,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/screen.css.scss",
+			"settings":
+			{
+				"buffer_size": 7102,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"selected_items":
 		[
+			[
+				":w",
+				":w - Save"
+			]
 		],
-		"width": 0.0
+		"width": 530.0
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 139.0
 	},
 	"distraction_free":
 	{
@@ -32,6 +96,11 @@
 	},
 	"file_history":
 	[
+		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
+		"/home/vatagin/dev/ror/moika/app/views/application/_adv1.haml",
+		"/home/vatagin/dev/ror/moika/config/locales/ru.yml",
+		"/home/vatagin/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/vatagin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
 		"/home/vatagin/dev/ror/moika/moika.sublime-project"
 	],
 	"find":
@@ -67,14 +136,208 @@
 	"groups":
 	[
 		{
+			"selected": 6,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/car_washes/show.html.haml",
+					"settings":
+					{
+						"buffer_size": 1347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1215,
+								1215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/application/_adv1.haml",
+					"settings":
+					{
+						"buffer_size": 87,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/layouts/application.html.haml",
+					"settings":
+					{
+						"buffer_size": 679,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								422,
+								422
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/application/_car_wash_menu.haml",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#car_wash_menu",
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/layouts/main_page.html.haml",
+					"settings":
+					{
+						"buffer_size": 781,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								740,
+								740
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/application/_header.haml",
+					"settings":
+					{
+						"buffer_size": 1504,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								278,
+								278
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/assets/stylesheets/screen.css.scss",
+					"settings":
+					{
+						"buffer_size": 7102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -113,6 +376,38 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"scre",
+				"app/assets/stylesheets/screen.css.scss"
+			],
+			[
+				"header",
+				"app/views/application/_header.haml"
+			],
+			[
+				"mainha",
+				"app/views/layouts/main_page.html.haml"
+			],
+			[
+				"apha",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"adv",
+				"app/views/application/_adv1.haml"
+			],
+			[
+				"mar",
+				"app/views/application/_marketing.haml"
+			],
+			[
+				"carshow",
+				"app/views/car_washes/show.html.haml"
+			],
+			[
+				"ru.",
+				"config/locales/ru.yml"
+			]
 		],
 		"width": 0.0
 	},

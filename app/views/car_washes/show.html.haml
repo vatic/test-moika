@@ -43,20 +43,7 @@
     - else
       %h5.text-muted Занято
       =image_tag "banner_red.png"
-  .col-lg-3
-    %h5.text-muted.text-center Камера с поста №1
-    .flowplayer
-      %video(width="200" height="200")
-        %source(type="video/mp4" src="/video/ex1.mp4")
-    =#render partial: 'ivideon_tag'
-    =#@car_wash.video_url1
-  .col-lg-3
-    %h5.text-muted.text-center Камера с поста №2
-    .flowplayer
-      %video(width="200" height="200")
-        %source(type="video/mp4" src="/video/ex1.mp4")
-    =#render partial: 'ivideon_tag'
-    =#@car_wash.video_url2
+    = image_tag 'video.png'
 
 = link_to 'Редактировать', edit_car_wash_path(@car_wash), class: 'btn btn-primary'
 %br

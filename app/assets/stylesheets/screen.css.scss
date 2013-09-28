@@ -375,3 +375,39 @@ input {
 #login fieldset input[type="submit"]:hover {
   background-color: #28ad63;
 }
+
+.container {
+  #car_wash_menu {
+    @include span-columns(12 omega,12);
+    #login_registration {
+      @include span-columns(4,12);
+    background-color: #ececec;
+    }
+    ul {
+      li {
+        list-style: none;
+        display: inline;
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+    #signal_video {
+      @include span-columns(8 omega,12);
+      #free_close_signal, .video {
+        background-color: #c2c9cc;
+      }
+      #free_close_signal {
+        @include span-columns(1,5);
+      }
+      .video {
+      }
+      .video#video1 {
+        @include span-columns(2,5);
+      }
+      .video#video2 {
+        @include span-columns(2 omega,5);
+      }
+    }
+  }
+}

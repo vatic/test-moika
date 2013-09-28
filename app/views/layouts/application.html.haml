@@ -5,14 +5,19 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     %title= t("site_title")
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false
-    = javascript_include_tag "application", "data-turbolinks-track" => false
     = csrf_meta_tags
   %body
-    #root
-      #header
-        = render partial: 'header'
-      .container
-        = yield
-      #root_footer
+    #header
+      = render partial: 'header'
+    .container
+      #adv1
+        = render partial: 'adv1'
+    .container
+      #car_wash_menu
+        = render partial: 'car_wash_menu'
+    .container#main_content
+      = yield
     .container#footer
       = render partial: 'footer'
+    = javascript_include_tag "application", "data-turbolinks-track" => false
+    = javascript_include_tag "main_page"
