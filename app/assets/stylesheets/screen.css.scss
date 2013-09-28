@@ -381,19 +381,41 @@ input {
     @include span-columns(12 omega,12);
     #login_registration {
       @include span-columns(4,12);
-    background-color: #ececec;
-    }
-    ul {
-      li {
-        list-style: none;
-        display: inline;
-        a {
-          text-decoration: none;
+      ul#car_wash_info {
+        li {
+          list-style: none;
+          margin: 5px 0;
+          background-color: #ececec;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+      ul.menu {
+        margin: 0;
+        padding: 15px 0;
+        background-color: #ececec;
+        li {
+          list-style: none;
+          display: inline;
+          a {
+            text-decoration: none;
+          }
         }
       }
     }
     #signal_video {
       @include span-columns(8 omega,12);
+      ul.menu {
+        margin: 0;
+        padding: 15px 0;
+        li {
+          list-style: none;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
       #free_close_signal, .video {
         background-color: #c2c9cc;
       }

@@ -1,52 +1,70 @@
-%p#notice= notice
-
-.row
-  .col-lg-12
-    %h2.text-center
-      = "Автомойка #{@car_wash.title}"
-
-.row
-  .col-lg-5
-    %ul.list-group
-      %li.list-group-item
-        %span.text-muted Адрес:
+#car_wash_menu
+  #login_registration
+    %ul.menu
+      %li#login
+        = render 'devise/menu/login_items'
+      %li
+        = render 'devise/menu/registration_items'
+      %li
+        = link_to current_user.email, "#" unless current_user.nil?
+    %ul#car_wash_info
+      %li
+        %span Адрес:
         %span= @car_wash.address
-      %li.list-group-item
+      %li
         %button.btn.btn-primary.btn-lg.btn-block(type="button")
           Оставить отзыв
-      %li.list-group-item
-        %p.text-muted Координаты:
-        %span.text-muted Широта:
+      %li
+        %p Координаты:
+        %span Широта:
         %span= @car_wash.lat
         %br
-        %span.text-muted Долгота:
+        %span Долгота:
         %span= @car_wash.lon
-      %li.list-group-item
-        %span.text-muted Контакты:
+      %li
+        %span Контакты:
         %span= @car_wash.contacts
-      %li.list-group-item
-        %span.text-muted Услуги:
+      %li
+        %span Услуги:
         %span= @car_wash.services
-      %li.list-group-item
-        %span.text-muted Цена:
+      %li
+        %span Цена:
         %span= @car_wash.price
-      %li.list-group-item
-        %span.text-muted Кол-во моечных зон:
+      %li
+        %span Кол-во моечных зон:
         %span= @car_wash.zones_count
-      %li.list-group-item
-        %span.text-muted Акции:
+      %li
+        %span Акции:
         %span= @car_wash.actions
-  .col-lg-1
-    - if @car_wash.signal
-      %h5.text-muted Свободно
-      =image_tag "banner_green.png"
-    - else
-      %h5.text-muted Занято
-      =image_tag "banner_red.png"
-    = image_tag 'video.png'
+  #signal_video
+    #free_close_signal
+      %ul.menu
+        %li Свободно
+    .video#video1
+      %ul.menu
+        %li  Камера №1
+    .video#video2
+      %ul.menu
+        %li  Камера №2
+  =#render partial: 'car_wash_menu'
+  %p#notice= notice
 
-= link_to 'Редактировать', edit_car_wash_path(@car_wash), class: 'btn btn-primary'
-%br
-%br
-/\|
-=#link_to 'Назад', car_washes_path
+  .row
+    .col-lg-12
+      %h2.text-center
+        = "Автомойка #{@car_wash.title}"
+
+    .col-lg-1
+      - if @car_wash.signal
+        %h5 Свободно
+        =image_tag "banner_green.png"
+      - else
+        %h5 Занято
+        =image_tag "banner_red.png"
+      = image_tag 'video.png'
+
+  = link_to 'Редактировать', edit_car_wash_path(@car_wash), class: 'btn btn-primary'
+  %br
+  %br
+  /\|
+  =#link_to 'Назад', car_washes_path
