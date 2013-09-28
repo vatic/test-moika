@@ -12,9 +12,6 @@
         %span Адрес:
         %span= @car_wash.address
       %li
-        %button.btn.btn-primary.btn-lg.btn-block(type="button")
-          Оставить отзыв
-      %li
         %p Координаты:
         %span Широта:
         %span= @car_wash.lat
@@ -36,35 +33,37 @@
       %li
         %span Акции:
         %span= @car_wash.actions
+    
+    #response_button
+      Оставить отзыв
+    = image_tag 'adv2.png', class: 'adv'
   #signal_video
     #free_close_signal
       %ul.menu
-        %li Свободно
+        - if @car_wash.signal
+          %li Свободно
+        - else
+          %li Занято
+
+      #signal_image
+        - if @car_wash.signal
+          =image_tag "green.png"
+        - else
+          =image_tag "red.png"
     .video#video1
       %ul.menu
-        %li  Камера №1
+        %li Камера с поста №1
+      = image_tag 'video.png' 
     .video#video2
       %ul.menu
-        %li  Камера №2
+        %li Камера с поста №2
+      = image_tag 'video.png' 
+    #service
+      = image_tag 'service.png'
   =#render partial: 'car_wash_menu'
   %p#notice= notice
 
-  .row
-    .col-lg-12
-      %h2.text-center
-        = "Автомойка #{@car_wash.title}"
 
-    .col-lg-1
-      - if @car_wash.signal
-        %h5 Свободно
-        =image_tag "banner_green.png"
-      - else
-        %h5 Занято
-        =image_tag "banner_red.png"
-      = image_tag 'video.png'
-
-  = link_to 'Редактировать', edit_car_wash_path(@car_wash), class: 'btn btn-primary'
-  %br
-  %br
+  =#link_to 'Редактировать', edit_car_wash_path(@car_wash), class: 'btn btn-primary'
   /\|
   =#link_to 'Назад', car_washes_path

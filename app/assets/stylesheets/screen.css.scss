@@ -408,6 +408,16 @@ input {
           }
         }
       }
+      #response_button {
+        height: 50px;
+        background-color: #a4b1c0;
+        margin: 0 30px; 
+      }
+      img.adv {
+        width: 100%;
+        min-width: 100%;
+        margin: 20px 0;
+      }
     }
     #signal_video {
       @include span-columns(8 omega,12);
@@ -421,8 +431,15 @@ input {
           }
         }
       }
-      #free_close_signal, .video {
+      #free_close_signal ul.menu, .video ul.menu{
         background-color: #c2c9cc;
+        margin-bottom: 20px;
+      }
+      #free_close_signal #signal_image img{
+        margin-left: 20px;
+      }
+      .video img {
+        width: 100%;
       }
       #free_close_signal {
         @include span-columns(1,5);
@@ -434,6 +451,11 @@ input {
       }
       .video#video2 {
         @include span-columns(2 omega,5);
+      }
+      #service {
+        img {
+          width: 100%;
+        }
       }
     }
   }
