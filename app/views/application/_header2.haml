@@ -13,11 +13,7 @@
       = image_tag 'header_logo_4.png'
 .container#header_nav_wrapper
   #header_nav
-    #login
-      = render 'devise/menu/login_items'
-    #registration
-      = render 'devise/menu/registration_items'
-      = link_to current_user.email, "#" unless current_user.nil?
+    #car_wash_name= @car_wash.title
     #social
       = link_to "", "#", class: 'color_on_hover', id: 'vk'
       = link_to "", "#", class: 'color_on_hover', id: 'odn'
