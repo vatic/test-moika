@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130926065152) do
+ActiveRecord::Schema.define(version: 20130930133747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_texts", force: true do |t|
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "action_types", force: true do |t|
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "actions", force: true do |t|
+    t.integer  "car_wash_id"
+    t.integer  "action_text_id"
+    t.integer  "action_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "car_washes", force: true do |t|
     t.string   "title"
@@ -25,7 +45,6 @@ ActiveRecord::Schema.define(version: 20130926065152) do
     t.text     "services"
     t.string   "price"
     t.integer  "zones_count"
-    t.string   "actions"
     t.string   "video_url1"
     t.string   "video_url2"
     t.boolean  "signal"

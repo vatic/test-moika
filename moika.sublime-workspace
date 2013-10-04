@@ -3,67 +3,46 @@
 	{
 		"selected_items":
 		[
+			[
+				"td",
+				"td:u	text-decoration:underline"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/views/car_washes/show.html.haml",
-			"settings":
-			{
-				"buffer_size": 1347,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/application/_adv1.haml",
-			"settings":
-			{
-				"buffer_size": 87,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/application.html.haml",
-			"settings":
-			{
-				"buffer_size": 679,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "",
-			"file": "app/views/application/_car_wash_menu.haml",
-			"file_size": 15,
-			"file_write_time": 1380391435000000,
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix",
-				"name": "#car_wash_menu"
-			}
-		},
-		{
-			"file": "app/views/layouts/main_page.html.haml",
-			"settings":
-			{
-				"buffer_size": 781,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/application/_header.haml",
-			"settings":
-			{
-				"buffer_size": 1504,
-				"line_ending": "Unix"
-			}
-		},
-		{
+			"contents": "// ---------------------------------------------------------------------------\n// Imports\n\n@import \"base\";\n@import \"flowplayer/skin/minimalist\";\n@import \"compass/layout/sticky-footer\";\n\n@include sticky-footer(140px);\n\n/* -------------------------------------------------------------------------*/\n/* base tags*/\n\nbody {\n  font-family: Arial, \"Helvetica Neue\", Helvetica, sans-serif;\n}\n\na {\n  color: black;\n  text-decoration: none;\n}\n\n/* -------------------------------------------------------------------------*/\n/* Layout */\n\n.text-center {\n  text-align: center;\n}\n\n.container {\n  @include container;\n  @include susy-grid-background;\n}\n\n#header {\n  #logo_left {\n    @include span-columns(4,12);\n    padding-top: 30px;\n  }\n  #logo_right {\n    .r_logo_img {\n      @include span-columns(2,12);\n      img {\n        max-width:100%; \n        height:auto;\n      }\n    }\n    .r_logo_img.omega{\n      @include span-columns(2 omega,12);\n      img {\n        max-width:100%; \n        height:auto;\n      }\n    }\n  }\n}\n.container#header_nav_wrapper {\n    z-index: 1;\n    background-image: url(image_path('h_menu.png'));\n    background-position: 0 0;\n    background-color: #fff;\n    background-repeat: no-repeat;\n    -webkit-background-size: cover;\n    background-size: cover;\n    height: 73px;\n    min-height: 73px;\n  #header_nav {\n    z-index: 10;\n    //border: 1px solid #000;\n    height: 25px;\n    min-height: 25px;\n    padding: 10px 0 0 0;\n\n    //background-color: #ebebeb;\n    #login {\n      @include pre(1);\n      @include span-columns(1,12);\n      margin-top: 5px;\n      a {\n        color: black;\n      }\n\n    }\n    #registration {\n      @include span-columns(2,12);\n      margin-top: 5px;\n      a {\n        color: black;\n      }\n    }\n\n    #car_wash_name {\n      @include pre(1);\n      @include span-columns(3,12);\n    }\n    #social {\n      .color_on_hover {\n        height: 32px;\n        float: left;\n        margin-right: 1.694915254237288%;\n        display: inline;\n        &#vk {\n          width: 3.3898305%;\n          margin-left: 3.39%;\n          background-image: url(image_path(\"vk_grey.png\"));\n          background-repeat: no-repeat;\n          &:hover {\n            background-image: url(image_path(\"vk.png\"));\n          background-repeat: no-repeat;\n          }\n        }\n        &#odn {\n          width: 6.779661%;\n          background-image: url(image_path(\"odn_grey.png\"));\n          background-repeat: no-repeat;\n          &:hover {\n            background-image: url(image_path(\"odn.png\"));\n          background-repeat: no-repeat;\n          }\n        }\n      }\n    }\n    #weather{\n      @include span-columns(1,12);\n    }\n    #traffic {\n      @include span-columns(1,12);\n      a {\n        img {\n          width: 80px;\n          height: 32px;\n          display: inline-block;\n        }\n      }\n    }\n    #date_currency {\n      @include span-columns(4 omega,12);\n      margin-top: 5px;\n      font-size: 15px;\n      letter-spacing: -1px;\n      .datetime {\n        display: inline-block;\n        .date {\n\n        }\n        .time {\n          color: blue;\n        }\n      }\n      .currency {\n        display: inline-block;\n        .name {\n          color: red;\n        }\n        .value {\n          color: #000;\n        }\n      }\n    }\n  }\n}\n\n#adv1 {\n  @include pre(2);\n  @include span-columns(8 omega,12);\n  @include post(2);\n  marquee {\n    margin-bottom: 20px;\n    color: red;\n    border: 1px solid #ccc;\n  }\n}\n\n.marketing {\n  @include span-columns(4,12);\n  img {\n    max-width:100%; \n    height:auto;\n  }\n}\n.marketing.omega {\n  @include span-columns(4 omega,12);\n  img {\n    max-width:100%; \n    height:auto;\n  }\n}\n.container#main_content {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  #car_washes_left_list {\n    @include span-columns(2,12);\n    #list_header {\n      @include columns(2);\n      background-color: #dbdbdb;\n      margin: 0 0 15px 0;\n      p {\n        @include span-columns(1,2);\n        margin-left: 10px;\n        font-weight: normal;\n        font-size: 16px;\n      }\n      img {\n        @include span-columns(1 omega,2);\n        height: 40px;\n        width: 40px;\n      }\n    }\n    ul {\n      margin: 0;\n      padding: 0;\n      li {\n        list-style: none;\n        background-color: #ebebeb;\n        margin: 0 0 10px 0;\n        padding: 0 0 0 10px;\n        border-left: 8px solid #dc0707;\n        a {\n          font-size: 14px;\n          color: #a2a2a2;\n        }\n        a:hover {\n          & {\n            background-color: #eaeaea;\n          }\n        }\n        a:active {\n        }\n      }\n    }\n    #adv_left {\n\n    }\n  }\n  #map_container {\n    @include span-columns(10 omega,12);\n    #map_header {\n      @include span-columns(3,8);\n      margin:20px 0;\n    }\n    #map_search {\n      margin:20px 0;\n      input {\n        @include span-columns(3,8);\n        border: 1px solid #777;\n      }\n      input.submit {\n        @include span-columns(2 omega,8);\n      }\n\n    }\n  }\n}\n\n#map {\n  width: 100%;\n  height: 1100px;\n  margin-bottom: 20px;\n}  \n\n .container#footer { \n  width: 100%;\n  max-width: 100%;\n  margin: 20px 0 0 0;\n  padding: 0;\n  border-bottom: 10px solid #8c8c8c;\n  background-color: #333333;\n  color: #fff;\n  height: 105px;\n  min-height: 105px;\n  .mobile_apps {\n    @include span-columns(2,12);\n    margin: 12px 0;\n    p {\n      margin: 0;\n      padding: 0;\n    }\n  }\n  #other_footer_content {\n    @include span-columns(8 omega,12);\n    margin-top: 20px;\n    ul#bottom_menu, ul#bottom_links {\n      li {\n        list-style: none;\n        display: inline;\n        a {\n          color: #fff;\n          text-decoration: none;\n        }\n      }\n    }\n    ul#bottom_menu {\n      margin: 5px 0;\n      li {\n        margin: 0px 20px 0 0; \n        a {\n        }\n      }\n    }\n    ul#bottom_links {\n      float: left;\n      margin: 5px 0;\n      li {\n        margin: 0px 20px 0 0; \n        a {\n          font-size: 12px;\n        }\n      }\n    }\n  }\n}\n\n#login {\n  @include pre(4);\n  @include span-columns(4,12);\n  margin-right: 0;\n}\n\ninput {\n  border: none;\n  font-family: inherit;\n  font-size: inherit;\n  font-weight: inherit;\n  line-height: inherit;\n  -webkit-appearance: none;\n}\n\n#login h2 {\n  background-color: #6c6c6c;\n  -webkit-border-radius: 20px 20px 0 0;\n  -moz-border-radius: 20px 20px 0 0;\n  border-radius: 20px 20px 0 0;\n  color: #fff;\n  font-size: 28px;\n  padding: 20px 38px 20px 38px;\n  margin: 0;\n  width: 328px;\n}\n\n#login fieldset {\n  background-color: #fff;\n  -webkit-border-radius: 0 0 20px 20px;\n  -moz-border-radius: 0 0 20px 20px;\n  border-radius: 0 0 20px 20px;\n  padding: 20px 0 20px 26px;\n  padding: 20px 26px;\n  margin: 0;\n}\n\n#login fieldset p {\n  color: #777;\n  margin-bottom: 14px;\n}\n\n#login fieldset p:last-child {\n  margin-bottom: 0;\n}\n\n#login fieldset input {\n  -webkit-border-radius: 3px;\n  -moz-border-radius: 3px;\n  border-radius: 3px;\n}\n\n#login fieldset input[type=\"email\"], #login fieldset input[type=\"password\"] {\n  background-color: #eee;\n  color: #777;\n  padding: 4px 10px;\n  width: 328px;\n}\n\n#login fieldset input[type=\"submit\"] {\n  background-color: #33cc77;\n  color: #fff;\n  display: block;\n  margin: 0 auto;\n  padding: 4px 0;\n  width: 100px;\n}\n\n#login fieldset input[type=\"submit\"]:hover {\n  background-color: #28ad63;\n}\n\nform.car_wash_edit {\n  input {\n    border: 1px solid #000;\n  }\n  #left {\n    @include span-columns(5,12);\n  }\n  #right{\n    @include span-columns(5 omega,12);\n  }\n}\n\n.container {\n  #car_wash_menu {\n    @include span-columns(12 omega,12);\n    #login_registration {\n      @include span-columns(4,12);\n      ul#car_wash_info {\n        li {\n          list-style: none;\n          margin: 5px 0;\n          background-color: #ececec;\n          a {\n            text-decoration: none;\n          }\n        }\n      }\n      ul.menu {\n        margin: 0;\n        padding: 15px 0;\n        background-color: #ececec;\n        li {\n          list-style: none;\n          display: inline;\n          a {\n            text-decoration: none;\n          }\n        }\n      }\n      #response_button {\n        height: 50px;\n        background-color: #a4b1c0;\n        margin: 0 30px; \n      }\n      img.adv {\n        width: 100%;\n        min-width: 100%;\n        margin: 20px 0;\n      }\n    }\n    #signal_video {\n      @include span-columns(8 omega,12);\n      ul.menu {\n        margin: 0;\n        padding: 15px 0;\n        li {\n          list-style: none;\n          a {\n            text-decoration: none;\n          }\n        }\n      }\n      #free_close_signal ul.menu, .video ul.menu{\n        background-color: #c2c9cc;\n        margin-bottom: 20px;\n      }\n      #free_close_signal #signal_image img{\n        margin-left: 20px;\n      }\n      .video img {\n        width: 100%;\n      }\n      #free_close_signal {\n        @include span-columns(1,5);\n      }\n      .video {\n      }\n      .video#video1 {\n        @include span-columns(2,5);\n      }\n      .video#video2 {\n        @include span-columns(2 omega,5);\n      }\n      #service {\n        img {\n          width: 100%;\n        }\n      }\n      #info {\n        #info_header {\n          h3 {\n            text-align: center;\n            text-decoration: underline;\n          }\n        }\n        #info_content {\n          #left h4, #center h4, #right h4 {\n            text-align: center;\n            color: red;\n          }\n          #left {\n            @include span-columns(4,12);\n          }\n          #center {\n            @include span-columns(4,12);\n          }\n          #right {\n            @include span-columns(4 omega,12);\n          }\n        }\n        img {\n          width: 100%;\n        }\n      }\n    }\n  }\n}",
 			"file": "app/assets/stylesheets/screen.css.scss",
+			"file_size": 9527,
+			"file_write_time": 1380542179000000,
 			"settings":
 			{
-				"buffer_size": 7102,
+				"buffer_size": 9527,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/car_washes/edit.html.haml",
+			"settings":
+			{
+				"buffer_size": 191,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/car_washes/_form.html.haml",
+			"settings":
+			{
+				"buffer_size": 1651,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/vatagin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 442,
 				"line_ending": "Unix"
 			}
 		}
@@ -71,15 +50,19 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 287.0,
 		"selected_items":
 		[
 			[
 				":w",
 				":w - Save"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
 			]
 		],
-		"width": 530.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -96,11 +79,37 @@
 	},
 	"file_history":
 	[
-		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
-		"/home/vatagin/dev/ror/moika/app/views/application/_adv1.haml",
-		"/home/vatagin/dev/ror/moika/config/locales/ru.yml",
-		"/home/vatagin/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
 		"/home/vatagin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
+		"/home/vatagin/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/vatagin/dev/ror/moika/app/models/action.rb",
+		"/home/vatagin/dev/ror/moika/spec/controllers/car_washes_controller_spec.rb",
+		"/home/vatagin/dev/ror/moika/spec/models/car_wash_spec.rb",
+		"/home/vatagin/dev/ror/moika/app/views/car_washes/show.json.jbuilder",
+		"/home/vatagin/dev/ror/moika/app/controllers/car_washes_controller.rb",
+		"/home/vatagin/dev/ror/moika/app/models/car_wash.rb",
+		"/home/vatagin/dev/ror/moika/app/views/car_washes/show.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/car_washes/_testpar.html.haml",
+		"/home/vatagin/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
+		"/home/vatagin/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/vatagin/dev/ror/moika/db/migrate/20130930133747_rename_type_column_to_action_types.rb",
+		"/home/vatagin/dev/ror/moika/app/models/action_text.rb",
+		"/home/vatagin/dev/ror/moika/app/models/action_type.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20130912101336_create_roles.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20130930131543_remove_column_from_car_wash.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20130912101558_create_roles_users.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20130930125822_create_actions.rb",
+		"/home/vatagin/dev/ror/moika/app/models/role.rb",
+		"/home/vatagin/dev/ror/moika/app/assets/javascripts/map.js.erb",
+		"/home/vatagin/dev/ror/moika/app/views/map/show.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/layouts/main_page.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/application/_header2.haml",
+		"/home/vatagin/dev/ror/moika/app/views/application/_header.haml",
+		"/home/vatagin/dev/ror/moika/app/views/layouts/application.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/application/_car_wash_menu.haml",
+		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_login_items.haml",
+		"/home/vatagin/dev/ror/moika/app/views/application/_adv1.haml",
+		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
+		"/home/vatagin/dev/ror/moika/config/locales/ru.yml",
 		"/home/vatagin/dev/ror/moika/moika.sublime-project"
 	],
 	"find":
@@ -119,6 +128,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"super",
+			"size",
+			"font",
+			", class: \"col-lg-2 control-label\"",
+			", class: \"form-control\"",
+			"input",
+			".col-lg-10",
+			".form-group",
+			".text-muted",
+			".list-group-item",
+			"list-group-item",
+			"menu"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -126,6 +147,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"ctrl",
+			""
 		],
 		"reverse": false,
 		"show_context": true,
@@ -136,43 +159,15 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/car_washes/show.html.haml",
+					"file": "app/assets/stylesheets/screen.css.scss",
 					"settings":
 					{
-						"buffer_size": 1347,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1215,
-								1215
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/application/_adv1.haml",
-					"settings":
-					{
-						"buffer_size": 87,
+						"buffer_size": 9527,
 						"regions":
 						{
 						},
@@ -181,6 +176,34 @@
 							[
 								0,
 								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/car_washes/edit.html.haml",
+					"settings":
+					{
+						"buffer_size": 191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								191,
+								191
 							]
 						],
 						"settings":
@@ -195,18 +218,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "app/views/layouts/application.html.haml",
+					"file": "app/views/car_washes/_form.html.haml",
 					"settings":
 					{
-						"buffer_size": 679,
+						"buffer_size": 1651,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								422,
-								422
+								1429,
+								1429
 							]
 						],
 						"settings":
@@ -223,106 +246,23 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/views/application/_car_wash_menu.haml",
+					"file": "/home/vatagin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 442,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								194,
+								194
 							]
 						],
 						"settings":
 						{
-							"auto_name": "#car_wash_menu",
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/layouts/main_page.html.haml",
-					"settings":
-					{
-						"buffer_size": 781,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								740,
-								740
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/application/_header.haml",
-					"settings":
-					{
-						"buffer_size": 1504,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								278,
-								278
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/assets/stylesheets/screen.css.scss",
-					"settings":
-					{
-						"buffer_size": 7102,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -341,7 +281,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -368,7 +308,7 @@
 	"menu_visible": true,
 	"replace":
 	{
-		"height": 0.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -377,12 +317,52 @@
 		"selected_items":
 		[
 			[
-				"scre",
-				"app/assets/stylesheets/screen.css.scss"
+				"migrare",
+				"db/migrate/20130930133747_rename_type_column_to_action_types.rb"
 			],
 			[
-				"header",
-				"app/views/application/_header.haml"
+				"cre",
+				"db/migrate/20130912101336_create_roles.rb"
+			],
+			[
+				"migr",
+				"db/migrate/20130930131543_remove_column_from_car_wash.rb"
+			],
+			[
+				"act",
+				"app/models/action_type.rb"
+			],
+			[
+				"carw",
+				"app/models/car_wash.rb"
+			],
+			[
+				"action",
+				"app/models/action.rb"
+			],
+			[
+				"migra",
+				"db/migrate/20130912101558_create_roles_users.rb"
+			],
+			[
+				"role",
+				"app/models/role.rb"
+			],
+			[
+				"form",
+				"app/views/car_washes/_form.html.haml"
+			],
+			[
+				"caredi",
+				"app/views/car_washes/edit.html.haml"
+			],
+			[
+				"mapjs",
+				"app/assets/javascripts/map.js.erb"
+			],
+			[
+				"mapsh",
+				"app/views/map/show.html.haml"
 			],
 			[
 				"mainha",
@@ -391,6 +371,30 @@
 			[
 				"apha",
 				"app/views/layouts/application.html.haml"
+			],
+			[
+				"header",
+				"app/views/application/_header.haml"
+			],
+			[
+				"carsho",
+				"app/views/car_washes/show.html.haml"
+			],
+			[
+				"show",
+				"app/views/car_washes/show.html.haml"
+			],
+			[
+				"carme",
+				"app/views/application/_car_wash_menu.haml"
+			],
+			[
+				"logi",
+				"app/views/devise/menu/_login_items.haml"
+			],
+			[
+				"scre",
+				"app/assets/stylesheets/screen.css.scss"
 			],
 			[
 				"adv",

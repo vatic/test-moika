@@ -1,66 +1,53 @@
-= form_for @car_wash, role: "form", html: {class: "form-horizontal"} do |f|
+= form_for @car_wash, role: "form", html: {class: "car_wash_edit"} do |f|
   - if @car_wash.errors.any?
     #error_explanation
       %h2= "#{pluralize(@car_wash.errors.count, "error")} prohibited this car_wash from being saved:"
       %ul
         - @car_wash.errors.full_messages.each do |msg|
           %li= msg
-  .row
-    .col-lg-5
-      .form-group
-        = f.label CarWash.human_attribute_name("title"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_field :title, class: "form-control"
-      .form-group
-        = f.label CarWash.human_attribute_name("address"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_field :address, class: "form-control"
-      .form-group
-        = f.label CarWash.human_attribute_name("lat"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_field :lat, class: "form-control"
-      .form-group
-        = f.label CarWash.human_attribute_name("lon"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_field :lon, class: "form-control"
-      .form-group
-        = f.label CarWash.human_attribute_name("contacts"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_field :contacts, class: "form-control"
-      .form-group
-        = f.label CarWash.human_attribute_name("services"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_area :services, class: "form-control"
-      .form-group
-        = f.label CarWash.human_attribute_name("price"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_field :price, class: "form-control"
-      .form-group
-        = f.label CarWash.human_attribute_name("zones_count"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.number_field :zones_count, class: "form-control"
-      .form-group
-        = f.label CarWash.human_attribute_name("actions"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_field :actions, class: "form-control"
-    .col-lg-7
-      .form-group
-        = f.label CarWash.human_attribute_name("video_url1"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_field :video_url1, class: "form-control"
-      .form-group
-        = f.label CarWash.human_attribute_name("video_url2"), class: "col-lg-2 control-label"
-        .col-lg-10
-          = f.text_field :video_url2, class: "form-control"
-      %fieldset#car-wash-edit
-        %legend Состояние постов
-        .form-group
-          = f.label CarWash.human_attribute_name("signal"), class: "col-lg-4 control-label"
-          .col-lg-8
-            = f.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
-            = link_to image_tag '', id: 'red-green'
+
+  %ul#left
+    %li
+      = f.label CarWash.human_attribute_name("title")
+      = f.text_field :title
+    %li
+      = f.label CarWash.human_attribute_name("address")
+      = f.text_field :address
+    %li
+      = f.label CarWash.human_attribute_name("lat")
+      = f.text_field :lat
+    %li
+      = f.label CarWash.human_attribute_name("lon")
+      = f.text_field :lon
+    %li
+      = f.label CarWash.human_attribute_name("contacts")
+      = f.text_field :contacts
+    %li
+      = f.label CarWash.human_attribute_name("services")
+      = f.text_area :services
+  #right
+    %li
+      = f.label CarWash.human_attribute_name("price")
+      = f.text_field :price
+    %li
+      = f.label CarWash.human_attribute_name("zones_count")
+      = f.number_field :zones_count
+    %li
+      = f.label CarWash.human_attribute_name("actions")
+      = f.text_field :actions
+    %li
+      = f.label CarWash.human_attribute_name("video_url1")
+      = f.text_field :video_url1
+    %li
+      = f.label CarWash.human_attribute_name("video_url2")
+      = f.text_field :video_url2
+    %li
+      = f.label CarWash.human_attribute_name("signal")
+      = f.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
+      = link_to image_tag '', id: 'red-green'
       %br
       %br
       %br
-      .actions.col-lg-4.col-lg-offset-4
-        = f.submit t("save_button"), class: "btn btn-lg btn-primary btn-block"
+    %li
+      .actions
+        = f.submit t("save_button")

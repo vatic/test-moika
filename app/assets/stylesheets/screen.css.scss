@@ -381,6 +381,18 @@ input {
   background-color: #28ad63;
 }
 
+form.car_wash_edit {
+  input {
+    border: 1px solid #000;
+  }
+  #left {
+    @include span-columns(5,12);
+  }
+  #right{
+    @include span-columns(5 omega,12);
+  }
+}
+
 .container {
   #car_wash_menu {
     @include span-columns(12 omega,12);
@@ -453,6 +465,32 @@ input {
         @include span-columns(2 omega,5);
       }
       #service {
+        img {
+          width: 100%;
+        }
+      }
+      #info {
+        #info_header {
+          h3 {
+            text-align: center;
+            text-decoration: underline;
+          }
+        }
+        #info_content {
+          #left h4, #center h4, #right h4 {
+            text-align: center;
+            color: red;
+          }
+          #left {
+            @include span-columns(4,12);
+          }
+          #center {
+            @include span-columns(4,12);
+          }
+          #right {
+            @include span-columns(4 omega,12);
+          }
+        }
         img {
           width: 100%;
         }
