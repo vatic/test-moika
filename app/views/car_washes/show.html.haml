@@ -35,11 +35,12 @@
         %span= @car_wash.zones_count
       %li
         %span Акции:
-        - @car_wash.actions.each do |action|
-          %p Тип
-          %span= action.action_type.text
-          %p Текст
-          %span= action.action_text.text
+        -unless @car_wash.actions.empty?
+          - @car_wash.actions.each do |action|
+            %p Тип
+            %span= action.action_type.text
+            %p Текст
+            %span= action.action_text.text
     
     #response_button
       Оставить отзыв
