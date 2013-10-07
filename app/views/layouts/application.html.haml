@@ -7,14 +7,17 @@
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false
     = csrf_meta_tags
   %body
-    #header
-      = render partial: 'header2'
-    .container
-      #adv1
-        = render partial: 'adv1'
-    .container#main_content
-      = yield
+    #root
+      #header
+        = render partial: 'header2'
+      .container
+        #adv1
+          = yield :adv1
+          =#render partial: 'adv1'
+      .container#main_content
+        = yield
+      #root_footer
     .container#footer
       = render partial: 'footer'
     = javascript_include_tag "application", "data-turbolinks-track" => false
-    = javascript_include_tag "main_page"
+    =#javascript_include_tag "main_page"

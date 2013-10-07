@@ -21,6 +21,7 @@ gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'haml-rails'
 
@@ -85,3 +86,5 @@ gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
 gem 'nokogiri'
 
 gem 'whenever', :require => false
+
+gem 'best_in_place', :git => "https://github.com/bernat/best_in_place", :branch => "rails-4"

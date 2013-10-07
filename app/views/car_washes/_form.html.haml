@@ -1,53 +1,32 @@
-= form_for @car_wash, role: "form", html: {class: "car_wash_edit"} do |f|
-  - if @car_wash.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@car_wash.errors.count, "error")} prohibited this car_wash from being saved:"
-      %ul
-        - @car_wash.errors.full_messages.each do |msg|
-          %li= msg
+.bip_input
+  #main_action_label Ведите текст для бегущей строки
+  #main_action_input
+    = best_in_place @car_wash, :main_action_text, :path => car_washes_update_main_action_path,:type => :input, :nil => "..to add content!", :html_attrs => {:class=>"dummy"}, :activator => "#editme"
+  #main_action_button
+    %a(id="editme" href="#")= t('save_button')
 
-  %ul#left
-    %li
-      = f.label CarWash.human_attribute_name("title")
-      = f.text_field :title
-    %li
-      = f.label CarWash.human_attribute_name("address")
-      = f.text_field :address
-    %li
-      = f.label CarWash.human_attribute_name("lat")
-      = f.text_field :lat
-    %li
-      = f.label CarWash.human_attribute_name("lon")
-      = f.text_field :lon
-    %li
-      = f.label CarWash.human_attribute_name("contacts")
-      = f.text_field :contacts
-    %li
-      = f.label CarWash.human_attribute_name("services")
-      = f.text_area :services
-  #right
-    %li
-      = f.label CarWash.human_attribute_name("price")
-      = f.text_field :price
-    %li
-      = f.label CarWash.human_attribute_name("zones_count")
-      = f.number_field :zones_count
-    %li
-      = f.label CarWash.human_attribute_name("actions")
-      = f.text_field :actions
-    %li
-      = f.label CarWash.human_attribute_name("video_url1")
-      = f.text_field :video_url1
-    %li
-      = f.label CarWash.human_attribute_name("video_url2")
-      = f.text_field :video_url2
-    %li
-      = f.label CarWash.human_attribute_name("signal")
-      = f.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
-      = link_to image_tag '', id: 'red-green'
-      %br
-      %br
-      %br
-    %li
+.container
+  = form_for @car_wash, role: "form", html: {class: "car_wash_edit"} do |f|
+    - if @car_wash.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@car_wash.errors.count, "error")} prohibited this car_wash from being saved:"
+        %ul
+          - @car_wash.errors.full_messages.each do |msg|
+            %li= msg
+
+    #left_form
+      %h3 Акция
+      =#f.label CarWash.human_attribute_name("title")
+      =#f.text_field :title
       .actions
-        = f.submit t("save_button")
+        =#f.submit t("save_button")
+    #center_form
+      %h3 Свободно
+      %p.text-center
+        = image_tag ('green.png')
+    #right_form
+      %h3 Занято
+      %p.text-center
+        = image_tag ('red.png')
+
+

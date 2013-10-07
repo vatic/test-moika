@@ -1,3 +1,6 @@
+- content_for :adv1 do
+  %marquee(behavior="alternate" direction="left")
+    %h5.text-muted.text-center= "#{@car_wash.main_action_text} #{t('adv1')}"
 #car_wash_menu
   #login_registration
     %ul.menu
@@ -32,7 +35,11 @@
         %span= @car_wash.zones_count
       %li
         %span Акции:
-        %span= @car_wash.actions
+        - @car_wash.actions.each do |action|
+          %p Тип
+          %span= action.action_type.text
+          %p Текст
+          %span= action.action_text.text
     
     #response_button
       Оставить отзыв
@@ -75,6 +82,6 @@
   %p#notice= notice
 
 
-  =#link_to 'Редактировать', edit_car_wash_path(@car_wash), class: 'btn btn-primary'
+  = link_to 'Редактировать', edit_car_wash_path(@car_wash), class: 'btn btn-primary'
   /\|
   =#link_to 'Назад', car_washes_path
