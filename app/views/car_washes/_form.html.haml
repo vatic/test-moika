@@ -17,18 +17,22 @@
     #left_form
       %h3 Акция
       -ActionType.find_each do |type|
+        - next if type.main?
         = text_field_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
         = label_tag :action_type_text, ActionType.find_by(text: type.text).title
         = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
+      %hr
       .actions
         = f.submit t("save_button")
     #center_form
       %h3 Свободно
       %p.text-center
-        = image_tag ('green.png')
+        = link_to image_tag ('green.png'), id: 'green'
     #right_form
       %h3 Занято
       %p.text-center
-        = image_tag ('red.png')
+        = link_to image_tag ('red.png'), id: 'red'
+    = f.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
+    = link_to image_tag '', id: 'red-green'
 
 

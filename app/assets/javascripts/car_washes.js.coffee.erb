@@ -5,8 +5,12 @@
 $ ->
   if $('#car-wash-signal').prop("checked")
     $('img#red-green').attr('src', "<%= asset_path('banner_green.png') %>")
+    $('img#green').attr('src', "<%= asset_path('green.png') %>")
+    $('img#red').attr('src', "<%= asset_path('red_blur.png') %>")
   else
     $('img#red-green').attr('src', "<%= asset_path('banner_red.png') %>")
+    $('img#green').attr('src', "<%= asset_path('green_blur.png') %>")
+    $('img#red').attr('src', "<%= asset_path('red.png') %>")
 
   $(document).on 'click', '#red-green', (e) ->
     e.preventDefault()
@@ -16,3 +20,18 @@ $ ->
     else
       $("input[type='checkbox']#car-wash-signal").prop("checked", true)
       $('img#red-green').attr('src', "<%= asset_path('banner_green.png') %>")
+
+  $(document).on 'click', 'img#green', (e) ->
+    e.preventDefault()
+    $("input[type='checkbox']#car-wash-signal").prop("checked", true)
+    $('img#red-green').attr('src', "<%= asset_path('banner_green.png') %>")
+    $('img#green').attr('src', "<%= asset_path('green.png') %>")
+    $('img#red').attr('src', "<%= asset_path('red_blur.png') %>")
+
+  $(document).on 'click', 'img#red', (e) ->
+    e.preventDefault()
+    $("input[type='checkbox']#car-wash-signal").prop("checked", false)
+    $('img#red-green').attr('src', "<%= asset_path('banner_red.png') %>")
+    $('img#green').attr('src', "<%= asset_path('green_blur.png') %>")
+    $('img#red').attr('src', "<%= asset_path('red.png') %>")
+
