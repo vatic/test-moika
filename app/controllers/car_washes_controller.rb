@@ -1,5 +1,6 @@
 class CarWashesController < ApplicationController
   before_action :set_car_wash, only: [:show, :edit, :update, :update_main_action, :destroy]
+  before_action :set_actions, only: [:show, :edit]
 
   # GET /car_washes
   # GET /car_washes.json
@@ -77,9 +78,12 @@ class CarWashesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_car_wash
       @car_wash = CarWash.find(params[:id])
+    end
+
+    def set_actions
+      @actions = @car_wash.try(:actions)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

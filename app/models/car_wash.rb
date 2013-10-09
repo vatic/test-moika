@@ -4,6 +4,7 @@ class CarWash < ActiveRecord::Base
   geocoded_by :address, :latitude  => :lat, :longitude => :lon
   after_validation :geocode, if: "lat_and_lon_nil?"
 
+
   def main_action
      actions.includes(:action_type).where("action_types.text" => "main").first
   end
