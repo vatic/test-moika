@@ -11,4 +11,8 @@ class Action < ActiveRecord::Base
   scope :bottom2, -> { includes(:action_type).where("action_types.text" => "bottom2") }
   scope :left, -> { includes(:action_type).where("action_types.text" => "left") }
 
+  def text=(str)
+    action_text_object = ActionText.find_or_create_by(text: str)
+    self.action_text_id = action_text_object.id
+  end
 end

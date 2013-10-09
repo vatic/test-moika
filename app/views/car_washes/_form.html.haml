@@ -16,21 +16,10 @@
 
     #left_form
       %h3 Акция
-      %ul
-        -@actions.each do |action|
-          %li= action.action_type_text
-          %li= action.text
-
-      %hr
-      = f.fields_for :actions do |builder|
-        -ActionType.find_each do |type|
-          %ul
-            %li
-              = builder.label :action_text_id
-              = builder.text_field :action_text_id, value: @actions.find_by(action_type_id: type.id).try(:text)
-            %li
-              = builder.label :action_type_text
-              = builder.text_field :action_type_text, value: ActionType.find_by(text: type.text).text
+      -ActionType.find_each do |type|
+        = text_field_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
+        = label_tag :action_type_text, ActionType.find_by(text: type.text).title
+        = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
       .actions
         = f.submit t("save_button")
     #center_form

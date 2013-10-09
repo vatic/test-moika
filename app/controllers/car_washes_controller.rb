@@ -41,8 +41,22 @@ class CarWashesController < ApplicationController
   # PATCH/PUT /car_washes/1
   # PATCH/PUT /car_washes/1.json
   def update
+    logger.debug("vatagin: #{car_wash_params}, #{params[:car_wash][:actions]}")
+
+    params_actions = params[:car_wash][:actions]
+
+    params_actions.each do |params_action|
+     action = @car_wash.action_by_type(params_action[:action_type_text])
+     if action.nil?
+      @car_wash.actions.build(
+        action_text: ActionText.create(text: params_action[:text]), 
+        action_type: ActionType.find_by(text: params_action[:action_type_text]))
+     else
+      action.action_text.update(text: params_action[:text])
+     end
+   end
+
     respond_to do |format|
-      logger.debug("vatagin: #{car_wash_params}")
       if @car_wash.update(car_wash_params)
         format.html { redirect_to @car_wash, notice: 'Car wash was successfully updated.' }
         format.json { head :no_content }
@@ -51,6 +65,9 @@ class CarWashesController < ApplicationController
         format.json { render json: @car_wash.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def update_actions
   end
 
   def update_main_action
@@ -88,6 +105,19 @@ class CarWashesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def car_wash_params
-      params.require(:car_wash).permit(:main_action_text, :title, :address, :lat, :lon, :contacts, :services, :price, :zones_count, :actions, :video_url1, :video_url2, :signal)
+      params.require(:car_wash).permit(
+        :main_action_text, 
+        :title, 
+        :address, 
+        :lat, 
+        :lon, 
+        :contacts, 
+        :services, 
+        :price, 
+        :zones_count, 
+        :video_url1, 
+        :video_url2, 
+        :signal,
+        actions_attributes: [:text, :action_type_text]) 
     end
 end
