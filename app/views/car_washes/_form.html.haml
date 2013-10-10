@@ -16,17 +16,10 @@
 
     #left_form
       %h3 Акция
-      -ActionType.find_each do |type|
-        - next if type.main?
-        = text_field_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
+      - ActionType.left.find_each do |type|
         = label_tag :action_type_text, ActionType.find_by(text: type.text).title
         = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
-      %hr
-      .actions#control_panel
-        #save_button
-          = f.submit t("save_button")
-        #edit_button
-          = link_to t("edit_button"), edit_car_wash_path(@car_wash)
+        = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
     #center_form
       %h3 Свободно
       %p.text-center
@@ -35,7 +28,15 @@
       %h3 Занято
       %p.text-center
         = link_to image_tag ('red.png'), id: 'red'
-    = f.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
-    = link_to image_tag '', id: 'red-green'
+        = f.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
+
+    #svetofor_container
+      = link_to image_tag '', id: 'red-green'
+    .actions#control_panel
+      #save_button
+        = f.submit t("save_button")
+      #edit_button
+        = link_to t("edit_button"), edit_car_wash_path(@car_wash)
+
 
 
