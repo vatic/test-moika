@@ -1,7 +1,7 @@
 .bip_input
   #main_action_label Ведите текст для бегущей строки
   #main_action_input
-    = best_in_place @car_wash, :main_action_text, :path => car_washes_update_main_action_path,:type => :input, :nil => "..to add content!", :html_attrs => {:class=>"dummy"}, :activator => "#editme"
+    = best_in_place @car_wash, :main_action_text, :path => car_washes_update_main_action_path,:type => :input, :nil => "...Бегущая строка пока не заполнена", :html_attrs => {:class=>"dummy"}, :activator => "#editme"
   #main_action_button
     %a(id="editme" href="#")= t('save_button')
 
@@ -22,8 +22,11 @@
         = label_tag :action_type_text, ActionType.find_by(text: type.text).title
         = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
       %hr
-      .actions
-        = f.submit t("save_button")
+      .actions#control_panel
+        #save_button
+          = f.submit t("save_button")
+        #edit_button
+          = link_to t("edit_button"), edit_car_wash_path(@car_wash)
     #center_form
       %h3 Свободно
       %p.text-center

@@ -555,3 +555,44 @@ form.car_wash_edit {
 
 #car_wash_signal {
 }
+
+
+.actions#control_panel {
+  @include border-radius(5px, 5px);
+  width: 100%;
+  margin-top: 50px;
+  #save_button {
+    background-color: transparent;
+    padding: 3px 3px;
+    border: 1px solid #ddd;
+    width: 100%;
+    @include border-radius(5px, 5px);
+    input[type='submit'] {
+      background-color: #D5D5D5;
+      color: #000;
+      width: 100%;
+      margin: 0px auto;
+      padding: 5px 0;
+      @include border-radius(5px, 5px);
+      border: none;
+    }
+  } 
+  #edit_button {
+    background-color: transparent;
+    padding: 3px 3px;
+    border: 1px solid #ddd;
+    width: 100%;
+    @include border-radius(5px, 5px);
+    a {
+      display: block;
+      text-align: center;
+      background-color: #D90D0E;
+      color: #fff;
+      width: 100%;
+      margin: 0px auto;
+      padding: 5px 0;
+      @include border-radius(5px, 5px);
+      border: none;
+    }
+  } 
+}
