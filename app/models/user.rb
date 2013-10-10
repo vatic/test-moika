@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     return !!self.roles.find_by(name: role.to_s)
   end
 
+  def self.admins
+     includes(:roles).where("roles.name = 'admin'").references(:roles)
+  end
+
   def make_admin
     self.roles << Role.admin
   end

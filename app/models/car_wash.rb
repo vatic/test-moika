@@ -11,14 +11,14 @@ class CarWash < ActiveRecord::Base
   end
 
   def main_action_text
-    main_action.action_text.text unless main_action.nil?
+    main_action.try(:action_text).try(:text)
   end
 
-  def action_by_type(type)
-     actions.includes(:action_type).where("action_types.text" => type).first
+  def actions_by_type(type)
+     actions.includes(:action_type).where("action_types.text" => type.to_s)
   end
   def actiontext_by_type(type)
-    action_by_type(type).action_text.text unless action_by_type(type).nil?
+    actions_by_type(type).try(:action_text).first.try(:text)
   end
 
   private

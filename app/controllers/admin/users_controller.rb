@@ -9,6 +9,8 @@ class Admin::UsersController < ApplicationController
     @clients = User.clients
     @guests = User.guests
 
+    logger.debug ( "#{@clients}" )
+
         respond_to do |format|
           format.html
           format.json { render json: @users}

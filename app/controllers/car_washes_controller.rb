@@ -11,6 +11,9 @@ class CarWashesController < ApplicationController
   # GET /car_washes/1
   # GET /car_washes/1.json
   def show
+    @left_actions = @car_wash.actions_by_type(:left)
+    @bottom1_actions = @car_wash.actions_by_type(:bottom1)
+    @bottom2_actions = @car_wash.actions_by_type(:bottom2)
   end
 
   # GET /car_washes/new
@@ -46,7 +49,7 @@ class CarWashesController < ApplicationController
     params_actions = params[:car_wash][:actions]
 
     params_actions.each do |params_action|
-     action = @car_wash.action_by_type(params_action[:action_type_text])
+     action = @car_wash.actions_by_type(params_action[:action_type_text]).first
      if action.nil?
       @car_wash.actions.build(
         action_text: ActionText.create(text: params_action[:text]), 

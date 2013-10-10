@@ -92,6 +92,9 @@ a {
     #car_wash_name {
       @include pre(1);
       @include span-columns(3,12);
+      a {
+        margin: 0 10px;
+      }
     }
     #social {
       .color_on_hover {
