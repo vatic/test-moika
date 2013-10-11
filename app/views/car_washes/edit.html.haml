@@ -1,3 +1,1 @@
-= render 'form'
-=#link_to t('show_link'), @car_wash
-=#link_to t('back_link'), car_washes_path
+= @full ? (render 'detailed_form') : (render 'form')

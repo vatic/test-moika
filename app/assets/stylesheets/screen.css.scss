@@ -386,14 +386,73 @@ input {
 }
 
 form.car_wash_edit {
-  input {
-    border: 1px solid #000;
+  @include blueprint-form;
+  label {
+    @include span-columns(3,12);
+    margin: 8px 0;
+    padding: 5px;
   }
+  textarea {
+    height: 100px;
+    width: 100%;
+  }
+  input[type='text'], input[type='number'] {
+    @include border-radius;
+    @include span-columns(8 omega,12);
+  }
+
+  ul {
+    li {
+      margin: 10px 0 5px 0;
+      list-style: none;
+    }
+    li#coords {
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+        margin: 0;
+        padding: 0;
+          display: inline;
+          input[type='text'] {
+            width: 30%;
+            margin-right: 0.75%;
+          }
+        }
+      }
+    }
+  }
+
   #left {
     @include span-columns(5,12);
   }
   #right{
-    @include span-columns(5 omega,12);
+    @include span-columns(6 omega,12);
+  }
+  #submit {
+    width: columns(4,12);
+  }
+
+  #services {
+    clear: both;
+    margin-top: 2%;
+    margin-right: 1.694915254237288%;
+    margin-left: 1.694915254237288%;
+    width: 100%;
+    label {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+  #action_bottom1 {
+    @include span-columns(4,12);
+  }
+  #action_bottom2 {
+    @include span-columns(4 omega,12);
+  }
+  .actions#control_panel {
+    margin-top: 100px;
   }
 }
 
@@ -587,41 +646,33 @@ form.car_wash_edit {
 
 
 .actions#control_panel {
+  clear: both;
   @include span-columns(4,12);
   @include border-radius(5px, 5px);
-  margin-top: 100px;
+  //margin-top: 100px;
+  #save_button, #edit_button {
+    margin: 5px auto;
+    @include span-columns(10,12);
+
+  }
   #save_button {
-    background-color: transparent;
-    padding: 3px 3px;
-    border: 1px solid #ddd;
-    width: 100%;
-    @include border-radius(5px, 5px);
+    @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
     input[type='submit'] {
-      background-color: #D5D5D5;
-      color: #000;
-      width: 100%;
-      margin: 0px auto;
-      padding: 5px 0;
-      @include border-radius(5px, 5px);
       border: none;
+      background-color: transparent;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      padding: 0
     }
   } 
   #edit_button {
-    background-color: transparent;
-    padding: 3px 3px;
-    border: 1px solid #ddd;
-    width: 100%;
-    @include border-radius(5px, 5px);
+    @include sassy-button("simple", 5px, 20px, rgba(236, 22, 22, 1), rgba(202,8,8,1));
     a {
+      color: #fff;
       display: block;
       text-align: center;
-      background-color: #D90D0E;
-      color: #fff;
-      width: 100%;
-      margin: 0px auto;
-      padding: 5px 0;
-      @include border-radius(5px, 5px);
-      border: none;
+      
     }
   } 
 }

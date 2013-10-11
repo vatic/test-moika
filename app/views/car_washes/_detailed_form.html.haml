@@ -13,41 +13,45 @@
     %li
       = f.label CarWash.human_attribute_name("address")
       = f.text_field :address
-    %li
-      = f.label CarWash.human_attribute_name("lat")
-      = f.text_field :lat
-    %li
-      = f.label CarWash.human_attribute_name("lon")
-      = f.text_field :lon
+    %li#coords
+      %ul
+        %li
+          = f.label 'Координаты'
+        %li
+          = f.text_field :lat
+        %li
+          =#f.label CarWash.human_attribute_name("lon")
+          = f.text_field :lon
     %li
       = f.label CarWash.human_attribute_name("contacts")
       = f.text_field :contacts
-    %li
-      = f.label CarWash.human_attribute_name("services")
-      = f.text_area :services
-  #right
+  %ul#right
     %li
       = f.label CarWash.human_attribute_name("price")
       = f.text_field :price
     %li
       = f.label CarWash.human_attribute_name("zones_count")
-      = f.number_field :zones_count
-    %li
-      = f.label CarWash.human_attribute_name("actions")
-      = f.text_field :actions
+      = f.text_field :zones_count
     %li
       = f.label CarWash.human_attribute_name("video_url1")
       = f.text_field :video_url1
     %li
       = f.label CarWash.human_attribute_name("video_url2")
       = f.text_field :video_url2
-    %li
-      = f.label CarWash.human_attribute_name("signal")
-      = f.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
-      = link_to image_tag '', id: 'red-green'
-      %br
-      %br
-      %br
-    %li
-      .actions
+  .container
+    #services 
+      = f.label CarWash.human_attribute_name("services")
+      = f.text_area :services
+    .actions#control_panel
+      #save_button
         = f.submit t("save_button")
+    #action_bottom1
+      - ActionType.bottom1.find_each do |type|
+        %h3.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
+        = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
+        = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
+    #action_bottom2
+      - ActionType.bottom2.find_each do |type|
+        %h3.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
+        = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
+        = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)

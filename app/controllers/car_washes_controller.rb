@@ -23,6 +23,7 @@ class CarWashesController < ApplicationController
 
   # GET /car_washes/1/edit
   def edit
+    @full = (params['full'] == '1')
   end
 
   # POST /car_washes

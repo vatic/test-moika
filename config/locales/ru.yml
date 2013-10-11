@@ -41,8 +41,8 @@ ru:
         price: "Цены"
         zones_count: "Кол-во постов"
         actions: "Акции"
-        video_url1: "Ссылка на видео 1"
-        video_url2: "Ссылка на видео 2"
+        video_url1: "видео 1"
+        video_url2: "видео 2"
         signal: "Занято/Свободно"
       user:
         email: "Email"
