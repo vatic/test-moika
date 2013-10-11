@@ -402,6 +402,10 @@ form.car_wash_edit {
     @include span-columns(12 omega,12);
     #login_registration {
       @include span-columns(4,12);
+      li {
+        display: block;
+        margin: 0 auto;
+      }
       ul#car_wash_info {
         li {
           list-style: none;
@@ -425,9 +429,14 @@ form.car_wash_edit {
         }
       }
       #response_button {
-        height: 50px;
+        @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
+        width: 70%;
         background-color: #a4b1c0;
         margin: 0 30px; 
+        p {
+          padding: 0;
+          margin: 0;
+        }
       }
       img.adv {
         width: 100%;

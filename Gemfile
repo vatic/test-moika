@@ -81,10 +81,13 @@ gem 'puma', group: :development
 
 gem 'rails_12factor', group: :production
 
-gem 'susy'
-gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
+  gem 'susy'
+  gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
+  gem 'sassy-buttons'
+
 gem 'nokogiri'
 
 gem 'whenever', :require => false
 
 gem 'best_in_place', :git => "https://github.com/bernat/best_in_place", :branch => "rails-4"
+
