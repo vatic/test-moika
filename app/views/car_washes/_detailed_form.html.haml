@@ -1,4 +1,4 @@
-= form_for @car_wash, role: "form", html: {class: "car_wash_edit"} do |f|
+= form_for @car_wash, role: "form", html: {class: "car_wash_edit_details"} do |f|
   - if @car_wash.errors.any?
     #error_explanation
       %h2= "#{pluralize(@car_wash.errors.count, "error")} prohibited this car_wash from being saved:"

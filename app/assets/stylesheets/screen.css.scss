@@ -385,7 +385,7 @@ input {
   background-color: #28ad63;
 }
 
-form.car_wash_edit {
+form.car_wash_edit_details {
   @include blueprint-form;
   label {
     @include span-columns(3,12);
@@ -649,7 +649,7 @@ form.car_wash_edit {
   clear: both;
   @include span-columns(4,12);
   @include border-radius(5px, 5px);
-  //margin-top: 100px;
+  margin-top: 0;
   #save_button, #edit_button {
     margin: 5px auto;
     @include span-columns(10,12);
