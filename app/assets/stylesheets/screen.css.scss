@@ -403,41 +403,50 @@ form.car_wash_edit {
     #login_registration {
       @include span-columns(4,12);
       li {
+        text-align: center;
         display: block;
-        margin: 0 auto;
+        padding: 5px 0;
       }
-      ul#car_wash_info {
-        li {
-          list-style: none;
-          margin: 5px 0;
+      table#car_wash_info {
+        border: 1px solid #fff;
+        tr {
           background-color: #ececec;
-          a {
-            text-decoration: none;
-          }
+          margin: 5px auto;
+        }
+        td {
+          border: 1px solid #fff;
+          vertical-align: top;
         }
       }
       ul.menu {
         margin: 0;
-        padding: 15px 0;
+        padding: 5% 20% ;
         background-color: #ececec;
         li {
           list-style: none;
           display: inline;
+          padding: 0% 10% ;
           a {
+            text-align: center;
             text-decoration: none;
           }
         }
       }
-      #response_button {
-        @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
-        width: 70%;
-        background-color: #a4b1c0;
-        margin: 0 30px; 
+      #comments_button, #enroll_button {
+        @include span-columns(10 omega,12);
+        margin: 10px auto;
         p {
           padding: 0;
           margin: 0;
         }
       }
+      #comments_button {
+        @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
+      } 
+      #enroll_button {
+        @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
+      }
+
       img.adv {
         width: 100%;
         min-width: 100%;
@@ -451,6 +460,7 @@ form.car_wash_edit {
         padding: 15px 0;
         li {
           list-style: none;
+          text-align: center;
           a {
             text-decoration: none;
           }
@@ -621,4 +631,10 @@ form.car_wash_edit {
   @include span-columns(5 omega,12);
   img#red-green {
   }
+}
+
+.title {
+  text-align: left;
+  font-weight: 0;
+  color: #aaa;
 }

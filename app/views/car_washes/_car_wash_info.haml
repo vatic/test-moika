@@ -1,0 +1,38 @@
+%table#car_wash_info
+  %tr
+    %td
+      %span.title Адрес:
+    %td
+      %span= car_wash.address
+  %tr
+    %td
+      %p.title Координаты:
+    %td
+      %span= car_wash.lat
+      %span= car_wash.lon
+  %tr
+    %td
+      %span.title Контакты:
+    %td
+      %span= car_wash.contacts
+  %tr
+    %td
+      %span.title Услуги:
+    %td
+      %span= car_wash.services
+  %tr
+    %td
+      %span.title Цена:
+    %td
+      %span= car_wash.price
+  %tr
+    %td
+      %span.title Кол-во моечных зон:
+    %td
+      %span= car_wash.zones_count
+  %tr
+    %td
+      %span.title Акции:
+    %td
+      %ul
+        = actions(left_actions, 'li')
