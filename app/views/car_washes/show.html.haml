@@ -11,7 +11,7 @@
     = render partial: "car_wash_info", locals: { car_wash: @car_wash, left_actions: @left_actions }
    
     #comments_button
-      %p.text-center Оставить отзыв
+      = link_to t('.comments'), car_wash_comments_path(@car_wash)
     #enroll_button
       %p.text-center Оставить заявку
     = image_tag 'adv2.png', class: 'adv'

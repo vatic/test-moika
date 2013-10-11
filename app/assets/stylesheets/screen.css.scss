@@ -506,6 +506,12 @@ form.car_wash_edit_details {
           padding: 0;
           margin: 0;
         }
+        a {
+          display: block;
+          text-align: center;
+          margin: 0 auto;
+          color: #fff;
+        }
       }
       #comments_button {
         @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
@@ -696,4 +702,40 @@ form.car_wash_edit_details {
   text-align: left;
   font-weight: 0;
   color: #aaa;
+}
+#comments {
+  #comments_header {
+    h1,h2,h3 {
+      text-align: center;
+      text-decoration: underline;
+    }
+  }
+  #left_adv {
+    @include span-columns(4,12);
+  }
+  #comments_content {
+    @include span-columns(8 omega,12);
+    #index {
+      margin-bottom: 100px;
+      #text {
+        background-color: #ebebeb;
+      }
+    }
+    form.new_comment {
+      h3 {
+        text-align: left;
+      }
+      @include blueprint-form;
+      input[type='text'] {
+        width: 100%;
+      }
+      textarea {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.red {
+  color: red;
 }

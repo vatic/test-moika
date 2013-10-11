@@ -1,7 +1,10 @@
 Moika::Application.routes.draw do
   get "users/index"
   devise_for :users
-  resources :car_washes
+  resources :car_washes do
+    resources :comments
+  end
+
   put 'car_washes/:id/update_main_action', to: 'car_washes#update_main_action', as: '/car_washes_update_main_action'
 
   root 'map#show'

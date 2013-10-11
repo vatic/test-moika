@@ -26,6 +26,16 @@ ru:
   #adv1: "Горизонтальный рекламный блок бегущая строка"
   adv1: "Сайт в разработке! Тестовый режим!"
   link_to_save: "Сохранить"
+
+  car_washes:
+    show:
+      comments: "Отзывы"
+  comments:
+    index:
+      empty_comments: "Ещё не оставлено ниодного отзыва"
+      input_name: "Ваше имя"
+      input_text: "Ваш отзыв"
+      add_comment: "Добавить отзыв"
   activerecord:
     models:
       car_wash: Автомойки
