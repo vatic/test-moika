@@ -2,7 +2,6 @@
 // Imports
 
 @import "base";
-@import "flowplayer/skin/minimalist";
 @import "compass/layout/sticky-footer";
 
 @include sticky-footer(120px);
@@ -474,7 +473,16 @@ form.car_wash_edit_details {
         }
         td {
           border: 1px solid #fff;
-          vertical-align: top;
+          vertical-align: middle;
+          padding-left: 10px;
+          ul {
+            @include margin-padding-0;
+            li {
+              text-align: left;
+            }
+          }
+          span {
+          }
         }
       }
       ul.menu {

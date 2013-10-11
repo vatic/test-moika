@@ -18,3 +18,10 @@ $container-width: 95%;
 
 //$show-grid-backgrounds  : true;
 $show-grid-backgrounds  : false;
+
+// ---------------------------------------------------------------------------
+
+@mixin margin-padding-0 {
+  margin: 0;
+  padding: 0;
+}
