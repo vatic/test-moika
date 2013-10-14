@@ -14,6 +14,7 @@ class CarWashesController < ApplicationController
     @left_actions = @car_wash.actions_by_type(:left)
     @bottom1_actions = @car_wash.actions_by_type(:bottom1)
     @bottom2_actions = @car_wash.actions_by_type(:bottom2)
+    @vacancy_actions = @car_wash.actions_by_type(:vacancy)
   end
 
   # GET /car_washes/new

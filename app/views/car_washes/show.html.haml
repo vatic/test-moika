@@ -1,6 +1,6 @@
 - content_for :adv1 do
   %marquee(behavior="alternate" direction="left")
-    %h5.text-center= "#{@car_wash.main_action_text} #{t('adv1')}"
+    %h1.text-center= "#{@car_wash.main_action_text} #{t('adv1')}"
 #car_wash_menu
   #login_registration
     %ul.menu
@@ -51,8 +51,10 @@
           %h4 Акции
           %ul
             = actions(@bottom2_actions, 'li')
-        #right
+        .vacancy_actions#right
           %h4 Вакансии
+          %ul
+            = actions(@vacancy_actions, 'li')
   =#render partial: 'car_wash_menu'
   %p#notice= notice
 

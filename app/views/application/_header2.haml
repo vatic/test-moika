@@ -14,7 +14,7 @@
 .container#header_nav_wrapper
   #header_nav
     #car_wash_name
-      = link_to(@car_wash.title, car_wash_path(@car_wash)) unless @car_wash.nil?
+      %h5= link_to(@car_wash.title, car_wash_path(@car_wash)) unless @car_wash.nil?
       = mail_to current_user.try(:email)
     #social
       = link_to "", "#", class: 'color_on_hover', id: 'vk'

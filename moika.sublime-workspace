@@ -4,12 +4,112 @@
 		"selected_items":
 		[
 			[
-				"act",
-				"action_by_type"
+				"ba",
+				"background-color"
+			],
+			[
+				"m",
+				"mb	margin-bottom"
+			],
+			[
+				"comm",
+				"comment_params"
+			],
+			[
+				"in",
+				"input_name"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"rig",
+				"right"
+			],
+			[
+				"d",
+				"d:b	display:block"
+			],
+			[
+				"ha",
+				"has_many"
+			],
+			[
+				"b",
+				"bt	belongs_to"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"ed",
+				"edit_button"
+			],
+			[
+				"fo",
+				"font-style"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"A",
+				"ActionType"
+			],
+			[
+				"left",
+				"left_actions"
 			],
 			[
 				"bd",
 				"bd	border"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"lef",
+				"left_actions"
+			],
+			[
+				"ac",
+				"action_text_object"
+			],
+			[
+				"act",
+				"action_text_id"
+			],
+			[
+				"Act",
+				"ActionText"
+			],
+			[
+				"action",
+				"action_text"
+			],
+			[
+				"para",
+				"params_action"
+			],
+			[
+				"actio",
+				"action"
+			],
+			[
+				"acton",
+				"actions"
+			],
+			[
+				"action_",
+				"action_type"
 			],
 			[
 				"update",
@@ -32,10 +132,50 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/car_washes/_form.html.haml",
+			"file": "app/views/comments/index.html.haml",
 			"settings":
 			{
-				"buffer_size": 1075,
+				"buffer_size": 600,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/screen.css.scss",
+			"settings":
+			{
+				"buffer_size": 13859,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/comments/_comment.html.haml",
+			"settings":
+			{
+				"buffer_size": 95,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/comments_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1216,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/comments/create.js.erb",
+			"settings":
+			{
+				"buffer_size": 113,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/locales/ru.yml",
+			"settings":
+			{
+				"buffer_size": 2249,
 				"line_ending": "Unix"
 			}
 		}
@@ -49,6 +189,14 @@
 			[
 				":w",
 				":w - Save"
+			],
+			[
+				":we",
+				":w - Save"
+			],
+			[
+				"for",
+				"Snippet: form_tag"
 			],
 			[
 				"Package Control: ",
@@ -72,46 +220,70 @@
 	},
 	"file_history":
 	[
+		"/home/vatagin/dev/ror/moika/Gemfile",
+		"/home/vatagin/dev/ror/moika/app/models/ability.rb",
+		"/home/vatagin/dev/ror/moika/app/assets/javascripts/comments.js.coffee.erb",
+		"/home/vatagin/dev/ror/moika/app/views/comments/create.js.erb",
+		"/home/vatagin/dev/ror/moika/app/controllers/comments_controller.rb",
 		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/screen.css.scss",
+		"/home/vatagin/dev/ror/moika/app/views/comments/create.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/comments/show.html.haml",
 		"/home/vatagin/dev/ror/moika/app/controllers/car_washes_controller.rb",
-		"/home/vatagin/dev/ror/moika/app/models/car_wash.rb",
+		"/home/vatagin/dev/ror/moika/app/views/car_washes/_form.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/comments/_comment.html.haml",
+		"/home/vatagin/dev/ror/moika/config/routes.rb",
+		"/home/vatagin/dev/ror/moika/config/locales/ru.yml",
 		"/home/vatagin/dev/ror/moika/app/views/layouts/application.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/car_washes/show.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/car_washes/_detailed_form.html.haml",
+		"/home/vatagin/dev/ror/moika/app/assets/stylesheets/_base.scss",
+		"/home/vatagin/dev/ror/moika/app/views/car_washes/_car_wash_info.haml",
+		"/home/vatagin/dev/ror/moika/app/models/comment.rb",
+		"/home/vatagin/dev/ror/moika/app/models/car_wash.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20131011165729_create_comments.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20131011165217_create_comments.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20130910100316_create_car_washes.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20130930125822_create_actions.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20130912101336_create_roles.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20131011165021_add_comments_table.rb",
+		"/home/vatagin/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/vatagin/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/vatagin/dev/ror/moika/app/models/action_type.rb",
+		"/home/vatagin/dev/ror/moika/app/views/car_washes/edit.html.haml",
+		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_login_items.haml",
+		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_registration_items.haml",
+		"/home/vatagin/dev/ror/moika/config/compass.rb",
+		"/home/vatagin/dev/ror/moika/app/assets/javascripts/car_washes.js.coffee.erb",
+		"/home/vatagin/dev/ror/moika/app/views/application/_header2.haml",
+		"/home/vatagin/dev/ror/moika/app/helpers/car_washes_helper.rb",
+		"/home/vatagin/dev/ror/moika/app/views/admin/users/index.html.haml",
+		"/home/vatagin/dev/ror/moika/app/models/user.rb",
+		"/home/vatagin/dev/ror/moika/app/controllers/admin/users_controller.rb",
+		"/home/vatagin/dev/ror/moika/app/assets/javascripts/map.js.erb",
+		"/home/vatagin/dev/ror/moika/app/models/action.rb",
+		"/home/vatagin/dev/ror/moika/db/migrate/20131009133733_add_title_to_action_types.rb",
+		"/home/vatagin/dev/ror/moika/db/seeds.rb",
 		"/home/vatagin/dev/ror/moika/app/assets/javascripts/application.js",
 		"/home/vatagin/dev/ror/moika/app/assets/javascripts/main_page.js",
-		"/home/vatagin/dev/ror/moika/app/assets/javascripts/map.js.erb",
-		"/home/vatagin/dev/ror/moika/app/views/car_washes/show.html.haml",
 		"/home/vatagin/dev/ror/moika/app/views/layouts/main_page.html.haml",
 		"/home/vatagin/dev/ror/moika/app/views/application/_marketing.haml",
 		"/home/vatagin/dev/ror/moika/app/views/application/_marketing_bottom.haml",
-		"/home/vatagin/dev/ror/moika/app/views/car_washes/edit.html.haml",
-		"/home/vatagin/dev/ror/moika/config/locales/ru.yml",
 		"/home/vatagin/dev/ror/moika/vendor/assets/javascripts/best_in_place.js",
-		"/home/vatagin/dev/ror/moika/app/views/application/_header2.haml",
-		"/home/vatagin/dev/ror/moika/Gemfile",
-		"/home/vatagin/dev/ror/moika/config/routes.rb",
 		"/home/vatagin/dev/ror/moika/app/views/application/_adv1.haml",
-		"/home/vatagin/dev/ror/moika/app/models/action.rb",
 		"/home/vatagin/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
-		"/home/vatagin/dev/ror/moika/app/views/car_washes/_form.html.haml",
-		"/home/vatagin/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
 		"/home/vatagin/dev/ror/moika/spec/controllers/car_washes_controller_spec.rb",
 		"/home/vatagin/dev/ror/moika/spec/models/car_wash_spec.rb",
 		"/home/vatagin/dev/ror/moika/app/views/car_washes/show.json.jbuilder",
 		"/home/vatagin/dev/ror/moika/app/views/car_washes/_testpar.html.haml",
 		"/home/vatagin/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-		"/home/vatagin/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/vatagin/dev/ror/moika/db/migrate/20130930133747_rename_type_column_to_action_types.rb",
 		"/home/vatagin/dev/ror/moika/app/models/action_text.rb",
-		"/home/vatagin/dev/ror/moika/app/models/action_type.rb",
-		"/home/vatagin/dev/ror/moika/db/migrate/20130912101336_create_roles.rb",
 		"/home/vatagin/dev/ror/moika/db/migrate/20130930131543_remove_column_from_car_wash.rb",
 		"/home/vatagin/dev/ror/moika/db/migrate/20130912101558_create_roles_users.rb",
-		"/home/vatagin/dev/ror/moika/db/migrate/20130930125822_create_actions.rb",
 		"/home/vatagin/dev/ror/moika/app/models/role.rb",
 		"/home/vatagin/dev/ror/moika/app/views/map/show.html.haml",
 		"/home/vatagin/dev/ror/moika/app/views/application/_header.haml",
 		"/home/vatagin/dev/ror/moika/app/views/application/_car_wash_menu.haml",
-		"/home/vatagin/dev/ror/moika/app/views/devise/menu/_login_items.haml",
 		"/home/vatagin/dev/ror/moika/moika.sublime-project"
 	],
 	"find":
@@ -130,6 +302,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"car_wash",
+			"show",
+			"action",
+			"video",
+			"round",
+			"action",
+			"actio",
+			"@",
+			"button",
+			"banner_green",
 			"= ",
 			"content",
 			"super",
@@ -151,6 +333,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"comment",
+			"",
+			"banner_green_x2",
 			"form",
 			"ctrl",
 			""
@@ -164,23 +349,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/car_washes/_form.html.haml",
+					"file": "app/views/comments/index.html.haml",
 					"settings":
 					{
-						"buffer_size": 1075,
+						"buffer_size": 600,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								843,
-								843
+								331,
+								331
 							]
 						],
 						"settings":
@@ -190,7 +375,143 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/assets/stylesheets/screen.css.scss",
+					"settings":
+					{
+						"buffer_size": 13859,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13746,
+								13746
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 14575.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/comments/_comment.html.haml",
+					"settings":
+					{
+						"buffer_size": 95,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								80,
+								80
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/comments_controller.rb",
+					"settings":
+					{
+						"buffer_size": 1216,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/comments/create.js.erb",
+					"settings":
+					{
+						"buffer_size": 113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								113,
+								113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "config/locales/ru.yml",
+					"settings":
+					{
+						"buffer_size": 2249,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1566,
+								1566
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -240,6 +561,214 @@
 		"selected_items":
 		[
 			[
+				"abil",
+				"app/models/ability.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"ru.",
+				"config/locales/ru.yml"
+			],
+			[
+				"comcon",
+				"app/controllers/comments_controller.rb"
+			],
+			[
+				"_comm",
+				"app/views/comments/_comment.html.haml"
+			],
+			[
+				"scr",
+				"app/assets/stylesheets/screen.css.scss"
+			],
+			[
+				"commshow",
+				"app/views/comments/show.html.haml"
+			],
+			[
+				"commcon",
+				"app/controllers/comments_controller.rb"
+			],
+			[
+				"carcon",
+				"app/controllers/car_washes_controller.rb"
+			],
+			[
+				"commcrea",
+				"app/views/comments/create.html.haml"
+			],
+			[
+				"form",
+				"app/views/car_washes/_form.html.haml"
+			],
+			[
+				"commha",
+				"app/views/comments/_comment.html.haml"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"carco",
+				"app/controllers/car_washes_controller.rb"
+			],
+			[
+				"ru",
+				"config/locales/ru.yml"
+			],
+			[
+				"appliha",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"sho",
+				"app/views/car_washes/show.html.haml"
+			],
+			[
+				"commind",
+				"app/views/comments/index.html.haml"
+			],
+			[
+				"coomecont",
+				"app/controllers/comments_controller.rb"
+			],
+			[
+				"carw",
+				"app/models/car_wash.rb"
+			],
+			[
+				"comm",
+				"app/models/comment.rb"
+			],
+			[
+				"comme",
+				"db/migrate/20131011165217_create_comments.rb"
+			],
+			[
+				"migra",
+				"db/migrate/20130930125822_create_actions.rb"
+			],
+			[
+				"migrarol",
+				"db/migrate/20130912101336_create_roles.rb"
+			],
+			[
+				"commen",
+				"db/migrate/20131011165021_add_comments_table.rb"
+			],
+			[
+				"base",
+				"app/assets/stylesheets/_base.scss"
+			],
+			[
+				"carin",
+				"app/views/car_washes/_car_wash_info.haml"
+			],
+			[
+				"scre",
+				"app/assets/stylesheets/screen.css.scss"
+			],
+			[
+				"actty",
+				"app/models/action_type.rb"
+			],
+			[
+				"edi",
+				"app/views/car_washes/edit.html.haml"
+			],
+			[
+				"deta",
+				"app/views/car_washes/_detailed_form.html.haml"
+			],
+			[
+				"regi",
+				"app/views/devise/menu/_registration_items.haml"
+			],
+			[
+				"logi",
+				"app/views/devise/menu/_login_items.haml"
+			],
+			[
+				"comp",
+				"config/compass.rb"
+			],
+			[
+				"sc",
+				"app/assets/stylesheets/screen.css.scss"
+			],
+			[
+				"login",
+				"app/views/devise/menu/_login_items.haml"
+			],
+			[
+				"carj",
+				"app/assets/javascripts/car_washes.js.coffee.erb"
+			],
+			[
+				"show",
+				"app/views/car_washes/show.html.haml"
+			],
+			[
+				"header",
+				"app/views/application/_header2.haml"
+			],
+			[
+				"appha",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"carhe",
+				"app/helpers/car_washes_helper.rb"
+			],
+			[
+				"car",
+				"app/models/car_wash.rb"
+			],
+			[
+				"adminuser",
+				"app/controllers/admin/users_controller.rb"
+			],
+			[
+				"adminusein",
+				"app/views/admin/users/index.html.haml"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"carfor",
+				"app/views/car_washes/_form.html.haml"
+			],
+			[
+				"mapjs",
+				"app/assets/javascripts/map.js.erb"
+			],
+			[
+				"actioty",
+				"app/models/action_type.rb"
+			],
+			[
+				"seed",
+				"db/seeds.rb"
+			],
+			[
+				"migradd",
+				"db/migrate/20131009133733_add_title_to_action_types.rb"
+			],
+			[
+				"act",
+				"app/models/action.rb"
+			],
+			[
+				"carcont",
+				"app/controllers/car_washes_controller.rb"
+			],
+			[
 				"mabo",
 				"app/views/application/_marketing_bottom.haml"
 			],
@@ -250,10 +779,6 @@
 			[
 				"mainpage",
 				"app/views/layouts/main_page.html.haml"
-			],
-			[
-				"show",
-				"app/views/car_washes/show.html.haml"
 			],
 			[
 				"map",
@@ -272,40 +797,8 @@
 				"app/views/layouts/application.html.haml"
 			],
 			[
-				"car",
-				"app/models/car_wash.rb"
-			],
-			[
-				"carcon",
-				"app/controllers/car_washes_controller.rb"
-			],
-			[
-				"ru.",
-				"config/locales/ru.yml"
-			],
-			[
-				"sc",
-				"app/assets/stylesheets/screen.css.scss"
-			],
-			[
 				"header2",
 				"app/views/application/_header2.haml"
-			],
-			[
-				"gem",
-				"Gemfile"
-			],
-			[
-				"rou",
-				"config/routes.rb"
-			],
-			[
-				"carw",
-				"app/models/car_wash.rb"
-			],
-			[
-				"appha",
-				"app/views/layouts/application.html.haml"
 			],
 			[
 				"ge",
@@ -314,22 +807,6 @@
 			[
 				"mainjs",
 				"app/assets/javascripts/main_page.js"
-			],
-			[
-				"form",
-				"app/views/car_washes/_form.html.haml"
-			],
-			[
-				"edi",
-				"app/views/car_washes/edit.html.haml"
-			],
-			[
-				"header",
-				"app/views/application/_header2.haml"
-			],
-			[
-				"appliha",
-				"app/views/layouts/application.html.haml"
 			],
 			[
 				"adv",
@@ -356,16 +833,8 @@
 				"db/migrate/20130930131543_remove_column_from_car_wash.rb"
 			],
 			[
-				"act",
-				"app/models/action_type.rb"
-			],
-			[
 				"action",
 				"app/models/action.rb"
-			],
-			[
-				"migra",
-				"db/migrate/20130912101558_create_roles_users.rb"
 			],
 			[
 				"role",
@@ -374,10 +843,6 @@
 			[
 				"caredi",
 				"app/views/car_washes/edit.html.haml"
-			],
-			[
-				"mapjs",
-				"app/assets/javascripts/map.js.erb"
 			],
 			[
 				"mapsh",
@@ -400,14 +865,6 @@
 				"app/views/application/_car_wash_menu.haml"
 			],
 			[
-				"logi",
-				"app/views/devise/menu/_login_items.haml"
-			],
-			[
-				"scre",
-				"app/assets/stylesheets/screen.css.scss"
-			],
-			[
 				"mar",
 				"app/views/application/_marketing.haml"
 			]
@@ -425,7 +882,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 204.0,
 	"status_bar_visible": true
 }

@@ -10,7 +10,8 @@ ACTION_TYPES = {
   main: 'Главная', 
   left: 'Акция слева у карты', 
   bottom1: 'Нижняя первая', 
-  bottom2: 'Нижняя вторая'
+  bottom2: 'Нижняя вторая',
+  vacancy: 'Вакансии'
 }
 
 puts "==  Deleting all rows in actiontypes table  =="
