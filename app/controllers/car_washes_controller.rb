@@ -123,6 +123,7 @@ class CarWashesController < ApplicationController
         :video_url1, 
         :video_url2, 
         :signal,
+        :site_url,
         actions_attributes: [:text, :action_type_text]) 
     end
 end

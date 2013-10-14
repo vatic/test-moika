@@ -25,6 +25,9 @@
     %li
       = f.label CarWash.human_attribute_name("contacts")
       = f.text_field :contacts
+    %li
+      = f.label CarWash.human_attribute_name("site_url")
+      = f.text_field :site_url
   %ul#right
     %li
       = f.label CarWash.human_attribute_name("price")
@@ -47,16 +50,16 @@
         = f.submit t("save_button")
     #action_bottom1
       - ActionType.bottom1.find_each do |type|
-        %h3.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
+        %h5.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
         = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
         = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
     #action_bottom2
       - ActionType.bottom2.find_each do |type|
-        %h3.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
+        %h5.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
         = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
         = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
     #action_vacancy
       - ActionType.vacancy.find_each do |type|
-        %h3.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
+        %h5.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
         = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
         = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)

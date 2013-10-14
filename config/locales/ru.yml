@@ -54,6 +54,7 @@ ru:
         video_url1: "видео 1"
         video_url2: "видео 2"
         signal: "Занято/Свободно"
+        site_url: "Сайт"
       user:
         email: "Email"
         password: "Пароль"
