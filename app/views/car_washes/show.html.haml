@@ -13,7 +13,7 @@
     #comments_button
       = link_to t('.comments'), car_wash_comments_path(@car_wash)
     #enroll_button
-      %p.text-center Оставить заявку
+      = link_to t('.send_request'), new_car_wash_request_path(@car_wash)
     = image_tag 'adv2.png', class: 'adv'
   #signal_video
     #free_close_signal

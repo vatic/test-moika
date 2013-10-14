@@ -2,6 +2,7 @@ ru:
   site_title: "Мойка-77"
   save_button: "Сохранить"
   edit_button: "Редактировать"
+  requests_button: "Отзывы"
   search_button: "ПОИСК"
   show_link: "Показать"
   back_link: "Назад"
@@ -30,16 +31,24 @@ ru:
   car_washes:
     show:
       comments: "Отзывы"
+      send_request: "Оставить заявку"
+      requests: "Заявки"
   comments:
     index:
       empty_comments: "Ещё не оставлено ниодного отзыва"
       input_name: "Ваше имя"
       input_text: "Ваш отзыв"
       add_comment: "Добавить отзыв"
+  requests: 
+    new: 
+      header: "Новая заявка"
+    show:
+      header: "Ваша заявка"
   activerecord:
     models:
       car_wash: Автомойки
       user: Пользователи
+      request: Заявки
     attributes:
       car_wash:
         title: "Название"
@@ -59,6 +68,11 @@ ru:
         email: "Email"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+      request:
+        name: "Имя"
+        phone: "Телефон"
+        email: "email"
+        text: "Заявка"
   layouts:
     admin:
       main_header: "Панель управления сайта \"Мойка 77\""

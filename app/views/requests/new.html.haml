@@ -1,0 +1,8 @@
+#requests
+  #requests_header
+    %h3= "#{@car_wash.title}: #{t('.header')}"
+  #left_adv
+    = image_tag 'adv.png', class: 'adv'
+
+  #requests_content
+    = render 'form'

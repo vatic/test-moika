@@ -20,6 +20,9 @@
         = label_tag :action_type_text, ActionType.find_by(text: type.text).title
         = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
         = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
+      .actions#control_panel
+        #requests_button
+          = link_to t("requests_button"), car_wash_requests_path(@car_wash)
     #center_form
       %h3 Свободно
       %p.text-center

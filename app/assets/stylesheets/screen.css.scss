@@ -696,7 +696,7 @@ form.car_wash_edit_details {
   @include span-columns(4,12);
   @include border-radius(5px, 5px);
   margin-top: 0;
-  #save_button, #edit_button {
+  #save_button, #edit_button, #requests_button {
     margin: 5px auto;
     @include span-columns(10,12);
 
@@ -721,6 +721,17 @@ form.car_wash_edit_details {
       
     }
   } 
+  #requests_button {
+    margin: 20px auto;
+    width: 100%;
+    @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
+    a {
+      color: #fff;
+      display: block;
+      text-align: center;
+      
+    }
+  } 
 }
 
 #svetofor_container {
@@ -735,8 +746,8 @@ form.car_wash_edit_details {
   font-weight: 0;
   color: #aaa;
 }
-#comments {
-  #comments_header {
+#comments, #requests {
+  #comments_header, #requests_header {
     h1,h2,h3 {
       text-align: center;
       text-decoration: underline;
@@ -745,15 +756,29 @@ form.car_wash_edit_details {
   #left_adv {
     @include span-columns(4,12);
   }
-  #comments_content {
+  #comments_content, #requests_content {
     @include span-columns(8 omega,12);
     #index {
       margin-bottom: 100px;
+      table {
+        tr {
+          border: 1px solid #000;
+          padding-bottom: 10px;
+          th {
+          padding-bottom: 10px;
+            
+          }
+          td {
+            padding: 10px;
+            background-color: #ddd;
+          }
+        }
+      }
       #text {
         background-color: #ebebeb;
       }
     }
-    form.new_comment {
+    form.new_comment, form.new_request {
       h3 {
         text-align: left;
       }
