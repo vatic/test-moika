@@ -28,8 +28,18 @@ $(document).ready( function() {
       success: function(json) {
         cw_list = [];
         json.forEach( function(row) {
-          cw_list.push({coords: [row.lat, row.lon], id: row.id, address: row.address, title: row.title, signal: row.signal, url: row.url.slice(0,-5), contacts: row.contacts, services: row.services});
-          })
+          cw_list.push({
+            coords: [row.lat, row.lon], 
+            id: row.id, 
+            address: row.address, 
+            title: row.title, 
+            signal: row.signal, 
+            url: row.url.slice(0,-5), 
+            contacts: row.contacts, 
+            services: row.services,
+            blink: row.blink
+          });
+        })
         log("json success done");
         log("load map...");
         ymaps.ready(init);
@@ -59,10 +69,14 @@ function init(){
     gridSize: 80
     })
 
-  ymaps.option.presetStorage.add('my#red', {
+  ymaps.option.presetStorage.add('my#red_blink', {
   iconImageHref: "<%= asset_path('red_bl.gif') %>"  });
-  ymaps.option.presetStorage.add('my#green', {
+  ymaps.option.presetStorage.add('my#green_blink', {
   iconImageHref: "<%= asset_path('green_bl.gif') %>"  });
+  ymaps.option.presetStorage.add('my#red_not_blink', {
+  iconImageHref: "<%= asset_path('red_led.png') %>"  });
+  ymaps.option.presetStorage.add('my#green_not_blink', {
+  iconImageHref: "<%= asset_path('green_led.png') %>"  });
 
   myMap.controls
       // Кнопка изменения масштаба.
@@ -84,12 +98,22 @@ function init(){
   console.log(cw_list);
 
   greenCollection = new ymaps.GeoObjectCollection({}, {
-      preset: 'my#green',
+      preset: 'my#green_not_blink',
       iconImageSize: [20, 20]
   });
 
   redCollection = new ymaps.GeoObjectCollection({}, {
-      preset: 'my#red',
+      preset: 'my#red_not_blink',
+      iconImageSize: [20, 20]
+  });
+
+  greenBlinkCollection = new ymaps.GeoObjectCollection({}, {
+      preset: 'my#green_blink',
+      iconImageSize: [20, 20]
+  });
+
+  redBlinkCollection = new ymaps.GeoObjectCollection({}, {
+      preset: 'my#red_blink',
       iconImageSize: [20, 20]
   });
 
@@ -174,12 +198,31 @@ function init(){
       placemark = new ymaps.Placemark(coordinates, properties, options);
 
 
-    (car_wash.signal) ? ( greenCollection.add(placemark) ):( redCollection.add(placemark) );
+    if (car_wash.signal) {
+      if (car_wash.blink) {
+        greenBlinkCollection.add(placemark)
+      }
+      else {
+        greenCollection.add(placemark)
+      }
+    }
+    else {
+      if (car_wash.blink) {
+        redBlinkCollection.add(placemark)
+      }
+      else {
+        redCollection.add(placemark)
+      }
+
+    }
+    //(car_wash.signal) ? ( greenCollection.add(placemark) ):( redCollection.add(placemark) );
     geo_objects_ary.push(placemark)
 
   });
     myMap.geoObjects.add(greenCollection);
     myMap.geoObjects.add(redCollection);
+    myMap.geoObjects.add(greenBlinkCollection);
+    myMap.geoObjects.add(redBlinkCollection);
     //clusterer.add(geo_objects_ary);
     //myMap.geoObjects.add(clusterer);
 }

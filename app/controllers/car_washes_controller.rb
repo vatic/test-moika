@@ -124,6 +124,7 @@ class CarWashesController < ApplicationController
         :video_url2, 
         :signal,
         :site_url,
+        :blink,
         actions_attributes: [:text, :action_type_text]) 
     end
 end

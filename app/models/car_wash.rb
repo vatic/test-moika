@@ -19,8 +19,19 @@ class CarWash < ActiveRecord::Base
   def actions_by_type(type)
      actions.includes(:action_type).where("action_types.text" => type.to_s)
   end
+
   def actiontext_by_type(type)
     actions_by_type(type).try(:action_text).first.try(:text)
+  end
+
+  def enable_blink
+    self.blink = true
+    self.save!
+  end
+
+  def disable_blink
+    self.blink = false
+    self.save!
   end
 
   private
