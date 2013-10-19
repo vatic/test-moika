@@ -1,11 +1,12 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  respond_to :js, :html
 
   # GET /requests
   # GET /requests.json
   def index
     @car_wash = CarWash.find(params[:car_wash_id])
-    @requests = @car_wash.requests
+    @requests = @car_wash.requests.where('id > ?', params[:after].to_i)
   end
 
   # GET /requests/1
@@ -74,6 +75,6 @@ class RequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      params.require(:request).permit(:name, :phone, :email, :text, :car_wash_id)
+      params.require(:request).permit(:name, :phone, :email, :text, :car_wash_id, :after)
     end
 end

@@ -1,5 +1,12 @@
-%tr
-  %td= request.name
-  %td= request.phone
-  %td= request.email
-  %td= request.text
+- if new_requests
+  %tr.new_requests{data: {id: request.id}}
+    %td= request.name
+    %td= request.phone
+    %td= request.email
+    %td= request.text
+-else
+  %tr{data: {id: request.id}}
+    %td= request.name
+    %td= request.phone
+    %td= request.email
+    %td= request.text

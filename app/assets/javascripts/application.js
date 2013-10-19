@@ -18,6 +18,7 @@
 //= require best_in_place
 //= require best_in_place.purr
 //= require map
+//= require requests
 
 $(document).ready(function() {
   /* Activating Best In Place */

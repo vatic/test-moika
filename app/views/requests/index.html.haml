@@ -1,4 +1,4 @@
-#requests
+#requests{data: {url: car_wash_requests_path(@car_wash)}}
   #requests_header
     %h3= t('car_washes.show.requests')
   #left_adv
@@ -6,14 +6,16 @@
   #requests_content
     #index
       %table
-        %tr
-            
-          %th=Request.human_attribute_name("name")
-          %th=Request.human_attribute_name("phone")
-          %th=Request.human_attribute_name("email")
-          %th=Request.human_attribute_name("text")
-        - unless @requests.empty? 
-          = render @requests
-        - else
-          = render inline: content_tag(:div, t('.empty_comments'), id: 'empty')
+        %thead
+          %tr
+              
+            %th=Request.human_attribute_name("name")
+            %th=Request.human_attribute_name("phone")
+            %th=Request.human_attribute_name("email")
+            %th=Request.human_attribute_name("text")
+        %tbody
+          - unless @requests.empty? 
+            = render @requests, new_requests: false
+          - else
+            = content_tag(:div, t('.empty_comments'), id: 'empty')
 
