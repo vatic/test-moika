@@ -186,7 +186,8 @@ function init(){
     var coordinates = car_wash.coords,
       properties = {
         body: myBalloonBody,
-        hintContent: myHintContent
+        hintContent: myHintContent,
+        car_wash_id: car_wash.id
       },
       options = {
         balloonContentBodyLayout : myBalloonContentBodyLayout,
@@ -219,10 +220,14 @@ function init(){
     geo_objects_ary.push(placemark)
 
   });
+
+
     myMap.geoObjects.add(greenCollection);
     myMap.geoObjects.add(redCollection);
     myMap.geoObjects.add(greenBlinkCollection);
     myMap.geoObjects.add(redBlinkCollection);
+
+    myMap.storage = ymaps.geoQuery(myMap.geoObjects);
     //clusterer.add(geo_objects_ary);
     //myMap.geoObjects.add(clusterer);
 }
