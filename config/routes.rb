@@ -9,7 +9,6 @@ Moika::Application.routes.draw do
   end
 
   put 'car_washes/:id/update_main_action', to: 'car_washes#update_main_action', as: '/car_washes_update_main_action'
-  #get 'car_washes/update_map', to: 'car_washes#update_map', as: '/car_washes_update_map'
 
   root 'map#show'
   get "map/show"

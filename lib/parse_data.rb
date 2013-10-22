@@ -6,7 +6,7 @@ module ParseData
 
   HOST = "http://maps.yandex.ru"
   PATH = "/services/search/1.x/search.json"
-  YA_ROW_COUNT = 2000
+  YA_ROW_COUNT = 200
   YA_SEARCH_STRING = "автомойки"
   QUERY_HASH = {
     autoscale: 0,
