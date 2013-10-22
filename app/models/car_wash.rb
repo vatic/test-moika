@@ -5,8 +5,14 @@ class CarWash < ActiveRecord::Base
   has_many :requests
   accepts_nested_attributes_for :actions
   geocoded_by :address, :latitude  => :lat, :longitude => :lon
+  
   after_validation :geocode, if: "lat_and_lon_nil?"
 
+  after_update :update_signals, if: :signal_changed?  
+
+  def update_signals
+    logger.debug "vatagin_from update signal_changed:#{self.title}:#{self.signal_changed}"
+  end
 
   def main_action
      actions.includes(:action_type).where("action_types.text" => "main").first

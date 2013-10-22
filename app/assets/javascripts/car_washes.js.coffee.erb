@@ -35,3 +35,35 @@ $ ->
     $('img#green').attr('src', "<%= asset_path('green_blur.png') %>")
     $('img#red').attr('src', "<%= asset_path('red.png') %>")
 
+@CarWashPoller =
+  poll: ->
+    setTimeout @request, 5000
+  request: ->
+    $.ajax
+      url: $('#map').data('url')
+      dataType: "json"
+      data:
+        updated_at: $('#map').data('updated-at')
+    .done (data) => CarWashPoller.updateMap(data)
+  updateMap: (data) ->
+    updated_at = data.updated_at
+    $('#map').data('updated-at', updated_at)
+    car_washes = data.car_washes
+    if (car_washes?)
+      car_washes.forEach (cw) ->
+        if (cw?)
+          id = cw.id
+          signal = cw.signal
+          blink = cw.blink
+          searchString = 'properties.car_wash_id = ' + id
+          geoQueryResult = myMap.storage.search(searchString)
+          geoQueryResult.each (o) ->
+            o.getParent().remove(o)
+            if signal and blink then greenBlinkCollection.add(o)
+            if signal and not blink then greenCollection.add(o)
+            if not signal and blink then redBlinkCollection.add(o)
+            if not signal and not blink then redCollection.add(o)
+    @poll()
+jQuery ->
+  if $('#map').length > 0
+    CarWashPoller.poll()

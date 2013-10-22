@@ -8,6 +8,11 @@ class CarWashesController < ApplicationController
     @car_washes = CarWash.all
   end
 
+  def update_map
+    @car_washes = CarWash.where('updated_at > ?', params[:updated_at])
+    @updated_at = Time.now.utc
+  end
+
   # GET /car_washes/1
   # GET /car_washes/1.json
   def show
@@ -17,7 +22,6 @@ class CarWashesController < ApplicationController
     @vacancy_actions = @car_wash.actions_by_type(:vacancy)
   end
 
-  # GET /car_washes/new
   def new
     @car_wash = CarWash.new
   end
@@ -46,8 +50,6 @@ class CarWashesController < ApplicationController
   # PATCH/PUT /car_washes/1
   # PATCH/PUT /car_washes/1.json
   def update
-    logger.debug("vatagin: #{car_wash_params}, #{params[:car_wash][:actions]}")
-
     params_actions = params[:car_wash][:actions]
 
     params_actions.each do |params_action|
@@ -62,6 +64,11 @@ class CarWashesController < ApplicationController
    end
 
     respond_to do |format|
+      if car_wash_params[:signal] == @car_wash.signal
+        car_wash_params[:signal_changed] = false
+      else
+        car_wash_params[:signal_changed] = true
+      end
       if @car_wash.update(car_wash_params)
         format.html { redirect_to @car_wash, notice: 'Car wash was successfully updated.' }
         format.json { head :no_content }
@@ -125,6 +132,8 @@ class CarWashesController < ApplicationController
         :signal,
         :site_url,
         :blink,
-        actions_attributes: [:text, :action_type_text]) 
+        :signal_changed,
+        :updated_at,
+        actions_attributes: [:text, :action_type_text])
     end
 end

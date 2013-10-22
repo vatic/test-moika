@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require search-address
 //= require map
+//= require car_washes

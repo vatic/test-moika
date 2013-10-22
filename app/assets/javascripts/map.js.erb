@@ -1,5 +1,5 @@
 /* Day Name Strings */
- var  ru_Date = 
+ var  ru_Date =
   {
     dayNames: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
     abbreviatedDayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
@@ -20,7 +20,6 @@ var myMap,
 
 
 $(document).ready( function() {
-  log("document ready!");
   function getCarWashes() {
     $.ajax('/car_washes', {
       dataType: "json",
@@ -29,21 +28,18 @@ $(document).ready( function() {
         cw_list = [];
         json.forEach( function(row) {
           cw_list.push({
-            coords: [row.lat, row.lon], 
-            id: row.id, 
-            address: row.address, 
-            title: row.title, 
-            signal: row.signal, 
-            url: row.url.slice(0,-5), 
-            contacts: row.contacts, 
+            coords: [row.lat, row.lon],
+            id: row.id,
+            address: row.address,
+            title: row.title,
+            signal: row.signal,
+            url: row.url.slice(0,-5),
+            contacts: row.contacts,
             services: row.services,
             blink: row.blink
           });
         })
-        log("json success done");
-        log("load map...");
         ymaps.ready(init);
-        log("done load map...");
       }
     })
   };
@@ -95,7 +91,6 @@ function init(){
   var myBalloonContentBodyLayout = ymaps.templateLayoutFactory.createClass(
                   '<div>$[properties.body]</div>'
               );
-  console.log(cw_list);
 
   greenCollection = new ymaps.GeoObjectCollection({}, {
       preset: 'my#green_not_blink',
@@ -177,7 +172,7 @@ function init(){
         ('<h3>' + car_wash.title + '</h3>' + '<br/>'
         + '<h5>' + car_wash.address + '</h5>'
         + '<h5>Время:' + timeNow.toLocaleTimeString() + '</h5>'
-        + '<h5>Пост загружен</h5>' 
+        + '<h5>Пост загружен</h5>'
        + '<img src="'
         + "<%= asset_path('banner_red.png') %>"
         + '">'
@@ -236,19 +231,19 @@ $(document).ready(function() {
   setInterval(function() {
   var date_now = new Date();
   $(".datetime .date").html(
-    ru_Date.abbreviatedDayNames[date_now.getDay()] + 
-    ' ' + 
-    date_now.getDate() + 
-    ' ' + 
-    ru_Date.monthNames[date_now.getMonth()] + 
-    ' ' + 
+    ru_Date.abbreviatedDayNames[date_now.getDay()] +
+    ' ' +
+    date_now.getDate() +
+    ' ' +
+    ru_Date.monthNames[date_now.getMonth()] +
+    ' ' +
     date_now.getFullYear() +
     ' г.'
     );
   $(".datetime .time").html(
     ' | ' +
     date_now.toLocaleTimeString() +
-    ' | ' 
+    ' | '
     );
   },500)
 });
