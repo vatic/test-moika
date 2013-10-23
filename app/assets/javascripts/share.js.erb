@@ -1,0 +1,92 @@
+/* Objects shared over application
+/* Day Name Strings */
+ var  ru_Date =
+  {
+    dayNames: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
+    abbreviatedDayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+    shortestDayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+    firstLetterDayNames: ["В", "П", "В", "С", "Ч", "П", "С"],
+
+    /* Month Name Strings */
+    monthNames: ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноябрь", "декабря"],
+    abbreviatedMonthNames: ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
+  }
+
+$(document).ready(function() {
+  setInterval(function() {
+  var date_now = new Date();
+  $(".datetime .date").html(
+    ru_Date.abbreviatedDayNames[date_now.getDay()] +
+    ' ' +
+    date_now.getDate() +
+    ' ' +
+    ru_Date.monthNames[date_now.getMonth()] +
+    ' ' +
+    date_now.getFullYear() +
+    ' г.'
+    );
+  $(".datetime .time").html(
+    ' | ' +
+    date_now.toLocaleTimeString() +
+    ' | '
+    );
+  },500)
+});
+
+function log (argument) {
+  console.log(argument)
+}
+
+function hint(car_wash) {
+  var timeNow = new Date;
+  var part1 = '<h3>' + car_wash.title + '</h3>'
+      + '<h5>' + car_wash.address + '</h5>'
+      + '<h5>Время:' + timeNow.toLocaleTimeString() + '</h5>';
+  var part3 = '<img src="';
+  var part4 = '">';
+  if (car_wash.signal) {
+    var ret = part1 + '<h5>Пост свободен</h5>' + part3 + "<%= asset_path('banner_green.png') %>" + part4;
+  } else {
+    ret = part1 + '<h5>Пост загружен</h5>' + part3 + "<%= asset_path('banner_red.png') %>" + part4;
+  }
+  return ret;
+    
+}
+
+function balloon(car_wash) {
+  var part1 = 
+      '<h3>'
+      + car_wash.title
+      + '</h3>'
+      + car_wash.address
+      + '<br/>'
+      + car_wash.contacts
+      + '<br/>'
+      + car_wash.services
+      + '<br/>';
+
+  if (car_wash.signal) {
+    var ret = part1
+      + 'Пост свободен'
+      + '<br/>'
+      + '<img src="'
+      + "<%= asset_path('banner_green.png') %>"
+      + '">'
+      + '<br/>'
+      + '<a href="'
+      + car_wash.url
+      + '">Перейти на страницу этой мойки</a>';
+  } else {
+    var ret = part1
+      + 'Пост загружен'
+      + '<br/>'
+      + '<img src="'
+      + "<%= asset_path('banner_red.png') %>"
+      + '">'
+      + '<br/>'
+      + '<a href="'
+      + car_wash.url
+      + '">Перейти на страницу этой мойки</a>';
+  }
+  return ret;
+}

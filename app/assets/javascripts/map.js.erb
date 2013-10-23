@@ -1,19 +1,4 @@
-/* Day Name Strings */
- var  ru_Date =
-  {
-    dayNames: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
-    abbreviatedDayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-    shortestDayNames: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
-    firstLetterDayNames: ["В", "П", "В", "С", "Ч", "П", "С"],
-
-    /* Month Name Strings */
-    monthNames: ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноябрь", "декабря"],
-    abbreviatedMonthNames: ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
-  }
-
-function log (argument) {
-  console.log(argument)
-}
+/* yandex map on main page */
 var myMap,
   cw_list = [],
   geo_objects_ary = [];
@@ -115,68 +100,8 @@ function init(){
   cw_list.forEach(function (car_wash) {
 
 
-    var myBalloonBody = (car_wash.signal) ?
-      (
-      '<h3>'
-      + car_wash.title
-      + '</h3>'
-      + car_wash.address
-      + '<br/>'
-      + car_wash.contacts
-      + '<br/>'
-      + car_wash.services
-      + '<br/>'
-      + 'Пост свободен'
-      + '<br/>'
-      + '<img src="'
-      + "<%= asset_path('banner_green.png') %>"
-      + '">'
-      + '<br/>'
-      + '<a href="'
-      + car_wash.url
-      + '">Перейти на страницу этой мойки</a>'
-      ):
-      (
-      '<h3>'
-      + car_wash.title
-      + '</h3>'
-      + car_wash.address
-      + '<br/>'
-      + car_wash.contacts
-      + '<br/>'
-      + car_wash.services
-      + '<br/>'
-      + 'Пост загружен'
-      + '<br/>'
-      + '<img src="'
-      + "<%= asset_path('banner_red.png') %>"
-      + '">'
-      + '<br/>'
-      + '<a href="'
-      + car_wash.url
-      + '">Перейти на страницу этой мойки</a>'
-      );
-
-      var timeNow = new Date;
-
-      var myHintContent = (car_wash.signal) ?
-        (
-        '<h3>' + car_wash.title + '</h3>'
-        + '<h5>' + car_wash.address + '</h5>'
-        + '<h5>Время:' + timeNow.toLocaleTimeString() + '</h5>'
-        + '<h5>Пост свободен</h5>'
-        + '<img src="'
-        + "<%= asset_path('banner_green.png') %>"
-        + '">'
-        ):
-        ('<h3>' + car_wash.title + '</h3>' + '<br/>'
-        + '<h5>' + car_wash.address + '</h5>'
-        + '<h5>Время:' + timeNow.toLocaleTimeString() + '</h5>'
-        + '<h5>Пост загружен</h5>'
-       + '<img src="'
-        + "<%= asset_path('banner_red.png') %>"
-        + '">'
-        );
+    var myBalloonBody = balloon(car_wash);
+    var myHintContent = hint(car_wash);
 
     var coordinates = car_wash.coords,
       properties = {
@@ -227,23 +152,3 @@ function init(){
     //myMap.geoObjects.add(clusterer);
 }
 
-$(document).ready(function() {
-  setInterval(function() {
-  var date_now = new Date();
-  $(".datetime .date").html(
-    ru_Date.abbreviatedDayNames[date_now.getDay()] +
-    ' ' +
-    date_now.getDate() +
-    ' ' +
-    ru_Date.monthNames[date_now.getMonth()] +
-    ' ' +
-    date_now.getFullYear() +
-    ' г.'
-    );
-  $(".datetime .time").html(
-    ' | ' +
-    date_now.toLocaleTimeString() +
-    ' | '
-    );
-  },500)
-});

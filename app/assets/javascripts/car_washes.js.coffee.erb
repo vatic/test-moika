@@ -63,6 +63,9 @@ $ ->
             if signal and not blink then greenCollection.add(o)
             if not signal and blink then redBlinkCollection.add(o)
             if not signal and not blink then redCollection.add(o)
+            properties = o.properties.getAll()
+            properties.hintContent = hint(cw)
+            properties.body = balloon(cw)
     @poll()
 jQuery ->
   if $('#map').length > 0

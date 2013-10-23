@@ -13,11 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.purr
+//= require share
 //= require car_washes
 //= require jquery.ui.all
 //= require best_in_place
 //= require best_in_place.purr
-//= require map
 //= require requests
 
 $(document).ready(function() {

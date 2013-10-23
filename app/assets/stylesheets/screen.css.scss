@@ -420,6 +420,10 @@ form.car_wash_edit_details {
     @include span-columns(8 omega,12);
   }
 
+  input.checkbox#car-wash-signal {
+    display: none;
+  }
+
   ul {
     li {
       margin: 10px 0 5px 0;
@@ -684,6 +688,9 @@ form.car_wash_edit_details {
   h3 {
     background-color: #fa7a79;
     padding: 10px;
+  }
+  input.checkbox#car-wash-signal {
+    display: none;
   }
 }
 

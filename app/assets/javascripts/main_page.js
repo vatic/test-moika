@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require share
 //= require search-address
 //= require map
 //= require car_washes
