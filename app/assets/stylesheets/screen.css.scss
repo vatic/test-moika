@@ -649,6 +649,14 @@ form.car_wash_edit_details {
   }
 }
 
+.red_medium_button {
+  display:block;
+  margin: 0 auto;
+  width: 50%;
+  @include red-medium-button;
+  cursor: pointer;
+}
+
 #main_action_button {
   a#editme {
     padding: 3px 20px;
@@ -667,6 +675,7 @@ form.car_wash_edit_details {
     padding: 10px 0;
     margin: 10px auto;
     width: 100%;
+    height: 200px;
     display: block;
     border: solid 1px #aaa;
   }
@@ -700,13 +709,21 @@ form.car_wash_edit_details {
 
 .actions#control_panel {
   clear: both;
-  @include span-columns(4,12);
+  @include span-columns(12,12);
   @include border-radius(5px, 5px);
-  margin-top: 0;
+  margin-top: 50px;
   #save_button, #edit_button, #requests_button {
     margin: 5px auto;
-    @include span-columns(10,12);
+    text-align: center;
+    @include span-columns(5,12);
+  }
 
+  #edit_button, #requests_button {
+    margin: 5px auto;
+    a {
+      color: #fff;
+      display: block;
+    }
   }
   #save_button {
     @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
@@ -714,38 +731,24 @@ form.car_wash_edit_details {
       border: none;
       background-color: transparent;
       display: block;
-      text-align: center;
-      margin: 0 auto;
-      padding: 0
     }
   } 
   #edit_button {
     @include sassy-button("simple", 5px, 20px, rgba(236, 22, 22, 1), rgba(202,8,8,1));
-    a {
-      color: #fff;
-      display: block;
-      text-align: center;
-      
-    }
+    @include omega;
   } 
   #requests_button {
-    margin: 20px auto;
-    width: 100%;
     @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
-    a {
-      color: #fff;
-      display: block;
-      text-align: center;
-      
-    }
   } 
 }
 
 #svetofor_container {
-  @include pre(7);
-  @include span-columns(5 omega,12);
+  @include reset-columns;
+  padding-left: 10%;
+  padding-right: 24%;
+  @include span-columns(2 omega,12);
   img#red-green {
-  }
+ }
 }
 
 .title {

@@ -1,7 +1,13 @@
 .bip_input
   #main_action_label Ведите текст для бегущей строки
   #main_action_input
-    = best_in_place @car_wash, :main_action_text, :path => car_washes_update_main_action_path,:type => :input, :nil => "...Бегущая строка пока не заполнена", :html_attrs => {:class=>"dummy"}, :activator => "#editme"
+    = best_in_place @car_wash, 
+      :main_action_text,
+      :path => car_washes_update_main_action_path,
+      :type => :input, 
+      :nil => "...Бегущая строка пока не заполнена", 
+      :html_attrs => {:class=>"dummy"}, 
+      :activator => "#editme"
   #main_action_button
     %a(id="editme" href="#")= t('save_button')
 
@@ -11,6 +17,7 @@
       #error_explanation
         %h2= "#{pluralize(@car_wash.errors.count, "error")} prohibited this car_wash from being saved:"
         %ul
+
           - @car_wash.errors.full_messages.each do |msg|
             %li= msg
 
@@ -20,9 +27,8 @@
         = label_tag :action_type_text, ActionType.find_by(text: type.text).title
         = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
         = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
-      .actions#control_panel
-        #requests_button
-          = link_to t("requests_button"), car_wash_requests_path(@car_wash)
+      
+        = f.submit t("save_button"), class: 'red_medium_button'
     #center_form
       %h3 Свободно
       %p.text-center
@@ -32,12 +38,11 @@
       %p.text-center
         = link_to image_tag ('red.png'), id: 'red'
         = f.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
-
     #svetofor_container
       = link_to image_tag '', id: 'red-green'
     .actions#control_panel
-      #save_button
-        = f.submit t("save_button")
+      #requests_button
+        = link_to t("requests_button"), car_wash_requests_path(@car_wash)
       #edit_button
         = link_to t("edit_button"), edit_car_wash_path(@car_wash, full: '1')
 
