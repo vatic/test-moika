@@ -12,7 +12,7 @@
     = form_for @car_wash, remote: true,  role: "form", html: {class: "car_wash_edit"} do |f|
       %h3 Акция
       - type = ActionType.left
-      = label_tag :action_type_text, type.text
+      = label_tag :action_type_text, type.title
       = hidden_field_tag "car_wash[actions][][action_type_text]", type.text
       = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text), disabled: "disabled"
     
@@ -29,7 +29,7 @@
     = signal_form.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
   #svetofor_container
     = image_tag '', id: 'red-green'
-    %h5.text-center#notice &nbsp; 
+    %h5.text-center#notice=render partial: 'signal', locals: {car_wash: @car_wash}
   .actions#control_panel
     #requests_button
       = link_to t("requests_button"), car_wash_requests_path(@car_wash)
