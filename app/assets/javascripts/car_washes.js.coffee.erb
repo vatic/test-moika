@@ -51,6 +51,8 @@ $ ->
       $('form.main_action_input').submit()
       this.value = "Редактировать"
       input.prop("disabled", true)
+   $('input,select').keypress (e) ->
+     e.keyCode != 13
 
 @CarWashPoller =
   poll: ->
