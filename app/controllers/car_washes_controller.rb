@@ -69,6 +69,18 @@ class CarWashesController < ApplicationController
       if @car_wash.update(car_wash_params)
         format.html { redirect_to @car_wash, notice: 'Car wash was successfully updated.' }
         format.json { head :no_content }
+        format.js { 
+          if params_actions.blank?
+            render "signal_update"
+          else
+            case params_actions.first[:action_type_text]
+            when "main"
+              render 'main_action_update'
+            when "left"
+              render 'left_action_update'
+            end
+          end
+        }
       else
         format.html { render action: 'edit' }
         format.json { render json: @car_wash.errors, status: :unprocessable_entity }
