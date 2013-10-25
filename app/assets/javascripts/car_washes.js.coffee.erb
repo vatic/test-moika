@@ -29,6 +29,29 @@ $ ->
     $('img#red').attr('src', "<%= asset_path('red.png') %>")
     $('form.car_wash_signal_edit').submit()
 
+
+  $(document).on 'click', 'form.car_wash_edit input[type="submit"]', (e) ->
+    e.preventDefault()
+    input = $('form.car_wash_edit #car_wash_actions__text')
+    if input.prop("disabled")
+      this.value = "Сохранить"
+      input.prop("disabled", false)
+    else
+      $('form.car_wash_edit').submit()
+      this.value = "Редактировать"
+      input.prop("disabled", true)
+
+  $(document).on 'click', 'form.main_action_input input[type="submit"]', (e) ->
+    e.preventDefault()
+    input = $('form.main_action_input #car_wash_actions__text')
+    if input.prop("disabled")
+      this.value = "Сохранить"
+      input.prop("disabled", false)
+    else
+      $('form.main_action_input').submit()
+      this.value = "Редактировать"
+      input.prop("disabled", true)
+
 @CarWashPoller =
   poll: ->
     setTimeout @request, 5000

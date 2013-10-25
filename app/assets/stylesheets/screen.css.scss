@@ -636,52 +636,54 @@ form.car_wash_edit_details {
 
 
 #main_action_label {
-  @include span-columns(4,12);
+  @include span-columns(3,12);
   color: #ec7575;
   padding: 0 0 0 30px;
 }
 
-#main_action_input {
-  @include span-columns(6,12);
-  border: 1px solid #aaa;
-  input {
-    width: 100%;
+form.main_action_input {
+  @include span-columns(8 omega,12);
+  input[type="text"] {
+    margin: 0 0 0 1%;
+    border: 1px solid #aaa;
+    width: 70%;
+  }
+  input[type="submit"] {
+    float: right;
+    width: 20%;
+    margin: 0 6% 0 0;
   }
 }
 
-.red_medium_button {
-  display:block;
-  margin: 0 auto;
-  width: 50%;
+.red-medium-button {
   @include red-medium-button;
   cursor: pointer;
 }
 
-#main_action_button {
-  a#editme {
-    padding: 3px 20px;
-    background-color: #d70d0d;
-    color: #fff;
-    @include border-radius(5px, 5px);
-  }
-}
 
 #left_form {
   @include span-columns(4,12);
-  textarea {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 16px;
-    font-style: italic;
-    padding: 10px 0;
-    margin: 10px auto;
-    width: 100%;
-    height: 200px;
-    display: block;
-    border: solid 1px #aaa;
-  }
-  h3 {
-    background-color: #dbdbdb;
-    padding: 10px;
+  form {
+    textarea {
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 16px;
+      font-style: italic;
+      padding: 10px 0;
+      margin: 10px auto;
+      width: 100%;
+      height: 200px;
+      display: block;
+      border: solid 1px #aaa;
+    }
+    input[type="submit"] {
+      display:block;
+      margin: 0 auto;
+      width: 50%;
+    }
+    h3 {
+      background-color: #dbdbdb;
+      padding: 10px;
+    }
   }
 }
 

@@ -1,34 +1,22 @@
 .bip_input
   #main_action_label Ведите текст для бегущей строки
-  #main_action_input
-    = best_in_place @car_wash, 
-      :main_action_text,
-      :path => car_washes_update_main_action_path,
-      :type => :input, 
-      :nil => "...Бегущая строка пока не заполнена", 
-      :html_attrs => {:class=>"dummy"}, 
-      :activator => "#editme"
-  #main_action_button
-    %a(id="editme" href="#")= t('save_button')
+  = form_for @car_wash, remote: true,  role: "form", html: {class: "main_action_input"} do |f|
+    - type = ActionType.main
+    = hidden_field_tag "car_wash[actions][][action_type_text]", type.text
+    = text_field_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text), disabled: "disabled"
+  
+    = f.submit t("edit_button"), class: 'red-medium-button'
 
 .container
-  = form_for @car_wash, role: "form", html: {class: "car_wash_edit"} do |f|
-    - if @car_wash.errors.any?
-      #error_explanation
-        %h2= "#{pluralize(@car_wash.errors.count, "error")} prohibited this car_wash from being saved:"
-        %ul
-
-          - @car_wash.errors.full_messages.each do |msg|
-            %li= msg
-
-    #left_form
+  #left_form
+    = form_for @car_wash, remote: true,  role: "form", html: {class: "car_wash_edit"} do |f|
       %h3 Акция
-      - ActionType.left.find_each do |type|
-        = label_tag :action_type_text, ActionType.find_by(text: type.text).title
-        = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
-        = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
-      
-        = f.submit t("save_button"), class: 'red_medium_button'
+      - type = ActionType.left
+      = label_tag :action_type_text, type.text
+      = hidden_field_tag "car_wash[actions][][action_type_text]", type.text
+      = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text), disabled: "disabled"
+    
+      = f.submit t("edit_button"), class: 'red-medium-button'
   #center_form
     %h3 Свободно
     %p.text-center

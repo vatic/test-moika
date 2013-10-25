@@ -66,11 +66,6 @@ class CarWashesController < ApplicationController
     end
 
     respond_to do |format|
-      if car_wash_params[:signal] == @car_wash.signal
-        car_wash_params[:signal_changed] = false
-      else
-        car_wash_params[:signal_changed] = true
-      end
       if @car_wash.update(car_wash_params)
         format.html { redirect_to @car_wash, notice: 'Car wash was successfully updated.' }
         format.json { head :no_content }

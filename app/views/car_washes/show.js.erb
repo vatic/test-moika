@@ -1,2 +1,6 @@
-log('hello from show.js: <%=@car_wash.title%>')
+log('hello from show.js: <%=@car_wash.actions_by_type('left').first.text%>')
 $('#notice').html('<%= j(render partial: 'signal', locals: {car_wash: @car_wash})%>')
+var label = $('form.car_wash_edit label')
+label.html('Обновлено').show("slow").effect("highlight", {color: "#f77"}, 3000)
+var label = $('#main_action_label')
+label.show("slow").effect("highlight", {color: "#f77"}, 3000)
