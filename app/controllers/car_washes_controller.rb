@@ -51,17 +51,19 @@ class CarWashesController < ApplicationController
   # PATCH/PUT /car_washes/1.json
   def update
     params_actions = params[:car_wash][:actions]
-
-    params_actions.each do |params_action|
-     action = @car_wash.actions_by_type(params_action[:action_type_text]).first
-     if action.nil?
-      @car_wash.actions.build(
-        action_text: ActionText.create(text: params_action[:text]), 
-        action_type: ActionType.find_by(text: params_action[:action_type_text]))
-     else
-      action.action_text.update(text: params_action[:text])
-     end
-   end
+    
+    unless params_actions.blank?
+      params_actions.each do |params_action|
+        action = @car_wash.actions_by_type(params_action[:action_type_text]).first
+        if action.nil?
+         @car_wash.actions.build(
+           action_text: ActionText.create(text: params_action[:text]), 
+           action_type: ActionType.find_by(text: params_action[:action_type_text]))
+        else
+         action.action_text.update(text: params_action[:text])
+        end
+      end
+    end
 
     respond_to do |format|
       if car_wash_params[:signal] == @car_wash.signal

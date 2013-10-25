@@ -1,4 +1,6 @@
 ru:
+  signal_open: "Свободно"
+  signal_close: "Занято"
   site_title: "Мойка-77"
   save_button: "Сохранить"
   edit_button: "Редактировать"
@@ -33,6 +35,8 @@ ru:
       comments: "Отзывы"
       send_request: "Оставить заявку"
       requests: "Заявки"
+    edit:
+      signal_notice: "Вы поменяли сигнал"
   comments:
     index:
       empty_comments: "Ещё не оставлено ниодного отзыва"

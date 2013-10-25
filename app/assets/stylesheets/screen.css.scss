@@ -744,10 +744,12 @@ form.car_wash_edit_details {
 
 #svetofor_container {
   @include reset-columns;
-  padding-left: 10%;
-  padding-right: 24%;
-  @include span-columns(2 omega,12);
+  padding-left: 13%;
+  padding-right: 17%;
+  @include span-columns(4 omega,12);
   img#red-green {
+    display: block;
+    margin: 0 auto;
  }
 }
 
@@ -805,6 +807,9 @@ form.car_wash_edit_details {
 
 .red {
   color: red;
+}
+.green {
+  color: green;
 }
 
 tr.new_requests {

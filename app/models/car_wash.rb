@@ -10,6 +10,10 @@ class CarWash < ActiveRecord::Base
 
   after_update :update_signals, if: :signal_changed?  
 
+  def signal_human
+    self.signal ? I18n.t('signal_open'):I18n.t('signal_close')
+    
+  end
   def update_signals
     logger.debug "vatagin_from update signal_changed:#{self.title}:#{self.signal_changed}"
   end

@@ -29,22 +29,24 @@
         = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
       
         = f.submit t("save_button"), class: 'red_medium_button'
-    #center_form
-      %h3 Свободно
-      %p.text-center
-        = link_to image_tag ('green.png'), id: 'green'
-    #right_form
-      %h3 Занято
-      %p.text-center
-        = link_to image_tag ('red.png'), id: 'red'
-        = f.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
-    #svetofor_container
-      = link_to image_tag '', id: 'red-green'
-    .actions#control_panel
-      #requests_button
-        = link_to t("requests_button"), car_wash_requests_path(@car_wash)
-      #edit_button
-        = link_to t("edit_button"), edit_car_wash_path(@car_wash, full: '1')
+  #center_form
+    %h3 Свободно
+    %p.text-center
+      = link_to image_tag ('green.png'), id: 'green'
+  #right_form
+    %h3 Занято
+    %p.text-center
+      = link_to image_tag ('red.png'), id: 'red'
+  = form_for @car_wash, remote: true, role: "form", html: {class: "car_wash_signal_edit"} do |signal_form|
+    = signal_form.check_box :signal, class: "checkbox", id: 'car-wash-signal', type:'hidden'
+  #svetofor_container
+    = image_tag '', id: 'red-green'
+    %h5.text-center#notice &nbsp; 
+  .actions#control_panel
+    #requests_button
+      = link_to t("requests_button"), car_wash_requests_path(@car_wash)
+    #edit_button
+      = link_to t("edit_button"), edit_car_wash_path(@car_wash, full: '1')
 
 
 

@@ -1,0 +1,2 @@
+log('hello from show.js: <%=@car_wash.title%>')
+$('#notice').html('<%= j(render partial: 'signal', locals: {car_wash: @car_wash})%>')
