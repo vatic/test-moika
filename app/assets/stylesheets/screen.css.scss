@@ -477,14 +477,6 @@ form.car_wash_edit_details {
   #action_vacancy{
     @include span-columns(3 omega,12);
   }
-  .actions#control_panel {
-    @include span-columns(3,12);
-    #save_button {
-      width: 80%;
-
-    }
-    margin-top: 100px;
-  }
 }
 
 .container {
@@ -709,40 +701,13 @@ form.main_action_input {
 }
 
 
-.actions#control_panel {
-  clear: both;
-  @include span-columns(12,12);
-  @include border-radius(5px, 5px);
-  margin-top: 50px;
-  #save_button, #edit_button, #requests_button {
-    margin: 5px auto;
-    text-align: center;
-    @include span-columns(5,12);
-  }
 
-  #edit_button, #requests_button {
-    margin: 5px auto;
-    a {
-      color: #fff;
-      display: block;
-    }
-  }
-  #save_button {
-    @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
-    input[type='submit'] {
-      border: none;
-      background-color: transparent;
-      display: block;
-    }
-  } 
-  #edit_button {
-    @include sassy-button("simple", 5px, 20px, rgba(236, 22, 22, 1), rgba(202,8,8,1));
-    @include omega;
-  } 
-  #requests_button {
-    @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
-  } 
-}
+.grey-button {
+  @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
+} 
+.red-button {
+  @include sassy-button("simple", 5px, 20px, rgba(236, 22, 22, 1), rgba(202,8,8,1));
+} 
 
 #svetofor_container {
   @include reset-columns;
@@ -818,4 +783,25 @@ tr.new_requests {
   color: red;
   background-color: #fff;
 
+}
+
+
+.left-container, .center-container, .right-container {
+  a {
+    width: 80%;
+    @include block-center;
+    text-align: center;
+  }
+}
+
+.left-container {
+  @include span-columns(4,12);
+}
+
+.center-container {
+  @include span-columns(4,12);
+}
+
+.right-container {
+  @include span-columns(4 omega,12);
 }

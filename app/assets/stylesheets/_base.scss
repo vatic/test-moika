@@ -26,6 +26,11 @@ $show-grid-backgrounds  : false;
   padding: 0;
 }
 
+@mixin block-center {
+  display: block;
+  margin: 0 auto;
+}
+
 @mixin red-medium-button {
   padding: 3px 20px;
   background-color: #d70d0d;
