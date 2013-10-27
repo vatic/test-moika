@@ -1,4 +1,4 @@
-#requests{data: {url: car_wash_requests_path(@car_wash)}}
+#requests{data: {url: car_wash_requests_path(@car_wash), oncpanel: '0'}}
   #requests_header
     %h3= t('car_washes.show.requests')
   #left_adv
@@ -8,14 +8,13 @@
       %table
         %thead
           %tr
-              
             %th=Request.human_attribute_name("name")
             %th=Request.human_attribute_name("phone")
             %th=Request.human_attribute_name("email")
             %th=Request.human_attribute_name("text")
         %tbody
           - unless @requests.empty? 
-            = render @requests, new_requests: false
+            = render @requests, new_requests: false, car_wash: @car_wash
           - else
             = content_tag(:div, t('.empty_comments'), id: 'empty')
 

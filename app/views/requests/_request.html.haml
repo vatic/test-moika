@@ -1,12 +1,7 @@
-- if new_requests
-  %tr.new_requests{data: {id: request.id}}
-    %td= request.name
-    %td= request.phone
-    %td= request.email
-    %td= request.text
--else
-  %tr{data: {id: request.id}}
-    %td= request.name
-    %td= request.phone
-    %td= request.email
-    %td= request.text
+%tr{data: {id: request.id, url: car_wash_request_path(car_wash, request), read: request.read.to_s }, id: request.id, class: 'toggleble'}
+  %td= link_to request.name, "#", class: "toggleble", title: "Подробнее"
+  %td= link_to request.phone, "#", class: "toggleble", title: "Подробнее"
+  %td= link_to request.email, "#", class: "toggleble", title: "Подробнее"
+  %td= link_to request.text[0..10], "#", class: "toggleble", title: "Подробнее"
+%tr.text-full{data: {id: request.id}, id: request.id}
+  %td{colspan: 4}= request.text

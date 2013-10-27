@@ -775,14 +775,35 @@ form.main_action_input {
 .red {
   color: red;
 }
+
+.light-red {
+  color: #f66;
+}
+
+.dark-red {
+  color: #850018;
+}
+
 .green {
   color: green;
 }
 
-tr.new_requests {
+.underline-dotted {
+  border-bottom: dotted 1px white;
+}
+
+tr.toggleble {
+  cursor: pointer;
+}
+
+tr[data-read="false"]{
+  a {
   color: red;
   background-color: #fff;
-
+  }
+}
+.text-full {
+  display: none;
 }
 
 

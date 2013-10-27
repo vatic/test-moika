@@ -20,6 +20,7 @@ class CarWashesController < ApplicationController
     @bottom1_actions = @car_wash.actions_by_type(:bottom1)
     @bottom2_actions = @car_wash.actions_by_type(:bottom2)
     @vacancy_actions = @car_wash.actions_by_type(:vacancy)
+    @unread_requests_count = @car_wash.requests.unread.count
   end
 
   def new
