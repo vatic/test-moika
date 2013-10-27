@@ -708,6 +708,9 @@ form.main_action_input {
 .red-button {
   @include sassy-button("simple", 5px, 20px, rgba(236, 22, 22, 1), rgba(202,8,8,1));
 } 
+.dark-red-button {
+  @include sassy-button("simple", 5px, 20px, rgba(110, 20, 20, 1), rgba(140,8,8,1));
+}
 
 #svetofor_container {
   @include reset-columns;
@@ -808,10 +811,17 @@ tr[data-read="false"]{
 
 
 .left-container, .center-container, .right-container {
+  margin: 10px 0;
   a {
     width: 80%;
     @include block-center;
     text-align: center;
+  }
+}
+
+#admin_messages_button {
+  a {
+    font-size: 18px;
   }
 }
 
@@ -824,5 +834,5 @@ tr[data-read="false"]{
 }
 
 .right-container {
-  @include span-columns(4 omega,12);
+  @include span-columns(2 omega,12);
 }

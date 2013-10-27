@@ -20,11 +20,11 @@ jQuery ->
   if $('#requests').length or $('#requests_button')> 0
     RequestPoller.poll()
 
-  $(document).on 'click', 'a.toggleble', (e) ->
+  $(document).on 'click', 'tr.toggleble', (e) ->
     e.preventDefault()
     
-    target_id = $(this).parent().parent().data('id') 
-    target = $('#requests_content tr#' + target_id)
+    target_id = $(this).data('id') 
+    target = $(this)
     $('table tr#' + target_id + '.text-full').first().fadeToggle('slow', 'linear')
 
     if not target.data('read')

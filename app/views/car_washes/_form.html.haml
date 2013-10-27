@@ -34,9 +34,12 @@
   .left-container#requests{data: {url: car_wash_requests_path(@car_wash), oncpanel: "1", updated_at: @updated_at}}
     #requests_button
       = render "requests_button"
-  .center-container
-    = link_to t("admin_messages_button"), "#", class: "grey-button"
   .right-container
-    = link_to t("edit_button"), edit_car_wash_path(@car_wash, full: '1'), class: "red-button"
+    #full_form_button
+      = link_to t("edit_button"), edit_car_wash_path(@car_wash, full: '1'), class: "red-button"
+.container
+  .left-container
+    #admin_messages_button
+      = link_to t("admin_messages_button"), "#", class: "dark-red-button"
 
 
