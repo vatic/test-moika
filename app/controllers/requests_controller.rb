@@ -6,8 +6,6 @@ class RequestsController < ApplicationController
   # GET /requests.json
   def index
     @car_wash = CarWash.find(params[:car_wash_id])
-    #@requests = @car_wash.requests.unread
-    @unread_requests_count = @car_wash.requests.unread.count
       respond_to do |format|
         format.js { 
           if params[:on_cpanel] == '0'
@@ -19,6 +17,7 @@ class RequestsController < ApplicationController
         }
         format.html {
           @requests = @car_wash.requests
+          @unread_requests_count = @car_wash.unread_requests_count
         }
       end
   end
@@ -48,7 +47,7 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       if @request.save
-        format.html { redirect_to [@car_wash,@request], notice: 'Request was successfully created.' }
+        format.html { redirect_to @car_wash, notice: t('notice.requests.create') }
         format.json { render action: 'show', status: :created, location: @request }
       else
         format.html { render action: 'new' }

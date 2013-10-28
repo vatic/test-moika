@@ -759,6 +759,13 @@ form.main_action_input {
       #text {
         background-color: #ebebeb;
       }
+      h3#empty {
+       width: 50%;
+       text-align: center;
+       color: #999;
+       border: solid 1px #999;
+       padding: 5px;
+      }
     }
     form.new_comment, form.new_request {
       h3 {
@@ -835,4 +842,10 @@ tr.toggleble[data-read="false"] {
 
 .right-container {
   @include span-columns(2 omega,12);
+}
+.display-none {
+  display: none;
+}
+.display-block {
+  display: block;
 }

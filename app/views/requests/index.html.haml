@@ -1,20 +1,29 @@
 #requests{data: {url: car_wash_requests_path(@car_wash), oncpanel: '0'}}
   #requests_header
-    %h3= t('car_washes.show.requests')
+    %h3 
+      = render "unread_requests_count", unread_requests_count: @unread_requests_count
   #left_adv
     = image_tag 'adv.png', class: 'adv'
   #requests_content
     #index
-      %table
-        %thead
-          %tr
-            %th=Request.human_attribute_name("name")
-            %th=Request.human_attribute_name("phone")
-            %th=Request.human_attribute_name("email")
-            %th=Request.human_attribute_name("text")
-        %tbody
-          - unless @requests.empty? 
-            = render @requests, new_requests: false, car_wash: @car_wash
-          - else
-            = content_tag(:div, t('.empty_comments'), id: 'empty')
+      - if @requests.blank? 
+        = content_tag(:h3, t('.empty_comments'), id: 'empty')
+        %table.display-none
+          %thead
+            %tr
+              %th=Request.human_attribute_name("name")
+              %th=Request.human_attribute_name("phone")
+              %th=Request.human_attribute_name("email")
+              %th=Request.human_attribute_name("text")
+          %tbody
+      - else
+        %table
+          %thead
+            %tr
+              %th=Request.human_attribute_name("name")
+              %th=Request.human_attribute_name("phone")
+              %th=Request.human_attribute_name("email")
+              %th=Request.human_attribute_name("text")
+          %tbody
+            = render @requests, car_wash: @car_wash
 

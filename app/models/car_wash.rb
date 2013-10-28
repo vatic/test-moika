@@ -10,6 +10,10 @@ class CarWash < ActiveRecord::Base
 
   after_update :update_signals, if: :signal_changed?  
 
+  def unread_requests_count
+    self.requests.unread.count
+  end
+
   def signal_human
     self.signal ? I18n.t('signal_open'):I18n.t('signal_close')
     

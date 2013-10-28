@@ -10,14 +10,24 @@
       data: 
         after: data_after
         on_cpanel: on_cpanel
-  addRequests: (requests) ->
-    $('#requests #requests_content #index table tbody').append(requests)
+  addRequestsFirstTime: (html) ->
+    $('h3#empty').remove()
+    $('#requests #requests_content #index').append(html)
+    @poll()
+  addRequests: (html_count, html) ->
+    if html!='' and $('#requests #requests_content #index table').css('display') == 'none'
+      $('h3#empty').remove()
+      $('#requests #requests_content #index table').show()
+
+    $('#requests #requests_header h3').html(html_count)
+    $('#requests #requests_content #index table tbody').append(html)
+      
     @poll()
   addCount: (requests_button_html) ->
     $('#requests_button').html(requests_button_html)
     @poll()
 jQuery ->
-  if $('#requests').length or $('#requests_button')> 0
+  if $('#requests').length> 0 or $('#requests_button')> 0
     RequestPoller.poll()
 
   $(document).on 'click', 'tr.toggleble', (e) ->
@@ -39,4 +49,4 @@ jQuery ->
             read: true
         success: ->
           target.data('read') == 'true'
-          $('tr.toggleble[data-read="false"]').children().css('color','black')
+          $('tr.toggleble[data-read="false"]#' + target_id).children().css('color','black')

@@ -1,4 +1,7 @@
 ru:
+  notice:
+    requests:
+      create: "Ваша заявка отправлена администратору мойки." 
   signal_open: "Свободно"
   admin_messages_button: "Сообщения администрации сайта"
   signal_close: "Занято"
@@ -45,6 +48,9 @@ ru:
       input_text: "Ваш отзыв"
       add_comment: "Добавить отзыв"
   requests: 
+    index:
+      unread_count_pl: "непрочитанных"
+      empty_comments: "Заявок нет."
     new: 
       header: "Новая заявка"
     show:
