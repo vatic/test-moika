@@ -26,6 +26,7 @@ jQuery ->
     target_id = $(this).data('id') 
     target = $(this)
     $('table tr#' + target_id + '.text-full').first().fadeToggle('slow', 'linear')
+    log(target.children().first())
 
     if not target.data('read')
       $.ajax
@@ -38,5 +39,4 @@ jQuery ->
             read: true
         success: ->
           target.data('read') == 'true'
-          target.children().first().find('a').css('color','black')
-          target.children().first().find('a').css('background-color','#ddd')
+          $('tr.toggleble[data-read="false"]').children().css('color','black')

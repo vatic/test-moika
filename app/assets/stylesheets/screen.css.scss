@@ -799,8 +799,8 @@ tr.toggleble {
   cursor: pointer;
 }
 
-tr[data-read="false"]{
-  a {
+tr.toggleble[data-read="false"] {
+  td {
   color: red;
   background-color: #fff;
   }
