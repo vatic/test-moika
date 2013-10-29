@@ -24,10 +24,10 @@
       
     @poll()
   addCount: (messages_button_html) ->
-    $('#messages_button').html(messages_button_html)
+    $('#admin_messages_button').html(messages_button_html)
     @poll()
 jQuery ->
-  if $('#messages').length> 0 or $('#messages_button')> 0
+  if $('#messages').length> 0 or $('#admin_messages_button').length> 0
     MessagePoller.poll()
 
   $(document).on 'click', '#messages_content #index table tbody tr.toggleble', (e) ->

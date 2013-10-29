@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  before_filter :check_access, :only => [:edit, :destroy]
   respond_to :js, :html
 
   # GET /requests

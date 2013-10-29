@@ -4,7 +4,7 @@ Moika::Application.routes.draw do
   devise_for :users
   resources :car_washes do
     get :update_map, on: :collection
-    resources :comments
+    resources :comments, only: [:index, :create]
     resources :requests
     resources :messages, only: [:index, :show, :update]
   end

@@ -2,6 +2,9 @@ ru:
   notice:
     requests:
       create: "Ваша заявка отправлена администратору мойки." 
+    messages:
+      create:
+        success: "Сообщение отправлено"
   close: "Закрыть"
   signal_open: "Свободно"
   admin_messages_button: "Сообщения администрации сайта"

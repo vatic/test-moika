@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: [:show, :update]
   respond_to :js, :html
   def index
     @car_wash = CarWash.find(params[:car_wash_id])

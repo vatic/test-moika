@@ -1,6 +1,7 @@
 class CarWashesController < ApplicationController
   before_action :set_car_wash, only: [:show, :edit, :update, :update_main_action, :destroy]
   before_action :set_actions, only: [:show, :edit]
+  before_filter :check_access, :only => [:new, :edit, :update, :destroy]
 
   # GET /car_washes
   # GET /car_washes.json

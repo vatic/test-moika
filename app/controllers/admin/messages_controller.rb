@@ -1,5 +1,4 @@
-class Admin::MessagesController < ApplicationController
-  layout 'admin'
+class Admin::MessagesController < AdminController
   before_action :set_message, only: [:show, :destroy]
 
   def index
@@ -13,7 +12,7 @@ class Admin::MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to [:admin, @message], notice: 'Message successfully sent.' }
+        format.html { redirect_to admin_users_path, notice: t('notice.messages.create.success') }
         format.json { render action: 'show', status: :created, location: @message }
       else
         format.html { render action: 'new' }

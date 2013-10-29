@@ -1,5 +1,4 @@
-class Admin::UsersController < ApplicationController
-  layout 'admin'
+class Admin::UsersController < AdminController
 
   before_filter :find_user, :only => [:edit, :update, :show, :destroy ,:add_car_wash]
 

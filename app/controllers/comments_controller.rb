@@ -1,19 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :update_main_action, :destroy]
 
   def index
     @car_wash = CarWash.find(params[:car_wash_id])
     @new_comment = @car_wash.comments.build
     @comments = @car_wash.comments
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def create
