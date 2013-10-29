@@ -9,10 +9,17 @@
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
         %li= link_to "Назад на сайт", root_path
-      %form.navbar-form.navbar-right
-        .form-group
-          %input.form-control{:placeholder => "Email", :type => "text"}/
-        .form-group
-          %input.form-control{:placeholder => "Пароль", :type => "password"}/
-        %button.btn.btn-success{:type => "submit"} Войти
+
+      - if current_user.blank?
+        %form.navbar-form.navbar-right
+          .form-group
+            %input.form-control{:placeholder => "Email", :type => "text"}/
+          .form-group
+            %input.form-control{:placeholder => "Пароль", :type => "password"}/
+          %button.btn.btn-success{:type => "submit"} Войти
+      - else
+        .navbar-form.navbar-right
+          =link_to current_user.email, "#"
+          = render 'devise/menu/login_items'
+
 

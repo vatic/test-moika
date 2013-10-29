@@ -1,0 +1,5 @@
+%tr{data: {id: message.id, url: car_wash_message_path(car_wash, message), read: message.read.to_s }, id: message.id, class: 'toggleble'}
+  %td{title: "Подробнее"}= message.subject
+  %td= message.body
+%tr.text-full{data: {id: message.id}, id: message.id}
+  %td{colspan: 4}= message.body

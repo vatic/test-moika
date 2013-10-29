@@ -14,7 +14,4 @@
 //= require jquery_ujs
 //= require jquery.purr
 //= require jquery.ui.all
-//= require share
-//= require car_washes
-//= require requests
-//= require messages
+//= require twitter/bootstrap

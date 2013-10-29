@@ -3,6 +3,8 @@ class CarWash < ActiveRecord::Base
   has_many :actions
   has_many :comments
   has_many :requests
+  has_many :messages
+
   accepts_nested_attributes_for :actions
   geocoded_by :address, :latitude  => :lat, :longitude => :lon
   
@@ -14,6 +16,10 @@ class CarWash < ActiveRecord::Base
     self.requests.unread.count
   end
 
+  def unread_messages_count
+    self.messages.unread.count
+  end
+ 
   def signal_human
     self.signal ? I18n.t('signal_open'):I18n.t('signal_close')
     

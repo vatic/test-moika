@@ -2,6 +2,7 @@ ru:
   notice:
     requests:
       create: "Ваша заявка отправлена администратору мойки." 
+  close: "Закрыть"
   signal_open: "Свободно"
   admin_messages_button: "Сообщения администрации сайта"
   signal_close: "Занято"
@@ -39,6 +40,7 @@ ru:
       comments: "Отзывы"
       send_request: "Оставить заявку"
       requests: "Заявки"
+      messages: "Сообщения администрации сайта"
     edit:
       signal_notice: "Вы поменяли сигнал"
   comments:
@@ -55,11 +57,15 @@ ru:
       header: "Новая заявка"
     show:
       header: "Ваша заявка"
+  messages:
+    index:
+      unread_count_pl: "непрочитанных"
   activerecord:
     models:
-      car_wash: Автомойки
-      user: Пользователи
-      request: Заявки
+      car_wash: "Автомойки"
+      user: "Пользователи"
+      request: "Заявки"
+      message: "Сообщения администрации сайта"
     attributes:
       car_wash:
         title: "Название"
@@ -84,8 +90,22 @@ ru:
         phone: "Телефон"
         email: "email"
         text: "Заявка"
+      message:
+        subject: "Тема"
+        body: "Сообщение"
   layouts:
     admin:
       main_header: "Панель управления сайта \"Мойка 77\""
       vmenu:
         users: "Пользователи"
+  admin:
+    users:
+      index:
+        clients: "Автомойки"
+        admins: "Администраторы"
+        guests: "Гости"
+        link_to_message: "Написать сообщение"
+        submit_sending_message: "Отправить"
+        modal_title: "Сообщение для"
+        from: "От"
+        to: "Кому"

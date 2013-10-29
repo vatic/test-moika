@@ -1,0 +1,6 @@
+= link_to car_wash_messages_path(@car_wash) ,class: "dark-red-button" do
+  =t("admin_messages_button")
+  - if count > 0
+    = "("
+    %span.underline-dotted= "#{count} " 
+    = ")"

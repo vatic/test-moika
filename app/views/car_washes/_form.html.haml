@@ -40,6 +40,4 @@
 .container
   .left-container
     #admin_messages_button
-      = link_to t("admin_messages_button"), "#", class: "dark-red-button"
-
-
+      = render "admin_messages_button", count: @car_wash.unread_messages_count

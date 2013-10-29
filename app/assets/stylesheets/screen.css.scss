@@ -728,17 +728,17 @@ form.main_action_input {
   font-weight: 0;
   color: #aaa;
 }
-#comments, #requests {
-  #comments_header, #requests_header {
+#comments, #requests, #messages {
+  #comments_header, #requests_header, #messages_header {
     h1,h2,h3 {
       text-align: center;
-      text-decoration: underline;
+      border-bottom: solid 1px #ddd;
     }
   }
   #left_adv {
     @include span-columns(4,12);
   }
-  #comments_content, #requests_content {
+  #comments_content, #requests_content, #messages_content {
     @include span-columns(8 omega,12);
     #index {
       margin-bottom: 100px;
@@ -828,7 +828,7 @@ tr.toggleble[data-read="false"] {
 
 #admin_messages_button {
   a {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
