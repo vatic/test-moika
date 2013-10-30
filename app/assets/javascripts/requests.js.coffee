@@ -30,13 +30,12 @@ jQuery ->
   if $('#requests').length> 0 or $('#requests_button')> 0
     RequestPoller.poll()
 
-  $(document).on 'click', 'tr.toggleble', (e) ->
+  $(document).on 'click', '#requests #requests_content #index table tr.toggleble', (e) ->
     e.preventDefault()
     
     target_id = $(this).data('id') 
     target = $(this)
     $('table tr#' + target_id + '.text-full').first().fadeToggle('slow', 'linear')
-    log(target.children().first())
 
     if not target.data('read')
       $.ajax

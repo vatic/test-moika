@@ -1,0 +1,14 @@
+%h1 Баннеры
+
+%table
+  %thead
+    %th place
+    %th text
+    %th filename
+    %th image
+  %tbody
+    = render @banners
+
+%hr
+=link_to "New", new_admin_banner_path
+    

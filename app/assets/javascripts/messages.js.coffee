@@ -2,7 +2,11 @@
   poll: ->
     setTimeout @request, 5000
   request: ->
-    data_after = $('#messages #messages_content #index table tbody tr').last().data('id') 
+    arr = $.map($('#messages #messages_content #index table tbody tr.toggleble'), (n,i) -> 
+      n.id
+    )
+    data_after = Math.max.apply(Math,arr)
+    #data_after = $('#messages #messages_content #index table tbody tr').last().data('id') 
     on_cpanel = $('#messages').data('oncpanel')
     $.ajax
       url: $('#messages').data('url')
@@ -36,7 +40,6 @@ jQuery ->
     target_id = $(this).data('id') 
     target = $(this)
     $('table tr#' + target_id + '.text-full').first().fadeToggle('slow', 'linear')
-    log(target.children().first())
 
     if not target.data('read')
       $.ajax

@@ -44,6 +44,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rspec-rails'
+  gem 'guard', '>=2.1.0'
   gem 'guard-rspec'
 end
 
@@ -82,7 +83,8 @@ gem 'puma', group: :development
 gem 'rails_12factor', group: :production
 
   gem 'susy'
-  gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
+  #gem 'compass-rails', git: 'https://github.com/Compass/compass-rails', branch: 'rails4'
+  gem 'compass'
   gem 'sassy-buttons'
 
 gem 'nokogiri'
@@ -90,4 +92,9 @@ gem 'nokogiri'
 gem 'whenever', :require => false
 
 gem 'best_in_place', :git => "https://github.com/bernat/best_in_place", :branch => "rails-4"
+
+gem 'carrierwave'
+gem 'carrierwave-dropbox'
+
+gem 'mini_magick'
 

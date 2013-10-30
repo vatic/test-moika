@@ -101,6 +101,7 @@ ru:
       main_header: "Панель управления сайта \"Мойка 77\""
       vmenu:
         users: "Пользователи"
+        adv: "Реклама"
   admin:
     users:
       index:
