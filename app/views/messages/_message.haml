@@ -1,6 +1,5 @@
 %tr{data: {id: message.id, url: car_wash_message_path(car_wash, message), read: message.read.to_s }, id: message.id, class: 'toggleble'}
   %td= message.created_at.strftime("%d.%m %T")
-  %td= message.id
   %td{title: "Подробнее"}= message.subject
   %td= message.body[0..10]
 %tr.text-full{data: {id: message.id}, id: message.id}

@@ -11,6 +11,7 @@
         %table.display-none
           %thead
             %tr
+              %th=Message.human_attribute_name("created_at")
               %th=Message.human_attribute_name("subject")
               %th=Message.human_attribute_name("body")
           %tbody
@@ -18,6 +19,7 @@
         %table
           %thead
             %tr
+              %th=Message.human_attribute_name("created_at")
               %th=Message.human_attribute_name("subject")
               %th=Message.human_attribute_name("body")
           %tbody

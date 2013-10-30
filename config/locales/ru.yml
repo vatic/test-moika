@@ -96,6 +96,7 @@ ru:
       message:
         subject: "Тема"
         body: "Сообщение"
+        created_at: "Отправлено"
   layouts:
     admin:
       main_header: "Панель управления сайта \"Мойка 77\""
