@@ -19,12 +19,23 @@ button.btn-primary {
 }
 img.banner {
   cursor: pointer;
+  border: solid 1px blue;
+  margin: 5px 0;
 }
 
-ul#image-container> li {
+ul.image-container> li {
   /*display: inline-block;
   zoom:1;
   *display: inline;*/
   list-style: none;
 
+}
+.around_map {
+  margin: 10px 0;
+}
+
+#fake_map {
+  h1 {
+    padding: 300px 0;
+  }
 }

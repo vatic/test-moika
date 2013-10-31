@@ -27,8 +27,9 @@ class Admin::BannersController < AdminController
   def update
     respond_to do |format|
       if @banner.update(banner_params)
-        format.html { redirect_to [:admin, @banner], notice: 'Banner was successfully updated.' }
-        format.json { head :no_content }
+        #format.html { redirect_to [:admin, @banner], notice: 'Banner was successfully updated.' }
+        logger.debug(Banner.find(@banner.id).file.url)
+        format.json 
       else
         format.html { render action: 'edit' }
         format.json { render json: @banner.errors, status: :unprocessable_entity }
@@ -52,7 +53,7 @@ class Admin::BannersController < AdminController
 
     def banner_params
       params[:banner] = {}
-      params[:banner][:banner] = params[:file]
+      params[:banner][:file] = params[:file]
       params[:banner][:filename] = params[:name]
       params.require(:banner).permit(:file, :filename, :text, :place)
     end

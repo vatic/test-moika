@@ -1,19 +1,59 @@
+#banners{data: {ids: @banners.ids}}
+.row.bordered
+  .col-md-8.col-md-offset-2#banner-top-text
+    %h1.text-muted.text-center.bordered#test Бегущая строка
+.row.bordered
+  .col-md-4
+    - banner = @banners.where(place: 'top_1').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
+    = render 'modal', banner: banner   
+  .col-md-4
+    = image_tag 'video.png', size: "335x200"
+  .col-md-4
+    - banner = @banners.where(place: 'top_2').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
+    = render 'modal', banner: banner   
+.row.around_map
+  .col-md-2
+    .panel.panel-default
+      %h1.text-fade.text-center Список автомоек
+
+    - banner = @banners.where(place: 'left_1').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
+    = render 'modal', banner: banner   
+
+    - banner = @banners.where(place: 'left_2').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
+    = render 'modal', banner: banner   
+
+    - banner = @banners.where(place: 'left_3').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
+    = render 'modal', banner: banner   
+
+    - banner = @banners.where(place: 'left_4').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
+    = render 'modal', banner: banner   
+
+    - banner = @banners.where(place: 'left_5').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
+    = render 'modal', banner: banner   
+  .col-md-10#fake_map
+    .panel.panel-default
+      .panel-heading &nbsp;
+      .panel-body
+        %h1.text-fade.text-center Карта Автомоек
+      .panel-footer &nbsp;
 .row.bordered
   .col-md-8.col-md-offset-2#banner-top-text
     %h1.text-muted.text-center.bordered Бегущая строка
 .row.bordered
   .col-md-4
-    - banner = @banners.where(place: 'top_1').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, title: 'Кликните для редактирования'
+    - banner = @banners.where(place: 'bottom_1').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
     = render 'modal', banner: banner   
   .col-md-4
-    = image_tag 'video.png', size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', title: 'Кликните для редактирования'
+    = image_tag 'video.png', size: "335x200"
   .col-md-4
-    = image_tag 'adv2-77.jpg', size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', title: 'Кликните для редактирования'
-
-
-%h1 Баннеры
-#gallery
-%hr
-=link_to "New", new_admin_banner_path
-    
+    - banner = @banners.where(place: 'bottom_2').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
+    = render 'modal', banner: banner   

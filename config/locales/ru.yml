@@ -114,3 +114,7 @@ ru:
         modal_title: "Сообщение для"
         from: "От"
         to: "Кому"
+    banners:
+      modal:
+        choose_file: "Выбрать файл"
+        submit_update_image: "Загрузить новый баннер"

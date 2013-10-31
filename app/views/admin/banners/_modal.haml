@@ -5,17 +5,17 @@
         .button(type="button" class="close" data-dismiss="modal" aria-hidden="true") &times;
         .modal-title
           %h4
-            = banner.text
+            = "#{banner.id}: #{banner.text}"
       .modal-body
         =form_for [:admin, banner] do |f|
-          #banner{data: {url: admin_banner_path(banner), token: form_authenticity_token }}
-          %ul#image-container
+          #banner{id: banner.id, data: {url: admin_banner_path(banner), token: form_authenticity_token }}
+            %ul{id: "image-container_#{banner.id}", class: 'image-container'}
             %li
               %h4 Старый
               = image_tag banner.file, size: '200x100'
             %hr
-          #filelist
+          %div{id: "filelist_#{banner.id}"}
       .modal-footer
         %button(type="button" class="btn btn-default" data-dismiss="modal")= t('close')
-        %button(type="button" class="btn btn-success" id="pickfiles")= t('.choose_file')
-        %button(type="submit" class="btn btn-primary" id="uploadfiles")= t('.submit_update_image')
+        %button(type="button" class="btn btn-success" id="pickfiles_#{banner.id}")= t('.choose_file')
+        %button(type="submit" class="btn btn-primary" id="uploadfiles_#{banner.id}")= t('.submit_update_image')
