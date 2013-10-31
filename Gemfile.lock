@@ -218,6 +218,8 @@ GEM
     orm_adapter (0.4.0)
     paint (0.8.6)
     pg (0.17.0)
+    plupload-rails (1.1.0)
+      rails (>= 3.1)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -361,6 +363,7 @@ DEPENDENCIES
   mini_magick
   nokogiri
   pg
+  plupload-rails
   puma
   rails (= 4.0.0)
   rails_12factor

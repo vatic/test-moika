@@ -54,15 +54,15 @@ class BannerUploader < CarrierWave::Uploader::Base
   # end
   
  
-  #def filename
-  #  model.filename
-  #end
+  def filename
+    model.filename
+  end
 
   CarrierWave.configure do |config|
   config.dropbox_app_key = "ykxd3nnm9kut7qj"
   config.dropbox_app_secret = "ertj7ttbfp83u7j"
-  config.dropbox_access_token = "z4z2pm3qcz7r5lx7"
-  config.dropbox_access_token_secret = "0x5gex92o6zquez"
+  config.dropbox_access_token = "f39jxu6o6ec3wlth"
+  config.dropbox_access_token_secret = "7isegmk64tal705"
   config.dropbox_user_id = "157055272"
   config.dropbox_access_type = "dropbox"
   end

@@ -13,3 +13,18 @@ button.btn-primary {
 .flash.success {
   color: green;
 }
+
+.bordered {
+  border: solid 1px #ddd;
+}
+img.banner {
+  cursor: pointer;
+}
+
+ul#image-container> li {
+  /*display: inline-block;
+  zoom:1;
+  *display: inline;*/
+  list-style: none;
+
+}

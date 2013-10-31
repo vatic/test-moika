@@ -1,14 +1,19 @@
+.row.bordered
+  .col-md-8.col-md-offset-2#banner-top-text
+    %h1.text-muted.text-center.bordered Бегущая строка
+.row.bordered
+  .col-md-4
+    - banner = @banners.where(place: 'top_1').first
+    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, title: 'Кликните для редактирования'
+    = render 'modal', banner: banner   
+  .col-md-4
+    = image_tag 'video.png', size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', title: 'Кликните для редактирования'
+  .col-md-4
+    = image_tag 'adv2-77.jpg', size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', title: 'Кликните для редактирования'
+
+
 %h1 Баннеры
-
-%table
-  %thead
-    %th place
-    %th text
-    %th filename
-    %th image
-  %tbody
-    = render @banners
-
+#gallery
 %hr
 =link_to "New", new_admin_banner_path
     

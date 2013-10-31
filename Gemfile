@@ -96,5 +96,7 @@ gem 'best_in_place', :git => "https://github.com/bernat/best_in_place", :branch 
 gem 'carrierwave'
 gem 'carrierwave-dropbox'
 
+gem 'plupload-rails'
+
 gem 'mini_magick'
 

@@ -1,5 +1,6 @@
 class Admin::BannersController < AdminController
   before_action :set_banner, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token, :only => [:update]
 
   def index
     @banners = Banner.all
@@ -50,9 +51,9 @@ class Admin::BannersController < AdminController
     end
 
     def banner_params
-      #params[:banner] = {}
-      #params[:banner][:banner] = params[:file]
-      #params[:banner][:filename] = params[:name]
+      params[:banner] = {}
+      params[:banner][:banner] = params[:file]
+      params[:banner][:filename] = params[:name]
       params.require(:banner).permit(:file, :filename, :text, :place)
     end
 

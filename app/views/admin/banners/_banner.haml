@@ -3,3 +3,10 @@
   %td= banner.text
   %td= banner.filename
   %td= image_tag banner.file, size: "400x200"
+%tr#container
+  %td
+    %button#pickfiles.btn.btn-success.btn-lg{type: 'button'} Select files 
+  %td
+    %button#uploadfiles.btn.btn-success.btn-lg Upload
+%tr
+  %td#filelist
