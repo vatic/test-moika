@@ -5,7 +5,7 @@ $ ->
   uploaders = {}
   ids = $('#banners').data('ids')
   console.log(ids)
-  for id in ids
+  $.each ids, (index,id) ->
     uploader = new plupload.Uploader(
       runtimes: "html5,flash,silverlight,browserplus"
       browse_button: "pickfiles_" + id
@@ -13,7 +13,6 @@ $ ->
       max_file_size: "10mb"
       url: $('#banner_' + id).data('url')
       authenticity_token: $('#banner').data('token')
-      #file_data_name: 'banner'
       multi_selection: false
       flash_swf_url: "/plupload/js/plupload.flash.swf"
       silverlight_xap_url: "/plupload/js/plupload.silverlight.xap"
@@ -28,23 +27,24 @@ $ ->
         width: 320
         height: 240
         quality: 90
-       multipart: true
-       multipart_params:
-        "_method" : "put",
+      multipart: true
+      multipart_params:
+        "_method" : "put"
     )
-    console.log(uploader.settings.container)
+
+    uploader.bind "UploadProgress", (up, file) ->
+      progress_div_part1 = '<div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="'
+      progress_div_part2 = '" aria-valuemin="0" aria-valuemax="100" style="width: 40%"><span class="sr-only">40% Complete (success)</span></div></div>'
+      $("#" + file.id + " b").html progress_div_part1 + file.percent + progress_div_part2
+      console.log('progress' + file.percent)
 
     uploader.bind "Init", (up, params) ->
-      #$("#filelist").html "<div>Current runtime: " + params.runtime + "</div>"
-
+      $("#filelist").html "<div>Current runtime: " + params.runtime + "</div>"
+      $("#filelist").append "<div>container: " + params.container + "</div>"
 
 ###############################
     uploader.init()
 ###############################
-
-
-    uploader.bind "UploadProgress", (up, file) ->
-      $("#" + file.id + " b").html file.percent + "%"
 
     uploader.bind "Error", (up, err) ->
       $("#filelist").append "<div>Error: " + err.code + ", Message: " + err.message + ((if err.file then ", File: " + err.file.name else "")) + "</div>"
@@ -59,288 +59,40 @@ $ ->
 
 #####################################################
 
-  $("#uploadfiles_" + ids[0]).click (e) ->
-    uploader = uploaders[ids[0]]
-    uploader.start()
-    e.preventDefault()
-
-  $("#uploadfiles_" + ids[1]).click (e) ->
-    uploader = uploaders[ids[1]]
-    uploader.start()
-    e.preventDefault()
-
-  $("#uploadfiles_" + ids[2]).click (e) ->
-    uploader = uploaders[ids[2]]
-    uploader.start()
-    e.preventDefault()
-
-  $("#uploadfiles_" + ids[3]).click (e) ->
-    uploader = uploaders[ids[3]]
-    uploader.start()
-    e.preventDefault()
-
-  $("#uploadfiles_" + ids[4]).click (e) ->
-    uploader = uploaders[ids[4]]
-    uploader.start()
-    e.preventDefault()
-
-  $("#uploadfiles_" + ids[5]).click (e) ->
-    uploader = uploaders[ids[5]]
-    uploader.start()
-    e.preventDefault()
-
-  $("#uploadfiles_" + ids[6]).click (e) ->
-    uploader = uploaders[ids[6]]
-    uploader.start()
-    e.preventDefault()
-
-  $("#uploadfiles_" + ids[7]).click (e) ->
-    uploader = uploaders[ids[7]]
-    uploader.start()
-    e.preventDefault()
-
-  $("#uploadfiles_" + ids[8]).click (e) ->
-    uploader = uploaders[ids[8]]
-    uploader.start()
-    e.preventDefault()
+    $("#uploadfiles_" + id).click (e) ->
+      uploader = uploaders[id]
+      uploader.start()
+      e.preventDefault()
 
 #####################################################
 
-  banner_id = ids[0]
-  uploader0 = uploaders[banner_id]
-  uploader0.bind "FilesAdded", (up, files) ->
-    id = banner_id
-    $.each files, (i, file) ->
-      img = new o.Image()
-      img.onload = ->
-        li = document.createElement("li")
-        h4 = document.createElement("h4")
-        t=document.createTextNode("Новый")
-        h4.appendChild(t)
-        li.appendChild(h4)
-        li.id = @uid
-        document.getElementById("image-container_" + id).appendChild li
-        @embed li.id,
-          width: 200
-          height: 100
-          crop: true
-      img.load file.getSource()
-      $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
-      up.refresh() # Reposition Flash/Silverlight
-      console.log('filesAdded:' + file.name)
-      console.log('filesAdded:' + id)
-      console.log('filesAdded:' + $("filelist_" + id))
-      $('#test').append file.name
+    uploader.bind "FilesAdded", (up, files) ->
+      $.each files, (i, file) ->
+        img = new o.Image()
+        img.onload = ->
+          li = document.createElement("li")
+          h4 = document.createElement("h4")
+          t=document.createTextNode("Новый")
+          h4.appendChild(t)
+          li.appendChild(h4)
+          li.id = @uid
+          document.getElementById("image-container_" + id).appendChild li
+          @embed li.id,
+            width: 240
+            height: 140
+            crop: true
+        img.load file.getSource()
+        $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
+        up.refresh() # Reposition Flash/Silverlight
+        console.log('filesAdded:' + file.name)
+        console.log('filesAdded:' + id)
+        console.log('filesAdded:' + $("#filelist_" + id).prop('id'))
+        console.log('filesAdded:' + $("#image-container_" + id).prop('id'))
+        $('#test').append file.name
 
-  banner_id = ids[1]
-  uploader1 = uploaders[banner_id]
-  uploader1.bind "FilesAdded", (up, files) ->
-    id = banner_id
-    $.each files, (i, file) ->
-      img = new o.Image()
-      img.onload = ->
-        li = document.createElement("li")
-        h4 = document.createElement("h4")
-        t=document.createTextNode("Новый")
-        h4.appendChild(t)
-        li.appendChild(h4)
-        li.id = @uid
-        document.getElementById("image-container_" + id).appendChild li
-        @embed li.id,
-          width: 200
-          height: 100
-          crop: true
-      img.load file.getSource()
-      $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
-      up.refresh() # Reposition Flash/Silverlight
-      console.log('filesAdded:' + file.name)
-      console.log('filesAdded:' + id)
-      console.log('filesAdded:' + $("filelist_" + id))
-      $('#test').append file.name
-
-  banner_id = ids[2]
-  uploader2 = uploaders[banner_id]
-  uploader2.bind "FilesAdded", (up, files) ->
-    id = banner_id
-    $.each files, (i, file) ->
-      img = new o.Image()
-      img.onload = ->
-        li = document.createElement("li")
-        h4 = document.createElement("h4")
-        t=document.createTextNode("Новый")
-        h4.appendChild(t)
-        li.appendChild(h4)
-        li.id = @uid
-        document.getElementById("image-container_" + id).appendChild li
-        @embed li.id,
-          width: 200
-          height: 100
-          crop: true
-      img.load file.getSource()
-      $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
-      up.refresh() # Reposition Flash/Silverlight
-      console.log('filesAdded:' + file.name)
-      console.log('filesAdded:' + id)
-      console.log('filesAdded:' + $("filelist_" + id))
-      $('#test').append file.name
-
-  banner_id = ids[3]
-  uploader3 = uploaders[banner_id]
-  uploader3.bind "FilesAdded", (up, files) ->
-    id = banner_id
-    $.each files, (i, file) ->
-      img = new o.Image()
-      img.onload = ->
-        li = document.createElement("li")
-        h4 = document.createElement("h4")
-        t=document.createTextNode("Новый")
-        h4.appendChild(t)
-        li.appendChild(h4)
-        li.id = @uid
-        document.getElementById("image-container_" + id).appendChild li
-        @embed li.id,
-          width: 200
-          height: 100
-          crop: true
-      img.load file.getSource()
-      $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
-      up.refresh() # Reposition Flash/Silverlight
-      console.log('filesAdded:' + file.name)
-      console.log('filesAdded:' + id)
-      console.log('filesAdded:' + $("filelist_" + id))
-      $('#test').append file.name
-
-  banner_id = ids[4]
-  uploader4 = uploaders[banner_id]
-  uploader4.bind "FilesAdded", (up, files) ->
-    id = banner_id
-    $.each files, (i, file) ->
-      img = new o.Image()
-      img.onload = ->
-        li = document.createElement("li")
-        h4 = document.createElement("h4")
-        t=document.createTextNode("Новый")
-        h4.appendChild(t)
-        li.appendChild(h4)
-        li.id = @uid
-        document.getElementById("image-container_" + id).appendChild li
-        @embed li.id,
-          width: 200
-          height: 100
-          crop: true
-      img.load file.getSource()
-      $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
-      up.refresh() # Reposition Flash/Silverlight
-      console.log('filesAdded:' + file.name)
-      console.log('filesAdded:' + id)
-      console.log('filesAdded:' + $("filelist_" + id))
-      $('#test').append file.name
-
-  banner_id = ids[5]
-  uploader5 = uploaders[banner_id]
-  uploader5.bind "FilesAdded", (up, files) ->
-    id = banner_id
-    $.each files, (i, file) ->
-      img = new o.Image()
-      img.onload = ->
-        li = document.createElement("li")
-        h4 = document.createElement("h4")
-        t=document.createTextNode("Новый")
-        h4.appendChild(t)
-        li.appendChild(h4)
-        li.id = @uid
-        document.getElementById("image-container_" + id).appendChild li
-        @embed li.id,
-          width: 200
-          height: 100
-          crop: true
-      img.load file.getSource()
-      $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
-      up.refresh() # Reposition Flash/Silverlight
-      console.log('filesAdded:' + file.name)
-      console.log('filesAdded:' + id)
-      console.log('filesAdded:' + $("filelist_" + id))
-      $('#test').append file.name
-
-  banner_id = ids[6]
-  uploader6 = uploaders[banner_id]
-  uploader6.bind "FilesAdded", (up, files) ->
-    id = banner_id
-    $.each files, (i, file) ->
-      img = new o.Image()
-      img.onload = ->
-        li = document.createElement("li")
-        h4 = document.createElement("h4")
-        t=document.createTextNode("Новый")
-        h4.appendChild(t)
-        li.appendChild(h4)
-        li.id = @uid
-        document.getElementById("image-container_" + id).appendChild li
-        @embed li.id,
-          width: 200
-          height: 100
-          crop: true
-      img.load file.getSource()
-      $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
-      up.refresh() # Reposition Flash/Silverlight
-      console.log('filesAdded:' + file.name)
-      console.log('filesAdded:' + id)
-      console.log('filesAdded:' + $("filelist_" + id))
-      $('#test').append file.name
-
-  banner_id = ids[7]
-  uploader7 = uploaders[banner_id]
-  uploader7.bind "FilesAdded", (up, files) ->
-    id = banner_id
-    $.each files, (i, file) ->
-      img = new o.Image()
-      img.onload = ->
-        li = document.createElement("li")
-        h4 = document.createElement("h4")
-        t=document.createTextNode("Новый")
-        h4.appendChild(t)
-        li.appendChild(h4)
-        li.id = @uid
-        document.getElementById("image-container_" + id).appendChild li
-        @embed li.id,
-          width: 200
-          height: 100
-          crop: true
-      img.load file.getSource()
-      $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
-      up.refresh() # Reposition Flash/Silverlight
-      console.log('filesAdded:' + file.name)
-      console.log('filesAdded:' + id)
-      console.log('filesAdded:' + $("filelist_" + id))
-      $('#test').append file.name
-
-  banner_id = ids[8]
-  uploader8 = uploaders[banner_id]
-  uploader8.bind "FilesAdded", (up, files) ->
-    id = banner_id
-    $.each files, (i, file) ->
-      img = new o.Image()
-      img.onload = ->
-        li = document.createElement("li")
-        h4 = document.createElement("h4")
-        t=document.createTextNode("Новый")
-        h4.appendChild(t)
-        li.appendChild(h4)
-        li.id = @uid
-        document.getElementById("image-container_" + id).appendChild li
-        @embed li.id,
-          width: 200
-          height: 100
-          crop: true
-      img.load file.getSource()
-      $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
-      up.refresh() # Reposition Flash/Silverlight
-      console.log('filesAdded:' + file.name)
-      console.log('filesAdded:' + id)
-      console.log('filesAdded:' + $("filelist_" + id))
-      $('#test').append file.name
 
 #####################################################
+# modal dialog for image uploading
 
   $(document).on 'mouseover', 'img.banner', (e) ->
     $(this).css('border', 'solid 2px red')

@@ -10,11 +10,10 @@
         =form_for [:admin, banner] do |f|
           #banner{id: banner.id, data: {url: admin_banner_path(banner), token: form_authenticity_token }}
             %ul{id: "image-container_#{banner.id}", class: 'image-container'}
-            %li
-              %h4 Старый
-              = image_tag banner.file, size: '200x100'
-            %hr
-          %div{id: "filelist_#{banner.id}"}
+              %li
+                %h4 Старый
+                = image_tag banner.file, size: '250x150'
+            %div{id: "filelist_#{banner.id}", class: 'filelist'}
       .modal-footer
         %button(type="button" class="btn btn-default" data-dismiss="modal")= t('close')
         %button(type="button" class="btn btn-success" id="pickfiles_#{banner.id}")= t('.choose_file')

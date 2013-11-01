@@ -5,38 +5,20 @@
 .row.bordered
   .col-md-4
     - banner = @banners.where(place: 'top_1').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-    = render 'modal', banner: banner   
+    = render 'banner', banner: banner   
   .col-md-4
     = image_tag 'video.png', size: "335x200"
   .col-md-4
     - banner = @banners.where(place: 'top_2').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-    = render 'modal', banner: banner   
+    = render 'banner', banner: banner   
 .row.around_map
   .col-md-2
     .panel.panel-default
       %h1.text-fade.text-center Список автомоек
+    -@banners_left.find_each do |banner|
+      = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
+      = render 'modal', banner: banner   
 
-    - banner = @banners.where(place: 'left_1').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-    = render 'modal', banner: banner   
-
-    - banner = @banners.where(place: 'left_2').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-    = render 'modal', banner: banner   
-
-    - banner = @banners.where(place: 'left_3').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-    = render 'modal', banner: banner   
-
-    - banner = @banners.where(place: 'left_4').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-    = render 'modal', banner: banner   
-
-    - banner = @banners.where(place: 'left_5').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-    = render 'modal', banner: banner   
   .col-md-10#fake_map
     .panel.panel-default
       .panel-heading &nbsp;
@@ -49,11 +31,9 @@
 .row.bordered
   .col-md-4
     - banner = @banners.where(place: 'bottom_1').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-    = render 'modal', banner: banner   
+    = render 'banner', banner: banner   
   .col-md-4
     = image_tag 'video.png', size: "335x200"
   .col-md-4
     - banner = @banners.where(place: 'bottom_2').first
-    = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-    = render 'modal', banner: banner   
+    = render 'banner', banner: banner   

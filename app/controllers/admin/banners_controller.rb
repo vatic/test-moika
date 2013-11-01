@@ -4,6 +4,9 @@ class Admin::BannersController < AdminController
 
   def index
     @banners = Banner.all
+    @banners_left = Banner.left
+    @banners_top = Banner.top
+    @banners_bottom = Banner.bottom
   end
 
   def show
