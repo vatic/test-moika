@@ -7,6 +7,14 @@ GIT
       sass (>= 3.2)
 
 GIT
+  remote: https://github.com/Compass/compass-rails
+  revision: 32c16cb90f78053310b35199a970c53355bcd300
+  branch: rails4-hack
+  specs:
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
+
+GIT
   remote: https://github.com/bernat/best_in_place
   revision: 366413be357d65cdf47031e928aea969f72e3659
   branch: rails-4
@@ -345,6 +353,7 @@ DEPENDENCIES
   carrierwave-dropbox
   coffee-rails (~> 4.0.0)
   compass
+  compass-rails!
   devise
   geocoder
   guard (>= 2.1.0)

@@ -82,10 +82,10 @@ gem 'puma', group: :development
 
 gem 'rails_12factor', group: :production
 
-  gem 'susy'
-  #gem 'compass-rails', git: 'https://github.com/Compass/compass-rails', branch: 'rails4'
-  gem 'compass'
-  gem 'sassy-buttons'
+gem 'susy'
+gem 'compass'
+gem 'compass-rails', git: 'https://github.com/Compass/compass-rails', branch: 'rails4-hack'
+gem 'sassy-buttons'
 
 gem 'nokogiri'
 
