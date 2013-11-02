@@ -73,7 +73,7 @@ gem 'unicorn'
 
 # Use Capistrano for deployment
 gem 'capistrano', group: :development
-gem 'rvm-capistrano'
+#gem 'rvm-capistrano'
 #gem 'thin', group: :development
 gem 'puma', group: :development
 

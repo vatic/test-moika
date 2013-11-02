@@ -1,13 +1,14 @@
 require "bundler/capistrano"
 
-require "rvm/capistrano"
+#require "rvm/capistrano"
 
 #set :rvm_ruby_string, '2.0.0-p247'
-set :rvm_type, :user  # Don't use system-wide RVM
+#set :rvm_type, :user  # Don't use system-wide RVM
 
-server "141.8.193.154", :web, :app, :db, primary: true
+#server "141.8.193.154", :web, :app, :db, primary: true
+server "141.8.193.183", :web, :app, :db, primary: true
 set :application, "moika"
-set :user, "vatagin"
+set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
