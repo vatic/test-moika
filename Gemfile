@@ -99,4 +99,4 @@ gem 'carrierwave-dropbox'
 gem 'plupload-rails'
 
 gem 'mini_magick'
-
+gem 'newrelic_rpm'
