@@ -17,6 +17,14 @@ set :repository, "git@github.com:vatic/#{application}.git"
 set :branch, "master"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
+
+
+after "deploy:update_code", :update_images_symlink
+task  :update_images_symlink, roles => :app do
+  run "rm -rf #{release_path}/public/uploads"
+  run "ln -nfs #{deploy_to}/shared/uploads/ #{current_release}/public/uploads"
+end
+
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 namespace :deploy do
   %w[start stop restart].each do |command|
