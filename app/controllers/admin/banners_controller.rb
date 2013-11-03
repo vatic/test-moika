@@ -1,5 +1,5 @@
 class Admin::BannersController < AdminController
-  before_action :set_banner, only: [:show, :edit, :update, :destroy]
+  before_action :set_banner, only: [:show, :edit, :update, :destroy, :delete_file]
   skip_before_filter :verify_authenticity_token, :only => [:update]
 
   def index
@@ -34,7 +34,6 @@ class Admin::BannersController < AdminController
         logger.debug(Banner.find(@banner.id).file.url)
         format.json 
       else
-        format.html { render action: 'edit' }
         format.json { render json: @banner.errors, status: :unprocessable_entity }
       end
     end
@@ -48,8 +47,15 @@ class Admin::BannersController < AdminController
     end
   end
 
+  def delete_file
+    @banner.remove_file!
+    @banner.save!
+    respond_to do |format|
+      format.json { render json: @banner.file}
+    end
+  end
+
   private
-    
     def set_banner
       @banner = Banner.find(params[:id])
     end

@@ -5,19 +5,22 @@
 .row.bordered
   .col-md-4
     - banner = @banners.where(place: 'top_1').first
-    = render 'banner', banner: banner   
+    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url
   .col-md-4
     = image_tag 'video.png', size: "335x200"
   .col-md-4
     - banner = @banners.where(place: 'top_2').first
-    = render 'banner', banner: banner   
+    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url
+
 .row.around_map
   .col-md-2
     .panel.panel-default
       %h1.text-fade.text-center Список автомоек
     -@banners_left.find_each do |banner|
-      = image_tag banner.file, size: "335x200", class: "img-thumbnail banner", 'data-toggle' => 'tooltip', 'data-id' => banner.id, id: banner.id, title: 'Кликните для редактирования'
-      = render 'modal', banner: banner   
+      - if banner.left_thin_long?
+        = render 'banner', banner: banner, banner_url: banner.file.b_160_190.url
+      - elsif banner.left_thin_short?
+        = render 'banner', banner: banner, banner_url: banner.file.b_160_160.url
 
   .col-md-10#fake_map
     .panel.panel-default
@@ -31,9 +34,10 @@
 .row.bordered
   .col-md-4
     - banner = @banners.where(place: 'bottom_1').first
-    = render 'banner', banner: banner   
+    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url
   .col-md-4
     = image_tag 'video.png', size: "335x200"
   .col-md-4
     - banner = @banners.where(place: 'bottom_2').first
-    = render 'banner', banner: banner   
+    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url
+

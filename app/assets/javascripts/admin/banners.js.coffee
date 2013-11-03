@@ -103,3 +103,9 @@ $ ->
   $(document).on 'click', 'img.banner', (e) ->
     banner_id = $(this).data('id')
     $('#bannermodal_' + banner_id).modal('toggle')
+
+  $(document).on "ajax:success", "a.delete_file", (e, data, status, xhr) ->
+    arr = $('ul.image-container li')
+    $.each arr, (i,v) ->
+      $(v).html('')
+    $("ul.image-container").append('<h5>Удалено</h5>')

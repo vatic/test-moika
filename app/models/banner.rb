@@ -22,4 +22,24 @@ class Banner < ActiveRecord::Base
   def self.comment
     Banner.where("place ilike 'comment%'")
   end
+  
+  def left?
+     !(/left_/ =~ self.place).nil?
+  end
+
+  def top?
+     !(/top_/ =~ self.place).nil?
+  end
+
+  def bottom?
+     !(/bottom_/ =~ self.place).nil?
+  end
+
+  def left_thin_short?
+    !(/left_[24]/ =~ self.place).nil?
+  end
+
+  def left_thin_long?
+    !(/left_[135]/ =~ self.place).nil?
+  end
 end
