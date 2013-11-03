@@ -21,6 +21,7 @@ ssh_options[:forward_agent] = true
 
 after "deploy:update_code", :update_images_symlink
 task  :update_images_symlink, roles => :app do
+  run "cp -R #{release_path}/public/uploads/default #{deploy_to}/shared/uploads/ "
   run "rm -rf #{release_path}/public/uploads"
   run "ln -nfs #{deploy_to}/shared/uploads/ #{current_release}/public/uploads"
 end

@@ -17,8 +17,8 @@ class BannerUploader < CarrierWave::Uploader::Base
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
     # For Rails 3.1+ asset pipeline compatibility:
-    asset_path("assets/fallback/" + [version_name, "default.png"].compact.join('_'))
-    #"/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    # asset_path([version_name, "default.png"].compact.join('_'))
+    "/uploads/default/" + [version_name, "default.png"].compact.join('_')
   end
 
   # Create different versions of your uploaded files:
