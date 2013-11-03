@@ -12,7 +12,7 @@
             %ul{id: "image-container_#{banner.id}", class: 'image-container'}
               %li
                 %h4 Старый
-                = image_tag banner.file, size: '250x150'
+                = image_tag banner_url, size: '250x150'
             %div{id: "filelist_#{banner.id}", class: 'filelist'}
       .modal-footer
         %button(type="button" class="btn btn-default" data-dismiss="modal")= t('close')
