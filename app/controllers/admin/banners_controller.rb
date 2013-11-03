@@ -51,7 +51,7 @@ class Admin::BannersController < AdminController
     @banner.remove_file!
     @banner.save!
     respond_to do |format|
-      format.json { render json: @banner.file}
+      format.json { render json: @banner.to_json(only: [:id, :file]) }
     end
   end
 

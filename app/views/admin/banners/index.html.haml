@@ -5,12 +5,12 @@
 .row.bordered
   .col-md-4
     - banner = @banners.where(place: 'top_1').first
-    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url
+    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url, version: :b_335_205
   .col-md-4
     = image_tag 'video.png', size: "335x200"
   .col-md-4
     - banner = @banners.where(place: 'top_2').first
-    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url
+    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url, version: :b_335_205
 
 .row.around_map
   .col-md-2
@@ -18,9 +18,9 @@
       %h1.text-fade.text-center Список автомоек
     -@banners_left.find_each do |banner|
       - if banner.left_thin_long?
-        = render 'banner', banner: banner, banner_url: banner.file.b_160_190.url
+        = render 'banner', banner: banner, banner_url: banner.file.b_160_190.url, version: :b_160_190
       - elsif banner.left_thin_short?
-        = render 'banner', banner: banner, banner_url: banner.file.b_160_160.url
+        = render 'banner', banner: banner, banner_url: banner.file.b_160_160.url, version: :b_160_160
 
   .col-md-10#fake_map
     .panel.panel-default
@@ -34,10 +34,10 @@
 .row.bordered
   .col-md-4
     - banner = @banners.where(place: 'bottom_1').first
-    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url
+    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url, version: :b_335_205
   .col-md-4
     = image_tag 'video.png', size: "335x200"
   .col-md-4
     - banner = @banners.where(place: 'bottom_2').first
-    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url
+    = render 'banner', banner: banner, banner_url: banner.file.b_335_205.url, version: :b_335_205
 

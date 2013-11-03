@@ -84,10 +84,6 @@ $ ->
         img.load file.getSource()
         $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
         up.refresh() # Reposition Flash/Silverlight
-        console.log('filesAdded:' + file.name)
-        console.log('filesAdded:' + id)
-        console.log('filesAdded:' + $("#filelist_" + id).prop('id'))
-        console.log('filesAdded:' + $("#image-container_" + id).prop('id'))
         $('#test').append file.name
 
 
@@ -109,3 +105,9 @@ $ ->
     $.each arr, (i,v) ->
       $(v).html('')
     $("ul.image-container").append('<h5>Удалено</h5>')
+    #file = data.response
+    #file = JSON.parse file
+    id = data.id
+    version =  $('#banner_' + id).data('version')
+    url = data.file[version].url
+    $('img#' + id).prop('src',url) 

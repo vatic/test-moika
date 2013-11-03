@@ -8,7 +8,7 @@
             = "#{banner.id}: #{banner.text}"
       .modal-body
         =form_for [:admin, banner] do |f|
-          #banner{id: banner.id, data: {url: admin_banner_path(banner), token: form_authenticity_token }}
+          #banner{id: banner.id, data: {url: admin_banner_path(banner), token: form_authenticity_token, version: version }}
             %ul{id: "image-container_#{banner.id}", class: 'image-container'}
               %li
                 %h4 Старый
