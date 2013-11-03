@@ -28,7 +28,7 @@ class BannerUploader < CarrierWave::Uploader::Base
   version :b_160_160, :if => :is_left_thin_short?
 
   version :b_335_205 do
-    process :resize_to_fit => [335, 205]
+    process :resize_to_limit => [335, 205]
   end
 
   version :b_160_160 do
@@ -36,7 +36,7 @@ class BannerUploader < CarrierWave::Uploader::Base
   end
 
   version :b_160_190 do
-    process :resize_to_fit => [160, 190]
+    process :resize_to_limit => [160, 190]
   end
 
 

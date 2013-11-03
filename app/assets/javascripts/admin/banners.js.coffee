@@ -84,7 +84,6 @@ $ ->
         img.load file.getSource()
         $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
         up.refresh() # Reposition Flash/Silverlight
-        $('#test').append file.name
 
 
 #####################################################
