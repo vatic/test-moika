@@ -24,10 +24,25 @@
 
   .col-md-10#fake_map
     .panel.panel-default
-      .panel-heading &nbsp;
       .panel-body
-        %h1.text-fade.text-center Карта Автомоек
-      .panel-footer &nbsp;
+        .row.bordered
+          .col-md-6
+            - banner = @banners.where(place: 'comments_fat_long').first
+            %h4= banner.text
+            = render 'banner', banner: banner, banner_url: banner.file.b_320_380.url, version: :b_320_380
+          .col-md-6
+            - banner = @banners.where(place: 'comments_fat_short').first
+            %h4= banner.text
+            = render 'banner', banner: banner, banner_url: banner.file.b_320_320.url, version: :b_320_320
+        .row.bordered
+          .col-md-6
+            - banner = @banners.where(place: 'requests_fat_long').first
+            %h4= banner.text
+            = render 'banner', banner: banner, banner_url: banner.file.b_320_380.url, version: :b_320_380
+          .col-md-6
+            - banner = @banners.where(place: 'requests_fat_short').first
+            %h4= banner.text
+            = render 'banner', banner: banner, banner_url: banner.file.b_320_320.url, version: :b_320_320
 .row.bordered
   .col-md-8.col-md-offset-2#banner-top-text
     %h1.text-muted.text-center.bordered Бегущая строка

@@ -9,11 +9,11 @@
     =#image_tag 'adv_left.png'
     =#image_tag 'adv_left.png'
     =#image_tag 'adv_left_small.png'
-    = image_tag  Banner.where(place: 'left_1').first.file.b_160_190.url
-    = image_tag  Banner.where(place: 'left_2').first.file.b_160_160.url
-    = image_tag  Banner.where(place: 'left_3').first.file.b_160_190.url
-    = image_tag  Banner.where(place: 'left_4').first.file.b_160_160.url
-    = image_tag  Banner.where(place: 'left_5').first.file.b_160_190.url
+    = image_tag  Banner.where(place: 'left_1').first.file.b_160_190.url, class: 'banner'
+    = image_tag  Banner.where(place: 'left_2').first.file.b_160_160.url, class: 'banner'
+    = image_tag  Banner.where(place: 'left_3').first.file.b_160_190.url, class: 'banner'
+    = image_tag  Banner.where(place: 'left_4').first.file.b_160_160.url, class: 'banner'
+    = image_tag  Banner.where(place: 'left_5').first.file.b_160_190.url, class: 'banner'
 
 #map_container
   %h3.text-center#map_header Карта автомоек Москвы

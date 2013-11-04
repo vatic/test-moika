@@ -42,4 +42,21 @@ class Banner < ActiveRecord::Base
   def left_thin_long?
     !(/left_[135]/ =~ self.place).nil?
   end
+
+  def comment?
+    !(/comments_/ =~ self.place).nil?
+  end
+
+  def request?
+    !(/requests_/ =~ self.place).nil?
+  end
+
+  def fat_long?
+    !(/_fat_long\Z/ =~ self.place).nil?
+  end
+
+  def fat_short?
+    !(/_fat_short\Z/ =~ self.place).nil?
+  end
+
 end

@@ -26,6 +26,8 @@ class BannerUploader < CarrierWave::Uploader::Base
   version :b_335_205, :if => :is_top_or_bottom?
   version :b_160_190, :if => :is_left_thin_long?
   version :b_160_160, :if => :is_left_thin_short?
+  version :b_320_380, :if => :is_fat_long?
+  version :b_320_320, :if => :is_fat_short?
 
   version :b_335_205 do
     process :resize_to_limit => [335, 205]
@@ -39,6 +41,13 @@ class BannerUploader < CarrierWave::Uploader::Base
     process :resize_to_limit => [160, 190]
   end
 
+  version :b_320_380 do
+    process :resize_to_limit => [320, 380]
+  end
+
+  version :b_320_320 do
+    process :resize_to_limit => [320, 320]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -71,6 +80,14 @@ class BannerUploader < CarrierWave::Uploader::Base
 
   def is_left_thin_short? picture
     model.left_thin_short?
+  end
+
+  def is_fat_long? picture
+    (model.comment? || model.request?) && model.fat_long?
+  end
+
+  def is_fat_short? picture
+    (model.comment? || model.request?) && model.fat_short?
   end
 
 

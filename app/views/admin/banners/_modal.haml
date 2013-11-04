@@ -17,6 +17,6 @@
       .modal-footer
         %button(type="button" class="btn btn-default" data-dismiss="modal")= t('close')
         %button(type="button" class="btn btn-danger" id="deletefiles_#{banner.id}")
-          = link_to t('delete'), admin_delete_file_path(banner.id), :confirm => 'Are you sure?', :method => :delete, :remote=>true, class: "delete_file"
+          = link_to t('delete'), admin_delete_file_path(banner.id), data: {:confirm => 'Are you sure?'}, :method => :delete, :remote=>true, class: "delete_file"
         %button(type="button" class="btn btn-success" id="pickfiles_#{banner.id}")= t('.choose_file')
         %button(type="submit" class="btn btn-primary" id="uploadfiles_#{banner.id}")= t('.submit_update_image')
