@@ -39,6 +39,7 @@ $ ->
       console.log('progress' + file.percent)
 
     uploader.bind "Init", (up, params) ->
+   
       $("#filelist").html "<div>Current runtime: " + params.runtime + "</div>"
       $("#filelist").append "<div>container: " + params.container + "</div>"
 
@@ -66,6 +67,8 @@ $ ->
 
     $("#uploadfiles_" + id).click (e) ->
       uploader = uploaders[id]
+      uploader.settings.multipart_params.text = $('#bannermodal_' + id + ' input[type="text"').val()
+      console.log(uploader.settings.multipart_params)
       uploader.start()
       e.preventDefault()
 

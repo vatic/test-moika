@@ -5,7 +5,8 @@
         .button(type="button" class="close" data-dismiss="modal" aria-hidden="true") &times;
         .modal-title
           %h4
-            = "#{banner.id}: #{banner.text}"
+            Текст над баннером:
+            = text_field_tag 'banner[text]', banner.text
       .modal-body
         =#form_for [:admin, banner] do |f|
         #banner{id: banner.id, data: {url: car_wash_banner_path(car_wash, banner), token: form_authenticity_token, version: version }}

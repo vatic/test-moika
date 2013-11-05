@@ -10,6 +10,7 @@ class BannersController < ApplicationController
   def update
     respond_to do |format|
       if @banner.update(banner_params)
+        logger.debug banner_params
         format.json { render json: @banner.to_json(only: [:id, :file]) }
       else
         format.json { render json: @banner.errors, status: :unprocessable_entity }
@@ -35,6 +36,7 @@ class BannersController < ApplicationController
 
     def banner_params
       params[:banner] = {}
+      params[:banner][:text] = params[:text]
       params[:banner][:file] = params[:file]
       params[:banner][:filename] = params[:name]
       params.require(:banner).permit(:file, :filename, :text, :place, :car_wash_id)

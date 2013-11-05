@@ -15,9 +15,10 @@
     #enroll_button
       = link_to t('.send_request'), new_car_wash_request_path(@car_wash)
     =#image_tag 'adv2.png', class: 'adv'
-    - banner = @banners.where(place: 'client_thin_bottom').first
-    %h5.text-center.bordered= banner.text
-    = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_460.url, version: :b_380_460, car_wash: @car_wash
+    #client_thin_bottom
+      - banner = @banners.where(place: 'client_thin_bottom').first
+      %h5.text-center.bordered= banner.text
+      = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_460.url, version: :b_380_460, car_wash: @car_wash
   #signal_video
     #free_close_signal
       %ul.menu

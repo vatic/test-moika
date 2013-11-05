@@ -35,6 +35,20 @@ h5 {
   font-size: 16px;
 }
 
+input {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  -webkit-appearance: none;
+}
+
+input[type='text']{
+  border: 1px solid #777;
+  width: 100%;
+}
+
 
 /* -------------------------------------------------------------------------*/
 /* Layout */
@@ -339,14 +353,6 @@ h5 {
   margin-right: 0;
 }
 
-input {
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  -webkit-appearance: none;
-}
 
 #login h2 {
   background-color: #6c6c6c;
@@ -894,6 +900,11 @@ img.banner {
   margin: 5px 0;
 }
 
+#car_wash_menu img.banner {
+  border: solid 2px #ddd;
+  cursor: inherit;
+}
+
 ul.image-container {
   padding: 0;
   margin: 20px 0 0;
@@ -923,4 +934,11 @@ img,canvas {
 .filelist {
   clear: both;
   margin-left: 50%;
+}
+
+#client_thin_bottom {
+  clear: both;
+  h5 {
+    margin: 20px 0 0 0;
+  }
 }
