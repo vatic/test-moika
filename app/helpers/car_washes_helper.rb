@@ -10,4 +10,13 @@ module CarWashesHelper
     raw(ret)
   end
 
+  def car_wash_title(title)
+    ret = ""
+    if /\Aавтомойка/i =~ title
+      ret = title
+    else
+      ret += "Автомойка #{title}"
+    end
+  end
+
 end
