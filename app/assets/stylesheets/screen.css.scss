@@ -593,8 +593,18 @@ form.car_wash_edit_details {
         img {
           width: 100%;
         }
+        #banner-1 {
+          @include span-columns(8,12)
+        }
+        #banner-2 {
+          @include span-columns(6,12)
+        }
+        #banner-3 {
+          @include span-columns(6 omega,12)
+        }
       }
       #info {
+        clear: both;
         #info_header {
           h3 {
             text-align: center;

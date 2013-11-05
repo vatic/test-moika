@@ -3,10 +3,10 @@ namespace :setup do
   task add_empty_client_banners: :environment do
     puts "Add empty banners"
     banners_data = [
-      {place: "client_fat_top", text: "Широкий баннер под камерами"},
-      {place: "client_thin_bottom", text: "Баннер слева от акций"},
-      {place: "client_thin_top_1", text: "Первый из двух баннеров под широким"},
-      {place: "client_thin_top_2", text: "Второй из двух баннеров под широким"}
+      {place: "client_fat_top"},
+      {place: "client_thin_bottom"},
+      {place: "client_thin_top_1"},
+      {place: "client_thin_top_2"}
     ]
 
     CarWash.find_each do |cw|

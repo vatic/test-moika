@@ -14,7 +14,10 @@
       = link_to t('.comments'), car_wash_comments_path(@car_wash)
     #enroll_button
       = link_to t('.send_request'), new_car_wash_request_path(@car_wash)
-    = image_tag 'adv2.png', class: 'adv'
+    =#image_tag 'adv2.png', class: 'adv'
+    - banner = @banners.where(place: 'client_thin_bottom').first
+    %h5.text-center.bordered= banner.text
+    = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_460.url, version: :b_380_460, car_wash: @car_wash
   #signal_video
     #free_close_signal
       %ul.menu
@@ -30,14 +33,28 @@
           =image_tag "red.png"
     .video#video1
       %ul.menu
-        %li Камера с поста №1
+        %li Камера №1
       = image_tag 'video.png' 
     .video#video2
       %ul.menu
-        %li Камера с поста №2
+        %li Камера №2
       = image_tag 'video.png' 
     #service
-      = image_tag 'service.png'
+      #banner-1
+      - banner = @banners.where(place: 'client_fat_top').first
+      %h5.text-center.bordered= banner.text
+      = render '/banners/banner', banner: banner, banner_url: banner.file.b_770_270.url, version: :b_770_270, car_wash: @car_wash
+      #banner-2
+        - banner = @banners.where(place: 'client_thin_top_1').first
+        %h5.text-center.bordered= banner.text
+        = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+
+      #banner-3
+        - banner = @banners.where(place: 'client_thin_top_2').first
+        %h5.text-center.bordered= banner.text
+        = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+
+      =#image_tag 'service.png'
     #info
       #info_header 
         %h3 Информация
