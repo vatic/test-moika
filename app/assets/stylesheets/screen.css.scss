@@ -3,6 +3,7 @@
 
 @import "base";
 @import "compass/layout/sticky-footer";
+@import "bootstrap-custom.min";
 
 @include sticky-footer(120px);
 
@@ -843,6 +844,25 @@ tr.toggleble[data-read="false"] {
 .right-container {
   @include span-columns(2 omega,12);
 }
+
+.right-container-4 {
+  @include span-columns(4 omega,12);
+  margin: 10px 0;
+}
+
+.right-container-8 {
+  @include span-columns(8 omega,12);
+  margin: 10px 0;
+}
+
+.fullwidth-container {
+  @include span-columns(12 omega,12);
+  img {
+    float: right;
+    margin: 0 auto;
+  }
+}
+
 .display-none {
   display: none;
 }
@@ -853,4 +873,44 @@ tr.toggleble[data-read="false"] {
 img.banner {
   margin: 3px auto;
   border: solid 1px #ddd;
+}
+
+.bordered {
+  border: solid 1px #ddd;
+}
+img.banner {
+  cursor: pointer;
+  border: solid 2px blue;
+  margin: 5px 0;
+}
+
+ul.image-container {
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+ul.image-container li {
+list-style: none;
+float: left;
+img,canvas {
+  margin: 7px;
+  padding: 5px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-backface-visibility: hidden;
+}
+}
+                 
+.around_map {
+  margin: 10px 0;
+}
+
+#fake_map {
+  h1 {
+    padding: 300px 0;
+  }
+}
+
+.filelist {
+  clear: both;
+  margin-left: 50%;
 }

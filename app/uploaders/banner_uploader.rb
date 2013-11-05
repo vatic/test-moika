@@ -28,6 +28,10 @@ class BannerUploader < CarrierWave::Uploader::Base
   version :b_160_160, :if => :is_left_thin_short?
   version :b_320_380, :if => :is_fat_long?
   version :b_320_320, :if => :is_fat_short?
+  version :b_770_270, :if => :is_client_fat_top?
+  version :b_380_270, :if => :is_client_thin_top?
+  version :b_380_460, :if => :is_client_thin_bottom?
+
 
   version :b_335_205 do
     process :resize_to_limit => [335, 205]
@@ -42,11 +46,23 @@ class BannerUploader < CarrierWave::Uploader::Base
   end
 
   version :b_320_380 do
-    process :resize_to_limit => [320, 380]
+    process :resize_to_limit => [320, nil]
   end
 
   version :b_320_320 do
     process :resize_to_limit => [320, 320]
+  end
+
+  version :b_770_270 do
+    process :resize_to_fill=> [770, 270]
+  end
+
+  version :b_380_270 do
+    process :resize_to_fill => [380, 270]
+  end
+ 
+  version :b_380_460 do
+    process :resize_to_fill => [380, 460]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -83,6 +99,8 @@ class BannerUploader < CarrierWave::Uploader::Base
   end
 
   def is_fat_long? picture
+    image = MiniMagick::Image.open(picture.path)
+    Rails.logger.debug "minimagick:width: #{image[:width]} height: #{image[:height]}"
     (model.comment? || model.request?) && model.fat_long?
   end
 
@@ -90,5 +108,16 @@ class BannerUploader < CarrierWave::Uploader::Base
     (model.comment? || model.request?) && model.fat_short?
   end
 
+  def is_client_thin_bottom? picture
+    model.client_thin_bottom?
+  end
+
+  def is_client_thin_top? picture
+    model.client_thin_top?
+  end
+
+  def is_client_fat_top? picture
+    model.client_fat_top?
+  end
 
 end

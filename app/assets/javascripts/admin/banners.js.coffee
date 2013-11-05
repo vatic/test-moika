@@ -53,8 +53,13 @@ $ ->
     uploader.bind "FileUploaded", (up, file, data) ->
       $("#" + file.id + " b").html "100%"
       banner = data.response
+      console.log banner
       banner = JSON.parse banner
-      $('img#' + banner["id"]).prop('src',banner.url) 
+
+      version =  $('#banner_' + id).data('version')
+      url = banner.file[version].url
+
+      $('img#' + banner["id"]).prop('src',url) 
     uploaders[id] = uploader
 
 #####################################################
@@ -93,7 +98,7 @@ $ ->
     $(this).css('border', 'solid 2px red')
     $(this).tooltip('show')
   $(document).on 'mouseout', 'img.banner', (e) ->
-    $(this).css('border', '1px solid blue')
+    $(this).css('border', '2px solid blue')
     $(this).tooltip('hide')
   $(document).on 'click', 'img.banner', (e) ->
     banner_id = $(this).data('id')

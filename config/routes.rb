@@ -1,5 +1,6 @@
 Moika::Application.routes.draw do
 
+  get "banners/update"
   get "users/index"
   devise_for :users
   resources :car_washes do
@@ -7,6 +8,8 @@ Moika::Application.routes.draw do
     resources :comments, only: [:index, :create]
     resources :requests
     resources :messages, only: [:index, :show, :update]
+    resources :banners, only: [:index, :update]
+    delete 'delete_file/:id', to: 'banners#delete_file', as: '/delete_file'
   end
 
   put 'car_washes/:id/update_main_action', to: 'car_washes#update_main_action', as: '/car_washes_update_main_action'

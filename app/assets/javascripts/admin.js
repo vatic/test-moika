@@ -29,5 +29,4 @@
 // optional, only if you want to use the jquery integration
 //= require jquery.plupload.queue
 
-
 //= require admin/banners
