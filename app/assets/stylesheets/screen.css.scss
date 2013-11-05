@@ -600,13 +600,22 @@ form.car_wash_edit_details {
           width: 100%;
         }
         #banner-1 {
-          @include span-columns(8,12)
+          @include span-columns(12 omega,12);
+          h5 {
+            margin: 30px 0 0 0;
+          }
         }
         #banner-2 {
-          @include span-columns(6,12)
+          @include span-columns(6,12);
+          h5 {
+            margin: 30px 0 0 0;
+          }
         }
         #banner-3 {
-          @include span-columns(6 omega,12)
+          @include span-columns(6 omega,12);
+          h5 {
+            margin: 30px 0 0 0;
+          }
         }
       }
       #info {

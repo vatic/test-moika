@@ -17,7 +17,7 @@
     =#image_tag 'adv2.png', class: 'adv'
     #client_thin_bottom
       - banner = @banners.where(place: 'client_thin_bottom').first
-      %h5.text-center.bordered= banner.text
+      %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
       = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_460.url, version: :b_380_460, car_wash: @car_wash
   #signal_video
     #free_close_signal
@@ -42,17 +42,18 @@
       = image_tag 'video.png' 
     #service
       #banner-1
-      - banner = @banners.where(place: 'client_fat_top').first
-      %h5.text-center.bordered= banner.text
-      = render '/banners/banner', banner: banner, banner_url: banner.file.b_770_270.url, version: :b_770_270, car_wash: @car_wash
+        - banner = @banners.where(place: 'client_fat_top').first
+        %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+        = render '/banners/banner', banner: banner, banner_url: banner.file.b_770_270.url, version: :b_770_270, car_wash: @car_wash
       #banner-2
         - banner = @banners.where(place: 'client_thin_top_1').first
-        %h5.text-center.bordered= banner.text
+        %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
         = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
 
       #banner-3
         - banner = @banners.where(place: 'client_thin_top_2').first
-        %h5.text-center.bordered= banner.text
+        %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+
         = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
 
       =#image_tag 'service.png'
