@@ -140,7 +140,7 @@ input[type='text']{
     }
 
     #car_wash_name {
-      margin: -0.5% 0 0 3%;
+      margin: 0.3% 0 0 3%;
       @include span-columns(3,12);
       p,h1,h2,h3,h4,h5 {
         @include margin-padding-0;
@@ -515,7 +515,7 @@ form.car_wash_edit_details {
       @include span-columns(4,12);
       li {
         text-align: center;
-        display: block;
+        display: inline;
         padding: 5px 0;
       }
       table#car_wash_info {
@@ -544,12 +544,15 @@ form.car_wash_edit_details {
       }
       ul.menu {
         margin: 0;
-        padding: 5% 20% ;
+        padding: 5% 10% ;
         background-color: #ececec;
         li {
           list-style: none;
           display: inline;
           padding: 0% 10% ;
+          h4,h5 {
+            display: inline;
+          }
           a {
             text-align: center;
             text-decoration: none;
@@ -557,7 +560,7 @@ form.car_wash_edit_details {
         }
       }
       #comments_button, #enroll_button {
-        @include span-columns(10 omega,12);
+        @include span-columns(12 omega,12);
         margin: 10px auto;
         p {
           padding: 0;
@@ -917,11 +920,6 @@ tr.toggleble[data-read="false"] {
   display: block;
 }
 
-img.banner {
-  margin: 3px auto;
-  border: solid 1px #ddd;
-}
-
 .bordered {
   border: solid 1px #ddd;
 }
@@ -931,7 +929,7 @@ img.banner {
   margin: 5px 0;
 }
 
-#car_wash_menu img.banner {
+.no-edit img.banner {
   border: solid 2px #ddd;
   cursor: inherit;
 }

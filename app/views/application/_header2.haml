@@ -15,7 +15,7 @@
   #header_nav
     #car_wash_name
       %h5= link_to(car_wash_title(@car_wash.title), car_wash_path(@car_wash)) unless @car_wash.nil?
-      = mail_to current_user.try(:email)
+      =#mail_to current_user.try(:email)
     #social
       = render 'social'
     #weather

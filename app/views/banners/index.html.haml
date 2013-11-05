@@ -10,12 +10,13 @@
   %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
 
   = render 'banner', banner: banner, banner_url: banner.file.b_380_460.url, version: :b_380_460, car_wash: @car_wash
-.center-container
-  - banner = @banners.where(place: 'client_thin_top_1').first
-  %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+.no-edit
+  .center-container
+    - banner = @banners.where(place: 'client_thin_top_1').first
+    %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
 
-  = render 'banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
-.right-container-4
-  - banner = @banners.where(place: 'client_thin_top_2').first
-  %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
-  = render 'banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+    = render 'banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+  .right-container-4
+    - banner = @banners.where(place: 'client_thin_top_2').first
+    %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+    = render 'banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
