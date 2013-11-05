@@ -1,8 +1,8 @@
 - if user_signed_in?
   - if current_user.admin?
-    = link_to t('admin_panel'), admin_path
+    %h4= link_to t('admin_panel'), admin_path
   - else
-    = link_to t('enter_cabinet'), edit_car_wash_path(current_user.car_wash)
+    %h4= link_to t('enter_cabinet'), edit_car_wash_path(current_user.car_wash)
 - else
   &nbsp;
-  = link_to t('sign_up'), new_user_registration_path
+  %h4= link_to t('sign_up'), new_user_registration_path

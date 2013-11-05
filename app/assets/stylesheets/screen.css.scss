@@ -19,6 +19,14 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: blue;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: Cambria, Georgia, Palatino, Times New Roman, serif;
+}
+
 h1 {
   font-size: 32px;
 }
@@ -105,29 +113,43 @@ input[type='text']{
     #login {
       @include pre(1);
       @include span-columns(1,12);
-      margin-top: 5px;
+      h4,h5 {
+        display: inline;
+        margin: 0 auto;
+      }
       a {
         color: black;
+      }
+      a:hover {
+        color: blue;
       }
 
     }
     #registration {
       @include span-columns(2,12);
-      margin-top: 5px;
+      h4,h5 {
+        display: inline;
+        margin: 0 auto;
+      }
       a {
         color: black;
+      }
+      a:hover {
+        color: blue;
       }
     }
 
     #car_wash_name {
-      @include pre(1);
+      margin: -0.5% 0 0 3%;
       @include span-columns(3,12);
       p,h1,h2,h3,h4,h5 {
         @include margin-padding-0;
         font-weight: 700;
       }
       a {
-        margin: 0 10px;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
       }
     }
     #social {
