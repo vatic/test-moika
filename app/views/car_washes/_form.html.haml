@@ -36,8 +36,11 @@
       = render "requests_button", count: @car_wash.unread_requests_count
   .right-container
     #full_form_button
-      = link_to t("edit_button"), edit_car_wash_path(@car_wash, full: '1'), class: "red-button"
+      = link_to t("detailed_form_header"), edit_car_wash_path(@car_wash, full: '1'), class: "red-button"
 .container
   .left-container#messages{data: {url: car_wash_messages_path(@car_wash), oncpanel: "1"}}
     #admin_messages_button
       = render "admin_messages_button", count: @car_wash.unread_messages_count
+  .right-container
+    #adv_manage
+      = link_to t("adv_manage"), car_wash_banners_path(@car_wash), class: 'red-button'

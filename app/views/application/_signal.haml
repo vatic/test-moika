@@ -1,5 +1,7 @@
 - if car_wash.signal
-  %span.green= car_wash.signal_human
+  %span.green= t('signal_on_map')
+  %span.green= car_wash.signal_human.mb_chars.upcase
 -else
-  %span.red= car_wash.signal_human
+  %span.green= t('signal_on_map')
+  %span.red= car_wash.signal_human.mb_chars.upcase
 

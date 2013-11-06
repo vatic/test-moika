@@ -15,12 +15,13 @@ body {
 }
 
 a {
-  color: black;
+  color: $base-link-color;
   text-decoration: none;
 }
 
 a:hover {
-  color: blue;
+  color: #fff;
+  text-decoration: none;
 }
 
 h1,h2,h3,h4,h5 {
@@ -118,7 +119,7 @@ input[type='text']{
         margin: 0 auto;
       }
       a {
-        color: black;
+        color: $header-link-color;
       }
       a:hover {
         color: blue;
@@ -132,7 +133,7 @@ input[type='text']{
         margin: 0 auto;
       }
       a {
-        color: black;
+        color: $header-link-color;
       }
       a:hover {
         color: blue;
@@ -147,9 +148,13 @@ input[type='text']{
         font-weight: 700;
       }
       a {
+        color: $header-link-color;
         display: block;
         margin: 0 auto;
         text-align: center;
+      }
+      a:hover {
+        color: lighten($header-link-color,20%)
       }
     }
     #social {
@@ -512,6 +517,7 @@ form.car_wash_edit_details {
   #car_wash_menu {
     @include span-columns(12 omega,12);
     #login_registration {
+      background-color: $car-wash-info-bg;
       @include span-columns(4,12);
       li {
         text-align: center;
@@ -521,7 +527,7 @@ form.car_wash_edit_details {
       table#car_wash_info {
         border: 1px solid #fff;
         tr {
-          background-color: #ececec;
+          background-color: $car-wash-info-bg;
           margin: 5px auto;
         }
         td {
@@ -542,20 +548,27 @@ form.car_wash_edit_details {
           }
         }
       }
-      ul.menu {
+
+      .menu {
         margin: 0;
-        padding: 5% 10% ;
-        background-color: #ececec;
-        li {
-          list-style: none;
-          display: inline;
-          padding: 0% 10% ;
+        padding: 0% 0% ;
+        .left {
+          margin: 0 auto;
+          background-color: $car-wash-info-bg;
+          @include span-columns(6,12);
+        }
+        .right {
+          margin: 0 auto;
+          border-left: solid 5px  #fff;
+          background-color: $car-wash-info-bg;
+          @include span-columns(6 omega,12);
+        }
+        .left, .right {
           h4,h5 {
-            display: inline;
-          }
-          a {
             text-align: center;
-            text-decoration: none;
+            a:hover {
+              color: $header-link-color;
+            }
           }
         }
       }
@@ -602,13 +615,22 @@ form.car_wash_edit_details {
       #free_close_signal ul.menu, .video ul.menu{
         background-color: #c2c9cc;
         margin-bottom: 20px;
+        h4,h5 {
+          margin: 0;
+        }
       }
       #free_close_signal #signal_image img{
         margin-left: 20px;
       }
-      .video img {
-        width: 100%;
+      .video {
+        h4,h5 {
+          margin: 0;
+        }
+        img {
+          width: 100%;
+        }
       }
+
       #free_close_signal {
         @include span-columns(1,5);
       }
@@ -765,9 +787,9 @@ form.main_action_input {
 
 #svetofor_container {
   @include reset-columns;
-  padding-left: 13%;
+  padding-left: 15%;
   padding-right: 17%;
-  @include span-columns(4 omega,12);
+  @include span-columns(8 omega,12);
   img#red-green {
     display: block;
     margin: 0 auto;
@@ -892,7 +914,7 @@ tr.toggleble[data-read="false"] {
 }
 
 .right-container {
-  @include span-columns(2 omega,12);
+  @include span-columns(4 omega,12);
 }
 
 .right-container-4 {
@@ -969,5 +991,17 @@ img,canvas {
   clear: both;
   h5 {
     margin: 20px 0 0 0;
+  }
+}
+
+#full_form_button {
+  a {
+    font-size: 12px;
+  }
+}
+
+#adv_manage {
+  a {
+    font-size: 12px;
   }
 }

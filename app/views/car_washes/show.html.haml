@@ -3,10 +3,10 @@
     %h5.text-center= "#{@car_wash.main_action_text} #{t('adv1')}"
 .no-edit#car_wash_menu
   #login_registration
-    %ul.menu
-      %li
+    .menu
+      .left
         = render 'devise/menu/login_items'
-      %li
+      .right
         = render 'devise/menu/registration_items'
     = render partial: "car_wash_info", locals: { car_wash: @car_wash, left_actions: @left_actions }
    
@@ -23,9 +23,11 @@
     #free_close_signal
       %ul.menu
         - if @car_wash.signal
-          %li Свободно
+          %li 
+            %h5 Свободно
         - else
-          %li Занято
+          %li 
+            %h5 Занято
 
       #signal_image
         - if @car_wash.signal
@@ -34,11 +36,13 @@
           =image_tag "red.png"
     .video#video1
       %ul.menu
-        %li Камера №1
+        %li 
+          %h5 Камера №1
       = image_tag 'video.png' 
     .video#video2
       %ul.menu
-        %li Камера №2
+        %li 
+          %h5 Камера №2
       = image_tag 'video.png' 
     #service
       #banner-1
