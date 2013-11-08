@@ -6,4 +6,5 @@ json.array!(@car_washes) do |car_wash|
     :video_url1, :video_url2, :signal, :blink,
     :updated_at
   json.url car_wash_url(car_wash, format: :json)
+  json.main_action car_wash.main_action.try(:text)
 end

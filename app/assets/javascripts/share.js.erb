@@ -39,15 +39,18 @@ function log (argument) {
 
 function hint(car_wash) {
   var timeNow = new Date;
-  var part1 = '<h3>' + car_wash.title + '</h3>'
-      + '<h5>' + car_wash.address + '</h5>'
-      + '<h5>Время:' + timeNow.toLocaleTimeString() + '</h5>';
+  var wrapper_begin = '<div class="hint">'
+  var wrapper_end = '</div>'
+  var part1 = '<h3>' + car_wash.title.toUpperCase() + '</h3>'
+      + '<h5>' + 'Адрес: ' + car_wash.address + '</h5>'
+      + '<h3>Время:  ' + timeNow.toLocaleTimeString() + '</h3>'
+      + '<h3 class="red">' + (car_wash.main_action == null ? '' : car_wash.main_action)   + '</h3>';
   var part3 = '<img src="';
   var part4 = '">';
   if (car_wash.signal) {
-    var ret = part1 + '<h5>Пост свободен</h5>' + part3 + "<%= asset_path('banner_green.png') %>" + part4;
+    var ret = wrapper_begin + part1 + part3 + "<%= asset_path('green.png') %>" + part4 + wrapper_end;
   } else {
-    ret = part1 + '<h5>Пост загружен</h5>' + part3 + "<%= asset_path('banner_red.png') %>" + part4;
+    ret = wrapper_begin + part1 + part3 + "<%= asset_path('red.png') %>" + part4 + wrapper_end;
   }
   return ret;
     

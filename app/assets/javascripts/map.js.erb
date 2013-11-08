@@ -21,7 +21,8 @@ $(document).ready( function() {
             url: row.url.slice(0,-5),
             contacts: row.contacts,
             services: row.services,
-            blink: row.blink
+            blink: row.blink,
+            main_action: row.main_action
           });
         })
         ymaps.ready(init);
