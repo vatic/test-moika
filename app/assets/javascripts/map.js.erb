@@ -81,13 +81,13 @@ function init(){
   greenCollection = new ymaps.GeoObjectCollection({}, {
       //preset: 'my#green_not_blink',
       preset: 'twirl#darkgreenDotIcon',
-      iconImageSize: [20, 20]
+      //iconImageSize: [20, 20]
   });
 
   redCollection = new ymaps.GeoObjectCollection({}, {
       //preset: 'my#red_not_blink',
       preset: 'twirl#redDotIcon',
-      iconImageSize: [20, 20]
+      //iconImageSize: [20, 20]
   });
 
   greenBlinkCollection = new ymaps.GeoObjectCollection({}, {
@@ -117,7 +117,7 @@ function init(){
         preset: (car_wash.signal) ?
           ('my#green'):
           ('my#red'),
-        iconImageSize: [20, 20]
+        //iconImageSize: [20, 20]
       },
       placemark = new ymaps.Placemark(coordinates, properties, options);
 
