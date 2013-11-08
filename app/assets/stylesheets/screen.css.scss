@@ -1006,11 +1006,32 @@ img,canvas {
   }
 }
 
-.hint {
+.balloon, .hint {
   h1,h2,h3,h4,h5 {
     text-align: center;
+    margin: 0;
     padding: 3px 5px;
     border-bottom: 2px solid #ddd;
+    color: #777;
+  }
+  img {
+    margin: 10px;
+  }
+  h1.red,h2.red,h3.red,h4.red,h5.red {
+    color: red;
+  }
+  h3.time, h3.phone, h5.address, h5.services {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  a {
+    color: $header-link-color;
+    margin: 0;
+    padding: 3px 5px;
+  }
+}
 
+.balloon {
+  h1,h2,h3,h4,h5 {
+    text-align: left;
   }
 }

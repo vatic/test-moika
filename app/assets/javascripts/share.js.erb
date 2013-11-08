@@ -41,10 +41,16 @@ function hint(car_wash) {
   var timeNow = new Date;
   var wrapper_begin = '<div class="hint">'
   var wrapper_end = '</div>'
-  var part1 = '<h3>' + car_wash.title.toUpperCase() + '</h3>'
-      + '<h5>' + 'Адрес: ' + car_wash.address + '</h5>'
-      + '<h3>Время:  ' + timeNow.toLocaleTimeString() + '</h3>'
-      + '<h3 class="red">' + (car_wash.main_action == null ? '' : car_wash.main_action)   + '</h3>';
+  var part1 = '<h3>' 
+      + car_wash.title.toUpperCase() 
+      + '</h3>'
+      + '<h5 class="address">'
+      + 'Адрес: ' + car_wash.address 
+      + '</h5>'
+      + '<h3 class="time">'
+      + 'Время:  ' + timeNow.toLocaleTimeString() 
+      + '</h3>'
+      + (car_wash.main_action == null ? '' : '<h3 class="red">' + car_wash.main_action + '</h3>');
   var part3 = '<img src="';
   var part4 = '">';
   if (car_wash.signal) {
@@ -57,39 +63,41 @@ function hint(car_wash) {
 }
 
 function balloon(car_wash) {
-  var part1 = 
+  var wrapper_begin = '<div class="balloon">';
+  var wrapper_end = '</div>';
+  var part1 =
       '<h3>'
       + car_wash.title
       + '</h3>'
-      + car_wash.address
-      + '<br/>'
-      + car_wash.contacts
-      + '<br/>'
+      + '<h5 class="address">'
+      + 'Адрес: ' + car_wash.address
+      + '</h5>'
+      + '<h3 class="phone">'
+      + 'Телефон: ' + car_wash.contacts
+      + '</h3>'
+      + '<h5 class="services">'
       + car_wash.services
-      + '<br/>';
+      + '</h5>'
+      + (car_wash.main_action == null ? '' : '<h3 class="red">' + car_wash.main_action + '</h3>');
 
   if (car_wash.signal) {
-    var ret = part1
-      + 'Пост свободен'
-      + '<br/>'
+    var ret = wrapper_begin + part1
       + '<img src="'
-      + "<%= asset_path('banner_green.png') %>"
+      + "<%= asset_path('green.png') %>"
       + '">'
       + '<br/>'
       + '<a href="'
       + car_wash.url
-      + '">Перейти на страницу этой мойки</a>';
+      + '">Перейти на страницу этой мойки</a>' + wrapper_end;
   } else {
-    var ret = part1
-      + 'Пост загружен'
-      + '<br/>'
+    var ret = wrapper_begin + part1
       + '<img src="'
-      + "<%= asset_path('banner_red.png') %>"
+      + "<%= asset_path('red.png') %>"
       + '">'
       + '<br/>'
       + '<a href="'
       + car_wash.url
-      + '">Перейти на страницу этой мойки</a>';
+      + '">Перейти на страницу этой мойки</a>'+ wrapper_end;
   }
   return ret;
 }
