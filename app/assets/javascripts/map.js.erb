@@ -3,6 +3,28 @@ var myMap,
   cw_list = [],
   geo_objects_ary = [];
 
+function updateTraffic() {
+  trafficProvider.update();
+  //console.log(trafficProvider.state.get('level'));
+  var level = trafficProvider.state.get('level');
+  if (level === undefined) {
+    return false;
+  }
+  if (level < 4) {
+    $('#traffic .svetofor').removeClass('traffic_undefined');
+    $('#traffic .svetofor').addClass('traffic_green');
+  } else if (level < 7) {
+    $('#traffic .svetofor').removeClass('traffic_undefined');
+    $('#traffic .svetofor').addClass('traffic_yellow');
+  } else {
+    $('#traffic .svetofor').removeClass('traffic_undefined');
+    $('#traffic .svetofor').addClass('traffic_red');
+  }
+
+  $('#traffic #level_digit').html( level );
+  $('#traffic #level_text').html( declensionBall[level-1]);
+  $('#traffic #level_desc').html( trafficText[level-1]);
+}
 
 $(document).ready( function() {
   function getCarWashes() {
@@ -26,12 +48,14 @@ $(document).ready( function() {
           });
         })
         ymaps.ready(init);
+        updateTraffic();
       }
     })
   };
   getCarWashes();
   log('getCarWashes done');
   //ymaps.ready(init);
+  window.setInterval(updateTraffic,1*10*1000)
 });
 
 
@@ -42,6 +66,9 @@ function init(){
   });
 
   searchControl = new SearchAddress(myMap, $('#map_search form'));
+  trafficControl = new ymaps.control.TrafficControl({providerKey: 'traffic#actual', shown: true});
+  trafficProvider = trafficControl.getProvider('traffic#actual');
+
 
   clusterer = new ymaps.Clusterer({
     preset: 'twirl#invertedVioletClusterIcons',
@@ -68,7 +95,7 @@ function init(){
       // Стандартный набор кнопок
       .add('mapTools', { left: 35, top: 5 })
       .add('routeEditor', { left: 130, top: 5 })
-      .add(new ymaps.control.TrafficControl({providerKey: 'traffic#actual', shown: true}))
+      .add(trafficControl)
       //.add('searchControl', { left: 180, top: 5 })
       ;
 
