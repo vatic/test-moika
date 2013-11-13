@@ -70,6 +70,8 @@ function updateTraffic() {
 
 function init(){
 
+  console.log('map init');
+
     myMap = window.map = new ymaps.Map ("map", {
         center: [55.76, 37.64],
         zoom: 11,
@@ -87,7 +89,6 @@ function init(){
         .add(trafficControl)
         //.add('searchControl', { left: 180, top: 5 })
         ;
-  if ( $('#car_wash_name').length > 0 ) {
 
     searchControl = new SearchAddress(myMap, $('#map_search form'));
     clusterer = new ymaps.Clusterer({
@@ -190,11 +191,6 @@ function init(){
       myMap.storage = ymaps.geoQuery(myMap.geoObjects);
       //clusterer.add(geo_objects_ary);
       //myMap.geoObjects.add(clusterer);
-      $('#map').hide();
-      console.log('hide');
-  }
-  else {
-  }
 }
 
 
@@ -224,8 +220,14 @@ $(document).ready(function() {
     $('#weather #deg').html(data.data.current_condition[0].temp_C + '&deg;C')
   }, 'jsonp');
 
-  ymaps.ready(init);
-  window.setInterval(updateTraffic,1*10*1000)
+  if ( $('#car_wash_name').length > 0 ) {
+    $('#map').hide();
+    console.log('hide');
+    ymaps.ready(init);
+    window.setInterval(updateTraffic,1*10*1000)
+  }
+  else {
+  }
 
   //trafficControl = new ymaps.control.TrafficControl({providerKey: 'traffic#actual', shown: true});
   //trafficProvider = trafficControl.getProvider('traffic#actual');
