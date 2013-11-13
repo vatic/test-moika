@@ -1,3 +1,8 @@
+var myMap,
+  cw_list = [],
+  geo_objects_ary = [];
+
+
 /* Objects shared over application
 /* Day Name Strings */
  var  ru_Date =
@@ -10,7 +15,7 @@
     /* Month Name Strings */
     monthNames: ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноябрь", "декабря"],
     abbreviatedMonthNames: ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
-  }
+  };
 
   var trafficText =
   [
@@ -24,7 +29,7 @@
     "Многокилометровые пробки",
     "Город стоит",
     "Лучше ехать на метро"
-  ]
+  ];
 
   var declensionBall =
   [
@@ -38,7 +43,159 @@
     "баллов",
     "баллов",
     "баллов",
-  ]
+  ];
+
+function updateTraffic() {
+  trafficProvider.update();
+  //console.log(trafficProvider.state.get('level'));
+  var level = trafficProvider.state.get('level');
+  if (level === undefined) {
+    return false;
+  }
+  if (level < 4) {
+    $('#traffic .svetofor').removeClass('traffic_undefined');
+    $('#traffic .svetofor').addClass('traffic_green');
+  } else if (level < 7) {
+    $('#traffic .svetofor').removeClass('traffic_undefined');
+    $('#traffic .svetofor').addClass('traffic_yellow');
+  } else {
+    $('#traffic .svetofor').removeClass('traffic_undefined');
+    $('#traffic .svetofor').addClass('traffic_red');
+  }
+
+  $('#traffic #level_digit').html( level );
+  $('#traffic #level_text').html( declensionBall[level-1]);
+  $('#traffic #level_desc').html( trafficText[level-1]);
+}
+
+function init(){
+
+    myMap = window.map = new ymaps.Map ("map", {
+        center: [55.76, 37.64],
+        zoom: 11,
+    });
+    trafficControl = new ymaps.control.TrafficControl({providerKey: 'traffic#actual', shown: true});
+    trafficProvider = trafficControl.getProvider('traffic#actual');
+    myMap.controls
+        // Кнопка изменения масштаба.
+        .add('zoomControl', { left: 5, top: 5 })
+        // Список типов карты
+        .add('typeSelector')
+        // Стандартный набор кнопок
+        .add('mapTools', { left: 35, top: 5 })
+        .add('routeEditor', { left: 130, top: 5 })
+        .add(trafficControl)
+        //.add('searchControl', { left: 180, top: 5 })
+        ;
+  if ( $('#car_wash_name').length > 0 ) {
+
+    searchControl = new SearchAddress(myMap, $('#map_search form'));
+    clusterer = new ymaps.Clusterer({
+      preset: 'twirl#invertedVioletClusterIcons',
+      groupByCoordinates: false,
+      clusterDisableClickZoom: false,
+      minClusterSize: 3,
+      gridSize: 80
+      })
+
+    ymaps.option.presetStorage.add('my#red_blink', {
+    iconImageHref: "<%= asset_path('red_bl.gif') %>"  });
+    ymaps.option.presetStorage.add('my#green_blink', {
+    iconImageHref: "<%= asset_path('green_bl.gif') %>"  });
+    ymaps.option.presetStorage.add('my#red_not_blink', {
+    iconImageHref: "<%= asset_path('red_led.png') %>"  });
+    ymaps.option.presetStorage.add('my#green_not_blink', {
+    iconImageHref: "<%= asset_path('green_led2.png') %>"  });
+
+
+    myMap.behaviors.enable('scrollZoom');
+
+    var myBalloonContentBodyLayout = ymaps.templateLayoutFactory.createClass(
+                    '<div>$[properties.body]</div>'
+                );
+
+    greenCollection = new ymaps.GeoObjectCollection({}, {
+        preset: 'my#green_not_blink',
+        //preset: 'twirl#greenDotIcon',
+        iconImageSize: [20, 20]
+    });
+
+    redCollection = new ymaps.GeoObjectCollection({}, {
+        preset: 'my#red_not_blink',
+        //preset: 'twirl#redDotIcon',
+        iconImageSize: [20, 20]
+    });
+
+    greenBlinkCollection = new ymaps.GeoObjectCollection({}, {
+        preset: 'my#green_blink',
+        iconImageSize: [20, 20]
+    });
+
+    redBlinkCollection = new ymaps.GeoObjectCollection({}, {
+        preset: 'my#red_blink',
+        iconImageSize: [20, 20]
+    });
+
+    if (cw_list !== null && cw_list !== undefined) {
+      cw_list.forEach(function (car_wash) {
+
+
+        var myBalloonBody = balloon(car_wash);
+        var myHintContent = hint(car_wash);
+
+        var coordinates = car_wash.coords,
+          properties = {
+            body: myBalloonBody,
+            hintContent: myHintContent,
+            car_wash_id: car_wash.id
+          },
+          options = {
+            balloonContentBodyLayout : myBalloonContentBodyLayout,
+            preset: (car_wash.signal) ?
+              ('my#green'):
+              ('my#red'),
+            //iconImageSize: [20, 20]
+          },
+          placemark = new ymaps.Placemark(coordinates, properties, options);
+
+
+        if (car_wash.signal) {
+          if (car_wash.blink) {
+            greenBlinkCollection.add(placemark)
+          }
+          else {
+            greenCollection.add(placemark)
+          }
+        }
+        else {
+          if (car_wash.blink) {
+            redBlinkCollection.add(placemark)
+          }
+          else {
+            redCollection.add(placemark)
+          }
+        }
+      //(car_wash.signal) ? ( greenCollection.add(placemark) ):( redCollection.add(placemark) );
+      geo_objects_ary.push(placemark);
+    });
+    }
+
+
+
+      myMap.geoObjects.add(greenCollection);
+      myMap.geoObjects.add(redCollection);
+      myMap.geoObjects.add(greenBlinkCollection);
+      myMap.geoObjects.add(redBlinkCollection);
+
+      myMap.storage = ymaps.geoQuery(myMap.geoObjects);
+      //clusterer.add(geo_objects_ary);
+      //myMap.geoObjects.add(clusterer);
+      $('#map').hide();
+      console.log('hide');
+  }
+  else {
+  }
+}
 
 
 $(document).ready(function() {
@@ -64,8 +221,14 @@ $(document).ready(function() {
 
   var url = "http://api.worldweatheronline.com/free/v1/weather.ashx?q=Moscow&format=json&num_of_days=1&date=today&fx=no&cc=yes&key=2rcm7aauw65cverta3rnvf3j";
   $.get(url, function(data) {
-    console.log(data);
-  });
+    $('#weather #deg').html(data.data.current_condition[0].temp_C + '&deg;C')
+  }, 'jsonp');
+
+  ymaps.ready(init);
+  window.setInterval(updateTraffic,1*10*1000)
+
+  //trafficControl = new ymaps.control.TrafficControl({providerKey: 'traffic#actual', shown: true});
+  //trafficProvider = trafficControl.getProvider('traffic#actual');
 
 });
 

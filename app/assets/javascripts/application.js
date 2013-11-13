@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.purr
 //= require jquery.ui.all
+//= require search-address
 //= require share
 //= require car_washes
 //= require requests
