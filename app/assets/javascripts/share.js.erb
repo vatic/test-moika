@@ -300,3 +300,14 @@ function balloon(car_wash) {
   }
   return ret;
 }
+
+$(document).ready(function() {
+  $('input[type="checkbox"]#agreement').change(function() {
+    if ($('input[type="checkbox"]#agreement').prop('checked')) {
+      $('input[type="submit"]').prop('disabled',false);
+    }
+    else {
+      $('input[type="submit"]').prop('disabled',true);
+    }
+  })
+});
