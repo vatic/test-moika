@@ -1,7 +1,9 @@
 - if user_signed_in?
   - if current_user.admin?
     %h4= link_to t('admin_panel'), admin_path
-  - else
+  - elsif current_user.client?
     %h4= link_to t('enter_cabinet'), edit_car_wash_path(current_user.car_wash)
+  - else
+    %h4= mail_to current_user.email
 - else
   %h4= link_to t('sign_up'), new_user_registration_path

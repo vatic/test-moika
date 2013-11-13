@@ -17,6 +17,9 @@ class CarWashesController < ApplicationController
   # GET /car_washes/1
   # GET /car_washes/1.json
   def show
+    if @car_wash.nil?
+      redirect_to :index
+    end
     @left_actions = @car_wash.actions_by_type(:left)
     @bottom1_actions = @car_wash.actions_by_type(:bottom1)
     @bottom2_actions = @car_wash.actions_by_type(:bottom2)
