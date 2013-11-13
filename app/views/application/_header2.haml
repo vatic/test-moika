@@ -20,9 +20,11 @@
       = render 'social'
     #weather
       :javascript
-        $.get(url, function(data) {
-          console.log(data)
-        })
+        $(document).ready( function() {
+          $.get(url, function(data) {
+            console.log(data)
+          })
+        }
     #traffic
       .svetofor.traffic_undefined
       %span#level_digit
