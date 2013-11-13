@@ -959,7 +959,8 @@ img.banner {
 }
 
 .no-edit img.banner {
-  border: solid 2px #ddd;
+  border: none;
+  margin: 0 0;
   cursor: inherit;
 }
 
