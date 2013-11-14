@@ -8,6 +8,18 @@
           %br/
           = f.email_field :email, :autofocus => true, class: "form-control"
         %div
+          = f.label :phone, User.human_attribute_name("phone")
+          %br/
+          = f.phone_field :phone, :autofocus => true, class: "form-control"
+        %div
+          = f.label :contact_person, User.human_attribute_name("contact_person")
+          %br/
+          = f.text_field :contact_person, :autofocus => true, class: "form-control"
+        %div
+          = f.label :car_wash_title, User.human_attribute_name("car_wash_title")
+          %br/
+          = f.text_field :car_wash_title, :autofocus => true, class: "form-control"
+        %div
           = f.label :password, User.human_attribute_name("password")
           %br/
           = f.password_field :password, class: "form-control"

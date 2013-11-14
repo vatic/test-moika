@@ -200,7 +200,7 @@ input[type='text']{
     #traffic {
       @include span-columns(1,12);
       margin-right: 0;
-      width: 8%;
+      width: 9%;
     }
     #date_currency {
       @include span-columns(4 omega,12);
@@ -1055,7 +1055,7 @@ img,canvas {
     color: $header-link-color;
   }
   #level_text {
-    font-size: 5px;
+    font-size: 10px;
     font-weight: bold;
     margin: 0;
   
@@ -1090,4 +1090,20 @@ img,canvas {
 }
 #map.hide {
   display: none;
+}
+
+#user_show {
+  #info {
+    @include pre(3);
+    @include span-columns(6,12);
+    table {
+      @include border-radius;
+      margin: 10px 0 0 0;
+      tr {
+        td {
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }

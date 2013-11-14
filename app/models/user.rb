@@ -1,13 +1,5 @@
 class User < ActiveRecord::Base
 
-  before_create do |user|
-    if User.admins.empty?
-      user.make_admin
-    else
-      user.make_guest
-    end
-  end
-
   scope :admins, -> { includes(:roles).where("roles.name='admin'").references(:roles) }
   scope :clients, -> { includes(:roles).where("roles.name='client'").references(:roles) }
   scope :guests, -> { includes(:roles).where("roles.name='guest'").references(:roles) }
@@ -17,12 +9,24 @@ class User < ActiveRecord::Base
   belongs_to :car_wash
   has_many :sent_messages, class_name: "Message", foreign_key: "sender_id"
   has_many :received_messages, class_name: "Message", foreign_key: "receiver_id"
-  
-  
+
+  validates_presence_of :email, :phone, :contact_person, :car_wash_title
+
+
+
+
+  before_create do |user|
+    if User.admins.empty?
+      user.make_admin
+    else
+      user.make_guest
+    end
+  end
 
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
   def role?(role)
     return !!self.roles.find_by(name: role.to_s)
   end

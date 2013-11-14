@@ -94,7 +94,10 @@ ru:
         signal: "Занято/Свободно"
         site_url: "Сайт"
       user:
-        email: "Email"
+        email: "E-mail"
+        phone: "Телефон"
+        contact_person: "Контактное лицо"
+        car_wash_title: "Название автомойки"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
       request:
@@ -123,3 +126,11 @@ ru:
         modal_title: "Сообщение для"
         from: "От"
         to: "Кому"
+  users:
+    show:
+      car_wash_registration_message:
+        - Заявка на регистрацию автомойки принята.
+        - В ближайшее время Вам будет отправлена ссылка на личный кабинет.
+      reg_info: "Информация, указанная Вами при регистрации"
+
+
