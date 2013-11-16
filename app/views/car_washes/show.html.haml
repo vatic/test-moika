@@ -15,10 +15,6 @@
     #enroll_button
       = link_to t('.send_request'), new_car_wash_request_path(@car_wash)
     =#image_tag 'adv2.png', class: 'adv'
-    #client_thin_bottom
-      - banner = @banners.where(place: 'client_thin_bottom').first
-      %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
-      = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_460.url, version: :b_380_460, car_wash: @car_wash
   #signal_video
     #free_close_signal
       %ul.menu
@@ -49,38 +45,39 @@
         - banner = @banners.where(place: 'client_fat_top').first
         %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
         = render '/banners/banner', banner: banner, banner_url: banner.file.b_770_270.url, version: :b_770_270, car_wash: @car_wash
-      #banner-2
-        - banner = @banners.where(place: 'client_thin_top_1').first
-        %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
-        = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
-
-      #banner-3
-        - banner = @banners.where(place: 'client_thin_top_2').first
-        %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
-
-        = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
 
       =#image_tag 'service.png'
+  %p#notice= notice
+.container
+  .left-container
+    #client_thin_bottom
+      - banner = @banners.where(place: 'client_thin_bottom').first
+      %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+      = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_540.url, version: :b_380_540, car_wash: @car_wash
+  .right-container-8
+    #banner-2
+      - banner = @banners.where(place: 'client_thin_top_1').first
+      %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+      = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+
+    #banner-3
+      - banner = @banners.where(place: 'client_thin_top_2').first
+      %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+
+      = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
     #info
       #info_header
         %h3 Информация
       #info_content
-        .bottom1_actions#left
+        .left-container
           %h4 Акции
           %ul
             = actions(@bottom1_actions, 'li')
-        .bottom2_actions#center
+        .center-container
           %h4 Акции
           %ul
             = actions(@bottom2_actions, 'li')
-        .vacancy_actions#right
+        .right-container
           %h4 Вакансии
           %ul
             = actions(@vacancy_actions, 'li')
-  =#render partial: 'car_wash_menu'
-  %p#notice= notice
-
-
-  =#link_to 'Редактировать', edit_car_wash_path(@car_wash), class: 'btn btn-primary'
-  /\|
-  =#link_to 'Назад', car_washes_path

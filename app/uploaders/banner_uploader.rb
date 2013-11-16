@@ -30,7 +30,7 @@ class BannerUploader < CarrierWave::Uploader::Base
   version :b_320_320, :if => :is_fat_short?
   version :b_770_270, :if => :is_client_fat_top?
   version :b_380_270, :if => :is_client_thin_top?
-  version :b_380_460, :if => :is_client_thin_bottom?
+  version :b_380_540, :if => :is_client_thin_bottom?
 
 
   
