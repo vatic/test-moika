@@ -1,11 +1,13 @@
 .marketing.no-edit
   =#image_tag 'marketing1.png'
   =#image_tag 'adv1-77.gif'
-  = image_tag  Banner.where(place: 'top_1').first.file.b_380_240.url, class: 'banner'
+  =#image_tag  Banner.where(place: 'top_1').first.file.b_380_240.url, class: 'banner'
+  %iframe(width="380" height="285" src="//www.youtube.com/embed/j7eUrMu3Cjk" frameborder="0" allowfullscreen)
 .marketing
   = render 'video'
 .marketing.omega.no-edit
   =#image_tag 'marketing2.png'
   =#image_tag 'banner_site.gif'
   =#image_tag 'adv2-77.jpg'
-  = image_tag  Banner.where(place: 'top_2').first.file.b_380_240.url, class: 'banner'
+  =#image_tag  Banner.where(place: 'top_2').first.file.b_380_240.url, class: 'banner'
+  %iframe(width="380" height="285" src="//www.youtube.com/embed/_qX6mgv26EA" frameborder="0" allowfullscreen)

@@ -34,12 +34,12 @@
       %ul.menu
         %li 
           %h5 Камера №1
-      = render 'video'
+      = render 'video_320'
     .video#video2
       %ul.menu
         %li 
           %h5 Камера №2
-      = render 'video'
+      = render 'video_320'
     #service
       #banner-1
         - banner = @banners.where(place: 'client_fat_top').first
