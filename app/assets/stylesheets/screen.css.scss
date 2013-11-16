@@ -603,6 +603,7 @@ form.car_wash_edit_details {
       }
       #comments_button {
         @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
+        margin-top: 30px; 
       } 
       #enroll_button {
         @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
