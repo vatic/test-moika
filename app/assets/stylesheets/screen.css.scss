@@ -1080,12 +1080,18 @@ img,canvas {
     }
   }
 }
-#banner-2, #banner-3, #client_thin_bottom {
+#banner-1, #banner-2, #banner-3, #client_thin_bottom {
   h5 {
     margin: 10px 0 0 0;
   }
   img {
     padding: 4px 0;
+    border: none;
+  }
+}
+#banner-2, #banner-3, #client_thin_bottom {
+  h5 {
+    width: 380px;
   }
 }
 #banner-2 {
@@ -1113,4 +1119,7 @@ img,canvas {
   img {
     width: 100%;
   }
+}
+.bottom-banners {
+  clear:both;
 }
