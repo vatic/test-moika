@@ -533,7 +533,6 @@ form.car_wash_edit_details {
   #car_wash_menu {
     @include span-columns(12 omega,12);
     #login_registration {
-      background-color: $car-wash-info-bg;
       @include span-columns(4,12);
       li {
         text-align: center;
@@ -666,6 +665,9 @@ form.car_wash_edit_details {
           h5 {
             margin: 10px 0 0 0;
           }
+          img {
+            padding: 4px 0;
+          }
         }
         #banner-1 {
           @include span-columns(12 omega,12);
@@ -680,6 +682,7 @@ form.car_wash_edit_details {
       #info {
         clear: both;
         #info_header {
+          padding: 20px 0 0 0;
           h3 {
             text-align: center;
             text-decoration: underline;
@@ -1003,7 +1006,13 @@ img,canvas {
 #client_thin_bottom {
   clear: both;
   background: #fff;
-  padding: 20px 0 0 0;
+  padding: 35px 0 0 0;
+  img {
+    padding: 4px 0;
+  }
+  h5 {
+   margin: 0; 
+  }
 }
 
 #full_form_button {
