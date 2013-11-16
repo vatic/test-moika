@@ -314,7 +314,7 @@ input[type='text']{
     @include span-columns(10 omega,12);
     #map_header {
       @include span-columns(3,8);
-      margin:20px 0;
+      margin:17px 0 20px 0;
     }
     #map_search {
       margin:20px 0;
