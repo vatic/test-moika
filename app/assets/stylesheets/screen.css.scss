@@ -803,6 +803,9 @@ form.main_action_input {
   }
   #left_adv {
     @include span-columns(4,12);
+    img {
+      border: none;
+    }
   }
   #comments_content, #requests_content, #messages_content {
     @include span-columns(8 omega,12);
