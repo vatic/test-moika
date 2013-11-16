@@ -58,6 +58,11 @@ input[type='text']{
   width: 100%;
 }
 
+.notice {
+  text-align: center;
+  color: #82D34F;
+}
+
 
 /* -------------------------------------------------------------------------*/
 /* Layout */
@@ -200,7 +205,7 @@ input[type='text']{
     #traffic {
       @include span-columns(1,12);
       margin-right: 0;
-      width: 9%;
+      width: 8%;
     }
     #date_currency {
       @include span-columns(4 omega,12);
@@ -234,9 +239,11 @@ input[type='text']{
   @include span-columns(8 omega,12);
   @include post(2);
   marquee {
-    margin-bottom: 20px;
-    color: red;
+    margin-bottom: 5px;
     border: none;
+    h4,h5 {
+      color: red;
+    }
   }
 }
 
@@ -1061,7 +1068,7 @@ img,canvas {
   
   }
   #level_desc {
-    font-size: 8px;
+    font-size: 6px;
     font-weight: bold;
     margin: 0;
   
