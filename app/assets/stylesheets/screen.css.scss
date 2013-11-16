@@ -590,7 +590,7 @@ form.car_wash_edit_details {
       }
       #comments_button, #enroll_button {
         @include span-columns(12 omega,12);
-        margin: 10px auto;
+        margin: 15px auto;
         p {
           padding: 0;
           margin: 0;
@@ -648,37 +648,33 @@ form.car_wash_edit_details {
       }
 
       #free_close_signal {
-        @include span-columns(1,5);
+        @include span-columns(1,7);
       }
       .video {
       }
       .video#video1 {
-        @include span-columns(2,5);
+        @include span-columns(3,7);
       }
       .video#video2 {
-        @include span-columns(2 omega,5);
+        @include span-columns(3 omega,7);
       }
       #service {
         img {
           width: 100%;
         }
+        #banner-1, #banner-2, #banner-3, #client_thin_bottom {
+          h5 {
+            margin: 10px 0 0 0;
+          }
+        }
         #banner-1 {
           @include span-columns(12 omega,12);
-          h5 {
-            margin: 30px 0 0 0;
-          }
         }
         #banner-2 {
           @include span-columns(6,12);
-          h5 {
-            margin: 30px 0 0 0;
-          }
         }
         #banner-3 {
           @include span-columns(6 omega,12);
-          h5 {
-            margin: 30px 0 0 0;
-          }
         }
       }
       #info {
@@ -1006,9 +1002,8 @@ img,canvas {
 
 #client_thin_bottom {
   clear: both;
-  h5 {
-    margin: 20px 0 0 0;
-  }
+  background: #fff;
+  padding: 20px 0 0 0;
 }
 
 #full_form_button {

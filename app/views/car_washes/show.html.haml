@@ -38,12 +38,12 @@
       %ul.menu
         %li 
           %h5 Камера №1
-      = image_tag 'video.png' 
+      = render 'video'
     .video#video2
       %ul.menu
         %li 
           %h5 Камера №2
-      = image_tag 'video.png' 
+      = render 'video'
     #service
       #banner-1
         - banner = @banners.where(place: 'client_fat_top').first
@@ -62,14 +62,13 @@
 
       =#image_tag 'service.png'
     #info
-      #info_header 
+      #info_header
         %h3 Информация
       #info_content
         .bottom1_actions#left
           %h4 Акции
           %ul
             = actions(@bottom1_actions, 'li')
-          
         .bottom2_actions#center
           %h4 Акции
           %ul
