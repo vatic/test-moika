@@ -40,7 +40,7 @@ class Banner < ActiveRecord::Base
   end
 
   def left_thin_long?
-    !(/left_[135]/ =~ self.place).nil?
+    !(/left_[13]/ =~ self.place).nil?
   end
 
   def comment?
