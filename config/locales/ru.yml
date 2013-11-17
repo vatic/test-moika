@@ -122,6 +122,7 @@ ru:
         admins: "Администраторы"
         guests: "Гости"
         link_to_message: "Написать сообщение"
+        link_to_car_wash_edit: "Панель управления мойки"
         submit_sending_message: "Отправить"
         modal_title: "Сообщение для"
         from: "От"

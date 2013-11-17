@@ -21,6 +21,7 @@
           %td= client.email
           %td= client.roles.first.name unless client.roles.first.nil?
           %td= client.car_wash.title unless client.car_wash.nil?
+          %td= link_to(t('.link_to_car_wash_edit'), edit_car_wash_path(client.car_wash), class: "btn btn-primary btn-sm") unless client.car_wash.nil?
           %td= link_to t('.link_to_message'), "#messagemodal_#{client.id}", class: "btn btn-primary btn-sm", data: {toggle: "modal"}
         .modal.fade{role: "dialog", id: "messagemodal_#{client.id}"}
           = form_for [:admin, Message.new], role: 'form' do |f|
