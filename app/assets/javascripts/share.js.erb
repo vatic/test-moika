@@ -255,9 +255,9 @@ function hint(car_wash) {
   var part3 = '<img src="';
   var part4 = '">';
   if (car_wash.signal) {
-    var ret = wrapper_begin + part1 + part3 + "<%= asset_path('green.png') %>" + part4 + wrapper_end;
+    var ret = wrapper_begin + part1 + part3 + "<%= asset_path('green.png') %>" + part4 + '<span class="green">Свободно</span>' + wrapper_end;
   } else {
-    ret = wrapper_begin + part1 + part3 + "<%= asset_path('red.png') %>" + part4 + wrapper_end;
+    ret = wrapper_begin + part1 + part3 + "<%= asset_path('red.png') %>" + part4 + '<span class="red">Занято</span>' +  wrapper_end;
   }
   return ret;
     
@@ -286,6 +286,7 @@ function balloon(car_wash) {
       + '<img src="'
       + "<%= asset_path('green.png') %>"
       + '">'
+      + '<span class="green">Свободно</span>'
       + '<br/>'
       + '<a href="'
       + car_wash.url
@@ -295,6 +296,7 @@ function balloon(car_wash) {
       + '<img src="'
       + "<%= asset_path('red.png') %>"
       + '">'
+      + '<span class="red">Занято</span>'
       + '<br/>'
       + '<a href="'
       + car_wash.url
