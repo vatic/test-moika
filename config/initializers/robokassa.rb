@@ -2,9 +2,6 @@ Robokassa::Interface
 
 module Robokassa
 
-  def self.client
-    Interface.new Interface.get_options_by_notification_key(nil)
-  end
 
   class Interface
     class << self
@@ -29,5 +26,9 @@ module Robokassa
         Payment.find(invoice_id).verifity!
       end
     end
+  end
+
+  def self.client
+    Interface.new Interface.get_options_by_notification_key(nil)
   end
 end

@@ -19,4 +19,11 @@ namespace :setup do
     end
   end
 
+  task add_first_payment: :environment do
+    puts "Add first payment to all car_washes"
+    CarWash.find_each do |cw|
+      cw.payments << Payment.new(amount: 6000.00)
+    end
+  end
+
 end

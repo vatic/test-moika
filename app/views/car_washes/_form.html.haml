@@ -2,9 +2,11 @@
   .container
     .columns-12#not-activated
       %h3.text-center Мойка не активирована.
-      -#pay_url = Robokassa.client.init_payment_url(@car_wash.payments.first.id, @car_wash.payments.first.amount, '', currency='', language='ru', email='', custom_options={car_wash_id: @car_wash.id})
+      - time_to_activate = (Time.at(7*24*3600 - (Time.now.utc - @car_wash.updated_at)).utc - 1.day)
+      %h3.text-center= "До окончания тестового периода осталось #{time_to_activate.strftime("%d")} дней #{time_to_activate.strftime("%H")} ч. #{time_to_activate.strftime("%M")} мин."
+      - pay_url = Robokassa.client.init_payment_url(@car_wash.payments.first.id, @car_wash.payments.first.amount, '', currency='', language='ru', email='', custom_options={car_wash_id: @car_wash.id})
       %p.text-center
-        = link_to "Оплатить", '#', class: 'save_button'
+        = link_to "Оплатить", pay_url, class: 'save_button'
 
       
 .bip_input
