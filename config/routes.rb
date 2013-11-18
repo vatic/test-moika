@@ -17,6 +17,13 @@ Moika::Application.routes.draw do
   root 'map#show'
   get "map/show"
 
+  controller :robokassa do
+    get "robokassa/:notification_key/notify"   => :notify,  :as => :robokassa_notification
+
+    get "robokassa/success"  => :success, :as => :robokassa_on_success
+    get "robokassa/fail"     => :fail,    :as => :robokassa_on_fail
+  end
+
   namespace :admin do
     get '', to: 'dashboard#main', as: '/'
     get 'load_data_from_ya', to: 'dashboard#load_data_from_ya', as: '/load_data_from_ya'
