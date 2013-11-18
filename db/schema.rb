@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131114161340) do
+ActiveRecord::Schema.define(version: 20131118130446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20131114161340) do
     t.string   "site_url"
     t.boolean  "blink",          default: false
     t.boolean  "signal_changed"
+    t.boolean  "activated",      default: false
   end
 
   create_table "comments", force: true do |t|
@@ -101,6 +102,16 @@ ActiveRecord::Schema.define(version: 20131114161340) do
   add_index "messages", ["car_wash_id"], name: "index_messages_on_car_wash_id", using: :btree
   add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
   add_index "messages", ["sender_id"], name: "index_messages_on_sender_id", using: :btree
+
+  create_table "payments", force: true do |t|
+    t.boolean  "confirmed",   default: false
+    t.boolean  "verified",    default: false
+    t.boolean  "failed",      default: true
+    t.integer  "car_wash_id"
+    t.float    "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "requests", force: true do |t|
     t.string   "name"

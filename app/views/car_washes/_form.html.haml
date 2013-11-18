@@ -1,3 +1,12 @@
+- unless @car_wash.activated?
+  .container
+    .columns-12#not-activated
+      %h3.text-center Мойка не активирована.
+      -#pay_url = Robokassa.client.init_payment_url(@car_wash.payments.first.id, @car_wash.payments.first.amount, '', currency='', language='ru', email='', custom_options={car_wash_id: @car_wash.id})
+      %p.text-center
+        = link_to "Оплатить", '#', class: 'save_button'
+
+      
 .bip_input
   #main_action_label Ведите текст для бегущей строки
   = form_for @car_wash, remote: true,  role: "form", html: {class: "main_action_input"} do |f|

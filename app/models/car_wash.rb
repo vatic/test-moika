@@ -5,6 +5,7 @@ class CarWash < ActiveRecord::Base
   has_many :requests
   has_many :messages
   has_many :banners
+  has_many :payments
 
   accepts_nested_attributes_for :actions
   geocoded_by :address, :latitude  => :lat, :longitude => :lon
@@ -12,6 +13,10 @@ class CarWash < ActiveRecord::Base
   after_validation :geocode, if: "lat_and_lon_nil?"
 
   after_update :update_signals, if: :signal_changed?  
+
+  def activate!
+    self.update(activated: true)
+  end
 
   def unread_requests_count
     self.requests.unread.count

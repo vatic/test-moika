@@ -45,9 +45,6 @@
     #services 
       = f.label CarWash.human_attribute_name("services")
       = f.text_area :services
-    .actions#control_panel
-      #save_button
-        = f.submit t("save_button")
     #action_bottom1
       - ActionType.bottom1.find_each do |type|
         %h5.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
@@ -63,3 +60,8 @@
         %h5.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
         = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
         = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
+  .container
+    = f.submit t("save_button"), class: 'save_button'
+    -#pay_url = Robokassa.client.init_payment_url(@car_wash.payments.first.id, @car_wash.payments.first.amount, '', currency='', language='ru', email='', custom_options={car_wash_id: @car_wash.id})
+    =#link_to "Оплатить через сервис ROBOX", pay_url
+

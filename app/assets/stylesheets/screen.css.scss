@@ -1145,3 +1145,24 @@ img,canvas {
 .bottom-banners {
   clear:both;
 }
+.save_button {
+  @include sassy-button("simple", 5px, 20px, rgba(92, 203, 15, 1), rgba(1,106,19,1));
+}
+
+.columns-12 {
+  @include span-columns(12 omega,12);
+}
+.columns-12#not-activated {
+  background: #ddf;
+  border: solid 1px #aaa;
+  @include border-radius;
+  margin-bottom: 20px;
+  padding: 10px;
+  h1,h2,h3,h4,h5,p {
+    color: #777;
+  }
+  a {
+    width: 50%;
+  }
+
+}
