@@ -1,5 +1,4 @@
 Robokassa::Interface
-
 module Robokassa
 
 
