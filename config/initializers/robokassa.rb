@@ -1,7 +1,5 @@
 Robokassa::Interface
 module Robokassa
-
-
   class Interface
     class << self
       def get_options_by_notification_key(key)
