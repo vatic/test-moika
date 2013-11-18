@@ -37,7 +37,7 @@ class Robokassa::Interface
   end
 
   # This method verificates request params recived from robocassa server
-  def self.notify(params, controller)
+  def notify(params, controller)
     parsed_params = map_params(params, @@notification_params_map)
     notify_implementation(
       parsed_params[:invoice_id],
