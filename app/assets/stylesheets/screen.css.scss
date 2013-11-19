@@ -117,7 +117,7 @@ input[type='text']{
 
     //background-color: #ebebeb;
     #login {
-      @include pre(1);
+      @include pre(1,48);
       @include span-columns(1,12);
       h4,h5 {
         display: inline;
@@ -133,6 +133,7 @@ input[type='text']{
     }
     #registration {
       @include span-columns(1,12);
+      @include post(2,48);
       h4,h5 {
         display: inline;
         margin: 0 auto;
