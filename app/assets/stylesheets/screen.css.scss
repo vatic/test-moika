@@ -132,7 +132,7 @@ input[type='text']{
 
     }
     #registration {
-      @include span-columns(2,12);
+      @include span-columns(1,12);
       h4,h5 {
         display: inline;
         margin: 0 auto;
@@ -147,7 +147,7 @@ input[type='text']{
 
     #car_wash_name {
       margin: 0.3% 0 0 0%;
-      @include span-columns(4,12);
+      @include span-columns(3,12);
       p,h1,h2,h3,h4,h5 {
         @include margin-padding-0;
         font-weight: 700;
@@ -156,7 +156,7 @@ input[type='text']{
         color: $header-link-color;
         display: block;
         margin: 0 auto;
-        text-align: center;
+        text-align: right;
       }
       a:hover {
         color: lighten($header-link-color,20%)
@@ -169,8 +169,24 @@ input[type='text']{
         float: left;
         margin-right: 1%;
         display: inline;
-        &#vk {
+        &#youtube {
           margin-left: 1%;
+          background-image: url(image_path("youtube_grey.png"));
+          background-repeat: no-repeat;
+          &:hover {
+            background-image: url(image_path("youtube.png"));
+          background-repeat: no-repeat;
+          }
+        }
+        &#mir {
+          background-image: url(image_path("mir_grey.png"));
+          background-repeat: no-repeat;
+          &:hover {
+            background-image: url(image_path("mir.png"));
+          background-repeat: no-repeat;
+          }
+        }
+        &#vk {
           background-image: url(image_path("vk_grey.png"));
           background-repeat: no-repeat;
           &:hover {
