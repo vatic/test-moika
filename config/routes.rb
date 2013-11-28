@@ -1,7 +1,6 @@
 Moika::Application.routes.draw do
 
-  resources :static_pages
-
+  get "sp/:id", to: "static_pages#show", as: "static_page"
   get "banners/update"
   get "user/:id", to: "users#show", as: '/user'
   devise_for :users, controllers: { registrations: "registrations" }
@@ -34,6 +33,7 @@ Moika::Application.routes.draw do
     resources :users
     resources :messages, only: [:index, :show, :create, :destroy]
     resources :banners
+    resources :static_pages
     get 'add_car_wash/:id', to: 'users#add_car_wash', as: '/add_car_wash'
     delete 'delete_file/:id', to: 'banners#delete_file', as: '/delete_file'
 

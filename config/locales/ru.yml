@@ -115,6 +115,7 @@ ru:
       vmenu:
         users: "Пользователи"
         adv: "Реклама"
+        static_pages: "Статические страницы"
   admin:
     users:
       index:
@@ -127,6 +128,9 @@ ru:
         modal_title: "Сообщение для"
         from: "От"
         to: "Кому"
+    static_pages:
+      index:
+        header: "Список статических страниц сайта"
   users:
     show:
       car_wash_registration_message:

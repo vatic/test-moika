@@ -1,0 +1,25 @@
+%h1= t('.header')
+
+%table
+  %tr
+    %th Заголовок1
+    %th Заголовок2
+    %th Текст
+    %th Ссылка
+    %th
+    %th
+    %th
+
+  - @static_pages.each do |static_page|
+    %tr
+      %td= static_page.title
+      %td= static_page.header
+      %td= static_page.content
+      %td= static_page.permalink
+      %td= link_to 'Show', admin_static_page
+      %td= link_to 'Edit', edit_admin_static_page_path(static_page)
+      %td= link_to 'Destroy', admin_static_page, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'Новая страница', new_admin_static_page_path, class: 'btn btn-lg btn-success'

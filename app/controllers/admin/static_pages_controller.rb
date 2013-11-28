@@ -1,4 +1,4 @@
-class StaticPagesController < AdminController
+class Admin::StaticPagesController < AdminController
   before_action :set_static_page, only: [:show, :edit, :update, :destroy]
 
   # GET /static_pages
