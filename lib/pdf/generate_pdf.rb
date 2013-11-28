@@ -74,7 +74,7 @@ module MyPDF
       font File.join(Prawn::BASEDIR, 'data','fonts','DejaVuSans.ttf'), size: 12, style: :bold do
         table([
           ["№", "Услуга", "Кол-во", "Ед", "Цена", "Сумма"],
-          ["1", "Оплата сервисных услуг интернет-сайта moika-77.ru", "1", "усл", "6000.00 руб.", "6000.00 руб."],
+          ["1", "Оплата сервисных услуг интернет-сайта moika-77.ru", "1", {content: "усл"}, "6000.00 руб.", "6000.00 руб."],
           [{content: "", borders: []}, {content: "", borders: []}, {content: "", borders: []},{content: "", borders: []}, {content: "Итого:", borders: []}, "6000.00 руб."],
           [{content: "", borders: []}, {content: "", borders: []}, {content: "", borders: []},{content: "", borders: []}, {content: "Без налога(НДС)", borders: []}, "-"]
         ], width: 550)

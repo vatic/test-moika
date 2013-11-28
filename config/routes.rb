@@ -1,5 +1,7 @@
 Moika::Application.routes.draw do
 
+  resources :static_pages
+
   get "banners/update"
   get "user/:id", to: "users#show", as: '/user'
   devise_for :users, controllers: { registrations: "registrations" }
