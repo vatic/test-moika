@@ -9,7 +9,7 @@
     %li
       = link_to "Главная", root_path
     %li
-      = link_to "Реклама на сайте", "#"
+      = link_to "Реклама на сайте", static_page_path(StaticPage.where(permalink: 'adv').first.id)
     %li
       = link_to "О компании", "#"
     %li
