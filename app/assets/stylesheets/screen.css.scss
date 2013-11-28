@@ -1169,6 +1169,9 @@ img,canvas {
 .columns-12 {
   @include span-columns(12 omega,12);
 }
+.columns-6 {
+  @include span-columns(6 omega,12);
+}
 .columns-12#not-activated {
   background: #ddf;
   border: solid 1px #aaa;
@@ -1182,4 +1185,25 @@ img,canvas {
     width: 50%;
   }
 
+}
+.left-6 {
+  @include span-columns(6,12);
+}
+.right-6 {
+  @include span-columns(6 omega,12);
+}
+
+#robokassa_link_wrapper {
+  padding: 10px;
+  height: 200px;
+  min-height: 200px;
+  background: #eee;
+  border: solid 1px #aaa;
+  @include border-radius;
+  a#robokassa {
+    color: $header-link-color;
+  }
+  a#robokassa:hover {
+    color: lighten($header-link-color, 20%);
+  }
 }

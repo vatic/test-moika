@@ -9,6 +9,8 @@ Moika::Application.routes.draw do
     resources :requests
     resources :messages, only: [:index, :show, :update]
     resources :banners, only: [:index, :update]
+    resources :payments, only: [:index]
+    resources :invoices, only: [:new, :create, :show]
     delete 'delete_file/:id', to: 'banners#delete_file', as: '/delete_file'
   end
 

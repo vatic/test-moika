@@ -4,18 +4,16 @@
       %h3.text-center Мойка не активирована.
       - time_to_activate = (Time.at(7*24*3600 - (Time.now.utc - @car_wash.updated_at)).utc - 1.day)
       %h3.text-center= "До окончания тестового периода осталось #{time_to_activate.strftime("%d")} дней #{time_to_activate.strftime("%H")} ч. #{time_to_activate.strftime("%M")} мин."
-      - pay_url = Robokassa.client.init_payment_url(@car_wash.payments.first.id, @car_wash.payments.first.amount, '', currency='', language='ru', email='', custom_options={car_wash_id: @car_wash.id})
       %p.text-center
-        = link_to "Оплатить", pay_url, class: 'save_button'
+        = link_to "Оплатить", car_wash_payments_path(@car_wash), class: 'save_button'
 
-      
 .bip_input
   #main_action_label Ведите текст для бегущей строки
   = form_for @car_wash, remote: true,  role: "form", html: {class: "main_action_input"} do |f|
     - type = ActionType.main
     = hidden_field_tag "car_wash[actions][][action_type_text]", type.text
     = text_field_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text), disabled: "disabled"
-  
+
     = f.submit t("edit_button"), class: 'red-medium-button'
 
 .container
@@ -26,7 +24,7 @@
       = label_tag :action_type_text, type.title
       = hidden_field_tag "car_wash[actions][][action_type_text]", type.text
       = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text), disabled: "disabled"
-    
+
       = f.submit t("edit_button"), class: 'red-medium-button'
   #center_form
     %h3 Свободно

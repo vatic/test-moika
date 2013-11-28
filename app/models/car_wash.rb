@@ -6,6 +6,7 @@ class CarWash < ActiveRecord::Base
   has_many :messages
   has_many :banners
   has_many :payments
+  has_many :invoices
 
   accepts_nested_attributes_for :actions
   geocoded_by :address, :latitude  => :lat, :longitude => :lon

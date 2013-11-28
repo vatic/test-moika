@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131118130446) do
+ActiveRecord::Schema.define(version: 20131128153351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,9 @@ ActiveRecord::Schema.define(version: 20131118130446) do
     t.boolean  "blink",          default: false
     t.boolean  "signal_changed"
     t.boolean  "activated",      default: false
+    t.string   "official_title"
+    t.string   "u_address"
+    t.string   "inn"
   end
 
   create_table "comments", force: true do |t|
@@ -85,6 +88,16 @@ ActiveRecord::Schema.define(version: 20131118130446) do
     t.datetime "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "invoices", force: true do |t|
+    t.integer  "car_wash_id"
+    t.string   "address"
+    t.string   "title"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "inn"
   end
 
   create_table "messages", force: true do |t|

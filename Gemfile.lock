@@ -23,6 +23,16 @@ GIT
       jquery-rails
       rails (~> 4)
 
+GIT
+  remote: https://github.com/prawnpdf/prawn.git
+  revision: 7720d6500c92cc2156adf792a333dedbac3aa02c
+  specs:
+    prawn (1.0.0.rc2)
+      afm
+      pdf-reader (~> 1.2)
+      ruby-rc4
+      ttfunk (~> 1.0.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -239,9 +249,6 @@ GEM
     plupload-rails (1.1.0)
       rails (>= 3.1)
     polyglot (0.3.3)
-    prawn (0.12.0)
-      pdf-reader (>= 0.9.0)
-      ttfunk (~> 1.0.2)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -387,7 +394,7 @@ DEPENDENCIES
   nokogiri
   pg
   plupload-rails
-  prawn
+  prawn!
   puma
   rails (= 4.0.0)
   rails_12factor

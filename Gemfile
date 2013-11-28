@@ -102,4 +102,4 @@ gem 'mini_magick'
 gem 'newrelic_rpm'
 #gem 'activemerchant', :require => 'active_merchant'
 #gem 'robokassa'
-gem 'prawn'
+gem 'prawn', :git => "https://github.com/prawnpdf/prawn.git"
