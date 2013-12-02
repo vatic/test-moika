@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  after_action :allow_iframe
   helper :application
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -29,5 +30,9 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:sign_up) do |u|
         u.permit(:phone, :contact_person, :car_wash_title, :email, :password, :password_confirmation)
       end
+    end
+  private
+    def allow_iframe
+      response.headers.except! 'X-Frame-Options'
     end
 end
