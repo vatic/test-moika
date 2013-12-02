@@ -1,42 +1,42 @@
 %table#car_wash_info
   %tr
-    %td
+    %td.label
       %span.title Адрес:
     %td
       %span= car_wash.address
   %tr
-    %td
+    %td.label
       %p.title Координаты:
     %td
       %span= car_wash.lat
       %span= car_wash.lon
   %tr
-    %td
+    %td.label
       %span.title= CarWash.human_attribute_name("site_url")
     %td
       %span= link_to car_wash.site_url, url_with_protocol(car_wash.site_url), :target => '_blank'
   %tr
-    %td
+    %td.label
       %span.title Контакты:
     %td
       %span= car_wash.contacts
   %tr
-    %td
+    %td.label
       %span.title Услуги:
     %td
       %span= car_wash.services
   %tr
-    %td
+    %td.label
       %span.title Цена:
     %td
       %span= car_wash.price
   %tr
-    %td
+    %td.label
       %span.title Кол-во моечных зон:
     %td
       %span= car_wash.zones_count
   %tr
-    %td
+    %td.label
       %span.title Акции:
     %td
       %ul

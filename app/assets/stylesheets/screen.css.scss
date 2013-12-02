@@ -573,11 +573,14 @@ form.car_wash_edit_details {
       }
       table#car_wash_info {
         border: 1px solid #fff;
+        table-layout: fixed;
+        width: 100%;
         tr {
           background-color: $car-wash-info-bg;
           margin: 5px auto;
         }
         td {
+          width: 70%;
           border: 1px solid #fff;
           vertical-align: middle;
           padding-left: 10px;
@@ -593,6 +596,9 @@ form.car_wash_edit_details {
           }
           span {
           }
+        }
+        td.label {
+          width: 30%;
         }
       }
 
