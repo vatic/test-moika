@@ -6,13 +6,9 @@
     -@car_washes.each do |cw|
       %li= link_to cw.title, car_wash_path(cw)
   #adv_left
-    =#image_tag 'adv_left.png'
-    =#image_tag 'adv_left.png'
-    =#image_tag 'adv_left_small.png'
-    =#image_tag  Banner.where(place: 'left_1').first.file.b_180_300.url, class: 'banner'
-    = image_tag  Banner.where(place: 'left_2').first.file.b_190_160.url, class: 'banner'
-    = image_tag  Banner.where(place: 'left_3').first.file.b_190_280.url, class: 'banner'
-    = image_tag  Banner.where(place: 'left_4').first.file.b_190_160.url, class: 'banner'
+    = image_tag  Banner.where(place: 'left_1').first.file.b_190_160.url, class: 'banner'
+    = image_tag  Banner.where(place: 'left_2').first.file.b_190_280.url, class: 'banner'
+    = image_tag  Banner.where(place: 'left_3').first.file.b_190_160.url, class: 'banner'
 
 #map_container
   %h3.text-center#map_header Карта автомоек Москвы
