@@ -23,11 +23,11 @@
   .col-md-2
     .panel.panel-default
       %h1.text-fade.text-center Список автомоек
-      - banner = @banners.where(place: 'left_2').first
-      = render 'banner', banner: banner, banner_url: banner.file.b_190_160.url, version: :b_190_160
       - banner = @banners.where(place: 'left_1').first
-      = render 'banner', banner: banner, banner_url: banner.file.b_190_280.url, version: :b_190_280
+      = render 'banner', banner: banner, banner_url: banner.file.b_190_160.url, version: :b_190_160
       - banner = @banners.where(place: 'left_2').first
+      = render 'banner', banner: banner, banner_url: banner.file.b_190_280.url, version: :b_190_280
+      - banner = @banners.where(place: 'left_3').first
       = render 'banner', banner: banner, banner_url: banner.file.b_190_160.url, version: :b_190_160
 
   .col-md-10#fake_map
