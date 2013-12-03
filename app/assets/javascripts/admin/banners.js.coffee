@@ -62,7 +62,9 @@ $ ->
       banner = JSON.parse banner
 
       version =  $('#banner_' + id).data('version')
-      url = banner.file[version].url
+      console.log(version)
+      console.log(banner.file.file)
+      url = banner.file.file[version].url
 
       $('img#' + banner["id"]).prop('src',url) 
     uploaders[id] = uploader

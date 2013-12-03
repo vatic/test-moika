@@ -11,7 +11,8 @@ class BannersController < ApplicationController
     respond_to do |format|
       if @banner.update(banner_params)
         logger.debug banner_params
-        format.json { render json: @banner.to_json(only: [:id, :file]) }
+        format.json
+        #{ render json: @banner.to_json(only: [:id, :file]) }
       else
         format.json { render json: @banner.errors, status: :unprocessable_entity }
       end
