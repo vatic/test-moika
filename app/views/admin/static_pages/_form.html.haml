@@ -1,4 +1,4 @@
-= form_for [:admin, @static_page] do |f|
+= form_for [:admin, @static_page], role: 'form' do |f|
   - if @static_page.errors.any?
     #error_explanation
       %h2= "#{pluralize(@static_page.errors.count, "error")} prohibited this static_page from being saved:"
@@ -6,17 +6,15 @@
         - @static_page.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :header
-    = f.text_area :header
-  .field
-    = f.label :content
-    = f.text_area :content
-  .field
-    = f.label :permalink
-    = f.text_field :permalink
-  .actions
-    = f.submit 'Save'
+  .form-group
+    = f.label :title, 'Заголовок в браузере'
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :header, 'Заголовок в тексте'
+    = f.text_area :header, class: 'form-control'
+  .form-group
+    = f.label :content, 'Текст'
+    = f.text_area :content, size: '100x20', class: 'form-control'
+  .col-lg-4.col-lg-offset-4.actions
+    = f.submit t('save_button'), class: 'btn btn-danger btn-block'
+

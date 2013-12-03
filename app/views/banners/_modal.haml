@@ -8,7 +8,9 @@
             Текст над баннером:
             = text_field_tag 'banner[text]', banner.text
       .modal-body
-        =#form_for [:admin, banner] do |f|
+        %h4= "Размер баннера будет преобразован к: #{version[-7..-1].sub('_','x')}"
+        %h4= "Максимальный размер файла: 500 kb"
+        %hr
         #banner{id: banner.id, data: {url: car_wash_banner_path(car_wash, banner), token: form_authenticity_token, version: version }}
           %ul{id: "image-container_#{banner.id}", class: 'image-container'}
             %li

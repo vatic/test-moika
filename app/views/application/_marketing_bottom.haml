@@ -1,8 +1,10 @@
 .marketing.no-edit
-  = image_tag  Banner.where(place: 'bottom_1').first.file.b_380_285.url, class: 'banner'
+  = image_tag  'b_385_220_default.png'
+  =#image_tag  Banner.where(place: 'bottom_1').first.file.b_380_285.url, class: 'banner'
 .marketing
-  = render 'video_380x285'
+  = render 'video'
   =#image_tag 'video.png'
 .marketing.omega.no-edit
-  = image_tag  Banner.where(place: 'bottom_2').first.file.b_380_285.url, class: 'banner'
+  = image_tag  'b_385_220_default.png'
+  =#image_tag  Banner.where(place: 'bottom_2').first.file.b_380_285.url, class: 'banner'
 

@@ -9,7 +9,7 @@
   - banner = @banners.where(place: 'client_thin_bottom').first
   %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
 
-  = render 'banner', banner: banner, banner_url: banner.file.b_380_460.url, version: :b_380_460, car_wash: @car_wash
+  = render 'banner', banner: banner, banner_url: banner.file.b_380_540.url, version: :b_380_540, car_wash: @car_wash
 .no-edit
   .center-container
     - banner = @banners.where(place: 'client_thin_top_1').first

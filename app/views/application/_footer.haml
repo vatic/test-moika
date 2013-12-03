@@ -11,11 +11,14 @@
     %li
       = link_to "Реклама на сайте", static_page_path(StaticPage.where(permalink: 'adv').first.id)
     %li
-      = link_to "О компании", "#"
+      = link_to "О компании", static_page_path(StaticPage.where(permalink: 'about').first.id)
+
     %li
       = mail_to "info@moika77.ru"
     %li
-      = link_to "Обратная связь", "#"
+      = link_to "Обратная связь", static_page_path(StaticPage.where(permalink: 'feedback').first.id)
+    %li
+      = render 'ya_counter'
   %ul#bottom_links
     =#render 'ya_counter_heroku'
     %li

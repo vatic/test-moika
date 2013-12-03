@@ -7,6 +7,7 @@ class Admin::BannersController < AdminController
     @banners_left = Banner.left
     @banners_top = Banner.top
     @banners_bottom = Banner.bottom
+    @top_text_banner = TextBanner.where(place: 'top').first
   end
 
   def show
@@ -31,8 +32,15 @@ class Admin::BannersController < AdminController
     respond_to do |format|
       if @banner.update(banner_params)
         #format.html { redirect_to [:admin, @banner], notice: 'Banner was successfully updated.' }
-        logger.debug(Banner.find(@banner.id).file.url)
-        format.json 
+        logger.debug(banner_params)
+        format.json
+        format.js {
+          render js: 'var label = $("#top_text_banner form label");
+                      var prev_html = label.html();
+                      console.log(prev_html);
+                      label.html("Обновлено").show("slow").effect("highlight", {color: "#f77"}, 3000);
+                      setTimeout(function() {label.html(prev_html);}, 3000);'
+        }
       else
         format.json { render json: @banner.errors, status: :unprocessable_entity }
       end
@@ -61,10 +69,10 @@ class Admin::BannersController < AdminController
     end
 
     def banner_params
-      params[:banner] = {}
+      params[:banner] ||= {}
       params[:banner][:file] = params[:file]
       params[:banner][:filename] = params[:name]
-      params.require(:banner).permit(:file, :filename, :text, :place)
+      params.require(:banner).permit(:file, :filename, :text, :place, :type)
     end
 
 end

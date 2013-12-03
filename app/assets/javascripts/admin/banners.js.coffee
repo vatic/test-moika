@@ -10,7 +10,7 @@ $ ->
       runtimes: "html5,flash,silverlight,browserplus"
       browse_button: "pickfiles_" + id
       container: "image-container_" + id 
-      max_file_size: "10mb"
+      max_file_size: "500kb"
       url: $('#banner_' + id).data('url')
       authenticity_token: $('#banner').data('token')
       multi_selection: false
@@ -40,21 +40,25 @@ $ ->
 
     uploader.bind "Init", (up, params) ->
    
-      $("#filelist").html "<div>Current runtime: " + params.runtime + "</div>"
-      $("#filelist").append "<div>container: " + params.container + "</div>"
+    #$("#filelist").html "<div>Current runtime: " + params.runtime + "</div>"
+    #$("#filelist").append "<div>container: " + params.container + "</div>"
 
 ###############################
     uploader.init()
 ###############################
 
     uploader.bind "Error", (up, err) ->
-      $("#filelist").append "<div>Error: " + err.code + ", Message: " + err.message + ((if err.file then ", File: " + err.file.name else "")) + "</div>"
+      $(".filelist").html('')
+      if err.code == -600
+        $(".filelist").append "<div>Ошибка: " + "<b class='red'>" + err.message + "</b>" + ((if err.file then ", Размер файла не может превышать: " + up.settings.max_file_size else "")) + "</div>"
+        console.log(up.settings)
+      else
+        $(".filelist").append "<div>Ошибка: " + err.code + ", Message: " + err.message + ((if err.file then ", File: " + err.file.name else "")) + "</div>"
       up.refresh() # Reposition Flash/Silverlight
 
     uploader.bind "FileUploaded", (up, file, data) ->
       $("#" + file.id + " b").html "100%"
       banner = data.response
-      console.log banner
       banner = JSON.parse banner
 
       version =  $('#banner_' + id).data('version')
@@ -90,6 +94,7 @@ $ ->
             height: 140
             crop: true
         img.load file.getSource()
+        $(".filelist").html('')
         $("#filelist_" + id).append "<div id=\"" + file.id + "\">" + file.name + " (" + plupload.formatSize(file.size) + ") <b></b>" + "</div>"
         up.refresh() # Reposition Flash/Silverlight
 

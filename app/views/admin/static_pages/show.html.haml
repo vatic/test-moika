@@ -1,18 +1,21 @@
 %p#notice= notice
-
+%hr
 %p
-  %b Title:
+  %b Заголовок в браузере:
   = @static_page.title
 %p
-  %b Header:
+  %b Заголовок:
   = @static_page.header
 %p
-  %b Content:
+  %b Текст:
   = @static_page.content
 %p
   %b Permalink:
   = @static_page.permalink
+%hr
 
-= link_to 'Edit', edit_admin_static_page_path(@static_page)
-\|
-= link_to 'Back', admin_static_pages_path
+.row
+  .col-lg-2.col-lg-offset-4.actions
+    = link_to t('edit_button'), edit_admin_static_page_path(@static_page), class: 'btn btn-danger'
+  .col-lg-2.actions
+    = link_to 'Назад к списку страниц', admin_static_pages_path, class: 'btn btn-success'

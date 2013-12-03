@@ -42,7 +42,7 @@ class Admin::StaticPagesController < AdminController
   def update
     respond_to do |format|
       if @static_page.update(static_page_params)
-        format.html { redirect_to @static_page, notice: 'Static page was successfully updated.' }
+        format.html { redirect_to [:admin, @static_page], notice: 'Страница успешно обновлена.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

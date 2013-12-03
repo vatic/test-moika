@@ -271,7 +271,7 @@ input[type='text']{
   @include span-columns(8 omega,12);
   @include post(2);
   marquee {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
     border: none;
     h4,h5 {
       color: red;
@@ -285,31 +285,51 @@ input[type='text']{
     max-width:100%; 
     height:auto;
   }
+  iframe {
+    max-width: 100%; 
+    min-height: 220px; 
+    height:auto;
+  }
 }
 .marketing.omega {
   @include span-columns(4 omega,12);
   img {
     max-width:100%; 
     height:auto;
+    float: right;
+  }
+  iframe{
+    float: right;
+    max-width: 100%; 
+    min-height: 220px; 
+    height:auto;
   }
 }
+
+#marketing_bottom {
+  margin-top: 0;
+}
 .container#main_content {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   #car_washes_left_list {
+    margin: 10px 0 0 0;
     @include span-columns(2,12);
+    height: ($map-height +80px);
+    min-height: ($map-height +80px);
+    max-height: ($map-height +80px);
     #list_header {
       @include columns(2);
       background-color: #dbdbdb;
       margin: 0 0 15px 0;
       p {
-        @include span-columns(1,2);
-        margin-left: 10px;
-        font-weight: normal;
-        font-size: 16px;
+        width: 100%;
+        margin: 10px 0 0 10px;
+        font-weight: bold;
+        font-size: 12px;
       }
       img {
-        @include span-columns(1 omega,2);
+        float: right;
         height: 40px;
         width: 40px;
       }
@@ -317,6 +337,8 @@ input[type='text']{
     ul {
       margin: 0;
       padding: 0;
+      min-height: 300px;
+      border: solid 1px #ddd;
       li {
         list-style: none;
         background-color: #ebebeb;
@@ -339,11 +361,15 @@ input[type='text']{
     #adv_left {
       img {
         margin: 3px 0;
+        width: 100%;
+        height: 100%;
       }
     }
   }
   #map_container {
     @include span-columns(10 omega,12);
+    height: ($map-height + 80px);
+    max-height: ($map-height + 80px);
     #map_header {
       @include span-columns(3,8);
       margin:17px 0 20px 0;
@@ -364,14 +390,14 @@ input[type='text']{
 
 #map {
   width: 100%;
-  height: 1120px;
+  height: $map-height;
   margin-bottom: 20px;
-}  
+}
 
  .container#footer { 
   width: 100%;
   max-width: 100%;
-  margin: 20px 0 0 0;
+  margin: 0 0 0 0;
   padding: 0;
   border-bottom: 10px solid #8c8c8c;
   background-color: #333333;
@@ -573,14 +599,11 @@ form.car_wash_edit_details {
       }
       table#car_wash_info {
         border: 1px solid #fff;
-        table-layout: fixed;
-        width: 100%;
         tr {
           background-color: $car-wash-info-bg;
           margin: 5px auto;
         }
         td {
-          width: 70%;
           border: 1px solid #fff;
           vertical-align: middle;
           padding-left: 10px;
@@ -596,9 +619,6 @@ form.car_wash_edit_details {
           }
           span {
           }
-        }
-        td.label {
-          width: 30%;
         }
       }
 

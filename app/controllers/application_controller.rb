@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_devise_params, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    if resource.is_a?(User) 
+    if resource.is_a?(User)
       if resource.client?
         edit_car_wash_path(resource.car_wash)
       elsif resource.admin?
@@ -31,6 +31,7 @@ class ApplicationController < ActionController::Base
         u.permit(:phone, :contact_person, :car_wash_title, :email, :password, :password_confirmation)
       end
     end
+
   private
     def allow_iframe
       response.headers.except! 'X-Frame-Options'
