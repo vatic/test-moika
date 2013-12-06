@@ -1,4 +1,5 @@
 Moika::Application.routes.draw do
+  require 'logged_in_constraint'
 
   get "sp/:id", to: "static_pages#show", as: "static_page"
   get "banners/update"
@@ -38,4 +39,10 @@ Moika::Application.routes.draw do
     delete 'delete_file/:id', to: 'banners#delete_file', as: '/delete_file'
 
   end
+  get 'callback'  => 'sessions#callback'
+  delete 'logout' => 'sessions#destroy'
+  get 'vk/', to: 'vk#index', constraints: LoggedInConstraint.new
+  get 'vk/', to: 'sessions#new'
+
+
 end
