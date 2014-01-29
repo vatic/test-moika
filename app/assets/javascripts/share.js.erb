@@ -104,14 +104,12 @@ function init(){
     ymaps.option.presetStorage.add('my#green_blink', {
     iconImageHref: "<%= asset_path('green_bl.gif') %>"  });
     ymaps.option.presetStorage.add('my#red_not_blink', {
-    //iconImageHref: "<%= asset_path('red_led.png') %>"  });
-    iconImageHref: "<%= asset_path('Award-star-gold-3d_35.png') %>"  });
+    iconImageHref: "<%= asset_path('red_led.png') %>"  });
     ymaps.option.presetStorage.add('my#green_not_blink', {
-    //iconImageHref: "<%= asset_path('green_led.png') %>"  });
-    iconImageHref: "<%= asset_path('christmas_star_35.png') %>"  });
+    iconImageHref: "<%= asset_path('green_led.png') %>"  });
 
     ymaps.option.presetStorage.add('my#videoned', {
-    iconImageHref: "<%= asset_path('ru_star_35.png') %>"  });
+    iconImageHref: "<%= asset_path('star_with_green.gif') %>"  });
 
 
     myMap.behaviors.enable('scrollZoom');
@@ -123,14 +121,12 @@ function init(){
     greenCollection = new ymaps.GeoObjectCollection({}, {
         preset: 'my#green_not_blink',
         //preset: 'twirl#greenDotIcon',
-        //iconImageSize: [20, 20]
-        iconImageSize: [35, 35]
+        iconImageSize: [20, 20]
     });
 
     redCollection = new ymaps.GeoObjectCollection({}, {
         preset: 'my#red_not_blink',
-        //iconImageSize: [20, 20]
-        iconImageSize: [35, 35]
+        iconImageSize: [20, 20]
     });
 
     greenBlinkCollection = new ymaps.GeoObjectCollection({}, {
@@ -146,7 +142,7 @@ function init(){
     videonedCollection = new ymaps.GeoObjectCollection({}, {
         preset: 'my#videoned',
         //preset: 'twirl#redDotIcon',
-        iconImageSize: [35, 35]
+        iconImageSize: [50, 50]
     });
 
     if (cw_list !== null && cw_list !== undefined) {
