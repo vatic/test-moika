@@ -150,6 +150,7 @@ class CarWashesController < ApplicationController
         :blink,
         :signal_changed,
         :updated_at,
+        :videoned,
         actions_attributes: [:text, :action_type_text])
     end
 end

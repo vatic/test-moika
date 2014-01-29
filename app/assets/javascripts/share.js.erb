@@ -104,11 +104,12 @@ function init(){
     ymaps.option.presetStorage.add('my#green_blink', {
     iconImageHref: "<%= asset_path('green_bl.gif') %>"  });
     ymaps.option.presetStorage.add('my#red_not_blink', {
-    //iconImageHref: "<%= asset_path('red_led.png') %>"  });
-    iconImageHref: "<%= asset_path('drop_new.png') %>"  });
+    iconImageHref: "<%= asset_path('red_led.png') %>"  });
     ymaps.option.presetStorage.add('my#green_not_blink', {
-    //jiconImageHref: "<%= asset_path('drop_new.png') %>"  });
-    iconImageHref: "<%= asset_path('drop_new_30.png') %>"  });
+    iconImageHref: "<%= asset_path('green_led.png') %>"  });
+
+    ymaps.option.presetStorage.add('my#videoned', {
+    iconImageHref: "<%= asset_path('camera.png') %>"  });
 
 
     myMap.behaviors.enable('scrollZoom');
@@ -125,7 +126,6 @@ function init(){
 
     redCollection = new ymaps.GeoObjectCollection({}, {
         preset: 'my#red_not_blink',
-        //preset: 'twirl#redDotIcon',
         iconImageSize: [20, 20]
     });
 
@@ -137,6 +137,12 @@ function init(){
     redBlinkCollection = new ymaps.GeoObjectCollection({}, {
         preset: 'my#red_blink',
         iconImageSize: [20, 20]
+    });
+
+    videonedCollection = new ymaps.GeoObjectCollection({}, {
+        preset: 'my#videoned',
+        //preset: 'twirl#redDotIcon',
+        iconImageSize: [30, 30]
     });
 
     if (cw_list !== null && cw_list !== undefined) {
@@ -175,7 +181,13 @@ function init(){
             redBlinkCollection.add(placemark)
           }
           else {
-            redCollection.add(placemark)
+            if (car_wash.videoned) {
+              videonedCollection.add(placemark);
+              console.log(car_wash)
+            }
+            else {
+              redCollection.add(placemark)
+            }
           }
         }
       //(car_wash.signal) ? ( greenCollection.add(placemark) ):( redCollection.add(placemark) );
@@ -189,6 +201,7 @@ function init(){
       myMap.geoObjects.add(redCollection);
       myMap.geoObjects.add(greenBlinkCollection);
       myMap.geoObjects.add(redBlinkCollection);
+      myMap.geoObjects.add(videonedCollection);
 
       myMap.storage = ymaps.geoQuery(myMap.geoObjects);
       //clusterer.add(geo_objects_ary);
