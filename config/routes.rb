@@ -1,5 +1,7 @@
 Moika::Application.routes.draw do
-  require 'logged_in_constraint'
+
+  root 'map#show'
+  get "map/show"
 
   get "sp/:id", to: "static_pages#show", as: "static_page"
   get "banners/update"
@@ -18,9 +20,6 @@ Moika::Application.routes.draw do
 
   put 'car_washes/:id/update_main_action', to: 'car_washes#update_main_action', as: '/car_washes_update_main_action'
 
-  root 'map#show'
-  get "map/show"
-
   controller :robokassa do
     get "robokassa/:notification_key/notify"   => :notify,  :as => :robokassa_notification
 
@@ -35,14 +34,9 @@ Moika::Application.routes.draw do
     resources :messages, only: [:index, :show, :create, :destroy]
     resources :banners
     resources :static_pages
+    resources :car_washes
     get 'add_car_wash/:id', to: 'users#add_car_wash', as: '/add_car_wash'
     delete 'delete_file/:id', to: 'banners#delete_file', as: '/delete_file'
-
   end
-  get 'callback'  => 'sessions#callback'
-  delete 'logout' => 'sessions#destroy'
-  get 'vk/', to: 'vk#index', constraints: LoggedInConstraint.new
-  get 'vk/', to: 'sessions#new'
-
-
+  match "*path" => redirect("/"), via: :all
 end

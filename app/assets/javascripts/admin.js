@@ -30,3 +30,4 @@
 //= require jquery.plupload.queue
 
 //= require admin/banners
+//= require admin/car_washes

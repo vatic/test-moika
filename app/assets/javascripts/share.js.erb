@@ -33,6 +33,7 @@ var myMap,
 
   var declensionBall =
   [
+    "баллов",
     "балл",
     "балла",
     "балла",
@@ -64,7 +65,7 @@ function updateTraffic() {
   }
 
   $('#traffic #level_digit').html( level );
-  $('#traffic #level_text').html( declensionBall[level-1]);
+  $('#traffic #level_text').html( declensionBall[level]);
   $('#traffic #level_desc').html( trafficText[level-1]);
 }
 
@@ -86,7 +87,7 @@ function init(){
         // Стандартный набор кнопок
         .add('mapTools', { left: 35, top: 5 })
         .add('routeEditor', { left: 130, top: 5 })
-        .add(trafficControl)
+        .add(trafficControl, {top: 50, left: 40})
         //.add('searchControl', { left: 180, top: 5 })
         ;
 
@@ -106,10 +107,13 @@ function init(){
     ymaps.option.presetStorage.add('my#red_not_blink', {
     iconImageHref: "<%= asset_path('red_led.png') %>"  });
     ymaps.option.presetStorage.add('my#green_not_blink', {
-    iconImageHref: "<%= asset_path('green_led.png') %>"  });
+    iconImageHref: "<%= asset_path('green_led2.png') %>"  });
+    ymaps.option.presetStorage.add('my#videoned', {
+    iconImageHref: "<%= asset_path('camera2.png') %>"  });
+    //iconImageHref: "<%= asset_path('drop.png') %>"  });
 
     ymaps.option.presetStorage.add('my#videoned', {
-    iconImageHref: "<%= asset_path('star_with_green.gif') %>"  });
+    iconImageHref: "<%= asset_path('star.gif') %>"  });
 
 
     myMap.behaviors.enable('scrollZoom');
@@ -117,6 +121,11 @@ function init(){
     var myBalloonContentBodyLayout = ymaps.templateLayoutFactory.createClass(
                     '<div>$[properties.body]</div>'
                 );
+
+    videonedCollection = new ymaps.GeoObjectCollection({}, {
+        preset: 'my#videoned',
+        iconImageSize: [20, 20]
+    });
 
     greenCollection = new ymaps.GeoObjectCollection({}, {
         preset: 'my#green_not_blink',
@@ -126,6 +135,7 @@ function init(){
 
     redCollection = new ymaps.GeoObjectCollection({}, {
         preset: 'my#red_not_blink',
+        //preset: 'twirl#redDotIcon',
         iconImageSize: [20, 20]
     });
 
@@ -139,24 +149,35 @@ function init(){
         iconImageSize: [20, 20]
     });
 
-    videonedCollection = new ymaps.GeoObjectCollection({}, {
-        preset: 'my#videoned',
-        //preset: 'twirl#redDotIcon',
-        iconImageSize: [35, 35]
+    greenStretchyCollection = new ymaps.GeoObjectCollection({}, {
+        preset:'twirl#greenStretchyIcon',
     });
+
+    redStretchyCollection = new ymaps.GeoObjectCollection({}, {
+        preset:'twirl#redStretchyIcon',
+    });
+
+    videonedCollection = new ymaps.GeoObjectCollection({}, {
+            preset: 'my#videoned',
+            //preset: 'twirl#redDotIcon',
+            iconImageSize: [35, 35]
+        });
+
 
     if (cw_list !== null && cw_list !== undefined) {
       cw_list.forEach(function (car_wash) {
+      console.log(car_wash.signal_type);
 
 
-        var myBalloonBody = balloon(car_wash);
+        var myBalloonBody = balloon(car_wash, car_wash.url);
         var myHintContent = hint(car_wash);
 
         var coordinates = car_wash.coords,
           properties = {
             body: myBalloonBody,
             hintContent: myHintContent,
-            car_wash_id: car_wash.id
+            car_wash_id: car_wash.id,
+            iconContent: car_wash.action_on_map ? (car_wash.main_action):("")
           },
           options = {
             balloonContentBodyLayout : myBalloonContentBodyLayout,
@@ -171,23 +192,23 @@ function init(){
         if (car_wash.signal) {
           if (car_wash.blink) {
             greenBlinkCollection.add(placemark)
-          }
-          else {
-            greenCollection.add(placemark)
+          } else if (car_wash.action_on_map) {
+              greenStretchyCollection.add(placemark)
+          } else if (car_wash.videoned) {
+              videonedCollection.add(placemark);
+          } else {
+              greenCollection.add(placemark)
           }
         }
         else {
           if (car_wash.blink) {
             redBlinkCollection.add(placemark)
-          }
-          else {
-            if (car_wash.videoned) {
+          } else if (car_wash.action_on_map) {
+              redStretchyCollection.add(placemark)
+          } else if (car_wash.videoned) {
               videonedCollection.add(placemark);
-              console.log(car_wash)
-            }
-            else {
+          } else {
               redCollection.add(placemark)
-            }
           }
         }
       //(car_wash.signal) ? ( greenCollection.add(placemark) ):( redCollection.add(placemark) );
@@ -201,6 +222,8 @@ function init(){
       myMap.geoObjects.add(redCollection);
       myMap.geoObjects.add(greenBlinkCollection);
       myMap.geoObjects.add(redBlinkCollection);
+      myMap.geoObjects.add(greenStretchyCollection);
+      myMap.geoObjects.add(redStretchyCollection);
       myMap.geoObjects.add(videonedCollection);
 
       myMap.storage = ymaps.geoQuery(myMap.geoObjects);
@@ -278,7 +301,7 @@ function hint(car_wash) {
     
 }
 
-function balloon(car_wash) {
+function balloon(car_wash, url) {
   var wrapper_begin = '<div class="balloon">';
   var wrapper_end = '</div>';
   var part1 =
@@ -304,7 +327,7 @@ function balloon(car_wash) {
       + '<span class="green">Свободно</span>'
       + '<br/>'
       + '<a href="'
-      + car_wash.url
+      + url
       + '">Перейти на страницу этой мойки</a>' + wrapper_end;
   } else {
     var ret = wrapper_begin + part1
@@ -314,7 +337,7 @@ function balloon(car_wash) {
       + '<span class="red">Занято</span>'
       + '<br/>'
       + '<a href="'
-      + car_wash.url
+      + url
       + '">Перейти на страницу этой мойки</a>'+ wrapper_end;
   }
   return ret;

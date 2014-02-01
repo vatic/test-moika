@@ -1,8 +1,10 @@
 # encoding: utf-8
 
 class BannerUploader < CarrierWave::Uploader::Base
+  require 'carrierwave/processing/mini_magick'
 
   include CarrierWave::MiniMagick
+  include CarrierWave::Processing::MiniMagick
   include Sprockets::Rails::Helper
 
   # Choose what kind of storage to use for this uploader:
@@ -23,7 +25,7 @@ class BannerUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
 
-  version :b_380_285, :if => :is_top_or_bottom?
+  version :b_385_220, :if => :is_top_or_bottom?
   version :b_190_280, :if => :is_left_thin_long?
   version :b_190_160, :if => :is_left_thin_short?
   version :b_320_380, :if => :is_fat_long?
@@ -34,8 +36,8 @@ class BannerUploader < CarrierWave::Uploader::Base
 
 
   
-  version :b_380_285 do
-    process :resize_to_limit => [380, 285]
+  version :b_385_220 do
+    process :resize_to_limit => [385, 220]
   end
 
   version :b_190_160 do
@@ -59,9 +61,13 @@ class BannerUploader < CarrierWave::Uploader::Base
   end
 
   version :b_380_270 do
-    process :resize_to_fill => [380, 270]
+    #process :my_resize => [380, 270]
+    #process :quality => 90
+    #process :convert => 'png'
+    #process :colorspace => :rgb
+    process resize_to_fill: [380,270]
   end
- 
+
   version :b_380_540 do
     process :resize_to_fill => [380, 540]
   end
@@ -73,20 +79,23 @@ class BannerUploader < CarrierWave::Uploader::Base
   #end
 
   def filename
-    model.filename
+    fn = model.filename
+    fn.chomp(File.extname(fn)) + '.png' if original_filename.present?
   end
 
-  # DropBox config
-  #CarrierWave.configure do |config|
-  #config.dropbox_app_key = "ykxd3nnm9kut7qj"
-  #config.dropbox_app_secret = "ertj7ttbfp83u7j"
-  #config.dropbox_access_token = "f39jxu6o6ec3wlth"
-  #config.dropbox_access_token_secret = "7isegmk64tal705"
-  #config.dropbox_user_id = "157055272"
-  #config.dropbox_access_type = "dropbox"
-  #end
 
   protected
+
+  def my_resize(width, height)
+    manipulate! do |img|
+      img.format("png") do |c|
+        c.quality 100
+        c.thumbnail "380x270"
+      end
+      img
+    end
+  end
+
   def is_top_or_bottom? picture
     model.top? || model.bottom?
   end

@@ -7,7 +7,6 @@ $(document).ready( function() {
       success: function(json) {
         cw_list = [];
         json.forEach( function(row) {
-          console.log(row)
           cw_list.push({
             coords: [row.lat, row.lon],
             id: row.id,
@@ -19,7 +18,9 @@ $(document).ready( function() {
             services: row.services,
             blink: row.blink,
             main_action: row.main_action,
-            videoned: row.videoned
+            action_on_map: row.action_on_map,
+            videoned: row.videoned,
+            signal_type: row.signal_type
           });
         })
         ymaps.ready(init);

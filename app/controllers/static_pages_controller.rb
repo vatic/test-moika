@@ -2,6 +2,14 @@ class StaticPagesController < ApplicationController
   before_action :set_static_page, only: [:show, :edit, :update, :destroy]
 
   def show
+    respond_to do |format|
+      format.html {}
+      format.pdf {
+          send_file("#{Rails.root}/app/presentations/moika-77.pdf",
+                                  filename: "moika-77.pdf",
+                                  type: "application/pdf")
+      }
+    end
   end
 
   private

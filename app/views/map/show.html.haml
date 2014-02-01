@@ -1,17 +1,17 @@
 .no-edit#car_washes_left_list
   #list_header
-    %p АВТОМОЙКИ
+    %h1 АВТОМОЙКИ
     = image_tag 'timer.png'
   %ul#car_wash_list
     -@car_washes.each do |cw|
       %li= link_to cw.title, car_wash_path(cw)
   #adv_left
-    = image_tag  Banner.where(place: 'left_1').first.file.b_190_160.url, class: 'banner'
-    = image_tag  Banner.where(place: 'left_2').first.file.b_190_280.url, class: 'banner'
-    = image_tag  Banner.where(place: 'left_3').first.file.b_190_160.url, class: 'banner'
+    = image_tag  Banner.where(place: 'left_1').first.file.b_190_160.url, class: 'banner low'
+    = image_tag  Banner.where(place: 'left_2').first.file.b_190_280.url, class: 'banner high'
+    = image_tag  Banner.where(place: 'left_3').first.file.b_190_160.url, class: 'banner low'
 
 #map_container
-  %h3.text-center#map_header Карта автомоек Москвы
+  %h1.text-center#map_header= t('.map_search_header')
   #map_search
     = form_tag '/search', method: 'get' do
       .control-group

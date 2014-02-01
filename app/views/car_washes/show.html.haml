@@ -1,13 +1,11 @@
 - content_for :adv1 do
-  %marquee(behavior="scroll" direction="right")
-    %h5.text-center= "#{@car_wash.main_action_text} #{t('adv1')}"
+  %marquee(behavior="scroll" direction="left")
+    %h5.text-center= @car_wash.main_action_text
 .no-edit#car_wash_menu
   #login_registration
     .menu
-      .left
-        = render 'devise/menu/login_items'
-      .right
-        = render 'devise/menu/registration_items'
+      #car_wash_name
+        = link_to(content_tag(:h5, car_wash_title(@car_wash.title)), car_wash_path(@car_wash)) unless @car_wash.nil?
     = render partial: "car_wash_info", locals: { car_wash: @car_wash, left_actions: @left_actions }
    
     #comments_button
@@ -34,35 +32,43 @@
       %ul.menu
         %li 
           %h5 Камера №1
-      = render 'video_320'
+      = render 'video_320', src: @car_wash.video_url1
     .video#video2
       %ul.menu
         %li 
           %h5 Камера №2
-      = render 'video_320'
+      = render 'video_320', src: @car_wash.video_url2
     #service
-      #banner-1
+      - banner = @banners.where(type: 'ClientVideoBanner').first
+      - unless banner.nil? || banner.filename.blank?
+        %h5.text-center= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+        = render 'client_youtube', src: banner.filename
+      - else
         - banner = @banners.where(place: 'client_fat_top').first
-        %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+        %h5.text-center= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
         = render '/banners/banner', banner: banner, banner_url: banner.file.b_770_270.url, version: :b_770_270, car_wash: @car_wash
 
-      =#image_tag 'service.png'
   %p#notice= notice
 .bottom-banners
   .left-container
-    #client_thin_bottom
-      - banner = @banners.where(place: 'client_thin_bottom').first
-      %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
-      = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_540.url, version: :b_380_540, car_wash: @car_wash
+    #banner-left-1
+      - banner = @banners.where(place: 'client_thin_top_3').first
+      %h5.text-center= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+      = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+    #banner-left-2
+      - banner = @banners.where(place: 'client_thin_top_4').first
+      %h5.text-center= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+      = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+
   .right-container-8
     #banner-2
       - banner = @banners.where(place: 'client_thin_top_1').first
-      %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+      %h5.text-center= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
       = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
 
     #banner-3
       - banner = @banners.where(place: 'client_thin_top_2').first
-      %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+      %h5.text-center= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
 
       = render '/banners/banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
     #info

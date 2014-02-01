@@ -1,9 +1,13 @@
-.marketing.no-edit
+.marketing.youtube
   =#image_tag  Banner.where(place: 'top_1').first.file.b_380_285.url, class: 'banner'
-  %iframe(width="385" height="217" src="//www.youtube.com/embed/jlq-DaDX31Q" frameborder="0" allowfullscreen)
+  %iframe(width="385" height="217" src="//www.youtube.com/embed/qeIeS8RDD98" frameborder="0" allowfullscreen)
 .marketing
-  = render 'video'
-  =#image_tag 'video.png'
-.marketing.omega.no-edit
   =#image_tag  Banner.where(place: 'top_2').first.file.b_380_285.url, class: 'banner'
-  %iframe(width="385" height="217" src="//www.youtube.com/embed/451sdB7kuKM" frameborder="0" allowfullscreen)
+  //%iframe(width="385" height="217" src="//www.youtube.com/embed/451sdB7kuKM" frameborder="0" allowfullscreen)
+  = render 'video'
+.marketing.youtube.omega
+  =#image_tag  Banner.where(place: 'top_1').first.file.b_380_285.url, class: 'banner'
+  %iframe(width="385" height="217" src="//www.youtube.com/embed/Vc6p8JOYNmQ" frameborder="0" allowfullscreen)
+/.marketing.video
+/=#render 'video'
+/=#image_tag 'video.png'

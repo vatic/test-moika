@@ -4,3 +4,4 @@
 # Mime::Type.register "text/richtext", :rtf
 # Mime::Type.register_alias "text/html", :iphone
 Mime::Type.register_alias "video/mp4", :mp4
+Mime::Type.register_alias "application/vnd.openxmlformats-officedocument.presentationml.presentation", :pptx

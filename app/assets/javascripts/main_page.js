@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.cycle2.min
+//= require jquery.cycle2.carousel.min
 //= require share
 //= require search-address
 //= require map

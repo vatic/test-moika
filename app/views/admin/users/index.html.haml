@@ -11,13 +11,15 @@
     %h5 Список клиентов
     %table.table
       %tr
+        %th N п/п
         %th email
         %th роль
         %th мойка
         %th 
 
-      - @clients.each do |client|
+      - @clients.each_with_index do |client, i|
         %tr
+          %td= i+1
           %td= client.email
           %td= client.roles.first.name unless client.roles.first.nil?
           %td= client.car_wash.title unless client.car_wash.nil?
@@ -54,12 +56,14 @@
     %h5 Список гостей
     %table.table
       %tr
+        %th N п/п
         %th email
         %th
         %th
         %th
-      - @guests.each do |user|
+      - @guests.each_with_index do |user,i|
         %tr
+          %td= i+1
           %td= user.email
           %td
             %button.btn.btn-primary
@@ -73,8 +77,9 @@
         %th email
         %th Роль
 
-      - @admins.each do |user|
+      - @admins.each_with_index do |user,i|
         %tr
+          %td= i+1
           %td= user.email
           %td= user.roles.first.name unless user.roles.first.nil?
 

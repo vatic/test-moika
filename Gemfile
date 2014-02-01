@@ -99,8 +99,8 @@ gem 'carrierwave-dropbox'
 gem 'plupload-rails'
 
 gem 'mini_magick'
+gem 'carrierwave-processing'
 gem 'newrelic_rpm'
 #gem 'activemerchant', :require => 'active_merchant'
 #gem 'robokassa'
 gem 'prawn', :git => "https://github.com/prawnpdf/prawn.git"
-gem 'vkontakte_api', '~> 1.3'

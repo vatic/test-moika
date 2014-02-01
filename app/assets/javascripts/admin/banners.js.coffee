@@ -10,7 +10,7 @@ $ ->
       runtimes: "html5,flash,silverlight,browserplus"
       browse_button: "pickfiles_" + id
       container: "image-container_" + id 
-      max_file_size: "500kb"
+      max_file_size: "10000kb"
       url: $('#banner_' + id).data('url')
       authenticity_token: $('#banner').data('token')
       multi_selection: false
@@ -24,9 +24,9 @@ $ ->
         extensions: "zip"
       ]
       resize:
-        width: 320
-        height: 240
-        quality: 90
+        width: 0
+        height: 0
+        quality: 100
       multipart: true
       multipart_params:
         "_method" : "put"
@@ -122,6 +122,7 @@ $ ->
     #file = data.response
     #file = JSON.parse file
     id = data.id
+    console.log(data)
     version =  $('#banner_' + id).data('version')
     url = data.file[version].url
     $('img#' + id).prop('src',url) 

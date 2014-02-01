@@ -28,6 +28,8 @@ h1,h2,h3,h4,h5 {
   font-family: Cambria, Georgia, Palatino, Times New Roman, serif;
 }
 
+
+
 h1 {
   font-size: 32px;
 }
@@ -79,13 +81,19 @@ input[type='text']{
 #header {
   #logo_left {
     @include span-columns(4,12);
-    padding-top: 30px;
+    padding-top: 1.8em;
+    img {
+      max-width:100%;
+      overflow: hidden;
+      height:auto;
+    }
   }
   #logo_right {
     .r_logo_img {
       @include span-columns(2,12);
       img {
-        max-width:100%; 
+        max-width:100%;
+        overflow: hidden;
         height:auto;
       }
     }
@@ -113,12 +121,16 @@ input[type='text']{
     //border: 1px solid #000;
     height: 25px;
     min-height: 25px;
-    padding: 10px 0 0 0;
-
-    //background-color: #ebebeb;
+    padding: .5em 0 0 0;
+    #login, #registration {
+      margin: 5px 0 0 0;
+      h4,h5 {
+      font-size: 1.2em;
+      }
+    }
     #login {
       @include pre(1,48);
-      @include span-columns(1,12);
+      @include span-columns(1,24);
       h4,h5 {
         display: inline;
         margin: 0 auto;
@@ -129,100 +141,106 @@ input[type='text']{
       a:hover {
         color: blue;
       }
-
     }
     #registration {
-      @include span-columns(1,12);
-      @include post(2,48);
+      @include span-columns(3,24);
+      @include pre(1,48);
+      margin-right: 0;
       h4,h5 {
         display: inline;
-        margin: 0 auto;
-      }
-      a {
-        color: $header-link-color;
-      }
-      a:hover {
-        color: blue;
-      }
-    }
-
-    #car_wash_name {
-      margin: 0.3% 0 0 0%;
-      @include span-columns(3,12);
-      p,h1,h2,h3,h4,h5 {
-        @include margin-padding-0;
-        font-weight: 700;
-      }
-      a {
-        color: $header-link-color;
-        display: block;
         margin: 0 auto;
         text-align: right;
       }
+      a {
+        color: $header-link-color;
+        h4.smaller,h5.smaller {
+          font-size: .9em;
+        }
+      }
       a:hover {
-        color: lighten($header-link-color,20%)
+        color: blue;
       }
     }
+
     #social {
       .color_on_hover {
-        height: 32px;
-        width: 32px;
+        height: 2em;
+        width: 2em;
         float: left;
         margin-right: 1%;
         display: inline;
+        a {
+          max-width:100%;
+          overflow: hidden;
+          height:auto;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
         &#youtube {
           margin-left: 1%;
-          background-image: url(image_path("youtube_grey.png"));
+          background-image: url(image_path("youtube.png"));
+          background-size: cover;
           background-repeat: no-repeat;
           &:hover {
-            background-image: url(image_path("youtube.png"));
-          background-repeat: no-repeat;
+            background-image: url(image_path("youtube_grey.png"));
+            background-size: cover;
+            background-repeat: no-repeat;
           }
         }
         &#mir {
-          background-image: url(image_path("mir_grey.png"));
+          background-image: url(image_path("mir.png"));
+          background-size: cover;
           background-repeat: no-repeat;
           &:hover {
-            background-image: url(image_path("mir.png"));
-          background-repeat: no-repeat;
+            background-image: url(image_path("mir_grey.png"));
+            background-size: cover;
+            background-repeat: no-repeat;
           }
         }
         &#vk {
-          background-image: url(image_path("vk_grey.png"));
           background-repeat: no-repeat;
+          background-size: cover;
+          background-image: url(image_path("vk.png"));
           &:hover {
-            background-image: url(image_path("vk.png"));
-          background-repeat: no-repeat;
+            background-image: url(image_path("vk_grey.png"));
+            background-size: cover;
+            background-repeat: no-repeat;
           }
         }
         &#odn {
-          background-image: url(image_path("odn_grey.png"));
+          background-image: url(image_path("odn.png"));
+          background-size: cover;
           background-repeat: no-repeat;
           &:hover {
-            background-image: url(image_path("odn.png"));
-          background-repeat: no-repeat;
+            background-image: url(image_path("odn_grey.png"));
+            background-size: cover;
+            background-repeat: no-repeat;
           }
         }
         &#twitter {
-          background-image: url(image_path("twitter_grey.png"));
+          background-image: url(image_path("twitter.png"));
+          background-size: cover;
           background-repeat: no-repeat;
           &:hover {
-            background-image: url(image_path("twitter.png"));
-          background-repeat: no-repeat;
+            background-image: url(image_path("twitter_grey.png"));
+            background-size: cover;
+            background-repeat: no-repeat;
           }
         }
         &#facebook {
-          background-image: url(image_path("facebook_grey.png"));
+          background-image: url(image_path("facebook.png"));
+          background-size: cover;
           background-repeat: no-repeat;
           &:hover {
-            background-image: url(image_path("facebook.png"));
-          background-repeat: no-repeat;
+            background-image: url(image_path("facebook_grey.png"));
+            background-size: cover;
+            background-repeat: no-repeat;
           }
         }
       }
     }
     #weather{
-      @include span-columns(1,12);
+      @include span-columns(6,48);
       p {
         @include margin-padding-0; 
         text-align: center;
@@ -235,14 +253,13 @@ input[type='text']{
 
     }
     #traffic {
-      @include span-columns(1,12);
+      @include span-columns(5,48);
       margin-right: 0;
       width: 8%;
     }
     #date_currency {
       @include span-columns(4 omega,12);
       margin-top: 5px;
-      font-size: 15px;
       letter-spacing: -1px;
       .datetime {
         display: inline-block;
@@ -275,6 +292,7 @@ input[type='text']{
     border: none;
     h4,h5 {
       color: red;
+      white-space:nowrap;
     }
   }
 }
@@ -291,7 +309,7 @@ input[type='text']{
     height:auto;
   }
 }
-.marketing.omega {
+.marketing.slideshow, .marketing.omega {
   @include span-columns(4 omega,12);
   img {
     max-width:100%; 
@@ -322,11 +340,11 @@ input[type='text']{
       @include columns(2);
       background-color: #dbdbdb;
       margin: 0 0 15px 0;
-      p {
+      p, h1 {
         width: 100%;
         margin: 10px 0 0 10px;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 11px;
       }
       img {
         float: right;
@@ -359,10 +377,17 @@ input[type='text']{
       }
     }
     #adv_left {
-      img {
+      img.low {
         margin: 3px 0;
-        width: 100%;
-        height: 100%;
+        width: 99%;
+        height: 99%;
+        max-height: 160px;
+      }
+      img.high {
+        margin: 3px 0;
+        width: 99%;
+        height: 99%;
+        max-height: 240px;
       }
     }
   }
@@ -370,6 +395,9 @@ input[type='text']{
     @include span-columns(10 omega,12);
     height: ($map-height + 80px);
     max-height: ($map-height + 80px);
+    h1 {
+      font-size: 24px;
+    }
     #map_header {
       @include span-columns(3,8);
       margin:17px 0 20px 0;
@@ -392,6 +420,7 @@ input[type='text']{
   width: 100%;
   height: $map-height;
   margin-bottom: 20px;
+  float:left;
 }
 
  .container#footer { 
@@ -410,6 +439,9 @@ input[type='text']{
     p {
       margin: 0;
       padding: 0;
+      img {
+        max-width: 99%;
+      }
     }
   }
   #other_footer_content {
@@ -592,6 +624,27 @@ form.car_wash_edit_details {
     @include span-columns(12 omega,12);
     #login_registration {
       @include span-columns(4,12);
+      #car_wash_name {
+        margin: 0 auto;
+        background-color: $car-wash-info-bg;
+        @include span-columns(3,3);
+        p,h1,h2,h3,h4,h5 {
+          @include margin-padding-0;
+          font-weight: 700;
+          font-size: 1.2em;
+          text-align: center;
+        }
+        a {
+          color: $header-link-color;
+          display: block;
+          margin: 0 auto;
+          padding: 15px 0;
+          text-align: right;
+        }
+        a:hover {
+          color: lighten($header-link-color,20%)
+        }
+      }
       li {
         text-align: center;
         display: inline;
@@ -599,6 +652,8 @@ form.car_wash_edit_details {
       }
       table#car_wash_info {
         border: 1px solid #fff;
+        table-layout: fixed;
+        width: 100%;
         tr {
           background-color: $car-wash-info-bg;
           margin: 5px auto;
@@ -618,6 +673,7 @@ form.car_wash_edit_details {
             }
           }
           span {
+            font-size: 1em;
           }
         }
       }
@@ -693,9 +749,13 @@ form.car_wash_edit_details {
           margin: 0;
         }
       }
-      #free_close_signal #signal_image img{
-        display: block;
-        margin: 0 auto;
+      #free_close_signal #signal_image {
+        img{
+          display: block;
+          margin: 0 auto;
+          width: 100%;
+          height: auto;
+        }
       }
       .video {
         h4,h5 {
@@ -718,6 +778,23 @@ form.car_wash_edit_details {
         @include span-columns(3 omega,7);
       }
       #service {
+        height:100%;
+        .video_wrapper {
+          position:relative;
+          padding-bottom: 45%;
+          padding-top: 0;
+          height:0;
+          overflow:hidden;
+          iframe {
+            position:absolute;
+            top:0;
+            right:0;
+            width:100%;
+            height: 100%;
+            max-width:560px;
+            max-height:375px;
+          }
+        }
         img {
           width: 100%;
         }
@@ -848,6 +925,8 @@ form.main_action_input {
     @include span-columns(4,12);
     img {
       border: none;
+      width: 100%;
+      height: auto;
     }
   }
   #comments_content, #requests_content, #messages_content {
@@ -989,6 +1068,11 @@ img.banner {
   border: solid 2px blue;
   margin: 5px 0;
 }
+.marketing img.banner {
+  cursor: auto;
+  border: none;
+  margin: 5px 0;
+}
 
 .no-edit img.banner {
   border: none;
@@ -1086,16 +1170,17 @@ img,canvas {
 
 #traffic {
   #level_digit {
-    font-size: 24px;
+    font-size: 1.5em;
     display: inline-block;
-    margin: -20px 0 0 5px;
+    margin: -5px 0 0 5px;
     font-weight: bold;
     color: $header-link-color;
   }
   #level_text {
-    font-size: 10px;
+    display:inline-block;
+    font-size: .8em;
     font-weight: bold;
-    margin: 0;
+    margin: -5px 0 0 1px;
   
   }
   #level_desc {
@@ -1105,25 +1190,26 @@ img,canvas {
   
   }
   .svetofor {
-  width: 21px;
-  height: 17px;
+  width: 42px;
+  height: 34px;
   float: left;
   
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJMAAAARCAMAAADuQ270AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkQ0Q0I5RDEzQUQzMTFFMUJGOTA5NThCQjRCRjBCRjMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkQ0Q0I5RDIzQUQzMTFFMUJGOTA5NThCQjRCRjBCRjMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGRDRDQjlDRjNBRDMxMUUxQkY5MDk1OEJCNEJGMEJGMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGRDRDQjlEMDNBRDMxMUUxQkY5MDk1OEJCNEJGMEJGMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsYHnoMAAAGAUExURUpKSbOMAJp6Cf9WPaysq1S3NTFvMpEpFaKioomJibW3tKenp1pbWQNFANa5LL6+vgMDAZKSkWJiYY2PjP/XAMbGx39/f3Z2djo6Om1tbbGxsW9YAHIaATU3NCYmJv/dH/5hI52fnP9DAkREPTZMO4OFggD/E5WXlAz/AGhpZyf+J4CAgP7VE3t8elo8KHJ0cT84M3BwcP9TFf9SBfzOBG5mMgD/J3pFHP/LApqamlZVPQZtBtHR0bczCMrKyqCgoQCdDOfIG7+/wKOjoysLB0o1AAbpACorKR3SJ2hoaEYSBVFRUcHBwbO0tAQnAs7OzjExMbm5uSTdAPMpAISEhC3RAJkEAf8cCjPIAP/PAB92AKSkpDfPJq+vsCBbD4CAOzaSJv/fAGttary8vP/hAP9DF/9WHv9mI/89FaiVJufUAMZLGvg7MlhZV0lBIfDMJiekAJUpKFRHAMybDnonJsyrAPOwBntoAGZZJs5hRswuEEvLJnl5eTRXJp+goP////BRcSoAAACAdFJOU/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AOAVLZwAAA89JREFUeNqc1flz2kYYBmCZyiIYBYxlogghjJCwiQFZChaOcLGNlXCU0Nb17SRuUnK06X3f1b+eb1erazOdafr+4pl3vvE+87GSGC/IqILiJZPFoUpqsq0ko6rvVKqSZFlSlKUlJvjPU2bKLC9TpqV8Ps/Spp/Ozs7ik4rCCCqOcIeBkzY23qmUpDa7hMMW2shUCkyVjZOTk9uUKfsR5IgyVb46Pz8vxyYZhbnjh+d5hpz038u21C74yWQygCpFe1Khkeg9vQ8p0nt67/MXL/6IJuv3Pyina5Ayz+Oj0En1+w/k1D2IHC8/vLl7sN5oNHZjpcuvWE0XYmUyGBXtycsIQkFgKFMRoeaU6feX1erLdCVG+r5WC1EaOgmTtu+FKL8MSI3GdVhm+RUJkwhKjO9JsQqFr+k9sYA6zD5KluaXr16lg0lEKh/XCMrQ4JYIAiLJvwBoGyL3SAmk3WHDz7Xul2hLluMSlCjCfWLZ0MQw0+lbd/zJPD/PPqJMv6VSqXASkdK1IPhpEoQHQEpdbpOQEpEOGkFICVuyyJog+LmLTJVbEPqOu8W9vb2Z6ybveO7y8lIOJoFU7mNPBxKYZFn+cbtFQkogIdO6H1LClv7d5GXANKH3hEwPKZP37erq6s+xyXIfcTp3IbXjvqHU61DKqYDUGizYml/CdQoyPOB0v4yZnGZTlLLZ0DRBixpRpiMw7T25kSy/ePb8+bMfokmjD5oqCvzt9E18kgamNT+ttVbKP15Hpu56t9tFrAO/FCMTpBk3jaaiRf92njsvFmc3KNNo4fXrX5cTpmqQu9W+2cYmOyABqmVruNS59e4mpItVnN4OTCUIMYlqZLoNeeuOs7PZzN3fT5Z/X11dxSeNnU5oqnaMb7baUPbsXGhay2kaLnVuvInTBdZY0XEpNtUSjgssVRIdNbzj0spkZUSZ9o8ODw9ZylRZvLi4uE6YYotKGyY+Set9OghIA7tHTDo33CQZcjoxiU2nROI0xZjJ+2symUzpPeXBdETv6c/T09Pv4t87QJFNdfoGMSmaHaCAZCp+qXNkU90xkPxSEptkU64KJClm4iVL+qzycfL42UMIS5mefgK5GU2aprGzc9xBT90OkJStLWzq2fZCbjDILdjopemXsChucTwcjhcRyS8lEaFUx1ExSXKc6I7zt0SGInn/lPJzmuSNnj5+zMUmGUCBCsUwTTip9Mompa4jFgciHZUC/gaLImLBewC/x53o/fT/U9cUUwGWgUWKtkFKBbE0LIqXOoZFZRZBRAxDr0yx5L0RYACgnrHZlnVWfAAAAABJRU5ErkJggg==) no-repeat;
+  //background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJMAAAARCAMAAADuQ270AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkQ0Q0I5RDEzQUQzMTFFMUJGOTA5NThCQjRCRjBCRjMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkQ0Q0I5RDIzQUQzMTFFMUJGOTA5NThCQjRCRjBCRjMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGRDRDQjlDRjNBRDMxMUUxQkY5MDk1OEJCNEJGMEJGMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGRDRDQjlEMDNBRDMxMUUxQkY5MDk1OEJCNEJGMEJGMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsYHnoMAAAGAUExURUpKSbOMAJp6Cf9WPaysq1S3NTFvMpEpFaKioomJibW3tKenp1pbWQNFANa5LL6+vgMDAZKSkWJiYY2PjP/XAMbGx39/f3Z2djo6Om1tbbGxsW9YAHIaATU3NCYmJv/dH/5hI52fnP9DAkREPTZMO4OFggD/E5WXlAz/AGhpZyf+J4CAgP7VE3t8elo8KHJ0cT84M3BwcP9TFf9SBfzOBG5mMgD/J3pFHP/LApqamlZVPQZtBtHR0bczCMrKyqCgoQCdDOfIG7+/wKOjoysLB0o1AAbpACorKR3SJ2hoaEYSBVFRUcHBwbO0tAQnAs7OzjExMbm5uSTdAPMpAISEhC3RAJkEAf8cCjPIAP/PAB92AKSkpDfPJq+vsCBbD4CAOzaSJv/fAGttary8vP/hAP9DF/9WHv9mI/89FaiVJufUAMZLGvg7MlhZV0lBIfDMJiekAJUpKFRHAMybDnonJsyrAPOwBntoAGZZJs5hRswuEEvLJnl5eTRXJp+goP////BRcSoAAACAdFJOU/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AOAVLZwAAA89JREFUeNqc1flz2kYYBmCZyiIYBYxlogghjJCwiQFZChaOcLGNlXCU0Nb17SRuUnK06X3f1b+eb1erazOdafr+4pl3vvE+87GSGC/IqILiJZPFoUpqsq0ko6rvVKqSZFlSlKUlJvjPU2bKLC9TpqV8Ps/Spp/Ozs7ik4rCCCqOcIeBkzY23qmUpDa7hMMW2shUCkyVjZOTk9uUKfsR5IgyVb46Pz8vxyYZhbnjh+d5hpz038u21C74yWQygCpFe1Khkeg9vQ8p0nt67/MXL/6IJuv3Pyina5Ayz+Oj0En1+w/k1D2IHC8/vLl7sN5oNHZjpcuvWE0XYmUyGBXtycsIQkFgKFMRoeaU6feX1erLdCVG+r5WC1EaOgmTtu+FKL8MSI3GdVhm+RUJkwhKjO9JsQqFr+k9sYA6zD5KluaXr16lg0lEKh/XCMrQ4JYIAiLJvwBoGyL3SAmk3WHDz7Xul2hLluMSlCjCfWLZ0MQw0+lbd/zJPD/PPqJMv6VSqXASkdK1IPhpEoQHQEpdbpOQEpEOGkFICVuyyJog+LmLTJVbEPqOu8W9vb2Z6ybveO7y8lIOJoFU7mNPBxKYZFn+cbtFQkogIdO6H1LClv7d5GXANKH3hEwPKZP37erq6s+xyXIfcTp3IbXjvqHU61DKqYDUGizYml/CdQoyPOB0v4yZnGZTlLLZ0DRBixpRpiMw7T25kSy/ePb8+bMfokmjD5oqCvzt9E18kgamNT+ttVbKP15Hpu56t9tFrAO/FCMTpBk3jaaiRf92njsvFmc3KNNo4fXrX5cTpmqQu9W+2cYmOyABqmVruNS59e4mpItVnN4OTCUIMYlqZLoNeeuOs7PZzN3fT5Z/X11dxSeNnU5oqnaMb7baUPbsXGhay2kaLnVuvInTBdZY0XEpNtUSjgssVRIdNbzj0spkZUSZ9o8ODw9ZylRZvLi4uE6YYotKGyY+Set9OghIA7tHTDo33CQZcjoxiU2nROI0xZjJ+2symUzpPeXBdETv6c/T09Pv4t87QJFNdfoGMSmaHaCAZCp+qXNkU90xkPxSEptkU64KJClm4iVL+qzycfL42UMIS5mefgK5GU2aprGzc9xBT90OkJStLWzq2fZCbjDILdjopemXsChucTwcjhcRyS8lEaFUx1ExSXKc6I7zt0SGInn/lPJzmuSNnj5+zMUmGUCBCsUwTTip9Mompa4jFgciHZUC/gaLImLBewC/x53o/fT/U9cUUwGWgUWKtkFKBbE0LIqXOoZFZRZBRAxDr0yx5L0RYACgnrHZlnVWfAAAAABJRU5ErkJggg==) no-repeat;
+  background: asset-url('svetofor2.png');
   vertical-align: middle;
   }
   .traffic_red{
-  background-position: -63px 0;
+  background-position: -126px 0;
   }
   .traffic_yellow {
-  background-position: -84px 0;
+  background-position: -168px 0;
   }
   .traffic_green {
-  background-position: -105px 0;
+  background-position: -210px 0;
   }
 
   .traffic_undefined{
-  background-position: -42px 0;
+  background-position: -84px 0;
   }
 }
 #map.hide {
@@ -1231,5 +1317,485 @@ img,canvas {
   }
   a#robokassa:hover {
     color: lighten($header-link-color, 20%);
+  }
+}
+#login, #registration {
+  a {
+    color: $header-link-color;
+  }
+  a:hover {
+    color: $header-link-hover-color;
+  }
+}
+
+.test-block__item {
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+#banner-left-1, #banner-left-2 {
+  img {
+  border: none;
+  margin: 0;
+  padding: 0;
+  }
+}
+
+#video_url_label {
+}
+
+@include at-breakpoint($computer) {
+  .container#header_nav_wrapper #header_nav {
+    #date_currency {
+      @include span-columns(4 omega,12);
+      font-size: 1.1em;
+      .currency {
+        display: inline-block;
+      }
+      .traffic {
+        @include span-columns(6,48);
+      }
+    }
+  }
+}
+
+@include at-breakpoint($tablet900) {
+  .container#header_nav_wrapper #header_nav {
+    #date_currency {
+      @include span-columns(4 omega,12);
+      font-size: .8em;
+      .currency {
+        display: inline-block;
+      }
+      .traffic {
+        @include span-columns(6,48);
+      }
+    }
+  }
+  .container#main_content #map_container {
+    h1#map_header {
+      margin: 20px 0px 10px;
+      font-size: 1.2em;
+    }
+  }
+  #main_content.container #car_washes_left_list #list_header img {
+    height: 20px;
+    width: 20px;
+    float: none;
+    margin: .5em 0 0 2em;
+  }
+  #main_content.container #car_washes_left_list #list_header h1 {
+    margin-bottom: .5em;
+  }
+  #footer.container #other_footer_content ul#bottom_menu li a {
+    font-size: .8em;
+  }
+  #footer.container #other_footer_content ul#bottom_links li a {
+    font-size: .6em;
+  }
+}
+
+@include at-breakpoint($tablet) {
+  .container#header_nav_wrapper #header_nav {
+    #login, #registration {
+      h4 {
+        font-size: .8em;
+      }
+    }
+    #date_currency {
+      @include span-columns(3 omega,12);
+      font-size: .8em;
+      .currency {
+        display: none;
+      }
+      .traffic {
+        @include span-columns(9,48);
+      }
+    }
+  }
+  .container#marketing_top {
+    .marketing.youtube {
+      @include span-columns(6,12);
+    }
+    .marketing.video {
+      @include span-columns(6 omega,12);
+    }
+    .marketing.slideshow{
+      display: none;
+    }
+  }
+  .container#marketing_bottom {
+    .marketing.banner {
+      @include span-columns(6,12);
+    }
+    .marketing.video {
+      @include span-columns(6 omega,12);
+    }
+    .marketing.omega {
+      display: none;
+    }
+  }
+  .container#main_content #car_washes_left_list ul li a {
+    font-size: .8em;
+  }
+  #header {
+    #logo_left {
+      @include span-columns(4,12);
+      padding-top: 1em;
+    }
+  }
+  .container#main_content #map_container {
+    h1#map_header {
+      margin: 20px 0px 10px;
+      font-size: 1em;
+    }
+  }
+  #main_content.container #car_washes_left_list #list_header h1 {
+    font-size: .5em;
+  }
+  #main_content.container #car_washes_left_list #list_header img {
+    height: 20px;
+    width: 20px;
+    float: none;
+    margin: 0 0 0 .5em;
+  }
+  #footer.container #other_footer_content ul#bottom_menu li a {
+    font-size: .5em;
+  }
+  #footer.container #other_footer_content ul#bottom_links li a {
+    font-size: .5em;
+  }
+  #header_nav_wrapper.container #header_nav #traffic {
+    width: 10%;
+  }
+  .container #car_wash_menu #login_registration table#car_wash_info td {
+    span, span a {
+      font-size: .8em;
+    }
+  }
+
+}
+@include at-breakpoint($phone_landscape) {
+  .container#header_nav_wrapper #header_nav {
+    #login, #registration {
+      h4 {
+        font-size: .6em;
+      }
+    }
+    #date_currency {
+      @include span-columns(3 omega,12);
+      font-size: .8em;
+      .currency {
+        display: none;
+      }
+      .datetime {
+        display: none;
+      }
+      .traffic {
+        @include span-columns(9,48);
+      }
+    }
+  }
+  .container#marketing_top {
+    .marketing.youtube {
+      @include span-columns(6,12);
+    }
+    .marketing.video {
+      @include span-columns(6 omega,12);
+    }
+    .marketing.slideshow{
+      display: none;
+    }
+  }
+  .container#marketing_bottom {
+    .marketing.banner {
+      @include span-columns(6,12);
+    }
+    .marketing.video {
+      @include span-columns(6 omega,12);
+    }
+    .marketing.omega {
+      display: none;
+    }
+  }
+  .container#main_content #car_washes_left_list ul li a {
+    font-size: .5em;
+  }
+  #header {
+    #logo_left {
+      @include span-columns(4,12);
+      padding-top: 1em;
+    }
+  }
+  .container#main_content #map_container {
+    h1#map_header {
+      margin: 20px 0px 10px;
+      font-size: .8em;
+    }
+  }
+  #main_content.container #car_washes_left_list #list_header h1 {
+    font-size: .3em;
+  }
+  #main_content.container #car_washes_left_list #list_header img {
+    height: 10px;
+    width: 10px;
+    float: none;
+    margin: 0 0 0 .5em;
+  }
+  #footer.container #other_footer_content ul#bottom_menu li a {
+    font-size: .3em;
+  }
+  #footer.container #other_footer_content ul#bottom_links li a {
+    font-size: .3em;
+  }
+  #header_nav_wrapper.container #header_nav #weather {
+    p {
+      font-size: .5em;
+    }
+    p#deg {
+      font-size: .8em;
+    }
+  }
+  #header_nav_wrapper.container #header_nav #traffic {
+    width: 20%;
+  }
+  .container#footer {
+    height: 105px;
+    min-height: 105px;
+    .mobile_apps {
+      @include span-columns(2,12);
+      margin: 12px 0;
+      p {
+        margin: .4em;
+        padding: 0;
+        img {
+          max-width: 99%;
+        }
+      }
+    }
+    #other_footer_content {
+      @include span-columns(8 omega,12);
+      margin: 0;
+      ul#bottom_menu {
+        margin: 5px 0px;
+        li {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      ul#bottom_links {
+        margin-left: 0px;
+        li {
+          margin: 0px 0px 0px 0px;
+        }
+      }
+    }
+  }
+  .container #car_wash_menu #login_registration table#car_wash_info td {
+    span {
+      font-size: .6em;
+    }
+    span a {
+      font-size: .6em;
+    }
+  }
+  .container #car_wash_menu #login_registration #car_wash_name h5 {
+    font-size: .8em;
+  }
+  .container #car_wash_menu #signal_video #free_close_signal ul.menu h5 {
+    font-size: .7em;
+  }
+  .container #car_wash_menu #signal_video .video ul.menu h5 {
+    font-size: .8em;
+  }
+}
+
+@include at-breakpoint($phone_portrait) {
+  .container#header_nav_wrapper #header_nav {
+    #login {
+      float: right;
+      @include pre(1,12);
+    }
+    #login, #registration {
+      @include span-columns(1,12);
+      h4 {
+        font-size: .4em;
+      }
+    }
+    #social {
+      @include span-columns(8 omega,12);
+    }
+    #date_currency {
+      display: none;
+    }
+    #traffic {
+      display: none;
+    }
+    #weather {
+      display: none;
+    }
+  }
+  .container#marketing_top {
+    .marketing.youtube {
+      @include span-columns(12 omega,12);
+    }
+    .marketing.video {
+      display: none;
+    }
+    .marketing.slideshow{
+      display: none;
+    }
+  }
+  .container#marketing_bottom {
+    .marketing.banner {
+      display: none;
+    }
+    .marketing.video {
+      @include span-columns(12 omega,12);
+    }
+    .marketing.omega {
+      display: none;
+    }
+  }
+  .container#main_content #car_washes_left_list ul li a {
+    font-size: .5em;
+  }
+  #header {
+    #logo_left {
+      @include span-columns(4,12);
+      padding-top: .5em;
+    }
+  }
+  .container#main_content #map_container {
+    h1#map_header {
+      margin: 20px 0px 10px;
+      font-size: .8em;
+    }
+  }
+  #main_content.container #car_washes_left_list #list_header h1 {
+    font-size: .3em;
+  }
+  #main_content.container #car_washes_left_list #list_header img {
+    height: 10px;
+    width: 10px;
+    float: none;
+    margin: 0 0 0 .5em;
+  }
+  #footer.container #other_footer_content ul#bottom_menu li a {
+    font-size: .3em;
+  }
+  #footer.container #other_footer_content ul#bottom_links li a {
+    font-size: .3em;
+  }
+  #header_nav_wrapper.container #header_nav #weather {
+    p {
+      font-size: .5em;
+    }
+    p#deg {
+      font-size: .8em;
+    }
+  }
+  #header_nav_wrapper.container #header_nav #traffic {
+    width: 20%;
+  }
+  #adv_left {
+    img.low {
+      margin: 3px 0;
+      width: 99%;
+      height: 99%;
+      max-height: 5em;
+    }
+    img.high {
+      margin: 3px 0;
+      width: 99%;
+      height: 99%;
+      max-height: 5%;
+    }
+  }
+  #adv1 {
+    @include span-columns(11 omega,12);
+    marquee h5 {
+      font-size: .5em;
+    }
+  }
+  #header_nav_wrapper.container {
+    height: 60px;
+    min-height: 60px;
+  }
+  #main_content.container {
+    #car_washes_left_list {
+      display: none;
+    }
+    #map_container {
+      height: ($map-phone-height + 80px);
+      max-height: ($map-phone-height + 80px);
+      @include span-columns(12 omega, 12);
+      h1#map_header {
+        font-size: .5em;
+        margin: 30px 0px 10px;
+      }
+    }
+  }
+  #map {
+    width: 100%;
+    height: $map-phone-height;
+    margin-bottom: 20px;
+    float:left;
+  }
+  .container#footer {
+    height: 105px;
+    min-height: 105px;
+    .mobile_apps {
+      @include span-columns(2,12);
+      margin: 12px 0;
+      p {
+        margin: .4em;
+        padding: 0;
+        img {
+          max-width: 99%;
+        }
+      }
+    }
+    #other_footer_content {
+      @include span-columns(8 omega,12);
+      margin: 0;
+      ul#bottom_menu {
+        margin: 5px 0px;
+        li {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      ul#bottom_links {
+        margin-left: -60px;
+        li {
+          margin: 0px 0px 0px 0px;
+        }
+      }
+    }
+  }
+  .container #car_wash_menu #login_registration table#car_wash_info td {
+    span {
+      font-size: .5em;
+    }
+    span a {
+      font-size: .5em;
+    }
+  }
+  .container #car_wash_menu #login_registration #car_wash_name h5 {
+    font-size: .6em;
+  }
+  .container #car_wash_menu #signal_video #free_close_signal {
+  }
+  .container #car_wash_menu #signal_video #free_close_signal ul.menu h5 {
+    font-size: .4em;
+  }
+  .container #car_wash_menu #signal_video .video ul.menu h5 {
+    font-size: .6em;
+  }
+  .container #car_wash_menu #login_registration {
+    #comments_button a, #enroll_button a {
+      font-size: .5em;
+    }
   }
 }

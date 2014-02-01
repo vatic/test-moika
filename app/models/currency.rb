@@ -6,7 +6,9 @@ class Currency < ActiveRecord::Base
 	def self.get_from_cb(date)
 	  ret = [] 
 	  formatted_date = date.strftime("%d/%m/%Y")
-      file_handle = open("http://www.cbr.ru/scripts/XML_daily.asp?date_req=#{formatted_date}")
+    # file_handle = open("http://www.cbr.ru/scripts/XML_daily.asp?date_req=#{formatted_date}")
+    file_handle = nil
+    unless file_handle.nil?
       document = Nokogiri::XML(file_handle)
       eur_name = document.xpath("//Valute[@ID='R01239']/CharCode").children.first.text
       eur_value = document.xpath("//Valute[@ID='R01239']/Value").children.first.text.sub(',','.').to_d
@@ -14,7 +16,8 @@ class Currency < ActiveRecord::Base
       usd_value = document.xpath("//Valute[@ID='R01235']/Value").children.first.text.sub(',','.').to_d
       ret << {name: eur_name, value: eur_value, date: date}
       ret << {name: usd_name, value: usd_value, date: date}
-      ret
+    end
+    ret
 	end
 
 	def self.save_current_from_cb
@@ -40,6 +43,12 @@ class Currency < ActiveRecord::Base
 			save_current_from_cb
   		current = Currency.where(name: opt_hash[:currency_name], date: Date.today)
 		end
+		if current.empty?
+  		current = Currency.where(name: opt_hash[:currency_name], date: Date.today-1)
+    end
+		if current.empty?
+  		current = Currency.where(name: opt_hash[:currency_name], date: Date.today-2)
+    end
 		current.first
 	end
 

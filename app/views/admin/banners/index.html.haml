@@ -12,12 +12,12 @@
 .row.bordered
   .col-md-4
     - banner = @banners.where(place: 'top_1').first
-    = render 'banner', banner: banner, banner_url: banner.file.b_380_285.url, version: :b_380_285
+    = render 'banner', banner: banner, banner_url: banner.file.b_385_220.url, version: :b_385_220
   .col-md-4
     = image_tag 'video.png', size: "380x285"
   .col-md-4
     - banner = @banners.where(place: 'top_2').first
-    = render 'banner', banner: banner, banner_url: banner.file.b_380_285.url, version: :b_380_285
+    = render 'banner', banner: banner, banner_url: banner.file.b_385_220.url, version: :b_385_220
 
 .row.around_map
   .col-md-2
@@ -57,10 +57,10 @@
 .row.bordered
   .col-md-4
     - banner = @banners.where(place: 'bottom_1').first
-    = render 'banner', banner: banner, banner_url: banner.file.b_380_285.url, version: :b_380_285
+    = render 'banner', banner: banner, banner_url: banner.file.b_385_220.url, version: :b_385_220
   .col-md-4
-    = image_tag 'video.png', size: "380x285"
+    = image_tag 'video.png', size: "385x220"
   .col-md-4
     - banner = @banners.where(place: 'bottom_2').first
-    = render 'banner', banner: banner, banner_url: banner.file.b_380_285.url, version: :b_380_285
+    = render 'banner', banner: banner, banner_url: banner.file.b_385_220.url, version: :b_385_220
 

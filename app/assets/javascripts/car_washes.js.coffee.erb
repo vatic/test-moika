@@ -78,13 +78,37 @@ $ ->
           geoQueryResult = myMap.storage.search(searchString)
           geoQueryResult.each (o) ->
             o.getParent().remove(o)
-            if signal and blink then greenBlinkCollection.add(o)
-            if signal and not blink then greenCollection.add(o)
-            if not signal and blink then redBlinkCollection.add(o)
-            if not signal and not blink then redCollection.add(o)
+            console.log 'hello from updater'
+            console.log cw.url
+
+            if cw.signal
+              if cw.blink
+                greenBlinkCollection.add(o)
+              else if cw.action_on_map
+                greenStretchyCollection.add(o)
+              else if cw.videoned
+                videonedCollection.add(o)
+              else
+                greenCollection.add(o)
+            else
+              if cw.blink
+                redBlinkCollection.add(o)
+              else if cw.action_on_map
+                redStretchyCollection.add(o)
+              else if cw.videoned
+                videonedCollection.add(o)
+              else
+                redCollection.add(o)
+
+            #if signal and blink then greenBlinkCollection.add(o)
+            #if signal and not blink then greenCollection.add(o)
+            #if not signal and blink then redBlinkCollection.add(o)
+            #if not signal and not blink then redCollection.add(o)
             properties = o.properties.getAll()
+            properties.iconContent = if cw.action_on_map then cw.main_action else ""
             properties.hintContent = hint(cw)
-            properties.body = balloon(cw)
+            url = cw.url.slice(0,-5)
+            properties.body = balloon(cw, url)
     @poll()
 jQuery ->
   if $('#map').length > 0

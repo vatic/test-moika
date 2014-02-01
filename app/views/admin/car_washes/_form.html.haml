@@ -1,0 +1,70 @@
+= form_for [:admin, @car_wash], role: "form", html: {class: "car_wash_edit_details form-horizontal"} do |f|
+  - if @car_wash.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@car_wash.errors.count, "error")} prohibited this car_wash from being saved:"
+      %ul
+        - @car_wash.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label CarWash.human_attribute_name("title"), class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label CarWash.human_attribute_name("address"), class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :address, class: 'form-control'
+  .form-group
+    = f.label 'Координаты', class: 'control-label col-lg-2'
+    .col-lg-5
+      = f.text_field :lat, class: 'form-control'
+    .col-lg-5
+      = f.text_field :lon, class: 'form-control'
+  .form-group
+    = f.label CarWash.human_attribute_name("contacts"), class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :contacts, class: 'form-control'
+  .form-group
+    = f.label CarWash.human_attribute_name("site_url"), class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :site_url, class: 'form-control'
+  .form-group
+    = f.label CarWash.human_attribute_name("video_url1"), class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :video_url1, class: 'form-control'
+  .form-group
+    = f.label CarWash.human_attribute_name("video_url2"), class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :video_url2, class: 'form-control'
+  .form-group
+    = f.label CarWash.human_attribute_name("vk_url"), class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :vk_url, class: 'form-control'
+  .form-group
+    = f.label CarWash.human_attribute_name("odn_url"), class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :odn_url, class: 'form-control'
+  %hr
+  .row
+    .col-lg-1
+      = f.label t("signal_type_normal"), class: 'control-label col-lg-2'
+    .col-lg-2
+      = f.radio_button :signal_type, 'normal', class: 'form-control', id: 'normal'
+    .col-lg-1
+      = f.label CarWash.human_attribute_name("blink"), class: 'control-label col-lg-2'
+    .col-lg-2
+      = f.radio_button :signal_type, 'blink', class: 'form-control', id: 'blink'
+    .col-lg-1
+      = f.label CarWash.human_attribute_name("videoned"), class: 'control-label col-lg-2'
+    .col-lg-2
+      = f.radio_button :signal_type, 'videoned', class: 'form-control', id: 'videoned'
+    .col-lg-1
+      = f.label CarWash.human_attribute_name("action_on_map"), class: 'control-label col-lg-2'
+    .col-lg-2
+      = f.radio_button :signal_type, 'action_on_map', class: 'form-control', id: 'action_on_map'
+  %br
+  %hr
+  .row
+    .col-lg-4.col-lg-offset-4
+      = f.submit t("save_button"), class: 'btn btn-danger btn-block'
+

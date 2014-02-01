@@ -1,16 +1,17 @@
 .container
   #logo_left
     = link_to root_path do
-      = image_tag 'logo.png'
+      = image_tag 'logo_msk.png', alt: 'Автомойки Москвы, Мойка-77'
   #logo_right
     .r_logo_img
-      = image_tag 'header_logo_1.png'
+      = image_tag 'header_logo_1.png', alt: 'Ресурс для автовладельцев'
     .r_logo_img
-      = image_tag 'header_logo_2.png'
+      = image_tag 'header_logo_2.png', alt: 'Ресурс для aвтомоек'
     .r_logo_img
-      = image_tag 'header_logo_3.png'
+      = image_tag 'header_logo_3.png', alt: 'Ресурс для автовладельцев'
     .r_logo_img.omega
-      = image_tag 'header_logo_4.png'
+      = image_tag 'header_logo_4.png', alt: 'Ресурс для автомоек'
+
 .container#header_nav_wrapper
   #header_nav
     #login
@@ -26,15 +27,19 @@
     #traffic
       .svetofor.traffic_undefined
       %span#level_digit
-      %span#level_text
-      %p#level_desc
+      //%span#level_text
+      //%p#level_desc
     #date_currency
       .datetime
         %span.date
         %span.time
       .currency 
-        %span.name= "#{Currency.get_current_usd.name}"
-        %span.value= "#{Currency.get_current_usd.value}"
-        %span.name= "#{Currency.get_current_eur.name}"
-        %span.value= "#{Currency.get_current_eur.value}"
+        //%span.name= "#{Currency.get_current_usd.name}"
+        //%span.value= "#{Currency.get_current_usd.value}"
+        //%span.name= "#{Currency.get_current_eur.name}"
+        //%span.value= "#{Currency.get_current_eur.value}"
+        %span.name= 'USD'
+        %span.value= '34.56'
+        %span.name= 'EUR'
+        %span.value= '47.22'
 

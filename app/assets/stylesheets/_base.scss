@@ -19,6 +19,14 @@ $container-width: 95%;
 //$show-grid-backgrounds  : true;
 $show-grid-backgrounds  : false;
 
+//alternative layout breakpoints
+$phone_portrait: 1px 12 480px;
+$phone_landscape: 481px 12 760px;
+$tablet: 761px 12 899px;
+$tablet900: 900px 12 1024px;
+$computer: 1023px 12;
+
+
 // ---------------------------------------------------------------------------
 
 @mixin margin-padding-0 {
@@ -43,10 +51,12 @@ $show-grid-backgrounds  : false;
 
   $base-link-color: #555;
   $header-link-color: #0504aa;
+  $header-link-hover-color: #0000ff;
   $car-wash-info-bg: #ececec;
 
 // --------------------------------------------------------------------------
 // base sizes
 
   $map-height: 1040px;
+  $map-phone-height: 600px;
 
