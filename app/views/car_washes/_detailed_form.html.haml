@@ -1,0 +1,67 @@
+= form_for @car_wash, role: "form", html: {class: "car_wash_edit_details"} do |f|
+  - if @car_wash.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@car_wash.errors.count, "error")} prohibited this car_wash from being saved:"
+      %ul
+        - @car_wash.errors.full_messages.each do |msg|
+          %li= msg
+
+  %ul#left
+    %li
+      = f.label CarWash.human_attribute_name("title")
+      = f.text_field :title
+    %li
+      = f.label CarWash.human_attribute_name("address")
+      = f.text_field :address
+    %li#coords
+      %ul
+        %li
+          = f.label 'Координаты'
+        %li
+          = f.text_field :lat
+        %li
+          =#f.label CarWash.human_attribute_name("lon")
+          = f.text_field :lon
+    %li
+      = f.label CarWash.human_attribute_name("contacts")
+      = f.text_field :contacts
+    %li
+      = f.label CarWash.human_attribute_name("site_url")
+      = f.text_field :site_url
+  %ul#right
+    %li
+      = f.label CarWash.human_attribute_name("price")
+      = f.text_field :price
+    %li
+      = f.label CarWash.human_attribute_name("zones_count")
+      = f.text_field :zones_count
+    %li
+      = f.label CarWash.human_attribute_name("video_url1")
+      = f.text_field :video_url1
+    %li
+      = f.label CarWash.human_attribute_name("video_url2")
+      = f.text_field :video_url2
+  .container
+    #services 
+      = f.label CarWash.human_attribute_name("services")
+      = f.text_area :services
+    #action_bottom1
+      - ActionType.bottom1.find_each do |type|
+        %h5.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
+        = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
+        = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
+    #action_bottom2
+      - ActionType.bottom2.find_each do |type|
+        %h5.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
+        = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
+        = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
+    #action_vacancy
+      - ActionType.vacancy.find_each do |type|
+        %h5.text-center= "Акция: #{ActionType.find_by(text: type.text).title}"
+        = hidden_field_tag "car_wash[actions][][action_type_text]", ActionType.find_by(text: type.text).text
+        = text_area_tag "car_wash[actions][][text]", @actions.find_by(action_type_id: type.id).try(:text)
+  .container
+    = f.submit t("save_button"), class: 'save_button'
+    -#pay_url = Robokassa.client.init_payment_url(@car_wash.payments.first.id, @car_wash.payments.first.amount, '', currency='', language='ru', email='', custom_options={car_wash_id: @car_wash.id})
+    =#link_to "Оплатить через сервис ROBOX", pay_url
+

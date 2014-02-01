@@ -1,0 +1,66 @@
+#banners{data: {ids: @banners.ids}}
+.row#top_text_banner
+  .col-md-12
+    = form_for :banner, remote: true,  url: admin_banner_path(@top_text_banner), method: :put, role: "form", html: {class: "form-horizontal"} do |f|
+      .form-group
+        = hidden_field_tag "banner[type]", @top_text_banner.type
+        = f.label "Бегущая строка", class: 'col-sm-2 control-label'
+        .col-sm-8
+          = text_field_tag "banner[text]", @top_text_banner.text, class: 'form-control'
+        .col-sm-2
+          = f.submit t("save_button"), class: 'btn btn-danger'
+.row.bordered
+  .col-md-4
+    - banner = @banners.where(place: 'top_1').first
+    = render 'banner', banner: banner, banner_url: banner.file.b_380_285.url, version: :b_380_285
+  .col-md-4
+    = image_tag 'video.png', size: "380x285"
+  .col-md-4
+    - banner = @banners.where(place: 'top_2').first
+    = render 'banner', banner: banner, banner_url: banner.file.b_380_285.url, version: :b_380_285
+
+.row.around_map
+  .col-md-2
+    .panel.panel-default
+      %h1.text-fade.text-center Список автомоек
+      - banner = @banners.where(place: 'left_2').first
+      = render 'banner', banner: banner, banner_url: banner.file.b_190_160.url, version: :b_190_160
+      - banner = @banners.where(place: 'left_1').first
+      = render 'banner', banner: banner, banner_url: banner.file.b_190_280.url, version: :b_190_280
+      - banner = @banners.where(place: 'left_2').first
+      = render 'banner', banner: banner, banner_url: banner.file.b_190_160.url, version: :b_190_160
+
+  .col-md-10#fake_map
+    .panel.panel-default
+      .panel-body
+        .row.bordered
+          .col-md-6
+            - banner = @banners.where(place: 'comments_fat_long').first
+            %h4= banner.text
+            = render 'banner', banner: banner, banner_url: banner.file.b_320_380.url, version: :b_320_380
+          .col-md-6
+            - banner = @banners.where(place: 'comments_fat_short').first
+            %h4= banner.text
+            = render 'banner', banner: banner, banner_url: banner.file.b_320_320.url, version: :b_320_320
+        .row.bordered
+          .col-md-6
+            - banner = @banners.where(place: 'requests_fat_long').first
+            %h4= banner.text
+            = render 'banner', banner: banner, banner_url: banner.file.b_320_380.url, version: :b_320_380
+          .col-md-6
+            - banner = @banners.where(place: 'requests_fat_short').first
+            %h4= banner.text
+            = render 'banner', banner: banner, banner_url: banner.file.b_320_320.url, version: :b_320_320
+.row.bordered
+  .col-md-8.col-md-offset-2#banner-top-text
+    %h1.text-muted.text-center.bordered Бегущая строка
+.row.bordered
+  .col-md-4
+    - banner = @banners.where(place: 'bottom_1').first
+    = render 'banner', banner: banner, banner_url: banner.file.b_380_285.url, version: :b_380_285
+  .col-md-4
+    = image_tag 'video.png', size: "380x285"
+  .col-md-4
+    - banner = @banners.where(place: 'bottom_2').first
+    = render 'banner', banner: banner, banner_url: banner.file.b_380_285.url, version: :b_380_285
+

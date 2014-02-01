@@ -1,0 +1,115 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://coffeescript.org/
+
+$ ->
+  if $('#car-wash-signal').prop("checked")
+    $('img#red-green').attr('src', "<%= asset_path('banner_green_x2.png') %>")
+    $('img#green').attr('src', "<%= asset_path('green.png') %>")
+    $('img#red').attr('src', "<%= asset_path('red_blur.png') %>")
+  else
+    $('img#red-green').attr('src', "<%= asset_path('banner_red.png') %>")
+    $('img#green').attr('src', "<%= asset_path('green_blur.png') %>")
+    $('img#red').attr('src', "<%= asset_path('red.png') %>")
+
+  $(document).on 'click', 'img#green', (e) ->
+    e.preventDefault()
+    $("input[type='checkbox']#car-wash-signal").prop("checked", true)
+    $('img#red-green').attr('src', "<%= asset_path('banner_green_x2.png') %>")
+    $('img#green').attr('src', "<%= asset_path('green.png') %>")
+    $('img#red').attr('src', "<%= asset_path('red_blur.png') %>")
+    $('form.car_wash_signal_edit').submit()
+
+
+  $(document).on 'click', 'img#red', (e) ->
+    e.preventDefault()
+    $("input[type='checkbox']#car-wash-signal").prop("checked", false)
+    $('img#red-green').attr('src', "<%= asset_path('banner_red.png') %>")
+    $('img#green').attr('src', "<%= asset_path('green_blur.png') %>")
+    $('img#red').attr('src', "<%= asset_path('red.png') %>")
+    $('form.car_wash_signal_edit').submit()
+
+
+  $(document).on 'click', 'form.car_wash_edit input[type="submit"]', (e) ->
+    e.preventDefault()
+    input = $('form.car_wash_edit #car_wash_actions__text')
+    if input.prop("disabled")
+      this.value = "Сохранить"
+      input.prop("disabled", false)
+    else
+      $('form.car_wash_edit').submit()
+      this.value = "Редактировать"
+      input.prop("disabled", true)
+
+  $(document).on 'click', 'form.main_action_input input[type="submit"]', (e) ->
+    e.preventDefault()
+    input = $('form.main_action_input #car_wash_actions__text')
+    if input.prop("disabled")
+      this.value = "Сохранить"
+      input.prop("disabled", false)
+    else
+      $('form.main_action_input').submit()
+      this.value = "Редактировать"
+      input.prop("disabled", true)
+   $('input,select').keypress (e) ->
+     e.keyCode != 13
+
+@CarWashPoller =
+  poll: ->
+    setTimeout @request, 5000
+  request: ->
+    $.ajax
+      url: $('#map').data('url')
+      dataType: "json"
+      data:
+        updated_at: $('#map').data('updated-at')
+    .done (data) => CarWashPoller.updateMap(data)
+  updateMap: (data) ->
+    updated_at = data.updated_at
+    $('#map').data('updated-at', updated_at)
+    car_washes = data.car_washes
+    if (car_washes?)
+      car_washes.forEach (cw) ->
+        if (cw?)
+          id = cw.id
+          signal = cw.signal
+          blink = cw.blink
+          searchString = 'properties.car_wash_id = ' + id
+          geoQueryResult = myMap.storage.search(searchString)
+          geoQueryResult.each (o) ->
+            o.getParent().remove(o)
+            console.log 'hello from updater'
+            console.log cw.url
+
+            if cw.signal
+              if cw.blink
+                greenBlinkCollection.add(o)
+              else if cw.action_on_map
+                greenStretchyCollection.add(o)
+              else if cw.videoned
+                videonedCollection.add(o)
+              else
+                greenCollection.add(o)
+            else
+              if cw.blink
+                redBlinkCollection.add(o)
+              else if cw.action_on_map
+                redStretchyCollection.add(o)
+              else if cw.videoned
+                videonedCollection.add(o)
+              else
+                redCollection.add(o)
+
+            #if signal and blink then greenBlinkCollection.add(o)
+            #if signal and not blink then greenCollection.add(o)
+            #if not signal and blink then redBlinkCollection.add(o)
+            #if not signal and not blink then redCollection.add(o)
+            properties = o.properties.getAll()
+            properties.iconContent = if cw.action_on_map then cw.main_action else ""
+            properties.hintContent = hint(cw)
+            url = cw.url.slice(0,-5)
+            properties.body = balloon(cw, url)
+    @poll()
+jQuery ->
+  if $('#map').length > 0
+    CarWashPoller.poll()

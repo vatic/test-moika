@@ -1,0 +1,10 @@
+#requests
+  #requests_header
+    %h3= "#{@car_wash.title}: #{t('.header')}"
+  #left_adv
+    =#image_tag 'adv.png', class: 'adv'
+    = image_tag  Banner.where(place: 'requests_fat_long').first.file.b_320_380.url, class: 'banner'
+    = image_tag  Banner.where(place: 'requests_fat_short').first.file.b_320_320.url, class: 'banner'
+
+  #requests_content
+    = render 'form'

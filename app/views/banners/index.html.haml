@@ -1,0 +1,39 @@
+#banners{data: {ids: @banners.ids}}
+#banner-top-text
+  %h3.text-center.bordered Баннеры на Вашей странице:
+.right-container-8
+  - banner = @banners.where(type: 'ClientVideoBanner').first
+  = form_for banner, url: car_wash_banner_path(@car_wash, banner), remote: true, role: 'form' do |f|
+    .form-group
+      = f.label :text, 'Текст над видео'
+      = text_field_tag 'banner[text]', banner.text
+    .form-group
+      = f.label :filename, 'Путь к ролику youtube', id: "video_url_label"
+      = text_field_tag 'banner[filename]', banner.filename
+    = f.submit t('save_button'), class: 'btn btn-danger btn-block'
+
+  - unless banner.blank?
+    %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+    = render 'client_youtube', src: banner.filename
+  - else
+    - banner = @banners.where(place: 'client_fat_top').first
+    %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+    = render '/banners/banner', banner: banner, banner_url: banner.file.b_770_270.url, version: :b_770_270, car_wash: @car_wash
+.left-container
+  - banner = @banners.where(place: 'client_thin_top_3').first
+  %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+  = render 'banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+  
+  - banner = @banners.where(place: 'client_thin_top_4').first
+  %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+  = render 'banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+.no-edit
+  .center-container
+    - banner = @banners.where(place: 'client_thin_top_1').first
+    %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+
+    = render 'banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash
+  .right-container-4
+    - banner = @banners.where(place: 'client_thin_top_2').first
+    %h5.text-center.bordered= banner.text.blank? ? (raw '&nbsp;'):(banner.text)
+    = render 'banner', banner: banner, banner_url: banner.file.b_380_270.url, version: :b_380_270, car_wash: @car_wash

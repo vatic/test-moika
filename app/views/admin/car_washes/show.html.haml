@@ -1,0 +1,43 @@
+%p#notice= notice
+%hr
+%p
+  %b= CarWash.human_attribute_name("title")
+  = @car_wash.title
+%p
+  %b= CarWash.human_attribute_name("address")
+  = @car_wash.address
+%p
+  %b Координаты
+  = @car_wash.lat
+  = @car_wash.lon
+%p
+  %b= CarWash.human_attribute_name("contacts")
+  = @car_wash.contacts
+%p
+  %b= CarWash.human_attribute_name("site_url")
+  = @car_wash.site_url
+%p
+  %b= CarWash.human_attribute_name("video_url1")
+  = @car_wash.video_url1
+%p
+  %b= CarWash.human_attribute_name("video_url2")
+  = @car_wash.video_url2
+%p
+  %b= CarWash.human_attribute_name("blink")
+  = @car_wash.blink ? "Да":"Нет"
+%p
+  %b= CarWash.human_attribute_name("videoned")
+  = @car_wash.videoned ? "Да":"Нет"
+%p
+  %b= CarWash.human_attribute_name("action_on_map")
+  = @car_wash.action_on_map ? "Да":"Нет"
+%p
+  %b= CarWash.human_attribute_name("signal_type")
+  = @car_wash.signal_type
+%hr
+
+.row
+  .col-lg-2.col-lg-offset-4.actions
+    = link_to t('edit_button'), edit_admin_car_wash_path(@car_wash), class: 'btn btn-danger'
+  .col-lg-2.actions
+    = link_to 'Назад к списку автомоек', admin_car_washes_path, class: 'btn btn-success'

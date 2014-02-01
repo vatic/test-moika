@@ -1,0 +1,3 @@
+%p.red= comment.created_at.try(:strftime,"%d.%m.%Y")
+%p.red= comment.name
+%p#text= comment.text

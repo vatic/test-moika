@@ -1,0 +1,34 @@
+/* yandex map on main page */
+$(document).ready( function() {
+  function getCarWashes() {
+    $.ajax('/car_washes', {
+      dataType: "json",
+      cache: false,
+      success: function(json) {
+        cw_list = [];
+        json.forEach( function(row) {
+          cw_list.push({
+            coords: [row.lat, row.lon],
+            id: row.id,
+            address: row.address,
+            title: row.title,
+            signal: row.signal,
+            url: row.url.slice(0,-5),
+            contacts: row.contacts,
+            services: row.services,
+            blink: row.blink,
+            main_action: row.main_action,
+            action_on_map: row.action_on_map,
+            videoned: row.videoned,
+            signal_type: row.signal_type
+          });
+        })
+        ymaps.ready(init);
+      }
+    })
+  };
+  getCarWashes();
+  window.setInterval(updateTraffic,1*60*1000)
+});
+
+

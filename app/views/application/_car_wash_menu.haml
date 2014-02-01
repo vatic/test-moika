@@ -1,0 +1,19 @@
+#login_registration
+  %ul
+    %li#login
+      = render 'devise/menu/login_items'
+    %li
+      = render 'devise/menu/registration_items'
+    %li
+      = link_to current_user.email, "#" unless current_user.nil?
+#signal_video
+  #free_close_signal
+    %ul
+      %li Свободно
+  .video#video1
+    %ul
+      %li  Камера №1
+  .video#video2
+    %ul
+      %li  Камера №2
+

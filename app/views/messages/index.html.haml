@@ -1,0 +1,27 @@
+#messages{data: {url: car_wash_messages_path(@car_wash), oncpanel: '0'}}
+  #messages_header
+    %h3 
+      = render "unread_messages_count", unread_messages_count: @unread_messages_count
+  #left_adv
+    = image_tag 'adv.png', class: 'adv'
+  #messages_content
+    #index
+      - if @messages.blank? 
+        = content_tag(:h3, t('.empty_comments'), id: 'empty')
+        %table.display-none
+          %thead
+            %tr
+              %th=Message.human_attribute_name("created_at")
+              %th=Message.human_attribute_name("subject")
+              %th=Message.human_attribute_name("body")
+          %tbody
+      - else
+        %table
+          %thead
+            %tr
+              %th=Message.human_attribute_name("created_at")
+              %th=Message.human_attribute_name("subject")
+              %th=Message.human_attribute_name("body")
+          %tbody
+            = render @messages, car_wash: @car_wash
+

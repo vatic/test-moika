@@ -1,0 +1,68 @@
+@import "twitter/bootstrap";
+
+#main_content {
+  padding-top: 90px;
+}
+
+button.btn-primary {
+  a {
+    color: #fff;
+  }
+}
+
+.flash.success {
+  color: green;
+}
+
+.bordered {
+  border: solid 1px #ddd;
+}
+img.banner {
+  cursor: pointer;
+  border: solid 1px blue;
+  margin: 5px 0;
+}
+
+ul.image-container {
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+ul.image-container li {
+list-style: none;
+float: left;
+img,canvas {
+  margin: 7px;
+  padding: 5px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-backface-visibility: hidden;
+}
+}
+                 
+.around_map {
+  margin: 10px 0;
+}
+
+#fake_map {
+  h1 {
+    padding: 300px 0;
+  }
+}
+
+.filelist {
+  clear: both;
+  margin-left: 50%;
+}
+
+#top_text_banner {
+  margin: 10px auto;
+}
+
+.actions {
+  padding: 10px;
+}
+
+#notice {
+  color: green;
+  text-align: center;
+}

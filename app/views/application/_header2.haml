@@ -1,0 +1,44 @@
+.container
+  #logo_left
+    = link_to root_path do
+      = image_tag 'logo_msk.png', alt: 'Автомойки Москвы, Мойка-77'
+  #logo_right
+    .r_logo_img
+      = image_tag 'header_logo_1.png'
+    .r_logo_img
+      = image_tag 'header_logo_2.png'
+    .r_logo_img
+      = image_tag 'header_logo_3.png'
+    .r_logo_img.omega
+      = image_tag 'header_logo_4.png'
+.container#header_nav_wrapper
+  #header_nav
+    #login
+      = render 'devise/menu/login_items'
+    #registration
+      = render 'devise/menu/registration_items'
+      =#mail_to current_user.try(:email)
+    #social
+      = render 'client_social', car_wash: @car_wash
+    #weather
+      %p Погода в Москве
+      %p#deg
+    #traffic
+      .svetofor.traffic_undefined
+      %span#level_digit
+      //%span#level_text
+      //%p#level_desc
+    #date_currency
+      .datetime
+        %span.date
+        %span.time
+      .currency 
+        //%span.name= "#{Currency.get_current_usd.name}"
+        //%span.value= "#{Currency.get_current_usd.value}"
+        //%span.name= "#{Currency.get_current_eur.name}"
+        //%span.value= "#{Currency.get_current_eur.value}"
+        %span.name= 'USD'
+        %span.value= '32.87'
+        %span.name= 'EUR'
+        %span.value= '45.19'
+
