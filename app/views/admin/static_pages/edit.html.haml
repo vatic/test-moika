@@ -1,9 +1,0 @@
-%h1 Редактирование страницы
-
-= render 'form'
-.row
-  .col-lg-2.col-lg-offset-4.actions
-    = link_to t('show_link'), admin_static_page_path(@static_page), class: 'btn btn-success'
-  .col-lg-2.actions
-    = link_to 'Назад к списку страниц', admin_static_pages_path, class: 'btn btn-success'
-

@@ -1,7 +1,0 @@
-%tr{data: {id: request.id, url: car_wash_request_path(car_wash, request), read: request.read.to_s }, id: request.id, class: 'toggleble'}
-  %td{title: "Подробнее"}= request.name
-  %td= request.phone
-  %td= request.email
-  %td= request.text[0..10]
-%tr.text-full{data: {id: request.id}, id: request.id}
-  %td{colspan: 4}= request.text

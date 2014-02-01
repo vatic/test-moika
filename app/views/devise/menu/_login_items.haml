@@ -1,4 +1,0 @@
-- if user_signed_in?
-  = link_to content_tag(:h4, t('logout')), destroy_user_session_path, :method => :delete
-- else
-  = link_to content_tag(:h4, t('login')), new_user_session_path

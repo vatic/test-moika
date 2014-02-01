@@ -1,8 +1,0 @@
-- if car_wash.blank?
-  - vk_url = 'http://vk.com/moika77'
-  - odn_url = 'http://www.odnoklassniki.ru/group/52917555626211'
-- else
-  - vk_url = car_wash.vk_url || 'http://vk.com/moika77'
-  - odn_url = car_wash.odn_url || 'http://www.odnoklassniki.ru/group/52917555626211'
-= link_to "", url_for(vk_url), class: 'color_on_hover', id: 'vk', target: '_blank'
-= link_to "", url_for(odn_url), class: 'color_on_hover', id: 'odn', target: '_blank'

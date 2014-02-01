@@ -1,2 +1,0 @@
-class TextBanner < Banner
-end
