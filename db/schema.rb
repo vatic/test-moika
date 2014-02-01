@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128182434) do
+ActiveRecord::Schema.define(version: 20140130170401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20131128182434) do
     t.integer  "zones_count"
     t.string   "video_url1"
     t.string   "video_url2"
-    t.boolean  "signal"
+    t.boolean  "signal",         default: true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "site_url"
@@ -72,6 +72,13 @@ ActiveRecord::Schema.define(version: 20131128182434) do
     t.string   "official_title"
     t.string   "u_address"
     t.string   "inn"
+    t.boolean  "action_on_map",  default: false
+    t.boolean  "youtubed",       default: false
+    t.string   "vk_url"
+    t.string   "odn_url"
+    t.integer  "rating",         default: 0
+    t.boolean  "videoned",       default: false
+    t.string   "signal_type"
   end
 
   create_table "comments", force: true do |t|

@@ -8,7 +8,7 @@ module ParseData
   PATH = "/services/search/1.x/search.json"
   YA_ROW_COUNT = 200
   YA_SEARCH_STRING = "автомойки"
-  QUERY_HASH_MSK = {
+  QUERY_HASH = {
     autoscale: 0,
     lang: "ru-RU",
     ll: "37.61767099999992,55.7557738481629",
@@ -18,18 +18,8 @@ module ParseData
     text: YA_SEARCH_STRING,
     type: "biz,psearch,web"
   }
-  QUERY_HASH_SPB = {
-    autoscale: 0,
-    lang: "ru-RU",
-    ll: "30.359937454531213,59.94173846082385",
-    origin: "maps-pager",
-    results: YA_ROW_COUNT,
-    spn: "2.5708007812500036,1.1203787977242854",
-    text: YA_SEARCH_STRING,
-    type: "biz,psearch,web"
-  }
 
-  YA_SEARCH_QUERY = QUERY_HASH_MSK.to_query
+  YA_SEARCH_QUERY = QUERY_HASH.to_query
   YA_SEARCH_URI = HOST + PATH + '?' + YA_SEARCH_QUERY
 
   def self.get_json
@@ -63,7 +53,7 @@ module ParseData
         lat: e['geometry']['coordinates'][1],
         lon: e['geometry']['coordinates'][0],
         services: services,
-        signal: (rand(10)!=1)
+        signal: (rand(2)==1)
       }
       tmp_ary << car_wash_hash
       CarWash.create(car_wash_hash)
