@@ -1305,7 +1305,7 @@ img,canvas {
   @include span-columns(6 omega,12);
 }
 
-#robokassa_link_wrapper {
+.grey_panel, #robokassa_link_wrapper {
   padding: 10px;
   height: 250px;
   min-height: 250px;
