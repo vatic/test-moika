@@ -14,6 +14,8 @@ class ApplicationController < ActionController::Base
         edit_car_wash_path(resource.car_wash)
       elsif resource.admin?
         admin_path
+      elsif resource.normal_user?
+        user_path(resource)
       else
         super
       end
