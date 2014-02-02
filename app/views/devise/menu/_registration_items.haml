@@ -6,4 +6,4 @@
   - else
     = link_to content_tag(:h4, current_user.car_wash_title, class: 'signed_in'), user_path(current_user)
 - else
-  = link_to content_tag(:h4, t('sign_up'), class: 'not_signed_in'), new_user_registration_path
+  = link_to content_tag(:h4, t('sign_up'), class: 'not_signed_in'), new_user_path

@@ -1278,6 +1278,10 @@ img,canvas {
   @include sassy-button("simple", 5px, 20px, rgba(92, 203, 15, 1), rgba(1,106,19,1));
 }
 
+.blue_button {
+  @include sassy-button("simple", 5px, 20px, rgba(92, 92, 215, 1), rgba(2,2,200,1));
+}
+
 .columns-12 {
   @include span-columns(12 omega,12);
 }
@@ -1305,6 +1309,9 @@ img,canvas {
   @include span-columns(6 omega,12);
 }
 
+.new_user_registration {
+  margin-top: 3em;
+}
 .grey-panel, #robokassa_link_wrapper {
   padding: 10px;
   height: 250px;
