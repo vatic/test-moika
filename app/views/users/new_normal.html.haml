@@ -19,12 +19,6 @@
           = f.label :password_confirmation, User.human_attribute_name("password_confirmation")
           %br/
           = f.password_field :password_confirmation, class: "form-control"
-        #agreement_text
-          = render 'agreement'
-        %div
-          %label.checkbox
-            = check_box_tag 'agreement', '', false
-            Нажимая кнопку «Зарегистрироваться», я принимаю условия Пользовательского соглашения
         %div= f.submit t("devise.sign_up"), disabled: true, class: "btn btn-lg btn-primary btn-block"
         %br
         = render "devise/shared/links"
