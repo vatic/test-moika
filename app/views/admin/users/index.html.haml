@@ -15,43 +15,44 @@
         %th email
         %th роль
         %th мойка
-        %th 
+        %th
 
-      - @clients.each_with_index do |client, i|
-        %tr
-          %td= i+1
-          %td= client.email
-          %td= client.roles.first.name unless client.roles.first.nil?
-          %td= client.car_wash.title unless client.car_wash.nil?
-          %td= link_to(t('.link_to_car_wash_edit'), edit_car_wash_path(client.car_wash), class: "btn btn-primary btn-sm") unless client.car_wash.nil?
-          %td= link_to t('.link_to_message'), "#messagemodal_#{client.id}", class: "btn btn-primary btn-sm", data: {toggle: "modal"}
-        .modal.fade{role: "dialog", id: "messagemodal_#{client.id}"}
-          = form_for [:admin, Message.new], role: 'form' do |f|
-            .modal-dialog
-              .modal-content
-                .modal-header
-                  .button(type="button" class="close" data-dismiss="modal" aria-hidden="true") &times;
-                  .modal-title
-                    %h4
-                      = t('.from') 
-                      %span.text-success= current_user.try(:email)
-                    %hr
-                    %h4
-                      = t('.to') 
-                      %span.text-success= "#{client.email}"
-                .modal-body
-                  = f.hidden_field :sender_id, value: current_user.id
-                  = f.hidden_field :receiver_id, value: client.id
-                  = f.hidden_field :car_wash_id, value: client.car_wash.id
-                  .form-group
-                    = f.label :subject, "Тема"
-                    = f.text_field :subject, rows: 15, class: 'form-control'
-                  .form-group
-                    = f.label :body, "Введите текст сообщения"
-                    = f.text_area :body, rows: 15, class: 'form-control'
-                .modal-footer
-                  %button(type="button" class="btn btn-default" data-dismiss="modal")= t('close')
-                  %button(type="submit" class="btn btn-primary")= t('.submit_sending_message')
+      - unless @clients.blank?
+        - @clients.each_with_index do |client, i|
+          %tr
+            %td= i+1
+            %td= client.email
+            %td= client.roles.first.name unless client.roles.first.nil?
+            %td= client.car_wash.title unless client.car_wash.nil?
+            %td= link_to(t('.link_to_car_wash_edit'), edit_car_wash_path(client.car_wash), class: "btn btn-primary btn-sm") unless client.car_wash.nil?
+            %td= link_to t('.link_to_message'), "#messagemodal_#{client.id}", class: "btn btn-primary btn-sm", data: {toggle: "modal"}
+          .modal.fade{role: "dialog", id: "messagemodal_#{client.id}"}
+            = form_for [:admin, Message.new], role: 'form' do |f|
+              .modal-dialog
+                .modal-content
+                  .modal-header
+                    .button(type="button" class="close" data-dismiss="modal" aria-hidden="true") &times;
+                    .modal-title
+                      %h4
+                        = t('.from') 
+                        %span.text-success= current_user.try(:email)
+                      %hr
+                      %h4
+                        = t('.to') 
+                        %span.text-success= "#{client.email}"
+                  .modal-body
+                    = f.hidden_field :sender_id, value: current_user.id
+                    = f.hidden_field :receiver_id, value: client.id
+                    = f.hidden_field :car_wash_id, value: client.car_wash.id
+                    .form-group
+                      = f.label :subject, "Тема"
+                      = f.text_field :subject, rows: 15, class: 'form-control'
+                    .form-group
+                      = f.label :body, "Введите текст сообщения"
+                      = f.text_area :body, rows: 15, class: 'form-control'
+                  .modal-footer
+                    %button(type="button" class="btn btn-default" data-dismiss="modal")= t('close')
+                    %button(type="submit" class="btn btn-primary")= t('.submit_sending_message')
   .tab-pane.fade#guests
     %h5 Список гостей
     %table.table

@@ -1,5 +1,5 @@
 %h4.text-center Выберите способ оплаты
-.left-6#robokassa_link_wrapper
+.left-6.grey-panel
   %h5.text-center Электронными деньгами
   %p 
     Все электронные платежи производятся через систему
@@ -9,7 +9,7 @@
   - pay_url = Robokassa.client.init_payment_url(@car_wash.payments.first.id, @car_wash.payments.first.amount, '', currency='', language='ru', email='', custom_options={car_wash_id: @car_wash.id})
   %p.text-center
     = link_to "Оплатить", pay_url, class: 'save_button'
-.right-6#robokassa_link_wrapper
+.right-6.grey-panel
   %h5.text-center Счет на оплату
   %p
     Вы также можете оплатить наши услуги с рассчетного счета вашей организации.
