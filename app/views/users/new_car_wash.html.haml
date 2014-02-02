@@ -27,6 +27,10 @@
           = f.label :password_confirmation, User.human_attribute_name("password_confirmation")
           %br/
           = f.password_field :password_confirmation, class: "form-control"
+        %div
+          = f.label :normal
+          %br/
+        = hidden_field_tag 'user[normal]', false
         #agreement_text
           = render 'agreement'
         %div

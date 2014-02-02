@@ -19,6 +19,7 @@
           = f.label :password_confirmation, User.human_attribute_name("password_confirmation")
           %br/
           = f.password_field :password_confirmation, class: "form-control"
-        %div= f.submit t("devise.sign_up"), disabled: true, class: "btn btn-lg btn-primary btn-block"
+        = hidden_field_tag 'user[normal]', true
+        %div= f.submit t("devise.sign_up"), class: "btn btn-lg btn-primary btn-block"
         %br
         = render "devise/shared/links"

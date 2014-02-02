@@ -1,4 +1,5 @@
 .container
+  %h1 ha
   #login
     = form_for(:user, :url => registration_path(:user), :html => {:class => "form-signin"}) do |f|
       = devise_error_messages!

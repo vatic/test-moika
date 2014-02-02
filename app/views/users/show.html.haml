@@ -1,18 +1,26 @@
-#user_show
-  - t('.car_wash_registration_message').each {|x| haml_tag :h3, x, class: "text-center" }
-  %br
-  %h4.text-center= t('.reg_info')
-  #info
-    %table.table.table-bordered.table-stripped
-      %tr
-        %td= User.human_attribute_name("email")
-        %td= @user.email
-      %tr
-        %td= User.human_attribute_name("phone")
-        %td= @user.phone
-      %tr
-        %td= User.human_attribute_name("contact_person")
-        %td= @user.contact_person
-      %tr
-        %td= User.human_attribute_name("car_wash_title")
-        %td= @user.car_wash_title
+- unless @user.normal_user?
+  #user_show
+    - t('.car_wash_registration_message').each {|x| haml_tag :h4, x, class: "text-center" }
+    %br
+    %h4.text-center= t('.reg_info')
+    #info
+      %table.table.table-bordered.table-stripped
+        %tr
+          %td= User.human_attribute_name("email")
+          %td= @user.email
+        %tr
+          %td= User.human_attribute_name("phone")
+          %td= @user.phone
+        %tr
+          %td= User.human_attribute_name("contact_person")
+          %td= @user.contact_person
+        %tr
+          %td= User.human_attribute_name("car_wash_title")
+          %td= @user.car_wash_title
+        %tr
+          %td Normal?
+          %td= @user.normal
+- else
+  #user_show
+    - t('.normal_user_registration_message').each {|x| haml_tag :h4, x, class: "text-center" }
+
