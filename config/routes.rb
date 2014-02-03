@@ -6,10 +6,11 @@ Moika::Application.routes.draw do
 
   get "sp/:id", to: "static_pages#show", as: "static_page"
   get "banners/update"
+
   get "user/:id", to: "users#show", as: '/user'
   get "users/new", to: "users#new", as: 'new_user'
-  get "users/new_car_wash", to: "users#new_car_wash", as: 'new_car_wash_user'
-  get "users/new_normal", to: "users#new_normal", as: 'new_normal_user'
+
+  get "normal_user/:id", to: "normal_users#show", as: '/normal_user'
 
   devise_for :users, controllers: { registrations: "registrations" }
   devise_for :normal_users, controllers: { registrations: "registrations" }

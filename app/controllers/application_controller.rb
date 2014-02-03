@@ -41,10 +41,18 @@ class ApplicationController < ActionController::Base
       redirect_to(root_path) and return unless current_user and (current_user.client? or current_user.admin?)
     end
 
-    def configure_devise_params
-      devise_parameter_sanitizer.for(:sign_up) do |u|
-        u.permit(:phone, :contact_person, :car_wash_title, :email, :password, :password_confirmation, :normal)
+    def devise_parameter_sanitizer
+      if resource_class == User
+        User::ParameterSanitizer.new(User, :user, params)
+      elsif resource_class == NormalUser
+        NormalUser::ParameterSanitizer.new(NormalUser, :normal_user, params)
+      else
+        super # Use the default one
       end
+    end
+
+    def configure_devise_params
+      devise_parameter_sanitizer
     end
 
   private

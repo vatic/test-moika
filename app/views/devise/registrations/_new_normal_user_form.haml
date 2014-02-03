@@ -8,6 +8,10 @@
           %br/
           = f.email_field :email, :autofocus => true, class: "form-control"
         %div
+          = f.label :name, User.human_attribute_name("name")
+          %br/
+          = f.text_field :name, class: "form-control"
+        %div
           = f.label :phone, User.human_attribute_name("phone")
           %br/
           = f.phone_field :phone, class: "form-control"

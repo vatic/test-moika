@@ -88,3 +88,9 @@ class User < ActiveRecord::Base
     self.roles.delete(Role.client)
   end
 end
+
+class User::ParameterSanitizer < Devise::ParameterSanitizer
+  def sign_up
+    default_params.permit(:phone, :contact_person, :car_wash_title, :email, :password, :password_confirmation, :normal)
+  end
+end

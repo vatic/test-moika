@@ -1,2 +1,4 @@
 - if resource.is_a?(NormalUser)
   = render 'new_normal_user_form'
+- elsif resource.is_a?(User)
+  = render 'new_car_wash_user_form'
