@@ -64,6 +64,8 @@ ru:
       requests: "Заявки"
       messages: "Сообщения администрации сайта"
       subscribe: "Подписаться"
+      register_and_subscribe: "Зарегистрируйтесь, чтобы подписаться"
+      you_are_subscribed: "Вы подписаны"
     edit:
       signal_notice: "Вы поменяли сигнал"
   comments:

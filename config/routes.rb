@@ -27,6 +27,7 @@ Moika::Application.routes.draw do
   end
 
   put 'car_washes/:id/update_main_action', to: 'car_washes#update_main_action', as: '/car_washes_update_main_action'
+  post 'car_washes/:id/subscribe/:user_id', to: 'car_washes#subscribe', as: '/car_washes_subscribe'
 
   controller :robokassa do
     get "robokassa/:notification_key/notify"   => :notify,  :as => :robokassa_notification

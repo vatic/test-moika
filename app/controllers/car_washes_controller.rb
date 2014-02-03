@@ -122,6 +122,22 @@ class CarWashesController < ApplicationController
     end
   end
 
+  def subscribe
+    @subscribe = Subscribe.new(normal_user_id: params[:user_id], car_wash_id: params[:id])
+
+    respond_to do |format|
+      if @subscribe.save
+        format.html { render text: "Вы подписаны"}
+        format.json { render json: @subscribe}
+        format.js {}
+      else
+        format.json { render json: @subscribe.errors, status: :unprocessable_entity }
+        format.js { alert("Ошибка") }
+      end
+    end
+  end
+
+
   private
     def set_car_wash
       @car_wash = CarWash.find(params[:id])
