@@ -747,7 +747,7 @@ form.car_wash_edit_details {
           }
         }
       }
-      #comments_button, #enroll_button {
+      #comments_button, #enroll_button, #subscribe_button {
         @include span-columns(12 omega,12);
         margin: 15px auto;
         p {
@@ -767,6 +767,9 @@ form.car_wash_edit_details {
       } 
       #enroll_button {
         @include sassy-button("simple", 5px, 20px, rgba(192, 203, 215, 1), rgba(91,106,119,1));
+      }
+      #subscribe_button {
+        @include sassy-button("simple", 5px, 20px, rgba(128, 03, 15, 1), rgba(191,06,19,1));
       }
 
       img.adv {

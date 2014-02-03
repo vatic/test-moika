@@ -3,6 +3,10 @@ class NormalUser < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :subscribes
+  has_many :car_washes, through: :subscribes
+
 end
 
 class NormalUser::ParameterSanitizer < Devise::ParameterSanitizer

@@ -8,6 +8,8 @@
         = link_to(content_tag(:h5, car_wash_title(@car_wash.title)), car_wash_path(@car_wash)) unless @car_wash.nil?
     = render partial: "car_wash_info", locals: { car_wash: @car_wash, left_actions: @left_actions }
    
+    #subscribe_button
+      = link_to t('.subscribe'), "#"
     #comments_button
       = link_to t('.comments'), car_wash_comments_path(@car_wash)
     #enroll_button

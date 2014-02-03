@@ -63,6 +63,7 @@ ru:
       send_request: "Оставить заявку"
       requests: "Заявки"
       messages: "Сообщения администрации сайта"
+      subscribe: "Подписаться"
     edit:
       signal_notice: "Вы поменяли сигнал"
   comments:
