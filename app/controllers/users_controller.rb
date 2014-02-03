@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @car_washes = CarWash.limit(20)
   end
 
   private

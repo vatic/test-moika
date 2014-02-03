@@ -107,6 +107,51 @@ input[type='text']{
     }
   }
 }
+
+#car_washes_user_list {
+  margin: 10px 0 0 0;
+  @include span-columns(4,12);
+  #list_header {
+    @include columns(2);
+    background-color: #dbdbdb;
+    margin: 0 0 15px 0;
+    p, h1 {
+      width: 100%;
+      margin: 10px 0 0 10px;
+      font-weight: bold;
+      font-size: 11px;
+    }
+    img {
+      float: right;
+      height: 40px;
+      width: 40px;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    min-height: 300px;
+    border: solid 1px #ddd;
+    li {
+      list-style: none;
+      background-color: #ebebeb;
+      margin: 0 0 10px 0;
+      padding: 0 0 0 10px;
+      border-left: 8px solid #dc0707;
+      a {
+        font-size: 14px;
+        color: #a2a2a2;
+      }
+      a:hover {
+        & {
+          background-color: #eaeaea;
+        }
+      }
+      a:active {
+      }
+    }
+  }
+}
 .container#header_nav_wrapper {
     z-index: 1;
     background-image: url(image_path('h_menu.png'));

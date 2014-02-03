@@ -1,0 +1,10 @@
+#car_washes_user_list
+  #list_header
+    %h1 АВТОМОЙКИ
+    = image_tag 'timer.png'
+  %ul#car_wash_list
+    -@car_washes.each do |cw|
+      %li= link_to cw.title, car_wash_path(cw)
+#user_show
+  - t('.normal_user_registration_message').each {|x| haml_tag :h4, x, class: "text-center" }
+

@@ -16,12 +16,12 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      #respond_with resource
-      if resource.normal?
-        render 'users/new_normal'
-      else
-        render 'users/new_car_wash'
-      end
+      respond_with resource
+      #if resource.normal?
+      #  render 'users/new_normal'
+      #else
+      #  render 'users/new_car_wash'
+      #end
     end
   end
   protected
