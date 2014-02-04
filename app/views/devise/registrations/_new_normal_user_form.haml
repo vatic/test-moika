@@ -1,6 +1,6 @@
 .container
   #login
-    = form_for(resource, as: resource_name, url: registration_path(resource), :html => {:class => "form-signin"}) do |f|
+    = form_for(resource, as: resource_name, url: normal_user_registration_path(resource), :html => {:class => "form-signin"}) do |f|
       = devise_error_messages!
       %fieldset
         %div
