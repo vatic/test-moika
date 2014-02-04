@@ -3,4 +3,4 @@
 - elsif normal_user_signed_in?
   = link_to content_tag(:h4, t('normal_user_logout')), destroy_normal_user_session_path, :method => :delete
 - else
-  = link_to content_tag(:h4, t('login')), new_normal_user_session_path
+  = link_to content_tag(:h4, t('login')), login_path

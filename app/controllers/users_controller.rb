@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   def new
   end
 
+  def login
+  end
+
   def new_car_wash
   end
 

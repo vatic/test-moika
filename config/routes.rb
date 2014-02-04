@@ -8,7 +8,8 @@ Moika::Application.routes.draw do
   get "banners/update"
 
   get "user/:id", to: "users#show", as: '/user'
-  get "users/new", to: "users#new", as: 'new_user'
+  get "users/registration", to: "users#registration", as: 'registration'
+  get "users/login", to: "users#login", as: 'login'
 
   get "normal_user/:id", to: "normal_users#show", as: '/normal_user'
 

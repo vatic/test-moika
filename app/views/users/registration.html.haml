@@ -1,9 +1,9 @@
-%h4.text-center Регистрация
+%h2.text-center.blue= t('sign_up')
 .left-6.grey-panel
-  %h2.text-center Для посетителей сайта
+  %h2.text-center= t('for_normal_users')
   %p.text-center
     = link_to t("devise.sign_up"), new_normal_user_registration_path, class: 'blue_button new_user_registration'
 .right-6.grey-panel
-  %h2.text-center Для владельцев автомоек
+  %h2.text-center= t('for_car_wash_users')
   %p.text-center
     = link_to t("devise.sign_up"), new_user_registration_path, class: 'blue_button new_user_registration'

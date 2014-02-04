@@ -9,4 +9,4 @@
   - if normal_user_signed_in?
     = link_to content_tag(:h4, current_normal_user.email, class: 'signed_in'), normal_user_path(current_normal_user)
   - else
-    = link_to content_tag(:h4, t('sign_up'), class: 'not_signed_in'), new_user_path
+    = link_to content_tag(:h4, t('sign_up'), class: 'not_signed_in'), registration_path
