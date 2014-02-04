@@ -3,13 +3,6 @@
     %h2.form-signin-heading.text-center= t("devise.sign_in")
     = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-signin"}) do |f|
       %fieldset
-        - if resource.is_a?(User)
-          Вход для мойки
-          = link_to "Войти как пользователь", new_normal_user_session_path
-        - elsif resource.is_a?(NormalUser)
-          Вход для пользователя
-          = link_to "Войти как мойка", new_user_session_path
-        %br/
         = f.label :email, User.human_attribute_name("email")
         %br/
         = f.email_field :email, :autofocus => true, class: "form-control"

@@ -1,11 +1,21 @@
 #car_washes_user_list
-  #list_header
-    %h1 АВТОМОЙКИ
-    = image_tag 'timer.png'
-  %ul#car_wash_list
+  .base-grey-panel 
+    %h4.text-center Ваши АВТОМОЙКИ
+  %ul
     - unless @car_washes.blank?
       - @car_washes.each do |cw|
-        %li= link_to cw.title, car_wash_path(cw)
-#user_show
-  - t('.normal_user_registration_message').each {|x| haml_tag :h4, x, class: "text-center" }
+        .steel_button
+          %li= link_to cw.title, car_wash_path(cw)
+.right-8
+  - if @car_washes.blank?
+    .base-grey-panel 
+      - t('.normal_user_registration_message').each {|x| haml_tag :h4, x, class: "text-center" }
+  - else
+    %ul.user_car_washes
+      - @car_washes.each do |cw|
+        %li.base-grey-panel 
+          .red= cw.title
+          %ul.user_actions
+            = cw.actions.find_each do |action|
+              %li= action.text
 

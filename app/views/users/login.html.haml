@@ -2,8 +2,8 @@
 .left-6.grey-panel
   %h2.text-center= t('for_normal_users')
   %p.text-center
-    = link_to t("devise.sign_up"), new_normal_user_registration_path, class: 'blue_button new_user_registration'
+    = link_to t("devise.sign_in"), new_normal_user_session_path, class: 'blue_button new_user_registration'
 .right-6.grey-panel
   %h2.text-center= t('for_car_wash_users')
   %p.text-center
-    = link_to t("devise.sign_up"), new_user_registration_path, class: 'blue_button new_user_registration'
+    = link_to t("devise.sign_in"), new_user_session_path, class: 'blue_button new_user_registration'
