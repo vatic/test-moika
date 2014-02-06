@@ -75,7 +75,7 @@ gem 'unicorn'
 #gem 'capistrano', group: :development
 gem 'capistrano', '~> 2.15.0', group: :development
 #gem 'rvm-capistrano'
-gem 'thin', group: :development
+gem 'thin'
 #gem 'puma', group: :development
 
 # Use debugger
