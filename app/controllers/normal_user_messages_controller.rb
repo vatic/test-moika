@@ -9,8 +9,9 @@ class NormalUserMessagesController < ApplicationController
           render "index"
         }
         format.html {
-          @normal_user_messages = @car_wash.normal_user_messages
-          #@unread_messages_count = @car_wash.unread_messages_count
+          unless current_normal_user.blank?
+            @normal_user_messages = @car_wash.normal_user_messages.where(receiver_id: current_normal_user.id)
+          end
         }
       end
   end
