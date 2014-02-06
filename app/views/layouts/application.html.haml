@@ -5,6 +5,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0, user-scalable=no, target-densityDpi=device-dpi", :name => "viewport"}
     %title= t("site_title")
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false
+    = javascript_include_tag "application", "data-turbolinks-track" => false
     = csrf_meta_tags
   %body
     #root
@@ -23,5 +24,4 @@
     .container#footer
       = render partial: 'footer'
     = javascript_include_tag "http://api-maps.yandex.ru/2.0.31/?load=package.full&lang=ru-RU"
-    = javascript_include_tag "application", "data-turbolinks-track" => false
     =#javascript_include_tag "main_page"
