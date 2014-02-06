@@ -72,7 +72,8 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano', group: :development
+#gem 'capistrano', group: :development
+gem 'capistrano', '~> 2.15.0', group: :development
 #gem 'rvm-capistrano'
 gem 'thin', group: :development
 #gem 'puma', group: :development
