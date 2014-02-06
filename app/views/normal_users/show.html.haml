@@ -13,13 +13,13 @@
               )
 .right-8
   - if @car_washes.blank?
-    .base-grey-panel 
+    .base-grey-panel
       - t('.normal_user_registration_message').each {|x| haml_tag :h4, x, class: "text-center" }
   - else
     %ul.user_car_washes
       - @car_washes.each do |cw|
         = subscribe_to "/normal_users_messages/#{cw.id}/#{current_normal_user.id}"
-        %li.base-grey-panel 
+        %li.base-grey-panel
           .red= cw.title
           %ul.user_actions
             = cw.actions.find_each do |action|

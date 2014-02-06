@@ -27,12 +27,12 @@ class NormalUserMessagesController < ApplicationController
   def create
     @normal_user_message = NormalUserMessage.new(normal_user_message_params)
     @car_wash_id = normal_user_message_params[:car_wash_id]
-    @messages_count = NormalUserMessage.where(
-      receiver_id: normal_user_message_params[:receiver_id],
-      car_wash_id: normal_user_message_params[:car_wash_id]).count
 
     respond_to do |format|
       if @normal_user_message.save
+        @messages_count = NormalUserMessage.where(
+          receiver_id: normal_user_message_params[:receiver_id],
+          car_wash_id: normal_user_message_params[:car_wash_id]).count
         format.html { redirect_to edit_car_wash_path(params[:car_wash_id]), notice: t('notice.messages.create.success') }
         format.js
       else
