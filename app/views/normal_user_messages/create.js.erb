@@ -1,0 +1,4 @@
+<% publish_to "/normal_users_messages/#{@car_wash_id}/#{@normal_user_message.receiver_id}" do %>
+  $("#normal_user_messages").append("<%= escape_javascript render(@normal_user_message) %>");
+  $('li#car_wash_<%= escape_javascript @car_wash_id.to_s %> #normal_user_messages_count').html("<%= escape_javascript @messages_count.to_s %>")
+<% end %>

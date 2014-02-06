@@ -21,6 +21,7 @@ Moika::Application.routes.draw do
     resources :comments, only: [:index, :create]
     resources :requests
     resources :messages, only: [:index, :show, :update]
+    resources :normal_user_messages
     resources :banners, only: [:index, :update]
     resources :payments, only: [:index]
     resources :invoices, only: [:new, :create, :show]

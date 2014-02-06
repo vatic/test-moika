@@ -11,7 +11,7 @@
     #subscribe_button
       - if current_normal_user.blank?
         = link_to t('.register_and_subscribe'), normal_user_registration_path, method: :post
-      - elsif NormalUser.first.car_washes.where(id: @car_wash.id).blank?
+      - elsif current_normal_user.car_washes.where(id: @car_wash.id).blank?
         = link_to t('.subscribe'), car_washes_subscribe_path(@car_wash, current_normal_user.id), method: :post, remote: true
       - else
         = link_to t('.you_are_subscribed'), "#"

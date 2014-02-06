@@ -43,6 +43,9 @@
   .left-container#requests{data: {url: car_wash_requests_path(@car_wash), oncpanel: "1", updated_at: @updated_at}}
     #requests_button
       = render "requests_button", count: @car_wash.unread_requests_count
+  .center-container
+    #full_form_button
+      = link_to t("normal_user_message"), new_car_wash_normal_user_message_path(@car_wash), class: "grey-button"
   .right-container
     #full_form_button
       = link_to t("detailed_form_header"), edit_car_wash_path(@car_wash, full: '1'), class: "red-button"

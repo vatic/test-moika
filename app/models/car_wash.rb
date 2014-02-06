@@ -11,6 +11,7 @@ class CarWash < ActiveRecord::Base
   has_many :comments
   has_many :requests
   has_many :messages
+  has_many :normal_user_messages
   has_many :banners
   has_many :payments
   has_many :invoices

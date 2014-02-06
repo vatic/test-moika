@@ -47,6 +47,7 @@ ru:
   are_you_sure: "Вы уверены?"
   adv_manage: 'Управление рекламой на Вашей странице'
   detailed_form_header: 'Управление видео и персональными данными'
+  normal_user_message: "Сообщение для пользователя"
   signal_on_map: 'Сигнал на карте'
 
   about_us: "О проекте"
